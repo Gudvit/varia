@@ -1,0 +1,12 @@
+{
+  "name": "varia-medical-report",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Полная медицинская хронология кошки Вари — сборка HTML-версии отчёта из Markdown",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "marked": "^16.4.1"
+  }
+}

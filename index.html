@@ -1,0 +1,2253 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Варя (Varia) — полная медицинская хронология</title>
+<meta name="description" content="Полная медицинская хронология. 24.06.2025 – 07.09.2026.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%88%3C/text%3E%3C/svg%3E">
+<style>
+/* ==========================================================================
+   Варя — медицинская хронология. Оформление печатного документа для экрана.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  --bg:          #faf9f7;
+  --bg-tint:     #f2efea;
+  --surface:     #ffffff;
+  --surface-alt: #f7f5f2;
+
+  --text:        #1b1a18;
+  --text-soft:   #4a4641;
+  --muted:       #7a736b;
+  --faint:       #a29a91;
+
+  --line:        #e4dfd8;
+  --line-strong: #cec7bd;
+
+  --accent:      #2b6a63;
+  --accent-soft: #e3efed;
+  --accent-line: #9cc4bf;
+
+  --warn:        #9a5b09;
+  --warn-soft:   #fdf3e2;
+  --warn-line:   #e3b872;
+
+  --up:          #a8371f;
+  --down:        #1f5f8b;
+
+  --shadow-sm: 0 1px 2px rgba(28, 24, 18, .05), 0 1px 3px rgba(28, 24, 18, .04);
+  --shadow-md: 0 4px 16px rgba(28, 24, 18, .08), 0 1px 3px rgba(28, 24, 18, .05);
+
+  --sans:  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --serif: Georgia, "Times New Roman", Times, serif;
+
+  --sidebar: 300px;
+  --measure: 74ch;
+  --radius: 10px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg:          #14161a;
+  --bg-tint:     #191c21;
+  --surface:     #1b1f25;
+  --surface-alt: #212630;
+
+  --text:        #e9e7e4;
+  --text-soft:   #c8c5c0;
+  --muted:       #97a0a9;
+  --faint:       #6d757e;
+
+  --line:        #2b313a;
+  --line-strong: #3a424d;
+
+  --accent:      #6fbdb3;
+  --accent-soft: #16302e;
+  --accent-line: #2f5f5a;
+
+  --warn:        #e0a95c;
+  --warn-soft:   #2b2416;
+  --warn-line:   #6b5528;
+
+  --up:          #e8836b;
+  --down:        #74b3dd;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, .45);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.68;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
+
+/* --- Прогресс чтения --------------------------------------------------- */
+
+#progress {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 2px;
+  width: 0;
+  background: var(--accent);
+  z-index: 60;
+  transition: width .1s linear;
+}
+
+/* --- Каркас ------------------------------------------------------------ */
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar) minmax(0, 1fr);
+  align-items: start;
+}
+
+/* --- Оглавление -------------------------------------------------------- */
+
+.toc {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 28px 20px 40px 32px;
+  border-right: 1px solid var(--line);
+  background: var(--bg-tint);
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.toc__brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: -.01em;
+  color: var(--text);
+}
+
+.toc__brand span { font-size: 13px; font-weight: 500; color: var(--muted); }
+
+.toc__sub {
+  margin: 0 0 22px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.toc__label {
+  margin: 0 0 10px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.toc ol { list-style: none; margin: 0; padding: 0; }
+
+.toc a {
+  display: flex;
+  gap: 9px;
+  padding: 5px 10px 5px 9px;
+  margin-left: -9px;
+  border-radius: 7px;
+  color: var(--text-soft);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: background .12s ease, color .12s ease;
+}
+
+.toc a:hover { background: var(--surface); color: var(--text); }
+
+.toc a .num {
+  flex: none;
+  min-width: 1.35em;
+  font-variant-numeric: tabular-nums;
+  color: var(--faint);
+}
+
+.toc a.is-active {
+  background: var(--surface);
+  border-left-color: var(--accent);
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.toc a.is-active .num { color: var(--accent); }
+
+.toc__sublist {
+  margin: 2px 0 8px 12px;
+  padding-left: 22px;
+  border-left: 1px solid var(--line-strong);
+}
+
+.toc__sublist a {
+  margin-left: 0;
+  padding-block: 3px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+/* --- Панель управления ------------------------------------------------- */
+
+.controls {
+  position: fixed;
+  top: 14px;
+  right: 18px;
+  z-index: 50;
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  min-width: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-soft);
+  font: 500 13px/1 var(--sans);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: color .12s ease, border-color .12s ease, transform .12s ease;
+}
+
+.btn:hover { color: var(--accent); border-color: var(--accent-line); }
+.btn:active { transform: translateY(1px); }
+.btn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+#menu-btn { display: none; }
+
+/* --- Основная колонка -------------------------------------------------- */
+
+.main { min-width: 0; padding: 0 clamp(20px, 5vw, 72px) 120px; }
+.wrap { max-width: var(--measure); margin: 0 auto; }
+
+/* --- Шапка документа --------------------------------------------------- */
+
+.hero { padding: clamp(48px, 9vh, 96px) 0 0; }
+
+.hero__eyebrow {
+  margin: 0 0 14px;
+  font: 700 11px/1 var(--sans);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: clamp(34px, 5.4vw, 54px);
+  font-weight: 680;
+  line-height: 1.05;
+  letter-spacing: -.028em;
+}
+
+.hero__lede {
+  margin: 14px 0 0;
+  font-size: clamp(18px, 2.4vw, 21px);
+  line-height: 1.45;
+  color: var(--text-soft);
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px;
+  margin: 34px 0 0;
+  padding: 0;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.meta div {
+  padding: 13px 16px;
+  background: var(--surface);
+}
+
+.meta dt {
+  margin: 0 0 3px;
+  font: 600 10.5px/1 var(--sans);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.meta dd {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 550;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+/* --- Разделы ----------------------------------------------------------- */
+
+.section { margin-top: 72px; }
+.section:first-of-type { margin-top: 56px; }
+
+.section > h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0 0 26px;
+  padding-top: 26px;
+  border-top: 2px solid var(--line-strong);
+  font-family: var(--sans);
+  font-size: clamp(23px, 3.2vw, 30px);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -.022em;
+}
+
+.section > h2 .num {
+  flex: none;
+  font-size: .62em;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  transform: translateY(-.12em);
+}
+
+h3, h4 {
+  font-family: var(--sans);
+  letter-spacing: -.012em;
+  line-height: 1.3;
+}
+
+h3 { margin: 44px 0 18px; font-size: 20px; font-weight: 650; }
+h4 { margin: 34px 0 12px; font-size: 16.5px; font-weight: 650; }
+
+/* Разделитель года в хронологии */
+.year {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 52px 0 30px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.year::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--accent-line), transparent);
+}
+
+/* --- Текст ------------------------------------------------------------- */
+
+p { margin: 0 0 18px; }
+strong { font-weight: 700; color: var(--text); }
+em { color: var(--text-soft); }
+
+ul, ol { margin: 0 0 20px; padding-left: 1.35em; }
+li { margin-bottom: 9px; }
+li::marker { color: var(--faint); }
+
+a { color: var(--accent); text-underline-offset: 2px; }
+
+/* Якоря у заголовков */
+.anchor {
+  margin-left: .4em;
+  font-family: var(--sans);
+  font-size: .58em;
+  font-weight: 500;
+  color: var(--faint);
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity .12s ease;
+}
+
+h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, .entry:hover .anchor { opacity: 1; }
+.anchor:hover { color: var(--accent); }
+
+/* --- Врезки ------------------------------------------------------------ */
+
+.notice {
+  margin: 0 0 22px;
+  padding: 16px 20px;
+  border: 1px solid var(--accent-line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+.notice p:last-child { margin-bottom: 0; }
+
+p.warn, li.warn {
+  position: relative;
+  padding: 11px 16px 11px 15px;
+  border-left: 3px solid var(--warn-line);
+  border-radius: 0 8px 8px 0;
+  background: var(--warn-soft);
+}
+
+p.warn { margin-bottom: 20px; }
+li.warn { margin-left: -.35em; list-style: none; }
+li.warn::before { content: ""; }
+
+/* --- Записи хронологии ------------------------------------------------- */
+
+.entry {
+  position: relative;
+  margin: 0 0 32px;
+  padding: 0 0 0 26px;
+  border-left: 2px solid var(--line);
+}
+
+.entry::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.entry > .entry__head {
+  margin: 0 0 12px;
+  font-family: var(--sans);
+}
+
+.entry__date {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.entry__title {
+  display: block;
+  margin-top: 3px;
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.32;
+  letter-spacing: -.014em;
+  color: var(--text);
+}
+
+.entry > *:last-child { margin-bottom: 0; }
+
+/* --- Таблицы ----------------------------------------------------------- */
+
+.table-wrap {
+  position: relative;
+  margin: 0 0 26px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--line-strong);
+  background: var(--surface-alt);
+  color: var(--text);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  text-align: left;
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  color: var(--text-soft);
+}
+
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:hover td { background: var(--surface-alt); }
+
+/* Первый столбец — «шапка» строки; для широких таблиц закреплён при прокрутке */
+tbody td:first-child { color: var(--text); font-weight: 600; }
+
+.table-wrap[data-wide] th:first-child,
+.table-wrap[data-wide] td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--surface);
+  border-right: 1px solid var(--line);
+}
+
+.table-wrap[data-wide] thead th:first-child { z-index: 3; background: var(--surface-alt); }
+.table-wrap[data-wide] tbody tr:hover td:first-child { background: var(--surface-alt); }
+
+tr.warn td { background: var(--warn-soft); }
+tr.warn:hover td { background: var(--warn-soft); }
+
+.arr { font-weight: 700; }
+.arr.up { color: var(--up); }
+.arr.down { color: var(--down); }
+
+/* --- Подвал ------------------------------------------------------------ */
+
+.colophon {
+  margin-top: 80px;
+  padding-top: 26px;
+  border-top: 2px solid var(--line-strong);
+}
+
+.colophon h2 {
+  margin: 0 0 18px;
+  font-family: var(--sans);
+  font-size: 20px;
+  font-weight: 650;
+}
+
+.colophon p { color: var(--text-soft); font-size: 16px; }
+
+.footnote {
+  margin-top: 34px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--faint);
+}
+
+/* --- Адаптив ----------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+  html { scroll-padding-top: 20px; }
+
+  .layout { grid-template-columns: minmax(0, 1fr); }
+
+  .toc {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(320px, 86vw);
+    z-index: 70;
+    transform: translateX(-101%);
+    transition: transform .22s ease;
+    box-shadow: var(--shadow-md);
+  }
+
+  .toc.is-open { transform: none; }
+
+  #menu-btn { display: inline-flex; }
+
+  .scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 65;
+    background: rgba(20, 18, 15, .42);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease, visibility .2s ease;
+  }
+
+  .scrim.is-open { opacity: 1; visibility: visible; }
+
+  .controls {
+    top: auto;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .main { padding-bottom: 90px; }
+}
+
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  .meta { grid-template-columns: 1fr; }
+  .section { margin-top: 54px; }
+  .entry { padding-left: 20px; }
+}
+
+/* --- Печать / PDF ------------------------------------------------------ */
+
+@media print {
+  :root {
+    --bg: #fff; --bg-tint: #fff; --surface: #fff; --surface-alt: #f4f4f4;
+    --text: #000; --text-soft: #1a1a1a; --muted: #444; --faint: #666;
+    --line: #ccc; --line-strong: #888; --accent: #14524c;
+    --shadow-sm: none; --shadow-md: none;
+  }
+
+  @page { margin: 16mm 14mm; }
+
+  body { font-size: 10.5pt; line-height: 1.5; background: #fff; }
+
+  .toc, .controls, .scrim, #progress, .anchor { display: none !important; }
+  .layout { display: block; }
+  .main { padding: 0; }
+  .wrap { max-width: none; }
+
+  .hero { padding-top: 0; }
+  .hero h1 { font-size: 26pt; }
+
+  .section { margin-top: 26px; }
+  .section > h2 { font-size: 15pt; break-after: avoid; }
+  h3, h4, .entry__head { break-after: avoid; }
+
+  .entry, .table-wrap, .notice, p.warn { break-inside: avoid; }
+  .table-wrap { overflow: visible; box-shadow: none; }
+  thead th { position: static; }
+  .table-wrap[data-wide] th:first-child,
+  .table-wrap[data-wide] td:first-child { position: static; }
+
+  table { font-size: 8.5pt; }
+  a { color: inherit; text-decoration: none; }
+}
+
+</style>
+</head>
+<body>
+<div id="progress" role="presentation"></div>
+<div class="scrim" id="scrim"></div>
+
+<div class="controls">
+  <button class="btn" id="menu-btn" aria-label="Оглавление" aria-expanded="false" aria-controls="toc">
+    <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <button class="btn" id="theme-btn" aria-label="Сменить тему">
+    <svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+  </button>
+  <button class="btn" id="top-btn" aria-label="В начало">
+    <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</div>
+
+<div class="layout">
+  <nav class="toc" id="toc" aria-label="Оглавление">
+    <p class="toc__brand">Варя <span>medical file</span></p>
+    <p class="toc__sub">24.06.2025 – 07.09.2026</p>
+    <p class="toc__label">Разделы</p>
+    <ol>
+<li><a href="#kak-chitat-etot-dokument"><span class="num">1</span><span>Как читать этот документ</span></a></li>
+<li><a href="#dannye-pacienta"><span class="num">2</span><span>Данные пациента</span></a></li>
+<li><a href="#kratkoe-rezyume"><span class="num">3</span><span>Краткое резюме</span></a></li>
+<li><a href="#polnaya-hronologiya-po-datam"><span class="num">4</span><span>Полная хронология по датам</span></a><ol class="toc__sublist"><li><a href="#2025-god">2025 год</a></li><li><a href="#2026-god">2026 год</a></li></ol></li>
+<li><a href="#svodka-gistologiya-i-citologiya-opuholey"><span class="num">5</span><span>Сводка: гистология и цитология опухолей</span></a></li>
+<li><a href="#hirurgicheskie-vmeshatelstva"><span class="num">6</span><span>Хирургические вмешательства</span></a></li>
+<li><a href="#himioterapiya-i-targetnaya-terapiya"><span class="num">7</span><span>Химиотерапия и таргетная терапия</span></a></li>
+<li><a href="#laboratornye-pokazateli-v-dinamike"><span class="num">8</span><span>Лабораторные показатели в динамике</span></a></li>
+<li><a href="#medikamentoznaya-terapiya-svodnaya-tablica"><span class="num">9</span><span>Медикаментозная терапия — сводная таблица</span></a></li>
+<li><a href="#oftalmologicheskaya-istoriya"><span class="num">10</span><span>Офтальмологическая история</span></a></li>
+<li><a href="#kardiologiya"><span class="num">11</span><span>Кардиология</span></a></li>
+<li><a href="#zhkt-i-mochevydelitelnaya-sistema"><span class="num">12</span><span>ЖКТ и мочевыделительная система</span></a></li>
+<li><a href="#pechen-i-pochki-svodka-nahodok"><span class="num">13</span><span>Печень и почки — сводка находок</span></a></li>
+<li><a href="#status-na-poslednyuyu-zadokumentirovannuyu-datu-07-09-2026"><span class="num">14</span><span>Статус на последнюю задокументированную дату (07.09.2026)</span></a></li>
+<li><a href="#otkrytye-voprosy-protivorechiya-i-probely-v-dokumentacii"><span class="num">15</span><span>Открытые вопросы, противоречия и пробелы в документации</span></a></li>
+<li><a href="#reestr-istochnikov-dokumentov"><span class="num">16</span><span>Реестр источников документов</span></a></li>
+<li><a href="#o-dokumente"><span class="num"></span><span>О документе</span></a></li>
+    </ol>
+  </nav>
+
+  <main class="main">
+    <div class="wrap">
+      <header class="hero">
+        <p class="hero__eyebrow">Ветеринарный отчёт</p>
+        <h1>Варя (Varia)</h1>
+        <p class="hero__lede">Полная медицинская хронология</p>
+        <dl class="meta">
+<div><dt>Пациент</dt><dd>Кошка, британская длинношёрстная, кастрирована</dd></div>
+<div><dt>Период документов</dt><dd>24.06.2025 – 07.09.2026</dd></div>
+<div><dt>Отчёт составлен</dt><dd>08.09.2026</dd></div>
+<div><dt>Владелец</dt><dd>Karina Grakova</dd></div>
+        </dl>
+      </header>
+
+<section class="section" id="kak-chitat-etot-dokument">
+<h2><span class="num">1</span><span>Как читать этот документ</span><a class="anchor" href="#kak-chitat-etot-dokument" aria-hidden="true">#</a></h2>
+<p>Этот отчёт составлен владелицей кошки на основе фотографий бумажных и электронных медицинских документов (карты визитов, результаты лабораторных анализов, гистопатологические и цитологические заключения, чеки внутренних лабораторий, рентген-снимки), полученных из нескольких ветеринарных клиник и лабораторий. Документы загружались не по порядку и по частям; настоящий отчёт — результат их сведения в единую, проверенную на противоречия хронологию.</p>
+
+<div class="notice"><p><strong>Документ не заменяет осмотр и заключение ветеринарного врача.</strong> Он предназначен для того, чтобы дать новому врачу, онкологу или любому консультирующему специалисту максимально полную и точную картину истории болезни, не тратя время на разбор десятков разрозненных фотографий.</p></div>
+
+<h4 id="principy-sostavleniya">Принципы составления<a class="anchor" href="#principy-sostavleniya" aria-hidden="true">#</a></h4>
+<ul>
+<li><strong>Факты из документов</strong> приводятся со ссылкой на дату и источник; при прямом цитировании оригинала (обычно по-польски) даётся перевод.</li>
+<li><strong>Слова владельца</strong> (анамнез, наблюдения дома) отдельно помечены как «со слов владельца» — это не объективные клинические данные.</li>
+<li><strong>Пробелы в данных</strong> обозначены как «не указано», «документ не загружен», «требует подтверждения» — там, где информация отсутствует, ничего не домысливается.</li>
+<li class="warn">Значком <strong>⚠️</strong> отмечены расхождения и противоречия между документами — приведены обе версии без попытки самостоятельно решить, какая верна; полный перечень — в разделе 15.</li>
+<li>Величины лабораторных показателей приводятся с единицами измерения и референсным интервалом лаборатории, выполнившей анализ (внутренняя лаборатория LoVet использует иные интервалы, чем IDEXX — сравнивать числа напрямую между этими двумя системами некорректно).</li>
+<li>Непрофессиональные (не врачебные) описания изображений — например, рентген-снимков без приложенного заключения — отдельно помечены и не должны восприниматься как диагноз.</li>
+</ul>
+
+
+</section>
+<section class="section" id="dannye-pacienta">
+<h2><span class="num">2</span><span>Данные пациента</span><a class="anchor" href="#dannye-pacienta" aria-hidden="true">#</a></h2>
+<div class="table-wrap" tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Кличка</td>
+<td>VARIA (Варя). В документах клиники Retina дважды встречается опечатка — «Waria», «Walia».</td>
+</tr>
+<tr>
+<td>Вид / пол</td>
+<td>Кошка, самка, кастрирована (samica kastrowana).</td>
+</tr>
+<tr>
+<td>Порода</td>
+<td>Британская длинношёрстная (kot brytyjski długowłosy) — точно по документам ALVET. LoVet в бланках указывает упрощённо «Kot brytyjski» без указания шёрстности — это не противоречие, а разная детализация в разных клиниках.</td>
+</tr>
+<tr>
+<td>Окрас</td>
+<td>Чёрный (maść czarna).</td>
+</tr>
+<tr>
+<td>Чип</td>
+<td>968000011873589</td>
+</tr>
+<tr>
+<td>Дата рождения</td>
+<td>Точная дата по документам не установлена. По четырём независимым записям возраста «лет и месяцев» в картах ALVET (см. ниже) — ориентировочно <strong>август–сентябрь 2014 года</strong>.</td>
+</tr>
+<tr>
+<td>Владелец</td>
+<td>Karina Grakova, ul. Św. Jacka 18e, 30-364 Kraków, тел. 577682296(9)*, email <a href="mailto:karinagrva@gmail.com">karinagrva@gmail.com</a> / <a href="mailto:gudvitt@gmail.com">gudvitt@gmail.com</a>. *В разных документах телефон указан с разночтением в последней цифре — не критично, не проверялось.</td>
+</tr>
+</tbody></table></div>
+<h4 id="obosnovanie-daty-rozhdeniya">Обоснование даты рождения<a class="anchor" href="#obosnovanie-daty-rozhdeniya" aria-hidden="true">#</a></h4>
+<p>Клиника ALVET указывает возраст в формате «X лет и Y месяцев», что позволяет реконструировать дату рождения по нескольким независимым точкам:</p>
+
+<div class="table-wrap" tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Дата записи</th>
+<th>Возраст в документе</th>
+<th>Расчётная дата рождения</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>08.08.2025</td>
+<td>10 lat i 11 miesięcy</td>
+<td>≈ сентябрь 2014</td>
+</tr>
+<tr>
+<td>29.12.2025</td>
+<td>11 lat i 4 miesiące</td>
+<td>≈ конец августа 2014</td>
+</tr>
+<tr>
+<td>04.11.2025</td>
+<td>11 лат и 2 miesiące</td>
+<td>≈ начало сентября 2014</td>
+</tr>
+<tr>
+<td>20.03.2026</td>
+<td>11 лат и 7 miesięcy</td>
+<td>≈ август 2014</td>
+</tr>
+</tbody></table></div>
+<p>Все четыре точки независимо указывают на <strong>рождение в августе–сентябре 2014 года</strong>. Клиники LoVet, Retina и ALPHAVET в разные периоды указывают возраст менее точно (только целыми годами — то «11», то «12» лет) — это, по всей видимости, связано с разными настройками округления в программах учёта этих клиник, а не с реальной неопределённостью возраста. Отдельно на бланке IDEXX от 24.06.2025 возраст указан грубо как «11 R», что для расчётной даты рождения давало бы фактически 10 лет 9–10 месяцев — то есть IDEXX, по-видимому, тоже просто округляет в большую сторону. На бланке биохимии LoVet от 02.09.2026 ошибочно указано «9 лет» — явная техническая ошибка, не использовать как источник возраста.</p>
+
+<h4 id="kliniki-laboratorii-i-vrachi">Клиники, лаборатории и врачи<a class="anchor" href="#kliniki-laboratorii-i-vrachi" aria-hidden="true">#</a></h4>
+<div class="table-wrap" tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Клиника / лаборатория</th>
+<th>Профиль</th>
+<th>Врачи</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Przychodnia Weterynaryjna <strong>LoVet</strong><br>Domagały 45/LU06, 30-741 Kraków<br>тел. 48797831631</td>
+<td>Основной лечащий врач, онкология, химиотерапия</td>
+<td>Agata Drewniak (основной лечащий врач/онколог), Oliwia Szaflik, Joanna Żak, Małgorzata Malec</td>
+</tr>
+<tr>
+<td><strong>ALVET</strong> Gabinet Weterynaryjny Olga Jaworska<br>ul. G. Zapolskiej 42/12, 30-126 Kraków<br>тел. 501259254, <a href="mailto:olga.jaworska@wp.pl">olga.jaworska@wp.pl</a></td>
+<td>Все онкологические операции 2025 – начала 2026 гг.</td>
+<td>lek. wet. Olga Jaworska</td>
+</tr>
+<tr>
+<td><strong>ALPHAVET</strong> Centrum Małych Zwierząt<br>ul. Lubostroń 15, 30-383 Kraków</td>
+<td>Кардиология</td>
+<td>Dr n. wet. Paweł Łyp</td>
+</tr>
+<tr>
+<td>Przychodnia Weterynaryjna <strong>RETINA</strong><br>ul. Antoniego Szyllinga 3, 30-433 Kraków<br>тел. 696 789 015, <a href="mailto:biuro@weterynarz-okulista.pl">biuro@weterynarz-okulista.pl</a></td>
+<td>Офтальмология</td>
+<td>dr n. wet. Paweł Stefanowicz (хирург ESE ECVO), lek. wet. Veronika Chybowska</td>
+</tr>
+<tr>
+<td><strong>IDEXX Laboratories</strong> (внешняя, через LoVet и напрямую для ALVET); <strong>ALAB Weterynaria</strong> (гистопатология, цитология, общий анализ мочи для ALVET); <strong>внутренняя лаборатория LoVet</strong> («Raport analizy hematologicznej»)</td>
+<td>Лабораторная диагностика</td>
+<td>—</td>
+</tr>
+</tbody></table></div>
+<h4 id="dinamika-vesa">Динамика веса<a class="anchor" href="#dinamika-vesa" aria-hidden="true">#</a></h4>
+<div class="table-wrap" tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Дата</th>
+<th>Вес, кг</th>
+<th>Примечание</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>29.04.2026</td>
+<td>4.80</td>
+<td></td>
+</tr>
+<tr>
+<td>18.05.2026</td>
+<td>4.80</td>
+<td></td>
+</tr>
+<tr>
+<td>08.06.2026</td>
+<td>4.80</td>
+<td></td>
+</tr>
+<tr class="warn">
+<td>13.06.2026</td>
+<td>4.80 (офиц.)</td>
+<td>⚠️ в этом же документе со слов владельца упомянуто «5,3 кг» — расхождение не объяснено</td>
+</tr>
+<tr>
+<td>15.06.2026</td>
+<td>5.30</td>
+<td></td>
+</tr>
+<tr>
+<td>23.06.2026</td>
+<td>5.00</td>
+<td></td>
+</tr>
+<tr>
+<td>24.06.2026</td>
+<td>5.00</td>
+<td></td>
+</tr>
+<tr>
+<td>06.07.2026</td>
+<td>5.20</td>
+<td></td>
+</tr>
+<tr>
+<td>10.07.2026</td>
+<td>5.20</td>
+<td></td>
+</tr>
+<tr>
+<td>27.07.2026</td>
+<td>не указан</td>
+<td></td>
+</tr>
+<tr>
+<td>03.08.2026</td>
+<td>5.10</td>
+<td></td>
+</tr>
+<tr>
+<td>17.08.2026</td>
+<td>4.94</td>
+<td></td>
+</tr>
+<tr>
+<td>19.08.2026</td>
+<td>4.94</td>
+<td></td>
+</tr>
+<tr>
+<td>26.08.2026</td>
+<td>5.00</td>
+<td></td>
+</tr>
+<tr>
+<td>02.09.2026</td>
+<td>4.81</td>
+<td>исправлено от руки в документе</td>
+</tr>
+<tr>
+<td>07.09.2026</td>
+<td>4.77</td>
+<td>последнее известное значение</td>
+</tr>
+</tbody></table></div>
+<p>Общая динамика: вес был относительно стабилен (4.8–5.3 кг) на протяжении химиотерапии, с постепенным небольшим снижением к сентябрю 2026 года (4.77 кг на 07.09.2026 — самое низкое зафиксированное значение).</p>
+
+
+</section>
+<section class="section" id="kratkoe-rezyume">
+<h2><span class="num">3</span><span>Краткое резюме</span><a class="anchor" href="#kratkoe-rezyume" aria-hidden="true">#</a></h2>
+<p><strong>Основной диагноз:</strong> рак молочной железы высокой степени злокачественности (III степень по классификации Mills), гистологически подтверждён с августа 2025 года. Множественные локальные рецидивы (ноябрь 2025, декабрь 2025, март 2026), <strong>метастазирование в лёгкие подтверждено 13.04.2026</strong>. С апреля 2026 — рецидивирующий плевральный выпот и пролиферативные изменения стенки грудной клетки.</p>
+
+<p><strong>Точный гистологический подтип опухоли (карцинома / саркома / карциносаркома) окончательно не определён</strong> — патолог ALAB неоднократно указывал на необходимость иммуногистохимического окрашивания (панцитокератин, виментин) для уточнения; по документам не прослеживается, было ли оно выполнено.</p>
+
+<p><strong>Текущая терапия (на 07.09.2026):</strong> химиотерапия доксорубицином (введена V доза, интервалы строго по 21 дню); ранее — курс карбоплатина (одна задокументированная доза, 18.05.2026) до смены препарата; таргетная терапия торцеранибом (Palladia) — статус после 08.06.2026 не задокументирован ни в одном документе; преднизолон (доза снижена до 3/4 табл. к 07.09.2026); фуросемид при учащении дыхания; поддерживающая терапия ЖКТ и почек.</p>
+
+<p><strong>Сопутствующие проблемы:</strong></p>
+
+<ul>
+<li>Почки: азотемия документирована минимум с 20.12.2025 (креатинин 221 мкмоль/л), несколько эпизодов повышения и нормализации креатинина; с 24.06.2026 — неровная капсула левой почки на УЗИ; 10.07.2026 — рентгенопозитивные структуры в почках/мочевом пузыре (не подтверждены дальнейшими исследованиями); статус на последнюю дату (02.09.2026) — показатели в норме.</li>
+<li>Глаза: с середины августа 2026 — тяжёлый, плохо поддающийся лечению двусторонний дефект эпителия роговицы (синдром сухого глаза), возможно связанный с системной терапией и/или носительством FHV1. На 03.09.2026 — без явного улучшения (дефект OD ~70%, OS ~80% поверхности).</li>
+<li>ЖКТ: эпизод тяжёлого запора 10.07.2026, потенциально ведущего к мегаколон; исход не задокументирован.</li>
+<li>Сердце: случайная находка 26.08.2026 — образование ~0.9×0.7 см у верхушки сердца/в средостении с кистой внутри; признаков ГКМП нет; АД 155 мм рт.ст.; противопоказаний к продолжению химиотерапии кардиолог не выявил.</li>
+<li>Печень: единичное очаговое изменение в паренхиме, впервые описано 24.06.2026; повторно не проверялось.</li>
+</ul>
+
+<p><strong>Наиболее срочные открытые вопросы для нового врача</strong> (полный список из 34 пунктов — раздел 15):</p>
+
+<ul>
+<li>Статус препарата Palladia (торцераниб) после 08.06.2026 нигде не задокументирован — продолжается ли терапия?</li>
+<li>Точный гистологический подтип опухоли не определён (нужна ИГХ).</li>
+<li>Край резекции при последней крупной операции (20.03.2026) гистологически положительный — дальнейшая тактика по документам не описана.</li>
+<li>Значительный рост плеврального выпота за 5 дней (02.09→07.09.2026) — требует внимания.</li>
+<li>Рентгенологическая находка в почках/пузыре от 10.07.2026 не была повторно проверена.</li>
+<li>Получены сами рентген-снимки с подписью владельца «02/03/2026» без заключения врача — требуют прочтения радиологом; возможно несоответствие с датой «04.03.2026», ранее известной по другим документам.</li>
+</ul>
+
+
+</section>
+<section class="section" id="polnaya-hronologiya-po-datam">
+<h2><span class="num">4</span><span>Полная хронология по датам</span><a class="anchor" href="#polnaya-hronologiya-po-datam" aria-hidden="true">#</a></h2>
+<p>Ниже — все задокументированные события в строгом хронологическом порядке. Результаты лабораторных/гистологических исследований, как правило, приведены сразу под визитом/операцией, к которой они относятся (даже если официальная дата выдачи заключения — позже), чтобы сохранить клиническую связь причины и результата; дата выдачи заключения указана отдельно.</p>
+
+<h3 class="year" id="2025-god">2025 год</h3>
+<div class="entry" id="24-06-2025-idexx-planovyy-chek-ap-skrining-allergii-lab-lz40">
+<h4 class="entry__head"><span class="entry__date">24.06.2025</span><span class="entry__title">IDEXX: плановый чек-ап + скрининг аллергии (лаб. № LZ405526)</span><a class="anchor" href="#24-06-2025-idexx-planovyy-chek-ap-skrining-allergii-lab-lz40" aria-hidden="true">#</a></h4>
+<p>Самый ранний из всех полученных документов — за месяц до обнаружения опухоли. На тот момент признаков онкологического заболевания не зафиксировано.</p>
+
+<ul>
+<li>Биохимия: креатинин 159.12 мкмоль/л [79.56–203.32] — норма; мочевина 12.14 [5.71–13.57] — верхняя граница нормы; Na 154, K 4.9, общий белок 77, альбумин 36, глобулин 41, A/G 0.88, АЛТ 42, АСТ 35, ЩФ 26, билирубин общий 3.42, холестерин 4.76 — всё в пределах референса.</li>
+<li>Общий анализ крови: эритроциты 9.46, гематокрит 0.415, гемоглобин 128, <strong>MCV 43.9</strong> (для сравнения — нормальный, микроцитоз разовьётся позже), MCH 13.5, MCHC 308, лейкоциты 7.05, тромбоциты 427 — все показатели в норме.</li>
+<li>Скрининг аллергии (GREER, IgE, ингибитор CCD): травы, деревья, клещи/плесень, блохи — все отрицательные.</li>
+<li>Пищевая панель Nutridexx: IgE-антитела — R0 (отрицательно) по всем позициям. IgG-антитела — положительные разной степени (R2–R4) практически ко всем протестированным продуктам (молоко, рыба разных видов, птица, говядина/баранина/свинина, злаки, картофель, соя и др.). Клиническая интерпретация повышенных пищевых IgG у кошек в документе не даётся и в целом неоднозначна в ветеринарии — приведено как объективная находка без интерпретации.</li>
+</ul>
+
+</div>
+<div class="entry" id="25-07-2025-obnaruzhena-opuhol-na-2-m-soske-sprava">
+<h4 class="entry__head"><span class="entry__date">25.07.2025</span><span class="entry__title">обнаружена опухоль на 2-м соске справа</span><a class="anchor" href="#25-07-2025-obnaruzhena-opuhol-na-2-m-soske-sprava" aria-hidden="true">#</a></h4>
+<p>Рентген грудной клетки — без особенностей.</p>
+
+<p><strong>Цитология ALAB</strong> (заказ №293/25-07-2025 от 25/28.07.2025, материал получен 28.07.2025, исследование выполнено и выдано 01.08.2025 12:44; врач-заказчик lek. wet. Olga Jaworska, патолог prof. dr hab. Rafał Sapierzyński): «Guz sutka kota. 5 rozmazów». Заключение: <strong>«nowotwór nabłonkowy gruczołu sutkowego, z minimalnie wyrażoną złośliwością cytologiczną»</strong> — эпителиальная опухоль молочной железы с минимально выраженной цитологической злокачественностью. Патолог отмечает умеренную корреляцию цитологии и гистологии у кошек и рекомендует хирургическое удаление с гистологией.</p>
+
+</div>
+<div class="entry" id="06-07-08-2025-idexx-chek-ap-pered-operaciey-lab-lz029307">
+<h4 class="entry__head"><span class="entry__date">06–07.08.2025</span><span class="entry__title">IDEXX: чек-ап перед операцией (лаб. № LZ029307)</span><a class="anchor" href="#06-07-08-2025-idexx-chek-ap-pered-operaciey-lab-lz029307" aria-hidden="true">#</a></h4>
+<ul>
+<li>Биохимия: креатинин <strong>150.28 мкмоль/л</strong> [79.56–203.32] — норма (важная точка: последний нормальный креатинин непосредственно перед хирургическим лечением); T4 и SDMA — норма.</li>
+<li>Общий анализ крови: гемоглобин 138, гематокрит 0.386, эритроциты 10.81, тромбоциты 325. <strong>MCV 35.7<span class="arr down">↓</span></strong> [39.0–56.0] — здесь впервые виден лёгкий микроцитоз, который сохранится на протяжении всей дальнейшей истории болезни. Ретикулоцитарный гемоглобин 13.4<span class="arr down">↓</span> [15.3–22.9] — лаборатория сама пометила результат: <strong>«Result implausibly low. We recommend retesting from new material»</strong> — повторное тестирование по документам не прослеживается.</li>
+</ul>
+
+</div>
+<div class="entry" id="08-08-2025-18-22-alvet-dr-olga-jaworska-operaciya-1-totalnay">
+<h4 class="entry__head"><span class="entry__date">08.08.2025, 18:22</span><span class="entry__title">ALVET, dr Olga Jaworska: операция №1 — тотальная мастэктомия правого ряда</span><a class="anchor" href="#08-08-2025-18-22-alvet-dr-olga-jaworska-operaciya-1-totalnay" aria-hidden="true">#</a></h4>
+<p>Тотальная мастэктомия правого ряда молочных желёз с удалением пахового лимфоузла. Среди препаратов визита впервые встречается <strong>Sedatex</strong> (вероятно, седация для премедикации/анестезии; состав и схема по документам не определены).</p>
+
+<p><strong>Гистология ALAB:</strong> «rak prosty lity o złośliwości III stopnia z wąskim marginesem» — <strong>простой солидный рак, III степень злокачественности по Mills, узкий край резекции</strong>, с очагами некроза; край резекции — порядка 0.2 мм. (Точная польскоязычная формулировка по фотографии документа требует финальной сверки с оригиналом — часть текста мелкая.)</p>
+
+</div>
+<div class="entry" id="29-10-2025-obnaruzhen-uzel-ryadom-s-posleoperacionnym-rubcom">
+<h4 class="entry__head"><span class="entry__date">29.10.2025</span><span class="entry__title">обнаружен узел рядом с послеоперационным рубцом внизу живота</span><a class="anchor" href="#29-10-2025-obnaruzhen-uzel-ryadom-s-posleoperacionnym-rubcom" aria-hidden="true">#</a></h4>
+<p>Рентген — чисто.</p>
+
+</div>
+<div class="entry" id="31-10-2025-idexx-analiz-krovi-i-biohimiya">
+<h4 class="entry__head"><span class="entry__date">31.10.2025</span><span class="entry__title">IDEXX: анализ крови и биохимия</span><a class="anchor" href="#31-10-2025-idexx-analiz-krovi-i-biohimiya" aria-hidden="true">#</a></h4>
+<p>Креатинин 185.64 [79.56–203.32] — норма, но выше, чем 06.08 (150.28); мочевина 8.57; глюкоза 7.22; <strong>MCV 37.6<span class="arr down">↓</span>, MCH 12.0<span class="arr down">↓</span></strong> — тот же паттерн лёгкого микроцитоза. Остальное в норме.</p>
+
+</div>
+<div class="entry" id="04-11-2025-09-49-alvet-dr-olga-jaworska-operaciya-2-udalenie">
+<h4 class="entry__head"><span class="entry__date">04.11.2025, 09:49</span><span class="entry__title">ALVET, dr Olga Jaworska: операция №2 — удаление узла у рубца</span><a class="anchor" href="#04-11-2025-09-49-alvet-dr-olga-jaworska-operaciya-2-udalenie" aria-hidden="true">#</a></h4>
+<p>Со слов владельца: 3–4 дня был более жидкий кал, улучшилось после пробиотика Sustain, накануне визита снова размягчился.</p>
+
+<p>Операция: мастэктомия в правом ряду в области 3 и 4 пары сосков; «guz hyperagresywny wrastający od strony uda licznymi naczyniami z ciemną cieczą» — агрессивно растущая опухоль со стороны бедра с обилием сосудов и тёмной жидкостью внутри; частичное удаление мышц живота; послойное ушивание. Назначено: Биотраксон (цефтриаксон), NaCl, Толфедин; воротник на 10 дней.</p>
+
+<p><strong>Гистология ALAB (13.11.2025):</strong> «Tkanka tłuszczowa podskórna objęta wieloogniskowym zlewającym się jałowym zapaleniem mieszanym... W badanym materiale brak cech procesu nowotworowego gruczołu sutkowego» — <strong>опухолевого процесса не обнаружено</strong>, изменения оказались доброкачественными (стерильное многоочаговое воспаление жировой ткани, фиброз).</p>
+
+</div>
+<div class="entry" id="19-12-2025-obnaruzhen-limfouzel-1-5-2-sm-sprava">
+<h4 class="entry__head"><span class="entry__date">19.12.2025</span><span class="entry__title">обнаружен лимфоузел ~1.5–2 см справа</span><a class="anchor" href="#19-12-2025-obnaruzhen-limfouzel-1-5-2-sm-sprava" aria-hidden="true">#</a></h4>
+</div>
+<div class="entry" id="20-12-2025-idexx-polnyy-analiz-krovi-lab-1000226201-otchet-s">
+<h4 class="entry__head"><span class="entry__date">20.12.2025</span><span class="entry__title">IDEXX: полный анализ крови (лаб. № 1000226201, отчёт создан 20.12.2025 03:16 UTC)</span><a class="anchor" href="#20-12-2025-idexx-polnyy-analiz-krovi-lab-1000226201-otchet-s" aria-hidden="true">#</a></h4>
+<p><strong>Креатинин 221 мкмоль/л [79.56–203.32] — выше референса.</strong> Это самый ранний документированный эпизод повышенного креатинина во всей истории болезни. Также <strong>глюкоза 8.33 [3.5–7.77] — выше нормы</strong> (возможно стрессовая гипергликемия).</p>
+
+<ul>
+<li>Остальная биохимия: мочевина 9.28, Na 153, K 5.0, общий белок 76, альбумин 31, глобулин 45, A/G 0.69, АЛТ 32, АСТ 24, ЩФ 25, билирубин 3.42, холестерин 2.61 — в норме.</li>
+<li>Общий анализ крови: эритроциты 10.62, гематокрит 0.38, гемоглобин 120, <strong>MCV 35.6<span class="arr down">↓</span>, MCH 11.3<span class="arr down">↓</span></strong> (тот же паттерн микроцитоза), MCHC 317, лейкоциты 11.28, тромбоциты 279.</li>
+</ul>
+
+</div>
+<div class="entry" id="29-12-2025-17-27-alvet-dr-olga-jaworska-operaciya-3-opuhol-s">
+<h4 class="entry__head"><span class="entry__date">29.12.2025, 17:27</span><span class="entry__title">ALVET, dr Olga Jaworska: операция №3 — опухоль сбоку тела, за правой лопаткой</span><a class="anchor" href="#29-12-2025-17-27-alvet-dr-olga-jaworska-operaciya-3-opuhol-s" aria-hidden="true">#</a></h4>
+<p>Рентген грудной клетки, 2 проекции — без видимых изменений в лёгких. Наркоз: дексмедетомидин, метадон, пропофол, изофлуран.</p>
+
+<p>Операция: удаление опухоли «с боку тела, за правой лопаткой» («guz z boku ciała, za łopatką prawą») — <strong>опухоль росла точно между мышцами и прорастала в них</strong>, удалены поражённые мышцы; <strong>опухоль многочастная, чёрно-зелёная, с бороздками</strong>. После операции: биотраксон, толфедин, Рингер в клинике; домой — бунондол; воротник на 10 дней.</p>
+
+<p><em>Уточнение анатомии:</em> гистологический образец обозначен как «tkanki miękkie z pachy kota» (мягкие ткани из подмышечной области), «вероятно изменённый лимфоузел» — то есть локализация в целом согласуется с ранее известным «лимфоузел ~1.5–2 см справа», но документ описывает саму опухоль/поражённые ткани, а не изолированный лимфоузел.</p>
+
+<p><strong>Гистология ALAB</strong> (заказ № 211/05-01-2026, материал зарегистрирован 07.01.2026, исследование выполнено 12.01.2026, выдано 12.01.2026 19:52): предмет — «Tkanki miękkie z pachy kota». Заключение: <strong>«Rak prosty lity o wysokiej złośliwości histologicznej, prawdopodobnie zmieniony węzeł chłonny, w okolicznych naczyniach limfatycznych skupiska komórek raka»</strong> — простой солидный рак высокой гистологической злокачественности, вероятно изменённый лимфатический узел, в окружающих лимфатических сосудах — скопления опухолевых клеток (<strong>лимфоваскулярная инвазия подтверждена дословно</strong>).</p>
+
+<p>В комментарии патолога (prof. dr hab. Rafał Sapierzyński) приведён общий справочный перечень неблагоприятных прогностических факторов при опухолях молочной железы у кошек (возраст, порода, стадия, диаметр опухоли, степень по Mills, инвазия сосудов, отсутствие рецепторов эстрогена, экспрессия Ki67/COX-2/TP53/TIMP и др.) — <strong>это общая справочная информация лаборатории, а не указание на то, что перечисленные маркеры измерялись непосредственно у Вари.</strong></p>
+
+</div>
+<h3 class="year" id="2026-god">2026 год</h3>
+<div class="entry" id="09-02-2026-kontrolnyy-osmotr-pervichnyy-dokument-ne-zagruzhe">
+<h4 class="entry__head"><span class="entry__date">09.02.2026</span><span class="entry__title">контрольный осмотр (первичный документ не загружен)</span><a class="anchor" href="#09-02-2026-kontrolnyy-osmotr-pervichnyy-dokument-ne-zagruzhe" aria-hidden="true">#</a></h4>
+<p>Рентген чистый; УЗИ всех органов (документация недоступна, известно со слов хирурга: всё выглядело чисто при пробном осмотре). <strong>Возможный небольшой камень в почке и одна почка чуть крупнее другой</strong> — возможно, индивидуальный вариант нормы. Это самое раннее упоминание находок со стороны почек именно на УЗИ (по анализам крови азотемия, как теперь известно, фиксировалась уже 20.12.2025).</p>
+
+</div>
+<div class="entry" id="02-02-2026-nachat-neoplazmaxan-so-slov-svodki-ot-13-04-2026">
+<h4 class="entry__head"><span class="entry__date">~02.02.2026</span><span class="entry__title">начат Neoplazmaxan (со слов сводки от 13.04.2026)</span><a class="anchor" href="#02-02-2026-nachat-neoplazmaxan-so-slov-svodki-ot-13-04-2026" aria-hidden="true">#</a></h4>
+<p>Также кошка получала Apoquel (антигистаминный/противозудный препарат) и была переведена на <strong>почечную диету из-за повышенного креатинина по последнему на тот момент анализу</strong>.</p>
+
+</div>
+<div class="entry" id="02-03-2026-tonkoigolnaya-aspiracionnaya-biopsiya">
+<h4 class="entry__head"><span class="entry__date">02.03.2026</span><span class="entry__title">тонкоигольная аспирационная биопсия</span><a class="anchor" href="#02-03-2026-tonkoigolnaya-aspiracionnaya-biopsiya" aria-hidden="true">#</a></h4>
+<p>Результат по сводке 13.04.2026: подозрение на неопластический процесс. Уточнение по первичному документу — <strong>цитология ALAB, исследование от 09.03.2026</strong>: заключение — «рак низкой/умеренной цитологической злокачественности» (более точная формулировка).</p>
+
+</div>
+<div class="entry" id="02-04-03-2026-rentgen-uzla-2-sm-vo-vremya-operacii-temnaya-z">
+<h4 class="entry__head"><span class="entry__date">02–04.03.2026</span><span class="entry__title">рентген узла (~2 см); во время операции — тёмная жидкость</span><a class="anchor" href="#02-04-03-2026-rentgen-uzla-2-sm-vo-vremya-operacii-temnaya-z" aria-hidden="true">#</a></h4>
+<p class="warn">⚠️ <strong>Получены сами рентген-снимки</strong> (2 файла, боковая и вентродорсальная проекции) с подписью владельца «02/03/2026», тогда как в исходных записях фигурировала дата «04.03.2026» — не ясно, один это документ с опечаткой в дате или два разных исследования; требует уточнения у клиники/владелицы.</p>
+
+<p>На боковой проекции в области живота/паха, каудальнее рёбер, визуализируется крупная структура неоднородной (пятнистой/крапчатой) плотности; на вентродорсальной проекции аналогичная структура видна сбоку от позвоночника в области поясницы/таза. <strong>Это непрофессиональное описание снимка — оценка точной анатомической локализации и клиническое значение находки должны быть подтверждены лечащим врачом/рентгенологом; заключение врача к снимкам не приложено.</strong></p>
+
+</div>
+<div class="entry" id="17-03-2026-idexx-analiz-krovi">
+<h4 class="entry__head"><span class="entry__date">17.03.2026</span><span class="entry__title">IDEXX: анализ крови</span><a class="anchor" href="#17-03-2026-idexx-analiz-krovi" aria-hidden="true">#</a></h4>
+<p><strong>Креатинин 212.16 мкмоль/л — выше референса (79.56–203.32).</strong> Мочевина 13.21 (верхняя граница нормы). Гемоглобин 103.0 (нижняя граница нормы 103.0–162.0).</p>
+
+</div>
+<div class="entry" id="19-03-2026-alab-obschiy-analiz-mochi">
+<h4 class="entry__head"><span class="entry__date">19.03.2026</span><span class="entry__title">ALAB: общий анализ мочи</span><a class="anchor" href="#19-03-2026-alab-obschiy-analiz-mochi" aria-hidden="true">#</a></h4>
+<p><strong>Белок в моче обнаружен (+), гемоглобин резко положителен (++), свежие эритроциты 20–25 в поле зрения</strong> (норма — единичные) — выраженная гематурия и протеинурия. Белок количественно 27.38 мг/дл.</p>
+
+</div>
+<div class="entry" id="20-03-2026-12-00-alvet-dr-olga-jaworska-operaciya-4-opuholi-">
+<h4 class="entry__head"><span class="entry__date">20.03.2026, 12:00</span><span class="entry__title">ALVET, dr Olga Jaworska: операция №4 — опухоли из-под правой подмышки и с живота</span><a class="anchor" href="#20-03-2026-12-00-alvet-dr-olga-jaworska-operaciya-4-opuholi-" aria-hidden="true">#</a></h4>
+<p>Обезболивание ингаляционное изофлураном. Обе опухоли — под мышцами; потребовалось удаление участка мышечной стенки живота и грудной клетки; опухоль под мышкой прилегала к крупным сосудам и нервам подмышечной области, сильно кровоснабжалась, с кровоизлияниями. Врач отметил высокую травматичность операции и риск отёка/пареза правой грудной конечности.</p>
+
+<p>Терапия после операции: марбоцил (марбофлоксацин), толфедин, цепорекс (цефалексин), Рингер с лактатом в/в, бупренорфин, буналгин дома 0.5 табл. каждые 8 ч, воротник на 10 дней.</p>
+
+<p><strong>Врач ALVET прямо зафиксировал:</strong> «Ogólny wygląd guzów, rozpoznanie HP, liczne już wznowy są spójne w rozpoznanie raka gr mlekowego o wysokiej złośliwości, rokowanie ogólne nie jest pomyślne» — <strong>общий вид опухолей, гистопатологический диагноз и уже многочисленные рецидивы согласуются с диагнозом рака молочной железы высокой степени злокачественности; общий прогноз неблагоприятный.</strong></p>
+
+<p><strong>Гистология ALAB (27.03.2026):</strong> «W obu badanych wycinkach nisko zróżnicowany nowotwór o wysokiej złośliwości histologicznej, prawdopodobnie rak lity, wieloogniskowo komórki nowotworowe stykają się z marginesami histologicznymi, w badanym materiale nie stwierdzono naciekania naczyń» — в обоих образцах низкодифференцированная опухоль высокой гистологической злокачественности, вероятно солидный рак; <strong>многоочагово опухолевые клетки контактируют с краями резекции</strong> (край резекции нечистый/сомнительный); признаков сосудистой инвазии не обнаружено. Патолог отдельно отмечает: точное разграничение карцинома/саркома/карциносаркома требует иммуногистохимического окрашивания (панцитокератин, виментин) — <strong>точный гистологический тип опухоли до конца не определён даже документами ALAB.</strong></p>
+
+</div>
+<div class="entry" id="01-04-2026">
+<h4 class="entry__head"><span class="entry__date">~01.04.2026</span><a class="anchor" href="#01-04-2026" aria-hidden="true">#</a></h4>
+<p>По состоянию на эту дату, со слов сводки от 13.04.2026: «стабильна, ест и ходит в туалет».</p>
+
+</div>
+<div class="entry" id="13-04-2026-16-00-lovet-dr-agata-drewniak-pervaya-onkologiche">
+<h4 class="entry__head"><span class="entry__date">13.04.2026, 16:00</span><span class="entry__title">LoVet, dr Agata Drewniak: первая онкологическая консультация в LoVet</span><a class="anchor" href="#13-04-2026-16-00-lovet-dr-agata-drewniak-pervaya-onkologiche" aria-hidden="true">#</a></h4>
+<p>На этом визите составлена англоязычная сводка полного анамнеза с 07.2025 (легла в основу раздела 4 этого отчёта). Осмотр: BCS 4/9, брюшная стенка мягкая, безболезненная, лимфоузлы не увеличены, рубец чистый.</p>
+
+<p><strong>TFAST:</strong> справа — единичные субплевральные консолидации, до 1.4 мм; слева — небольшое количество свободной жидкости у сердца, изменение 1.4 мм (возможно фиброзированная доля лёгкого), также субплевральные консолидации.</p>
+
+<p><strong>Заключение: распространённая онкологическая болезнь с метастазами в лёгкие.</strong> Принято решение начать терапию торцеранибом (<strong>Palladia</strong>) 10 мг, 1 табл. пн/ср/пт, в перчатках, не крошить/не делить, ввиду наличия метастатической болезни. Контроль через 2 недели.</p>
+
+<ul>
+<li>Гематология (16:31, обр. №5885): WBC 7.33, Neu# 4.18, Lym# 2.73, Mon# 0.05, Eos# 0.37, Bas# 0.00, <strong>RBC 8.03<span class="arr down">↓</span>, HGB 10.0<span class="arr down">↓</span>, HCT 28.7<span class="arr down">↓</span>, MCV 35.8<span class="arr down">↓</span></strong>, MCH 12.5, MCHC 35.0, PLT 266.</li>
+<li>Биохимия (23:52): TP 71.0, ALB 32.0, GLO 39.0, TBIL 2.79, AST 21, ALT 43, ALP 40, BUN 9.50, <strong>CRE 202<span class="arr up">↑</span></strong> [1–168], CK 88, AMY 1328, <strong>GLU 7.87<span class="arr up">↑</span></strong> [3.05–6.1], CHOL 5.12, Ca 2.85, P 1.19.</li>
+</ul>
+
+</div>
+<div class="entry" id="27-04-2026-laboratornye-blanki-vizit-dokument-ne-zagruzhen">
+<h4 class="entry__head"><span class="entry__date">27.04.2026</span><span class="entry__title">лабораторные бланки (визит-документ не загружен)</span><a class="anchor" href="#27-04-2026-laboratornye-blanki-vizit-dokument-ne-zagruzhen" aria-hidden="true">#</a></h4>
+<ul>
+<li>Биохимия: креатинин <strong>161 мкмоль/л</strong> (снизился, в пределах нормы 1–168); K+ 5.23<span class="arr up">↑</span>; Ca 3.01<span class="arr up">↑</span> (верхняя граница); глюкоза 6.73<span class="arr up">↑</span>.</li>
+<li>Гематология (обр. №6002): WBC 9.94, HGB 11.0, HCT 31.9, MCV 34.9<span class="arr down">↓</span>, MPV 8.6<span class="arr down">↓</span>.</li>
+</ul>
+
+<p>Примерно этой же датой (реконструировано по записи Retina от 18.08.2026) начат <strong>преднизолон 5 мг/день</strong> — доза не менялась до 15.06.2026.</p>
+
+</div>
+<div class="entry" id="29-04-2026-15-00-lovet-dr-agata-drewniak-kontrolnoe-uzi">
+<h4 class="entry__head"><span class="entry__date">29.04.2026, 15:00</span><span class="entry__title">LoVet, dr Agata Drewniak: контрольное УЗИ</span><a class="anchor" href="#29-04-2026-15-00-lovet-dr-agata-drewniak-kontrolnoe-uzi" aria-hidden="true">#</a></h4>
+<p>Со слов владельца: дыхание во сне 30/мин, чувствует себя хорошо, ест, рвоты/поноса нет.</p>
+
+<p><strong>УЗИ:</strong> слева значительное улучшение — меньше свободной жидкости; справа свободная жидкость присутствует, но меньше, чем в понедельник; виден небольшой отёк лёгких в добавочных долях; видны субплевральные консолидации.</p>
+
+<p>Назначения: продолжить Palladia 10 мг пн/ср/пт; сохранить стероид 5 мг 1×/день вечером; добавлен <strong>Libeo</strong> (вероятно гепатопротектор) 1×/день 1/2 табл. утром; контроль через 2 недели. Вес 4.80 кг.</p>
+
+</div>
+<div class="entry" id="do-11-05-2026-upominanie-uzi-bryushnoy-polosti-v-fevrale-202">
+<h4 class="entry__head"><span class="entry__date">До 11.05.2026</span><span class="entry__title">упоминание УЗИ брюшной полости «в феврале 2026»</span><a class="anchor" href="#do-11-05-2026-upominanie-uzi-bryushnoy-polosti-v-fevrale-202" aria-hidden="true">#</a></h4>
+<p>Со слов владельца, зафиксировано в записи LoVet от 13.06.2026 («USG jamy brzusznej w lutym, ok»). Результат — в норме. Сам документ этого УЗИ не загружен.</p>
+
+</div>
+<div class="entry" id="11-05-2026-18-15-lovet-dr-agata-drewniak">
+<h4 class="entry__head"><span class="entry__date">11.05.2026, 18:15</span><span class="entry__title">LoVet, dr Agata Drewniak</span><a class="anchor" href="#11-05-2026-18-15-lovet-dr-agata-drewniak" aria-hidden="true">#</a></h4>
+<p>Пункция грудной клетки (160 мл), прогрессия по УЗИ; введена <strong>Palladia 15 мг</strong> пн/ср/пт; фуросорал 1/4 табл.; Cyklonamina 1/4 табл. 2×/день. Вес 4.80 кг.</p>
+
+</div>
+<div class="entry" id="18-05-2026-19-45-lovet-dr-agata-drewniak-pervaya-yavnaya-him">
+<h4 class="entry__head"><span class="entry__date">18.05.2026, 19:45</span><span class="entry__title">LoVet, dr Agata Drewniak: первая явная химиотерапия</span><a class="anchor" href="#18-05-2026-19-45-lovet-dr-agata-drewniak-pervaya-yavnaya-him" aria-hidden="true">#</a></h4>
+<p>Со слов владельца: поправилась, стала активнее, аппетит в порядке, рвоты и поноса нет. Чешется — хозяева сменили корм. Дыхание на приёме 26–30/мин. УЗИ: количество жидкости сравнимо с количеством после пункции.</p>
+
+<p><strong>Принято решение ввести Карбоплатин (Carboplatin Ebewe) 200 мг/м² в глюкозе</strong> + Cerenia 0.5 мл в/в — первая явно задокументированная химиотерапия в истории болезни.</p>
+
+<p>Назначения: Cyklonamina 250 мг 1/4 табл. 2×/день; преднизолон снижен до 5 мг 1 табл. 1×/день; Palladia — доза снижена до 10 мг пн/ср/пт, с 25.05.2026; фуросемид снижен до 1/4 табл. 1×/день; при поносе — Carobin Pet Forte; следующая химиотерапия — через 3 недели (ожидалось ~08.06.2026). Вес 4.80 кг.</p>
+
+</div>
+<div class="entry" id="08-06-2026-19-30-lovet-dr-agata-drewniak-himioterapiya-otloz">
+<h4 class="entry__head"><span class="entry__date">08.06.2026, 19:30</span><span class="entry__title">LoVet, dr Agata Drewniak: химиотерапия отложена из-за нейтропении</span><a class="anchor" href="#08-06-2026-19-30-lovet-dr-agata-drewniak-himioterapiya-otloz" aria-hidden="true">#</a></h4>
+<p>Со слов владельца: 2 недели после химиотерапии — первая неделя слабый аппетит, без рвоты; вторая неделя — лучше. <strong>В анализе крови — тяжёлая нейтропения (WBC 2.56, Neu# 0.45): химиотерапию сегодня ввести нельзя.</strong> УЗИ: слева — меньше свободной жидкости; справа — без изменений.</p>
+
+<p>Решение: химиотерапию перенести на неделю (фактически введена 15.06.2026 — но уже <strong>доксорубицином</strong>, а не карбоплатином, см. раздел 6). Начат антибиотик Veraflox. Куплено, среди прочего, <strong>Palladia 10 мг 20 табл. (3 уп.)</strong> — подтверждает продолжение приёма Palladia минимум до этой даты. Вес 4.80 кг.</p>
+
+<p><strong>Гематология (19:58, обр. №6306):</strong> WBC 2.56<span class="arr down">↓</span> [5.50–19.50], <strong>Neu# 0.45<span class="arr down">↓</span> — тяжёлая нейтропения</strong>, Lym# 1.71, Mon# 0.02<span class="arr down">↓</span>, Eos# 0.38, RBC 7.85.</p>
+
+</div>
+<div class="entry" id="13-06-2026-subbota-16-30-lovet-dr-oliwia-szaflik">
+<h4 class="entry__head"><span class="entry__date">13.06.2026 (суббота), 16:30</span><span class="entry__title">LoVet, dr Oliwia Szaflik</span><a class="anchor" href="#13-06-2026-subbota-16-30-lovet-dr-oliwia-szaflik" aria-hidden="true">#</a></h4>
+<p class="warn">Со слов владельца: утром учащённое дыхание ~57/мин в покое (но не во сне); дали 1/2 табл. фуросемида — немного лучше; после консультации по телефону с д-ром Drewniak дали ещё табл. (итого 1.5 табл. за день) — стало лучше, дыхание ~30/мин. Пьёт, мочится. <strong>Вес по словам владельца — 5.3 кг</strong> (⚠️ официальный вес в этом же документе — 4.80 кг). УЗИ брюшной полости в феврале было в норме. Получает преднизолон, veraflox, фуросемид. «Последние результаты хорошие, кроме нейтропении».</p>
+
+<p>Осмотр: слизистые розовые, влажные, CRT&lt;2с. Периферические лимфоузлы <strong>не увеличены</strong>. Тоны сердца в норме, лёгочные шумы ослаблены.</p>
+
+<p class="warn">УЗИ: жидкость в грудной клетке с обеих сторон, больше слева; <strong>увеличенные лимфоузлы</strong> (⚠️ иное, чем на осмотре чуть выше — возможно, речь о разных группах узлов). Попытка постановки венфлона — пациентка вырывается, катетер не поставлен.</p>
+
+<p>Назначения: фуросемид 1/2 табл. 1×/день, при учащении дыхания — ещё 1/2 или целую табл.; <strong>за 2 часа до визита — 1 капсула габапентина 100 мг</strong> (впервые формализована цель — седация перед стрессовыми визитами). Официальный вес: 4.80 кг.</p>
+
+<p><strong>Гематология (16:57, обр. №6359):</strong> WBC 3.53<span class="arr down">↓</span>, Neu# 1.42<span class="arr down">↓</span> (нейтропения), Lym# 1.98, RBC 7.23, HGB 9.9, HCT 26.7, MCV 36.9<span class="arr down">↓</span>, MCHC 37.2 (флаг H — не согласуется с референсом, но качество термопечати чека затрудняет точное прочтение части значений), RDW-CV 24.2<span class="arr up">↑</span>, PLT 699<span class="arr up">↑</span>.</p>
+
+</div>
+<div class="entry" id="14-06-2026-voskresene-veroyatnyy-vizit-v-dezhurnuyu-kliniku">
+<h4 class="entry__head"><span class="entry__date">~14.06.2026 (воскресенье)</span><span class="entry__title">вероятный визит в дежурную клинику</span><a class="anchor" href="#14-06-2026-voskresene-veroyatnyy-vizit-v-dezhurnuyu-kliniku" aria-hidden="true">#</a></h4>
+<p>Реконструировано по записи от 15.06.2026: «W ndz pogorszenie — 3×1,5 Tbl furosoralu — at night 23 — słychać było oddech głośny. Wizyta na dyżurze — 28 ml płynu wolnego». Судя по всему — ухудшение в воскресенье, шумное дыхание ночью, обращение в дежурную клинику, эвакуировано 28 мл жидкости. Сам документ визита не загружен.</p>
+
+</div>
+<div class="entry" id="15-06-2026-20-30-lovet-dr-agata-drewniak-doksorubicin-i-posl">
+<h4 class="entry__head"><span class="entry__date">15.06.2026, 20:30</span><span class="entry__title">LoVet, dr Agata Drewniak: доксорубицин I (после смены препарата)</span><a class="anchor" href="#15-06-2026-20-30-lovet-dr-agata-drewniak-doksorubicin-i-posl" aria-hidden="true">#</a></h4>
+<p class="warn">Doxorubicin 1 мг/кг = 2.5 мл + маропитант; преднизолон увеличен до 1.5 табл./день (7.5 мг); вес 5.30 кг. ⚠️ На документе есть рукописная дата «18/05», не соответствующая дате визита (эта пометка относится к отдельному визиту 18.05.2026, см. выше).</p>
+
+</div>
+<div class="entry" id="23-06-2026-11-15-lovet-dr-agata-drewniak-kontrol-onkologii">
+<h4 class="entry__head"><span class="entry__date">23.06.2026, 11:15</span><span class="entry__title">LoVet, dr Agata Drewniak: контроль онкологии</span><a class="anchor" href="#23-06-2026-11-15-lovet-dr-agata-drewniak-kontrol-onkologii" aria-hidden="true">#</a></h4>
+<p>TFAST: новые очаги 0.65×0.83, 0.45×0.55, 0.82×0.93 см справа; слева 0.22–0.25 см; глубже — 1.40×1.24 см. Заключение: «стабильная болезнь». Температура 38.30°C, вес 5.00 кг.</p>
+
+</div>
+<div class="entry" id="24-06-2026-17-30-lovet-dr-oliwia-szaflik">
+<h4 class="entry__head"><span class="entry__date">24.06.2026, 17:30</span><span class="entry__title">LoVet, dr Oliwia Szaflik</span><a class="anchor" href="#24-06-2026-17-30-lovet-dr-oliwia-szaflik" aria-hidden="true">#</a></h4>
+<p>Со слов владельца: слабая со вчерашнего дня, после еды бодрее. Дыхание ~30/мин стабильно.</p>
+
+<p class="warn">Осмотр: слизистые розовые влажные. Периферические лимфоузлы <strong>не увеличены</strong> (⚠️ в отличие от записи 13.06.2026). Тоны сердца в норме.</p>
+
+<p>УЗИ: жидкость в грудной клетке с обеих сторон — сходно со вчерашним. В брюшной полости: <strong>единичное очаговое изменение в паренхиме печени (новая находка); левая почка с неровной, «побороздчатой» капсулой (новая находка).</strong> Свободной жидкости в брюшной полости нет. Морфология крови в норме, незначительное снижение гематокрита. <strong>Выраженная липемия — биохимический анализ не выполнен.</strong></p>
+
+<p>Рекомендации врача: если станет хуже — сделать биохимию для оценки функции почек; <strong>оговорено, что в случае почечной болезни терапевтические возможности ограничены, так как Варя может не перенести внутривенную инфузионную терапию.</strong> Вес 5.00 кг.</p>
+
+</div>
+<div class="entry" id="06-07-2026-21-00-lovet-dr-agata-drewniak-doksorubicin-ii">
+<h4 class="entry__head"><span class="entry__date">06.07.2026, 21:00</span><span class="entry__title">LoVet, dr Agata Drewniak: доксорубицин II</span><a class="anchor" href="#06-07-2026-21-00-lovet-dr-agata-drewniak-doksorubicin-ii" aria-hidden="true">#</a></h4>
+<p>Со слов владельца: утром чувствовала себя хорошо, небольшое количество кала. Последние 2 недели чувствовала себя хорошо, хорошо ела, прибавила в весе.</p>
+
+<p>Осмотр: слизистые бледно-розовые. <strong>Ухудшение дыхания — сделана пункция — эвакуировано 60 мл кровянистой жидкости из грудной клетки</strong> (ранее жидкость не описывалась как кровянистая). На УЗИ — <strong>отёк подкожной клетчатки справа (новая находка).</strong></p>
+
+<p>Введено: Doxorubicin 1 мг/кг в венфлон + маропитант 1 мг/кг.</p>
+
+<p class="warn">⚠️ Документ внутренне противоречив по дозе стероида: в разделе «Zalecenia» написано «steryd bez zmian tj 1,5 Tbl», но чуть ниже — «Prednizolon 5 mg 1 Tbl 1 x dziennie».</p>
+
+<p>Температура 38.50°C, вес 5.20 кг.</p>
+
+<p><strong>Лабораторные данные (21:30–21:36):</strong> гематология — WBC 9.74 (норма, нейтропения разрешилась), MCV 37.3<span class="arr down">↓</span>; биохимия — BUN 11.5<span class="arr up">↑</span>, <strong>K+ 5.19<span class="arr up">↑</span></strong>, GLU 6.85<span class="arr up">↑</span>.</p>
+
+</div>
+<div class="entry" id="10-07-2026-13-15-lovet-dr-joanna-ak-vyrazhennyy-zapor">
+<h4 class="entry__head"><span class="entry__date">10.07.2026, 13:15</span><span class="entry__title">LoVet, dr Joanna Żak: выраженный запор</span><a class="anchor" href="#10-07-2026-13-15-lovet-dr-joanna-ak-vyrazhennyy-zapor" aria-hidden="true">#</a></h4>
+<p>Со слов владельца: химиотерапия была в понедельник (06.07.2026). Перед химией — маленькие «горошки» кала. <strong>С понедельника кошка практически не оправлялась.</strong> Получала влажный корм RC Intestinal, Purina Sterilised, лактулозу. Со вчерашнего дня много безуспешных попыток сходить в туалет; во время потуг дважды вырвало.</p>
+
+<p>Осмотр: <strong>подчелюстные лимфоузлы слегка увеличены</strong>, <strong>температура 39.5°C (повышена).</strong> Ректально — каловых масс в пределах достижимости пальца не обнаружено.</p>
+
+<p><strong>Рентген в боковой проекции: крупные скопления кала в ободочной кишке перед входом в полость таза; кишка расширена — запор, потенциально ведущий к мегаколон. Дополнительно видны более контрастные (рентгенопозитивные) структуры в области почек и в мочевом пузыре</strong> (возможные конкременты/минерализация — не исследовалась и не подтверждалась дополнительно).</p>
+
+<p>Лабораторно — «стрессовая лейкограмма» (нейтрофилия 94.3% при выраженной лимфопении 3.8%); глюкоза 16.47 ммоль/л — значительно выше остальных измерений (вероятно стрессовая гипергликемия); фосфор снижен (0.62, необычно на фоне подозрения на почечную проблему); K+ 5.04<span class="arr up">↑</span> (повторно повышен, как и 06.07.2026).</p>
+
+<p>Назначено: продолжить лактулозу 2×/день; <strong>Fiberactiv</strong> (клетчатка); <strong>Dicopeg</strong> (макрогол, слабительное); контроль в понедельник 18:30 (=13.07.2026, документ не загружен). Вес 5.20 кг.</p>
+
+</div>
+<div class="entry" id="27-07-2026-16-45-lovet-dr-agata-drewniak-doksorubicin-iii">
+<h4 class="entry__head"><span class="entry__date">27.07.2026, 16:45</span><span class="entry__title">LoVet, dr Agata Drewniak: доксорубицин III</span><a class="anchor" href="#27-07-2026-16-45-lovet-dr-agata-drewniak-doksorubicin-iii" aria-hidden="true">#</a></h4>
+<p class="warn">Doxorubicin 1 мг/кг, 2.5 мл + маропитант. ⚠️ В документе неясная формулировка: «właścicielka włączyła steryd: 3 razy» — не удалось однозначно интерпретировать.</p>
+
+</div>
+<div class="entry" id="03-08-2026-16-00-lovet-dr-joanna-ak">
+<h4 class="entry__head"><span class="entry__date">03.08.2026, 16:00</span><span class="entry__title">LoVet, dr Joanna Żak</span><a class="anchor" href="#03-08-2026-16-00-lovet-dr-joanna-ak" aria-hidden="true">#</a></h4>
+<p>Осмотр: ухудшение шёрстного покрова — участки поредения/просветления шерсти из-за проступающего подшёрстка. <strong>Опорожнены параанальные железы — левая сильно увеличена, забита.</strong> Введено железо (Suiferrin) 0.3 мл в/м. «Морфология стабильна» по мнению врача (лабораторно, впрочем, присутствуют признаки лёгкой анемии и нейтропении — см. ниже). Выдан Sucralfat — 7 доз по 1 мл. Вес 5.10 кг.</p>
+
+<p><strong>Гематология (16:14, обр. №6733):</strong> WBC 6.06, <strong>Neu# 1.41<span class="arr down">↓</span></strong> (нейтропения), RBC 6.74, <strong>HGB 8.3<span class="arr down">↓</span>, HCT 23.5<span class="arr down">↓</span>, MCV 34.9<span class="arr down">↓</span></strong> — лёгкая микроцитарная анемия присоединилась к нейтропении.</p>
+
+</div>
+<div class="entry" id="17-08-2026-16-45-lovet-dr-agata-drewniak-doksorubicin-iv-vpe">
+<h4 class="entry__head"><span class="entry__date">17.08.2026, 16:45</span><span class="entry__title">LoVet, dr Agata Drewniak: доксорубицин IV, впервые выявлены язвы роговицы</span><a class="anchor" href="#17-08-2026-16-45-lovet-dr-agata-drewniak-doksorubicin-iv-vpe" aria-hidden="true">#</a></h4>
+<p>Doxorubicin 1 мг/кг, 2.4 мл + маропитант. Преднизолон снижен до 5 мг/день (1 табл.) — с 27.04 до 15.06.2026 доза была 5 мг/день, с 15.06 повышена до 7.5 мг/день (1.5 табл.), теперь снова снижена до 5 мг.</p>
+
+<p><strong>Впервые выявлены обширные язвы/эрозии роговицы обоих глаз</strong> (тест на флюоресцеин +++). Начаты Tobrex 6×/день, Yellox 2×/день, Corneregel 3×/день. Рекомендована консультация офтальмолога.</p>
+
+</div>
+<div class="entry" id="18-08-2026-14-45-retina-dr-pawe-stefanowicz-1-y-vizit-oftalm">
+<h4 class="entry__head"><span class="entry__date">18.08.2026, 14:45</span><span class="entry__title">Retina, dr Paweł Stefanowicz: 1-й визит офтальмолога</span><a class="anchor" href="#18-08-2026-14-45-retina-dr-pawe-stefanowicz-1-y-vizit-oftalm" aria-hidden="true">#</a></h4>
+<p>Анамнез: кот лечится онкологически, получает доксорубицин. Проблемы с глазами около недели — слезотечение (со слов владельца — начало ~09.08.2026), давали Veraflox.</p>
+
+<p>Осмотр: ВГД OD 18.3, OS 20 мм рт.ст. Скудные слизистые выделения в углу век с обеих сторон. Увлажнение конъюнктивы и роговицы нарушено (низкий мениск слёзной плёнки, короткий NIBUT). Роговица: обширные изменения эндотелия (мацерация, «морщинистость»), видна абразия эпителия роговицы с обеих сторон. Хрусталик — возрастные изменения (склероз ядра). Глазное дно без особенностей.</p>
+
+<p><strong>Диагноз: поверхностное повреждение роговицы (абразия эпителия). Синдром сухого глаза (ZSO).</strong> Возможные причины: общее состояние, возраст, применяемые препараты (в т.ч. кортикостероиды, химиотерапия), возможное носительство вируса герпеса кошек FHV1 (типично для породы) на фоне снижения иммунитета.</p>
+
+<p>Рекомендации: рассмотреть снижение дозы кортикостероида; ввести иммуномодулятор (бета-глюкан). Назначения: Tobrex 4×/день, Corneregel 2–4×/день, Optixcare минимум 4×/день. Контроль через 14 дней или раньше. Возраст указан: 12 лет 7 месяцев.</p>
+
+</div>
+<div class="entry" id="19-08-2026-17-00-lovet-dr-agata-drewniak">
+<h4 class="entry__head"><span class="entry__date">19.08.2026, 17:00</span><span class="entry__title">LoVet, dr Agata Drewniak</span><a class="anchor" href="#19-08-2026-17-00-lovet-dr-agata-drewniak" aria-hidden="true">#</a></h4>
+<p>Куплено: Famogast/Ranigast (фамотидин) 20 мг; <strong>Varenzin 23.3 мг/мл, 27 мл</strong> — 1 мл 1×/день в ротовую полость. Точное показание для Varenzin в документах не сформулировано врачом явно; учитывая находки со стороны почек и последующее выявление повышенного АД (26.08.2026), возможные причины — контроль артериального давления и/или протеинурия — но обе версии не подтверждены документами напрямую. Вес 4.94 кг.</p>
+
+</div>
+<div class="entry" id="25-08-2026-11-42-retina-lek-wet-veronika-chybowska-2-y-vizit">
+<h4 class="entry__head"><span class="entry__date">25.08.2026, 11:42</span><span class="entry__title">Retina, lek. wet. Veronika Chybowska: 2-й визит офтальмолога</span><a class="anchor" href="#25-08-2026-11-42-retina-lek-wet-veronika-chybowska-2-y-vizit" aria-hidden="true">#</a></h4>
+<p>Анамнез: выделения из глаз прошли, но кошка очень сильно щурится и выглядит болезненно. Преднизолон снижен до 5 мг с 17.08 (подтверждение). Введён бета-глюкан.</p>
+
+<p>Осмотр: ВГД OD 19, OS 19 мм рт.ст. <strong>Дефект эпителия роговицы OD ~70% поверхности, OS ~80% поверхности</strong> — предыдущие отдельные дефекты слились в один обширный на каждом глазу.</p>
+
+<p><strong>Заключение: обширные поверхностные повреждения роговиц. Ухудшение несмотря на интенсивное лечение</strong> — площадь дефектов эпителия увеличилась. Владельцы сообщают о возможности замены стероидного препарата у онколога — врач Retina просит уведомить, если замена будет признана безопасной.</p>
+
+<p>Назначения: Optixcare EMS, Tobrex 4×/день, Corneregel 2×/день, аллогенная сыворотка/плазма с ЭДТА 4×/день. Контроль через 10 дней. Возраст указан: 12 лет 8 месяцев.</p>
+
+</div>
+<div class="entry" id="26-08-2026-18-36-alphavet-dr-pawe-yp-kardiologicheskaya-kons">
+<h4 class="entry__head"><span class="entry__date">26.08.2026, 18:36</span><span class="entry__title">ALPHAVET, Dr Paweł Łyp: кардиологическая консультация</span><a class="anchor" href="#26-08-2026-18-36-alphavet-dr-pawe-yp-kardiologicheskaya-kons" aria-hidden="true">#</a></h4>
+<p>ЭхоКГ без признаков ГКМП; <strong>случайно найдено образование ~0.9×0.7 см у верхушки сердца/в средостении с кистой внутри.</strong> АД 155 мм рт.ст. Противопоказаний к продолжению химиотерапии не выявлено.</p>
+
+</div>
+<div class="entry" id="02-09-2026-13-15-13-20-lovet-dr-ma-gorzata-malec">
+<h4 class="entry__head"><span class="entry__date">02.09.2026, 13:15–13:20</span><span class="entry__title">LoVet, dr Małgorzata Malec</span><a class="anchor" href="#02-09-2026-13-15-13-20-lovet-dr-ma-gorzata-malec" aria-hidden="true">#</a></h4>
+<p><strong>Новый симптом: болезненность при пальпации грудного отдела позвоночника.</strong> УЗИ: слева 0.8 см, справа 0.53 см свободной жидкости. Вес 4.81 кг.</p>
+
+<p class="warn">Биохимия: все почечные и печёночные показатели (мочевина, креатинин 120, AST, ALT, ALP, билирубин) — <strong>в пределах нормы</strong>, несмотря на находку изменённой капсулы левой почки на УЗИ от 24.06.2026. Глюкоза 6.93<span class="arr up">↑</span> (возможно стрессовая). ⚠️ На бланке ошибочно указан возраст «9 Lat».</p>
+
+<p>IDEXX Haematology — получена только страница 1 из 2; страница 2 (с графиками и комментариями лаборатории) для этой даты так и не была получена.</p>
+
+</div>
+<div class="entry" id="03-09-2026-13-58-retina-lek-wet-veronika-chybowska-3-y-vizit">
+<h4 class="entry__head"><span class="entry__date">03.09.2026, 13:58</span><span class="entry__title">Retina, lek. wet. Veronika Chybowska: 3-й визит офтальмолога</span><a class="anchor" href="#03-09-2026-13-58-retina-lek-wet-veronika-chybowska-3-y-vizit" aria-hidden="true">#</a></h4>
+<p class="warn">Анамнез: немного лучше, но по-прежнему сильно щурится и болезненна. Optixcare каждые 2 часа приносит облегчение. ⚠️ Со слов владельца — «вчера были сделаны анализы крови (в норме), онкологический визит, а также визит к кардиологу — без отклонений»; независимого документа о кардиологическом визите именно 02.09.2026 нет (ближайший задокументированный — 26.08.2026).</p>
+
+<p>Осмотр: ВГД OD 19, OS 19 мм рт.ст. Дефект эпителия роговицы <strong>OD ~70%, OS ~80%</strong> — те же цифры, что и 25.08.2026 (возможно плато, но нельзя достоверно судить о динамике по совпадающим цифрам). Назначения — аналогичны предыдущему визиту, добавлен Vital Drop (с осторожностью).</p>
+
+</div>
+<div class="entry" id="07-09-2026-18-00-lovet-dr-agata-drewniak-doksorubicin-v-posl">
+<h4 class="entry__head"><span class="entry__date">07.09.2026, 18:00</span><span class="entry__title">LoVet, dr Agata Drewniak: доксорубицин V (последний известный визит)</span><a class="anchor" href="#07-09-2026-18-00-lovet-dr-agata-drewniak-doksorubicin-v-posl" aria-hidden="true">#</a></h4>
+<p>Со слов владельца — «были 3 раза в Retinie» (подтверждается тремя визитами 18.08, 25.08, 03.09.2026). <strong>Varenzin отменён; стероид снижен до 3/4 табл./день.</strong></p>
+
+<p><strong>УЗИ: слева 2 см, справа 1.5 см жидкости — заметный рост объёма плеврального выпота за 5 дней от 02.09.2026.</strong> Вес 4.77 кг.</p>
+
+<p>IDEXX Haematology этой даты (полная) — см. лабораторные таблицы, раздел 8; сравнение с 02.09.2026 показывает снижение RBC/HCT/HGB, снижение MCH, повышение RDW и ретикулоцитоз, повышение WBC/нейтрофилов/моноцитов.</p>
+
+<p><strong>Это последняя дата, документированная в загруженных материалах на момент составления отчёта (08.09.2026).</strong></p>
+
+
+</div>
+</section>
+<section class="section" id="svodka-gistologiya-i-citologiya-opuholey">
+<h2><span class="num">5</span><span>Сводка: гистология и цитология опухолей</span><a class="anchor" href="#svodka-gistologiya-i-citologiya-opuholey" aria-hidden="true">#</a></h2>
+<p>Все известные гистологические и цитологические заключения по опухолевому процессу, в одном месте, в порядке даты взятия материала.</p>
+
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Дата материала</th>
+<th>Дата заключения</th>
+<th>Материал</th>
+<th>Заключение</th>
+<th>Лаборатория</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>25.07–28.07.2025</td>
+<td>01.08.2025</td>
+<td>Цитология опухоли 2-го соска справа (5 мазков)</td>
+<td>Эпителиальная опухоль молочной железы, минимально выраженная цитологическая злокачественность</td>
+<td>ALAB</td>
+</tr>
+<tr>
+<td>08.08.2025 (операция)</td>
+<td>не позднее операции</td>
+<td>Гистология после тотальной мастэктомии правого ряда</td>
+<td>Простой солидный рак, <strong>III степень по Mills</strong>, узкий край резекции (~0.2 мм), очаги некроза</td>
+<td>ALAB</td>
+</tr>
+<tr>
+<td>04.11.2025 (операция)</td>
+<td>13.11.2025</td>
+<td>Гистология узла у послеоперационного рубца</td>
+<td><strong>Доброкачественно</strong>: стерильное многоочаговое воспаление жировой ткани, фиброз; опухолевого процесса не обнаружено</td>
+<td>ALAB</td>
+</tr>
+<tr>
+<td>29.12.2025 (операция)</td>
+<td>12.01.2026</td>
+<td>Гистология опухоли за правой лопаткой / подмышечная область</td>
+<td>Простой солидный рак <strong>высокой злокачественности</strong>, вероятно изменённый лимфоузел, <strong>лимфоваскулярная инвазия</strong></td>
+<td>ALAB</td>
+</tr>
+<tr>
+<td>02.03.2026 (ТИАБ)</td>
+<td>09.03.2026</td>
+<td>Цитология</td>
+<td>Рак <strong>низкой/умеренной</strong> цитологической злокачественности</td>
+<td>ALAB</td>
+</tr>
+<tr>
+<td>20.03.2026 (операция)</td>
+<td>27.03.2026</td>
+<td>Гистология опухолей подмышки и живота</td>
+<td>Низкодифференцированная опухоль <strong>высокой злокачественности</strong>, вероятно солидный рак; <strong>край резекции затронут опухолью многоочагово</strong>; сосудистой инвазии не выявлено; точный подтип требует ИГХ</td>
+<td>ALAB</td>
+</tr>
+</tbody></table></div>
+<p><strong>Вывод:</strong> гистологически подтверждённый диагноз — рак молочной железы высокой степени злокачественности (III степень по Mills в первом образце), с прогрессирующим течением: от узкого, но чистого края резекции (08.2025) до края, вовлечённого опухолью (03.2026), и с появлением лимфоваскулярной инвазии к декабрю 2025 года. <strong>Точный гистологический подтип (карцинома / саркома / карциносаркома) патолог не определил однозначно</strong> — по заключению от 27.03.2026 для этого требуется дополнительное иммуногистохимическое окрашивание (панцитокератин, виментин); по документам не прослеживается, было ли оно выполнено. Общий прогноз врач ALVET прямо охарактеризовал как неблагоприятный (запись от 20.03.2026).</p>
+
+
+</section>
+<section class="section" id="hirurgicheskie-vmeshatelstva">
+<h2><span class="num">6</span><span>Хирургические вмешательства</span><a class="anchor" href="#hirurgicheskie-vmeshatelstva" aria-hidden="true">#</a></h2>
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Дата</th>
+<th>Клиника / врач</th>
+<th>Вмешательство</th>
+<th>Наркоз/анестезия</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>08.08.2025</td>
+<td>ALVET, dr Olga Jaworska</td>
+<td>Тотальная мастэктомия правого ряда молочных желёз + паховый лимфоузел</td>
+<td>не детализирован (Sedatex среди препаратов)</td>
+</tr>
+<tr>
+<td>04.11.2025</td>
+<td>ALVET, dr Olga Jaworska</td>
+<td>Удаление узла у рубца; мастэктомия в области 3–4 пары сосков; частичное удаление мышц живота</td>
+<td>не детализирован</td>
+</tr>
+<tr>
+<td>29.12.2025</td>
+<td>ALVET, dr Olga Jaworska</td>
+<td>Удаление опухоли сбоку тела за правой лопаткой, с удалением поражённых мышц</td>
+<td>дексмедетомидин, метадон, пропофол, изофлуран</td>
+</tr>
+<tr>
+<td>20.03.2026</td>
+<td>ALVET, dr Olga Jaworska</td>
+<td>Удаление опухоли из-под правой подмышки и опухоли с живота, с удалением участка мышечной стенки</td>
+<td>изофлуран (ингаляционный)</td>
+</tr>
+</tbody></table></div>
+<p>Каждая операция сопровождалась гистологическим исследованием удалённого материала — см. раздел 5. Начиная с операции 29.12.2025 в заключениях фигурирует высокая степень злокачественности и/или инвазия; последняя операция (20.03.2026) — с гистологически положительным краем резекции.</p>
+
+
+</section>
+<section class="section" id="himioterapiya-i-targetnaya-terapiya">
+<h2><span class="num">7</span><span>Химиотерапия и таргетная терапия</span><a class="anchor" href="#himioterapiya-i-targetnaya-terapiya" aria-hidden="true">#</a></h2>
+<p>Лечение начиналось с карбоплатина, затем препарат был заменён на доксорубицин. Причина смены препарата в документах явно не указана — по времени совпадает с эпизодом тяжёлой нейтропении (08.06.2026), но прямого указания врача «меняем препарат из-за нейтропении» в текстах нет.</p>
+
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Дата</th>
+<th>Препарат</th>
+<th>Доза</th>
+<th>Примечание</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>18.05.2026</td>
+<td>Карбоплатин (Carboplatin Ebewe)</td>
+<td>200 мг/м² в глюкозе + Cerenia 0.5 мл в/в</td>
+<td>Первая явно задокументированная химиотерапия</td>
+</tr>
+<tr>
+<td>~08.06.2026 (план)</td>
+<td>Карбоплатин (повтор)</td>
+<td>—</td>
+<td><strong>Отменена/перенесена</strong> из-за тяжёлой нейтропении (WBC 2.56, Neu# 0.45)</td>
+</tr>
+<tr>
+<td>15.06.2026</td>
+<td>Doxorubicin (препарат сменён)</td>
+<td>1 мг/кг = 2.5 мл + маропитант</td>
+<td>Доксорубицин I</td>
+</tr>
+<tr>
+<td>06.07.2026</td>
+<td>Doxorubicin</td>
+<td>1 мг/кг + маропитант</td>
+<td>Доксорубицин II; попутно пункция 60 мл кровянистой жидкости</td>
+</tr>
+<tr>
+<td>27.07.2026</td>
+<td>Doxorubicin</td>
+<td>1 мг/кг, 2.5 мл + маропитант</td>
+<td>Доксорубицин III</td>
+</tr>
+<tr>
+<td>17.08.2026</td>
+<td>Doxorubicin</td>
+<td>1 мг/кг, 2.4 мл + маропитант</td>
+<td>Доксорубицин IV</td>
+</tr>
+<tr>
+<td>07.09.2026</td>
+<td>Doxorubicin</td>
+<td>1 мг/кг, 2.3 мл + маропитант</td>
+<td>Доксорубицин V (последняя известная доза)</td>
+</tr>
+</tbody></table></div>
+<p>Интервалы между дозами доксорубицина строго по 21 дню (15.06→06.07→27.07→17.08→07.09) — нумерация I–V подтверждена и документами, и интервалами.</p>
+
+<h4 id="palladia-torceranib-targetnaya-terapiya">Palladia (торцераниб) — таргетная терапия<a class="anchor" href="#palladia-torceranib-targetnaya-terapiya" aria-hidden="true">#</a></h4>
+<ul>
+<li>с 11.05.2026: 15 мг, пн/ср/пт;</li>
+<li>с 25.05.2026 (назначено 18.05.2026): снижена до 10 мг, пн/ср/пт;</li>
+<li>подтверждена продолжающейся минимум до 08.06.2026 (куплена на этом приёме);</li>
+<li><strong>дальнейший статус после 08.06.2026 не задокументирован — не встречается ни в одном более позднем чеке или назначении.</strong></li>
+</ul>
+
+
+</section>
+<section class="section" id="laboratornye-pokazateli-v-dinamike">
+<h2><span class="num">8</span><span>Лабораторные показатели в динамике</span><a class="anchor" href="#laboratornye-pokazateli-v-dinamike" aria-hidden="true">#</a></h2>
+<p class="warn">⚠️ Внутренняя лаборатория LoVet использует иные референсные интервалы, чем IDEXX — прямое сравнение чисел между двумя системами лабораторий может быть некорректным. Показатели ниже сгруппированы по источнику и типу.</p>
+
+<h4 id="8-1-dinamika-kreatinina-i-azotemii-svodno-po-vsem-istochnika">8.1. Динамика креатинина и азотемии (сводно по всем источникам)<a class="anchor" href="#8-1-dinamika-kreatinina-i-azotemii-svodno-po-vsem-istochnika" aria-hidden="true">#</a></h4>
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Дата</th>
+<th>Креатинин</th>
+<th>Референс</th>
+<th>Лаборатория</th>
+<th>Статус</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>24.06.2025</td>
+<td>159.12 мкмоль/л</td>
+<td>79.56–203.32</td>
+<td>IDEXX</td>
+<td>Норма</td>
+</tr>
+<tr>
+<td>06.08.2025</td>
+<td>150.28 мкмоль/л</td>
+<td>79.56–203.32</td>
+<td>IDEXX</td>
+<td>Норма (последний нормальный перед операциями)</td>
+</tr>
+<tr>
+<td>31.10.2025</td>
+<td>185.64 мкмоль/л</td>
+<td>79.56–203.32</td>
+<td>IDEXX</td>
+<td>Норма, но выше предыдущего</td>
+</tr>
+<tr>
+<td>20.12.2025</td>
+<td>221 мкмоль/л</td>
+<td>79.56–203.32</td>
+<td>IDEXX</td>
+<td><strong>Повышен — первый документированный эпизод азотемии</strong></td>
+</tr>
+<tr>
+<td>17.03.2026</td>
+<td>212.16 мкмоль/л</td>
+<td>79.56–203.32</td>
+<td>IDEXX</td>
+<td><strong>Повышен</strong></td>
+</tr>
+<tr>
+<td>13.04.2026</td>
+<td>202 мкмоль/л</td>
+<td>1–168</td>
+<td>LoVet (внутр.)</td>
+<td><strong>Повышен</strong> (др. референс лаборатории)</td>
+</tr>
+<tr>
+<td>27.04.2026</td>
+<td>161 мкмоль/л</td>
+<td>1–168</td>
+<td>LoVet (внутр.)</td>
+<td>Норма — нормализация</td>
+</tr>
+<tr>
+<td>06.07.2026</td>
+<td>136 мкмоль/л</td>
+<td>1–168</td>
+<td>LoVet (внутр.)</td>
+<td>Норма</td>
+</tr>
+<tr>
+<td>10.07.2026</td>
+<td>107 мкмоль/л</td>
+<td>1–168</td>
+<td>LoVet (внутр.)</td>
+<td>Норма</td>
+</tr>
+<tr>
+<td>02.09.2026</td>
+<td>120 мкмоль/л</td>
+<td>1–168</td>
+<td>LoVet (внутр.)</td>
+<td>Норма</td>
+</tr>
+</tbody></table></div>
+<p>Дополнительно: 09.02.2026 — УЗИ показало возможный небольшой камень в почке и асимметрию размеров почек (документ не загружен, известно со слов врача); 19.03.2026 — гематурия и протеинурия по анализу мочи (ALAB); 24.06.2026 — неровная капсула левой почки на УЗИ; 10.07.2026 — рентгенопозитивные структуры в почках и мочевом пузыре (не подтверждены повторно).</p>
+
+<h4 id="8-2-vnutrennyaya-laboratoriya-lovet-gematologiya">8.2. Внутренняя лаборатория LoVet — гематология<a class="anchor" href="#8-2-vnutrennyaya-laboratoriya-lovet-gematologiya" aria-hidden="true">#</a></h4>
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Показатель</th>
+<th>Ref</th>
+<th>08.06.26</th>
+<th>13.06.26</th>
+<th>06.07.26</th>
+<th>10.07.26</th>
+<th>03.08.26</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>WBC, ×10⁹/л</td>
+<td>5.50–19.50</td>
+<td>2.56 <span class="arr down">↓↓</span></td>
+<td>3.53 <span class="arr down">↓</span></td>
+<td>9.74</td>
+<td>10.62</td>
+<td>6.06</td>
+</tr>
+<tr>
+<td>Neu#, ×10⁹/л</td>
+<td>3.12–12.58</td>
+<td>0.45 <span class="arr down">↓↓</span></td>
+<td>1.42 <span class="arr down">↓</span></td>
+<td>7.49</td>
+<td>10.01</td>
+<td>1.41 <span class="arr down">↓</span></td>
+</tr>
+<tr>
+<td>Lym#, ×10⁹/л</td>
+<td>0.73–7.86</td>
+<td>1.71</td>
+<td>1.98</td>
+<td>1.48</td>
+<td>0.40 <span class="arr down">↓</span></td>
+<td>4.36</td>
+</tr>
+<tr>
+<td>Neu %</td>
+<td>—</td>
+<td>17.4</td>
+<td>40.0</td>
+<td>76.9</td>
+<td>94.3</td>
+<td>23.3</td>
+</tr>
+<tr>
+<td>Lym %</td>
+<td>—</td>
+<td>66.5</td>
+<td>56.1</td>
+<td>15.2</td>
+<td>3.8</td>
+<td>71.8</td>
+</tr>
+<tr>
+<td>RBC, ×10¹²/л</td>
+<td>4.60–10.20</td>
+<td>7.85</td>
+<td>7.23</td>
+<td>7.02</td>
+<td>7.35</td>
+<td>6.74</td>
+</tr>
+<tr>
+<td>HGB, г/дл</td>
+<td>~8.5–15.3</td>
+<td>~9.7</td>
+<td>9.9</td>
+<td>9.2</td>
+<td>9.2</td>
+<td>8.3 <span class="arr down">↓</span></td>
+</tr>
+<tr>
+<td>HCT, %</td>
+<td>~26.0–54.0</td>
+<td>~28.9</td>
+<td>26.7</td>
+<td>26.1</td>
+<td>27.2</td>
+<td>23.5 <span class="arr down">↓</span></td>
+</tr>
+<tr>
+<td>MCV, фл</td>
+<td>~38.0–54.0</td>
+<td>36.8 <span class="arr down">↓</span></td>
+<td>36.9 <span class="arr down">↓</span></td>
+<td>37.3 <span class="arr down">↓</span></td>
+<td>37.0 <span class="arr down">↓</span></td>
+<td>34.9 <span class="arr down">↓</span></td>
+</tr>
+<tr>
+<td>PLT, ×10⁹/л</td>
+<td>~100–518</td>
+<td>~399</td>
+<td>699 <span class="arr up">↑</span></td>
+<td>304</td>
+<td>335</td>
+<td>426</td>
+</tr>
+</tbody></table></div>
+<p>Клиническая картина: 08.06.2026 — тяжёлая нейтропения (причина переноса химиотерапии); 06.07.2026 — показатели белой крови нормализовались; 10.07.2026 (на фоне сильного запора и болевого стресса) — классическая «стрессовая лейкограмма» (высокий Neu%, очень низкий Lym%); 03.08.2026 — присоединилась лёгкая микроцитарная анемия к сохраняющейся нейтропении.</p>
+
+<h4 id="8-3-vnutrennyaya-laboratoriya-lovet-biohimiya">8.3. Внутренняя лаборатория LoVet — биохимия<a class="anchor" href="#8-3-vnutrennyaya-laboratoriya-lovet-biohimiya" aria-hidden="true">#</a></h4>
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Показатель</th>
+<th>Ref</th>
+<th>06.07.2026</th>
+<th>10.07.2026</th>
+<th>02.09.2026</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Общий белок, г/л</td>
+<td>57–94</td>
+<td>74.4</td>
+<td>72.1</td>
+<td>72.7</td>
+</tr>
+<tr>
+<td>Мочевина (BUN), ммоль/л</td>
+<td>5–11.3</td>
+<td>11.5 <span class="arr up">↑</span></td>
+<td>9.45</td>
+<td>8.39</td>
+</tr>
+<tr>
+<td>Креатинин, мкмоль/л</td>
+<td>1–168</td>
+<td>136</td>
+<td>107</td>
+<td>120</td>
+</tr>
+<tr>
+<td>Глюкоза, ммоль/л</td>
+<td>3.05–6.1</td>
+<td>6.85 <span class="arr up">↑</span></td>
+<td>16.47 <span class="arr up">↑↑</span></td>
+<td>6.93 <span class="arr up">↑</span></td>
+</tr>
+<tr>
+<td>Калий (K+), ммоль/л</td>
+<td>3–4.8</td>
+<td>5.19 <span class="arr up">↑</span></td>
+<td>5.04 <span class="arr up">↑</span></td>
+<td>н/д</td>
+</tr>
+<tr>
+<td>Фосфор (P), ммоль/л</td>
+<td>0.8–1.9</td>
+<td>1.26</td>
+<td>0.62 <span class="arr down">↓</span></td>
+<td>0.88</td>
+</tr>
+<tr>
+<td>АЛТ, Ед/л</td>
+<td>1–91</td>
+<td>26</td>
+<td>28</td>
+<td>20</td>
+</tr>
+<tr>
+<td>АЛП, Ед/л</td>
+<td>1–140</td>
+<td>31</td>
+<td>30</td>
+<td>37</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li><strong>Повышенный калий дважды подряд (06.07 и 10.07.2026)</strong> на фоне приёма фуросемида (который обычно снижает калий) — не откомментирован врачом в документах.</li>
+<li><strong>Глюкоза 16.47 ммоль/л от 10.07.2026</strong> — существенно выше остальных измерений; вероятно выраженная стрессовая гипергликемия (в этот день также сильный стресс, боль, рентген под седацией) — но однократное значение не позволяет исключить иные причины.</li>
+<li><strong>Фосфор снижен (0.62) на 10.07.2026</strong> — необычная находка на фоне подозрения на проблемы с почками; клиническое значение по документам не устанавливается.</li>
+</ul>
+
+<h4 id="8-4-idexx-haematology-sravnenie-02-09-2026-i-07-09-2026">8.4. IDEXX Haematology — сравнение 02.09.2026 и 07.09.2026<a class="anchor" href="#8-4-idexx-haematology-sravnenie-02-09-2026-i-07-09-2026" aria-hidden="true">#</a></h4>
+<p>Между этими двумя датами отмечены: снижение RBC, HCT, HGB; снижение MCH; повышение RDW; ретикулоцитоз; повышение WBC, нейтрофилов и моноцитов. Полные числовые значения — в исходных лабораторных бланках (Фото 011–012, 016–017); при подготовке к консультации рекомендуется сверка с оригиналами этих двух отчётов.</p>
+
+<h4 id="8-5-dannye-do-nachala-himioterapii-2025-god-dlya-spravki">8.5. Данные до начала химиотерапии (2025 год) — для справки<a class="anchor" href="#8-5-dannye-do-nachala-himioterapii-2025-god-dlya-spravki" aria-hidden="true">#</a></h4>
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Дата</th>
+<th>MCV</th>
+<th>MCH</th>
+<th>Комментарий</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>24.06.2025</td>
+<td>43.9 [39.0–56.0]</td>
+<td>13.5 [12.6–16.5]</td>
+<td>Норма — единственная точка без микроцитоза</td>
+</tr>
+<tr>
+<td>06.08.2025</td>
+<td>35.7 <span class="arr down">↓</span></td>
+<td>—</td>
+<td>Впервые виден лёгкий микроцитоз</td>
+</tr>
+<tr>
+<td>31.10.2025</td>
+<td>37.6 <span class="arr down">↓</span></td>
+<td>12.0 <span class="arr down">↓</span></td>
+<td>Микроцитоз сохраняется</td>
+</tr>
+<tr>
+<td>20.12.2025</td>
+<td>35.6 <span class="arr down">↓</span></td>
+<td>11.3 <span class="arr down">↓</span></td>
+<td>Микроцитоз сохраняется</td>
+</tr>
+</tbody></table></div>
+<p>Лёгкий микроцитоз (MCV ниже референса) — стабильный паттерн, документированный практически на всех анализах, начиная с августа 2025 года, то есть возникший вскоре после первой операции и сохраняющийся на протяжении всей дальнейшей истории болезни.</p>
+
+
+</section>
+<section class="section" id="medikamentoznaya-terapiya-svodnaya-tablica">
+<h2><span class="num">9</span><span>Медикаментозная терапия — сводная таблица</span><a class="anchor" href="#medikamentoznaya-terapiya-svodnaya-tablica" aria-hidden="true">#</a></h2>
+<div class="table-wrap" tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Препарат</th>
+<th>Период / дата начала</th>
+<th>Комментарий</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Карбоплатин (Carboplatin Ebewe)</td>
+<td>18.05.2026 (однократно)</td>
+<td>Химиотерапия, 200 мг/м² в глюкозе; повторная доза отменена из-за нейтропении</td>
+</tr>
+<tr>
+<td>Доксорубицин (Doxorubicin)</td>
+<td>с 15.06.2026, каждые 21 день</td>
+<td>Химиотерапия, 1 мг/кг; введено 5 доз к 07.09.2026</td>
+</tr>
+<tr>
+<td>Palladia (торцераниб)</td>
+<td>11.05.2026 – минимум 08.06.2026</td>
+<td>15 мг → 10 мг с 25.05.2026; статус после 08.06.2026 не задокументирован</td>
+</tr>
+<tr>
+<td>Prednicortone / преднизолон</td>
+<td>с ~27.04.2026</td>
+<td>5 мг/день → 7.5 мг (1.5 табл.) с 15.06 → 5 мг с 17.08 → 3/4 табл. с 07.09.2026</td>
+</tr>
+<tr>
+<td>Furosemid (фуросемид)</td>
+<td>с ~11.05.2026</td>
+<td>1/4 табл., доп. доза при учащении дыхания (схема закреплена 13.06.2026)</td>
+</tr>
+<tr>
+<td>Gabapentin 100 мг</td>
+<td>с 13.06.2026 (формализовано)</td>
+<td>За 2 часа до стрессовых визитов в клинику</td>
+</tr>
+<tr>
+<td>Cyklonamina 250 мг</td>
+<td>с 11.05.2026</td>
+<td>1/4 табл. 2×/день</td>
+</tr>
+<tr>
+<td>Cerenia, маропитант</td>
+<td>сопровождает химиотерапию</td>
+<td>Противорвотное при введении химиопрепаратов</td>
+</tr>
+<tr>
+<td>Veraflox</td>
+<td>с ~08.06.2026, далее при глазных симптомах</td>
+<td>Антибиотик</td>
+</tr>
+<tr>
+<td>Varenzin 23.3 мг/мл</td>
+<td>19.08.2026 – 07.09.2026</td>
+<td>1 мл/день; точное показание не сформулировано врачом; отменён 07.09.2026</td>
+</tr>
+<tr>
+<td>Famogast/Ranigast (фамотидин)</td>
+<td>19.08.2026</td>
+<td>20 мг; схема отдельно не описана</td>
+</tr>
+<tr>
+<td>Suiferrin (железо)</td>
+<td>с 03.08.2026</td>
+<td>0.3 мл в/м; связано по времени с лабораторными признаками анемии</td>
+</tr>
+<tr>
+<td>Sucralfat</td>
+<td>с 23.06.2026, длительно</td>
+<td>В т.ч. 7 доз 03.08.2026</td>
+</tr>
+<tr>
+<td>Dicopeg, Fiberactiv</td>
+<td>10.07.2026</td>
+<td>Слабительные/клетчатка при запоре</td>
+</tr>
+<tr>
+<td>Comfortan (медетомидин)</td>
+<td>10.07.2026</td>
+<td>Седация для рентгена</td>
+</tr>
+<tr>
+<td>Propomitor</td>
+<td>06.07.2026 (однократно)</td>
+<td>Вероятно седативное/анестезиологическое средство</td>
+</tr>
+<tr>
+<td>Libeo</td>
+<td>с 29.04.2026</td>
+<td>1/2 табл. утром; вероятно гепатопротектор</td>
+</tr>
+<tr>
+<td>Neoplazmaxan</td>
+<td>~02.02.2026</td>
+<td>Состав и точное назначение по документам не определены</td>
+</tr>
+<tr>
+<td>Apoquel (оклацитиниб)</td>
+<td>на 13.04.2026</td>
+<td>Противозудный; причина назначения не уточнена</td>
+</tr>
+<tr>
+<td>Carobin Pet Forte</td>
+<td>18.05.2026</td>
+<td>Пробиотическая паста, «на всякий случай» при поносе</td>
+</tr>
+<tr>
+<td>Sustain</td>
+<td>11.2025</td>
+<td>Пробиотик при эпизодах мягкого стула</td>
+</tr>
+<tr>
+<td>Biotrakson, Tolfine/Tolfedine, Ceporex, Marbocyl</td>
+<td>04.11.2025, 20.03.2026</td>
+<td>Антибиотики/обезболивающее при операциях</td>
+</tr>
+<tr>
+<td>Bupredine, Bunondol</td>
+<td>20.03.2026</td>
+<td>Обезболивание после операции</td>
+</tr>
+<tr>
+<td>Sedatex</td>
+<td>08.08.2025</td>
+<td>Вероятно седация для премедикации перед первой операцией</td>
+</tr>
+<tr>
+<td>Beta-glukan (бета-глюкан)</td>
+<td>~25.08.2026</td>
+<td>Иммуномодулятор по рекомендации офтальмолога</td>
+</tr>
+<tr>
+<td>Optixcare, Corneregel, Tobrex, Yellox, Vital Drop, Dexoftyal żel, аллогенная сыворотка/плазма с ЭДТА</td>
+<td>с 17.08.2026</td>
+<td>Офтальмологическая схема — см. раздел 10</td>
+</tr>
+</tbody></table></div>
+<p>Для препаратов <strong>Neoplazmaxan, Apoquel, Libeo, Varenzin, Sedatex, Propomitor</strong> точный состав и/или точное клиническое показание по документам не определены — известны только названия, примерные даты начала приёма и, где указано, дозировка.</p>
+
+
+</section>
+<section class="section" id="oftalmologicheskaya-istoriya">
+<h2><span class="num">10</span><span>Офтальмологическая история</span><a class="anchor" href="#oftalmologicheskaya-istoriya" aria-hidden="true">#</a></h2>
+<div class="table-wrap" tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Дата</th>
+<th>Событие</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>~27.04–15.06.2026</td>
+<td>Преднизолон 5 мг/день, глазных жалоб ещё не зафиксировано</td>
+</tr>
+<tr>
+<td>~09.08.2026</td>
+<td>Начало насморка/выделений (со слов владельца)</td>
+</tr>
+<tr>
+<td>~11.08.2026</td>
+<td>Начало слезотечения; начат Veraflox</td>
+</tr>
+<tr>
+<td>17.08.2026 (LoVet)</td>
+<td>Впервые выявлены обширные язвы/эрозии роговицы обоих глаз (флюоресцеин +++). Начаты Tobrex, Yellox, Corneregel. Рекомендована консультация офтальмолога</td>
+</tr>
+<tr>
+<td>18.08.2026 (Retina, dr Stefanowicz)</td>
+<td>1-й визит: диагноз — поверхностная абразия эпителия роговицы обоих глаз на фоне синдрома сухого глаза (ZSO). Возможные причины: состояние, возраст, кортикостероиды/химиотерапия, возможное носительство FHV1. Рекомендовано снижение дозы стероида и бета-глюкан</td>
+</tr>
+<tr>
+<td>25.08.2026 (Retina, dr Chybowska)</td>
+<td>2-й визит: <strong>ухудшение</strong> — дефект эпителия OD ~70%, OS ~80% поверхности (слияние отдельных очагов). Добавлены Optixcare EMS, аллогенная сыворотка/плазма. Обсуждается замена стероида у онколога</td>
+</tr>
+<tr>
+<td>03.09.2026 (Retina, dr Chybowska)</td>
+<td>3-й визит: субъективно немного лучше, но те же цифры дефекта 70%/80% (плато или шаблонное повторение — нельзя достоверно судить)</td>
+</tr>
+<tr>
+<td>07.09.2026 (LoVet)</td>
+<td>«Не ухудшается, но и не улучшается»; получает капли с сывороткой; глаза открывает, но сохраняется болезненность</td>
+</tr>
+</tbody></table></div>
+<p><strong>Итог на 07.09.2026:</strong> хронический, плохо поддающийся лечению двусторонний дефект эпителия роговицы (синдром сухого глаза), возможно связанный с системной терапией (кортикостероиды, химиотерапия) и/или носительством FHV1. Последняя количественная оценка площади дефекта — 70% (OD) / 80% (OS), без явной положительной динамики с 25.08.2026.</p>
+
+
+</section>
+<section class="section" id="kardiologiya">
+<h2><span class="num">11</span><span>Кардиология</span><a class="anchor" href="#kardiologiya" aria-hidden="true">#</a></h2>
+<p>Единственная задокументированная кардиологическая консультация — <strong>26.08.2026, ALPHAVET, Dr Paweł Łyp</strong>: ЭхоКГ без признаков гипертрофической кардиомиопатии; случайно найдено образование ~0.9×0.7 см у верхушки сердца/в средостении с кистой внутри (природа не определена, дальнейшее наблюдение по документам не прослеживается); артериальное давление 155 мм рт.ст.; противопоказаний к продолжению химиотерапии не выявлено.</p>
+
+<p>Ссылка на «визит к кардиологу 02.09.2026» в записи офтальмолога от 03.09.2026 не подтверждена отдельным документом — см. открытый вопрос №13 в разделе 15.</p>
+
+
+</section>
+<section class="section" id="zhkt-i-mochevydelitelnaya-sistema">
+<h2><span class="num">12</span><span>ЖКТ и мочевыделительная система</span><a class="anchor" href="#zhkt-i-mochevydelitelnaya-sistema" aria-hidden="true">#</a></h2>
+<p><strong>10.07.2026</strong> — тяжёлый запор (кошка практически не оправлялась с 06.07.2026), на рентгене — крупные каловые массы в ободочной кишке, расширение кишки («потенциально ведущее к мегаколон»), а также <strong>рентгенопозитивные структуры в почках и мочевом пузыре</strong> (возможные конкременты — не подтверждено дополнительными исследованиями). Назначены лактулоза, Fiberactiv, Dicopeg. <strong>Дальнейшая динамика (разрешился ли запор, было ли повторное УЗИ/рентген почек) по документам не прослеживается</strong> — контроль от 13.07.2026 не загружен.</p>
+
+<p>Отдельно — <strong>02–04.03.2026</strong>, получены сами рентген-снимки (без заключения врача) с видимой крупной неоднородной структурой в области живота/поясницы — требуют прочтения радиологом (см. раздел 4 и открытый вопрос №34).</p>
+
+
+</section>
+<section class="section" id="pechen-i-pochki-svodka-nahodok">
+<h2><span class="num">13</span><span>Печень и почки — сводка находок</span><a class="anchor" href="#pechen-i-pochki-svodka-nahodok" aria-hidden="true">#</a></h2>
+<ul>
+<li><strong>24.06.2026:</strong> впервые описано единичное очаговое изменение в паренхиме печени и левая почка с неровной («побороздчатой») капсулой. Биохимия в этот день не выполнена из-за выраженной липемии.</li>
+<li><strong>02.09.2026:</strong> биохимия (включая почечные и печёночные показатели) — в пределах нормы. Прямой связи между находкой 24.06 и биохимией 02.09 по документам провести нельзя (контрольное УЗИ печени/почек между этими датами не выполнялось).</li>
+<li>Полная динамика креатинина и азотемии — раздел 8.1.</li>
+</ul>
+
+
+</section>
+<section class="section" id="status-na-poslednyuyu-zadokumentirovannuyu-datu-07-09-2026">
+<h2><span class="num">14</span><span>Статус на последнюю задокументированную дату (07.09.2026)</span><a class="anchor" href="#status-na-poslednyuyu-zadokumentirovannuyu-datu-07-09-2026" aria-hidden="true">#</a></h2>
+<ul>
+<li><strong>Онкология:</strong> продолжается химиотерапия доксорубицином (доза V введена 07.09.2026, интервал 21 день); <strong>растущий плевральный выпот</strong> (слева 2 см, справа 1.5 см — рост за 5 дней от 02.09.2026); статус Palladia не задокументирован с 08.06.2026.</li>
+<li><strong>Гематология:</strong> незадолго до 07.09.2026 (по сравнению с 02.09.2026) — снижение RBC/HCT/HGB, снижение MCH, повышение RDW, ретикулоцитоз, повышение WBC/нейтрофилов/моноцитов.</li>
+<li><strong>Почки/печень:</strong> биохимия на 02.09.2026 — в норме.</li>
+<li><strong>Глаза:</strong> хронический двусторонний дефект эпителия роговицы без явной динамики, продолжается лечение каплями и аллогенной сывороткой.</li>
+<li><strong>Стероид:</strong> снижен до 3/4 табл./день с 07.09.2026.</li>
+<li><strong>Прочее:</strong> новый симптом — болезненность при пальпации грудного отдела позвоночника (впервые отмечен 02.09.2026), причина не установлена.</li>
+<li>Вес на 07.09.2026 — 4.77 кг (самое низкое зафиксированное значение).</li>
+</ul>
+
+
+</section>
+<section class="section" id="otkrytye-voprosy-protivorechiya-i-probely-v-dokumentacii">
+<h2><span class="num">15</span><span>Открытые вопросы, противоречия и пробелы в документации</span><a class="anchor" href="#otkrytye-voprosy-protivorechiya-i-probely-v-dokumentacii" aria-hidden="true">#</a></h2>
+<p>Полный список расхождений между документами и незакрытых клинических вопросов, обнаруженных при сведении хронологии. Разрешённые в процессе работы противоречия отмечены отдельно и оставлены для полноты картины.</p>
+
+<h4 id="trebuyut-klinicheskogo-vnimaniya">Требуют клинического внимания<a class="anchor" href="#trebuyut-klinicheskogo-vnimaniya" aria-hidden="true">#</a></h4>
+<ul>
+<li><strong>Статус Palladia (торцераниб)</strong> после 08.06.2026 не упоминается ни в одном документе — продолжается ли приём, неизвестно.</li>
+<li><strong>Точный гистологический подтип опухоли</strong> (карцинома/саркома/карциносаркома) официально не подтверждён — по заключению ALAB от 27.03.2026 требовалось дополнительное иммуногистохимическое окрашивание, выполнение которого по документам не прослеживается.</li>
+<li><strong>Край резекции при операции 20.03.2026</strong> гистологически расценён как затронутый опухолью — дальнейшая тактика в связи с этим по документам не описана явно.</li>
+<li><strong>Значительный рост объёма плеврального выпота</strong> за 5 дней (02.09→07.09.2026).</li>
+<li><strong>Рентгенопозитивные структуры в почках и мочевом пузыре</strong> (10.07.2026) — находка не была повторно проверена/подтверждена.</li>
+<li>Получены <strong>сами рентген-снимки с подписью владельца «02/03/2026»</strong>, тогда как ранее в документах фигурировала запись «04.03.2026 — рентген узла» — не ясно, один это документ или два разных исследования; содержание снимков не интерпретировано врачом.</li>
+<li><strong>Гистопатологический/цитологический диагноз опухоли грудной клетки</strong> (образование у верхушки сердца, найдено 26.08.2026) — отсутствует.</li>
+<li><strong>Причина назначения Suiferrin</strong> (железо) не сформулирована врачом явно, но косвенно связывается по времени с лабораторными признаками анемии.</li>
+<li><strong>Причина смены химиотерапии</strong> с карбоплатина (18.05.2026) на доксорубицин (с 15.06.2026) нигде явно не объяснена — только косвенная связь по времени с эпизодом тяжёлой нейтропении (08.06.2026).</li>
+<li><strong>Повторяющаяся лёгкая гиперкалиемия</strong> (K+ 5.19 06.07.2026 и 5.04 10.07.2026) на фоне приёма фуросемида (который обычно снижает калий) — не откомментирована врачом.</li>
+<li><strong>Глюкоза 16.47 ммоль/л от 10.07.2026</strong> — намного выше остальных измерений; вероятно стрессовая гипергликемия, но требует внимания при повторении.</li>
+<li>Причина и точный состав препаратов <strong>Neoplazmaxan, Apoquel, Libeo</strong> не определены по документам.</li>
+</ul>
+
+<h4 id="tehnicheskie-rashozhdeniya-i-netochnosti-v-dokumentah">Технические расхождения и неточности в документах<a class="anchor" href="#tehnicheskie-rashozhdeniya-i-netochnosti-v-dokumentah" aria-hidden="true">#</a></h4>
+<ul>
+<li>13.06.2026: официальный вес в документе — 4.80 кг, но в этом же документе со слов владельца упомянуто «5,3 кг» — расхождение не объяснено.</li>
+<li>Увеличенные лимфоузлы на УЗИ 13.06.2026, но «не увеличены» при пальпации 24.06.2026 — возможно, разные группы лимфоузлов.</li>
+<li>Запись офтальмолога от 03.09.2026 упоминает «вчера был визит к кардиологу — без отклонений», но независимого документа о кардиологическом визите именно 02.09.2026 нет (ближайший задокументированный — 26.08.2026).</li>
+<li>Дефекты эпителия роговицы указаны идентичными цифрами (70% / 80%) на двух последовательных визитах офтальмолога (25.08 и 03.09.2026) — нельзя достоверно судить, было ли реальное отсутствие динамики или шаблонное повторение текста в карте.</li>
+<li>На бланке биохимии от 02.09.2026 указан возраст «9 лет» — техническая ошибка, не использовать как источник возраста.</li>
+<li>На бланке гематологии LoVet от 13.06.2026 отметка «H» рядом с MCHC 37.2 плохо согласуется с референсом — качество термопечати чека затрудняет точное прочтение части значений; рекомендуется сверка с оригиналом.</li>
+<li>Документ от 06.07.2026 внутренне противоречив по дозе стероида: «steryd bez zmian tj 1,5 Tbl» против «Prednizolon 5 mg 1 Tbl 1 x dziennie» в том же документе.</li>
+<li>Varenzin: 19.08.2026 назначен/оформлен, но в записи от 07.09.2026 упоминается как «начат 18.08» — расхождение на 1 день.</li>
+<li>27.07.2026: неясная формулировка «właścicielka włączyła steryd: 3 razy».</li>
+<li>15.06.2026: формулировка «3 x 1,5 Tbl furosoralu — at night 23» неразборчива.</li>
+<li>Оценка врача 02.09.2026 «морфология и биохимия очень хорошие» в целом подтверждается бланком биохимии, но расходится с отклонениями по гематологии IDEXX той же даты — возможно, врач имел в виду именно биохимию.</li>
+<li>В отчёте IDEXX от 24.06.2025 возраст указан грубо как «11 R», что при установленной дате рождения на эту дату давало бы фактически 10 лет 9–10 месяцев — расхождение в округлении, не меняет установленную дату рождения.</li>
+<li>В отчёте IDEXX от 24.06.2025 — панель IgG-антител к пищевым продуктам положительна (R2–R4) практически по всем позициям при полностью отрицательной панели IgE (R0); клиническое значение в документе не комментируется.</li>
+<li>В отчёте IDEXX от 06–07.08.2025 лаборатория сама пометила результат ретикулоцитарного гемоглобина как «implausibly low» и рекомендовала пересдачу — повторное тестирование по документам не прослеживается.</li>
+<li>Первичный документ операции 29.12.2025 описывает удаление опухоли «с боку тела, за правой лопаткой», а гистологический образец обозначен как «мягкие ткани из подмышечной области» — формально разные анатомические описания одной области, требует уточнения точной локализации.</li>
+<li>Фосфор снижен (0.62) на 10.07.2026 — необычная находка на фоне подозрения на почечные проблемы.</li>
+</ul>
+
+<h4 id="ne-zagruzhennye-otsutstvuyuschie-dokumenty">Не загруженные / отсутствующие документы<a class="anchor" href="#ne-zagruzhennye-otsutstvuyuschie-dokumenty" aria-hidden="true">#</a></h4>
+<ul>
+<li>УЗИ всех органов от 09.02.2026 — известно только со слов хирурга через сводку от 13.04.2026, первичный документ не загружен.</li>
+<li>Абдоминальное УЗИ «в феврале 2026», упомянутое со слов владельца в записи от 13.06.2026 — сам документ не загружен.</li>
+<li>Визит ~14.06.2026 (воскресенье, дежурная клиника, эвакуировано 28 мл жидкости) — реконструирован по косвенным записям, сам документ не загружен.</li>
+<li>Контроль от 13.07.2026 (запланирован по итогам визита 10.07.2026 по поводу запора) — документ не загружен.</li>
+<li>Повторное введение железа (Suiferrin), ожидавшееся ~10.08.2026 — документ не загружен.</li>
+<li>Страница 2 из 2 отчёта IDEXX Haematology от 02.09.2026 (с графиками и комментариями лаборатории) — не получена.</li>
+</ul>
+
+
+</section>
+<section class="section" id="reestr-istochnikov-dokumentov">
+<h2><span class="num">16</span><span>Реестр источников документов</span><a class="anchor" href="#reestr-istochnikov-dokumentov" aria-hidden="true">#</a></h2>
+<p>Все документы поступили в виде фотографий, сделанных владелицей, и были пронумерованы по мере загрузки (партиями). Ниже — сводный перечень по партиям загрузки; при необходимости сверки с оригиналом стоит запросить у владелицы конкретное фото по номеру.</p>
+
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Партия</th>
+<th>Файлы</th>
+<th>Период документов</th>
+<th>Содержание</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1-я</td>
+<td>Фото 001–061 (первичная нумерация)</td>
+<td>11.05.2026 – 07.09.2026 (первый срез)</td>
+<td>Основной массив визитов LoVet, Retina, ALPHAVET периода химиотерапии</td>
+</tr>
+<tr>
+<td>2-я</td>
+<td>IMG_5699–5713 (15 файлов)</td>
+<td>13.06 – 03.09.2026</td>
+<td>Визиты 13.06, 24.06.2026; все 3 визита офтальмолога Retina; чек биохимии 02.09; чек гематологии 03.08</td>
+</tr>
+<tr>
+<td>3-я</td>
+<td>IMG_5714–5729 (16 файлов)</td>
+<td>18.05 – 10.07.2026</td>
+<td>Найдена «недостающая» II доза доксорубицина (06.07); визит 08.06 (нейтропения); визит 10.07 (запор); визит 18.05 (первая химиотерапия — карбоплатин)</td>
+</tr>
+<tr>
+<td>4-я</td>
+<td>IMG_5730–5745 (16 файлов)</td>
+<td>31.10.2025 – 29.04.2026</td>
+<td><strong>Полная онкологическая история с 07.2025</strong> (сводка 13.04.2026); гистология операций 04.11.2025 и 20.03.2026; анализы мочи и крови марта 2026</td>
+</tr>
+<tr>
+<td>5-я</td>
+<td>IMG_5746–5760 (15 файлов)</td>
+<td>24.06.2025 – 09.03.2026</td>
+<td>Первичные документы операций 08.08.2025 и 29.12.2025; самый ранний документ всей истории (24.06.2025); уточнена дата первого эпизода азотемии (20.12.2025)</td>
+</tr>
+<tr>
+<td>6-я</td>
+<td>IMG_5761–5766 (6 файлов)</td>
+<td>20.12.2025 – 13.04.2026</td>
+<td>Чёткие пересъёмки документов операции 29.12.2025 и её гистологии; ранее не задокументированная биохимия 13.04.2026</td>
+</tr>
+<tr>
+<td>7-я</td>
+<td>2 файла без нумерации IMG</td>
+<td>02/03.2026 (подпись владельца)</td>
+<td>Сами рентген-снимки (боковая и вентродорсальная проекции) без приложенного заключения врача</td>
+</tr>
+</tbody></table></div>
+<p>Подробные постраничные таблицы по каждой партии (с указанием точного файла, даты документа, типа и клиники для каждого отдельного фото) сохранены в рабочем черновике хронологии и могут быть предоставлены по запросу.</p>
+
+
+</section>
+<footer class="colophon" id="o-dokumente">
+<h2>О документе<a class="anchor" href="#o-dokumente" aria-hidden="true">#</a></h2>
+<p>Отчёт составлен на основе фотографий документов, предоставленных владелицей кошки, без непосредственного участия ветеринарного врача в его подготовке. Просьба к специалисту, использующему этот документ: при принятии клинических решений опираться на оригиналы документов там, где это возможно, особенно в отношении дословных цитат гистологических заключений (отмечены как требующие сверки) и непрофессиональных описаний изображений (рентген-снимки раздела 4).</p>
+
+<p>Документ может быть дополнен по мере поступления новых материалов и медицинских документов.</p>
+</footer>
+    </div>
+  </main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var root = document.documentElement;
+  var STORE = "varia-theme";
+
+  /* --- Тема --------------------------------------------------------- */
+
+  function apply(theme) {
+    if (theme === "dark" || theme === "light") root.setAttribute("data-theme", theme);
+    else root.removeAttribute("data-theme");
+  }
+
+  function current() {
+    var saved = null;
+    try { saved = localStorage.getItem(STORE); } catch (e) {}
+    if (saved) return saved;
+    return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  apply(current());
+
+  var themeBtn = document.getElementById("theme-btn");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      var next = current() === "dark" ? "light" : "dark";
+      apply(next);
+      try { localStorage.setItem(STORE, next); } catch (e) {}
+      themeBtn.setAttribute("aria-label", next === "dark" ? "Светлая тема" : "Тёмная тема");
+    });
+  }
+
+  /* --- Мобильное меню ----------------------------------------------- */
+
+  var toc = document.getElementById("toc");
+  var scrim = document.getElementById("scrim");
+  var menuBtn = document.getElementById("menu-btn");
+
+  function setMenu(open) {
+    if (!toc || !scrim) return;
+    toc.classList.toggle("is-open", open);
+    scrim.classList.toggle("is-open", open);
+    if (menuBtn) menuBtn.setAttribute("aria-expanded", String(open));
+  }
+
+  if (menuBtn) menuBtn.addEventListener("click", function () { setMenu(!toc.classList.contains("is-open")); });
+  if (scrim) scrim.addEventListener("click", function () { setMenu(false); });
+  if (toc) toc.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
+
+  /* --- Прогресс чтения ---------------------------------------------- */
+
+  var bar = document.getElementById("progress");
+  var links = Array.prototype.slice.call(document.querySelectorAll(".toc a[href^='#']"));
+  var targets = links
+    .map(function (a) { return document.getElementById(decodeURIComponent(a.hash.slice(1))); })
+    .filter(Boolean);
+  var activeLink = null;
+  var ticking = false;
+
+  function update() {
+    ticking = false;
+
+    if (bar) {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (max > 0 ? Math.min(1, window.scrollY / max) * 100 : 0) + "%";
+    }
+
+    // Активный пункт оглавления — последний заголовок выше линии чтения.
+    var line = window.scrollY + window.innerHeight * 0.28;
+    var found = null;
+    for (var i = 0; i < targets.length; i++) {
+      if (targets[i].getBoundingClientRect().top + window.scrollY <= line) found = links[i];
+      else break;
+    }
+    if (!found && links.length) found = links[0];
+
+    if (found !== activeLink) {
+      if (activeLink) activeLink.classList.remove("is-active");
+      if (found) {
+        found.classList.add("is-active");
+        if (toc && window.innerWidth > 1000) {
+          var box = found.getBoundingClientRect();
+          var view = toc.getBoundingClientRect();
+          if (box.top < view.top + 40 || box.bottom > view.bottom - 40) {
+            found.scrollIntoView({ block: "center" });
+          }
+        }
+      }
+      activeLink = found;
+    }
+  }
+
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  update();
+
+  /* --- Наверх -------------------------------------------------------- */
+
+  var topBtn = document.getElementById("top-btn");
+  if (topBtn) {
+    topBtn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+})();
+
+</script>
+</body>
+</html>
