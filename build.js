@@ -115,8 +115,13 @@ const closeAll = () => {
   openColophon = false;
 };
 
-/** Помечает ⚠️-содержимое, чтобы оно читалось как предупреждение. */
+/**
+ * Помечает ⚠️-содержимое, чтобы оно читалось как предупреждение.
+ * Исключение — легенда, объясняющая сам значок: она описывает обозначение,
+ * а не сообщает о расхождении в документах.
+ */
 function markWarnings(html) {
+  if (/Значком/.test(html)) return html;
   return html
     .replace(/<tr>(?:(?!<\/tr>)[\s\S])*<\/tr>/g, (row) =>
       row.includes("⚠️") ? row.replace("<tr>", '<tr class="warn">') : row
@@ -149,10 +154,14 @@ for (const [index, token] of body.entries()) {
     const text = m ? m[2] : token.text;
     const id = slug(text);
 
+    // Вводное резюме идёт без номера и оформляется как отдельная карточка.
+    const brief = num === "" && toc.length === 0;
+
     toc.push({ id, num, text, children: [] });
-    out.push(`<section class="section" id="${id}">`);
+    out.push(`<section class="section${brief ? " section--brief" : ""}" id="${id}">`);
     out.push(
-      `<h2><span class="num">${num}</span><span>${inline(text)}</span>${anchor(id)}</h2>`
+      `<h2>${num ? `<span class="num">${num}</span>` : ""}` +
+        `<span>${inline(text)}</span>${anchor(id)}</h2>`
     );
     openSection = true;
     continue;
@@ -208,8 +217,14 @@ for (const [index, token] of body.entries()) {
   }
 
   if (token.type === "table") {
-    const html = render(token);
-    const cols = (html.match(/<th[\s>]/g) || []).length;
+    let html = render(token);
+
+    // Таблица-карточка «ключ → значение» задана без заголовков — пустую шапку убираем.
+    if (token.header.every((cell) => !cell.text.trim())) {
+      html = html.replace(/<thead>[\s\S]*?<\/thead>\s*/, "");
+    }
+
+    const cols = (html.match(/<th[\s>]/g) || []).length || token.header.length;
     out.push(
       `<div class="table-wrap"${cols >= 4 ? " data-wide" : ""} tabindex="0" role="group">${html}</div>`
     );

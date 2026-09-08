@@ -313,6 +313,31 @@ body {
 .section { margin-top: 72px; }
 .section:first-of-type { margin-top: 56px; }
 
+/* Вводное клиническое резюме — читается первым, отделено от нумерованных разделов */
+.section--brief {
+  padding: 4px clamp(18px, 3vw, 34px) 30px;
+  border: 1px solid var(--accent-line);
+  border-radius: 14px;
+  background: var(--bg-tint);
+}
+
+.section--brief > h2 { border-top: 0; }
+.section--brief .table-wrap { background: var(--surface); }
+.section--brief > *:last-child { margin-bottom: 0; }
+
+/* В сводке ⚠️ встречается почти в каждом пункте — там достаточно самого значка,
+   иначе половина страницы заливается плашками и подсветка перестаёт работать. */
+.section--brief tr.warn td,
+.section--brief tr.warn:hover td { background: var(--surface); }
+
+.section--brief li.warn {
+  margin-left: 0;
+  padding: 0;
+  border-left: 0;
+  background: none;
+  list-style: disc;
+}
+
 .section > h2 {
   display: flex;
   align-items: baseline;
