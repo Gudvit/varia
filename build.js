@@ -68,6 +68,17 @@ const body = all.slice(bodyStart);
 
 const title = (head.find((t) => t.type === "heading" && t.depth === 1) || { text: "Отчёт" }).text;
 const lede = (head.find((t) => t.type === "heading" && t.depth === 3) || { text: "" }).text;
+const heroImageToken = head.flatMap((t) => t.tokens || []).find((t) => t.type === "image");
+
+function localImageDataUrl(href) {
+  if (!href) return "";
+  const imagePath = path.resolve(ROOT, href);
+  if (!imagePath.startsWith(ROOT + path.sep) || !fs.existsSync(imagePath)) return "";
+  return href.replace(/\\/g, "/");
+}
+
+const heroImage = localImageDataUrl(heroImageToken && heroImageToken.href);
+const heroImageAlt = (heroImageToken && heroImageToken.text) || "Варя";
 
 // Курсивные строки вида «*Период документов: …*» превращаем в карточки метаданных.
 const meta = head
@@ -260,9 +271,25 @@ const tocHtml = toc
   })
   .join("\n");
 
-const metaHtml = meta
-  .map((m) => `<div><dt>${escape(m.label)}</dt><dd>${inline(m.value)}</dd></div>`)
+const owner = (meta.find((m) => /владелец/i.test(m.label)) || {}).value || "Karina Grakova";
+const ownerName = owner.split(",")[0].trim();
+const heroProfile = [
+  ["Имя", "Варя (Varia)"],
+  ["Возраст", "12 лет на 07.09.2026"],
+  ["Дата рождения", "25.08.2014"],
+  ["Чип", "968000011873589"],
+  ["Владелец", ownerName],
+];
+const heroProfileHtml = heroProfile
+  .map(([label, value]) => `<div><dt>${escape(label)}</dt><dd>${escape(value)}</dd></div>`)
   .join("\n");
+
+const heroImageHtml = heroImage
+  ? `<figure class="hero__portrait">
+          <img src="${heroImage}" alt="${escape(heroImageAlt)}">
+          <figcaption>Варя</figcaption>
+        </figure>`
+  : "";
 
 /* -------------------------------------------------------------------------
    Страница
@@ -312,12 +339,18 @@ ${tocHtml}
   <main class="main">
     <div class="wrap">
       <header class="hero">
-        <p class="hero__eyebrow">Ветеринарный отчёт</p>
-        <h1>${inline(title)}</h1>
+        <div class="hero__intro">
+          ${heroImageHtml}
+          <div class="hero__copy">
+            <p class="hero__eyebrow">Ветеринарный отчёт</p>
+            <h1>${inline(title)}</h1>
+            <dl class="hero__profile">
+${heroProfileHtml}
+            </dl>
+          </div>
+        </div>
+        <hr class="hero__divider">
         <p class="hero__lede">${inline(lede)}</p>
-        <dl class="meta">
-${metaHtml}
-        </dl>
       </header>
 
 ${out.join("\n")}

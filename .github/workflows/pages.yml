@@ -40,6 +40,7 @@ jobs:
           mkdir -p _site
           cp index.html _site/index.html
           cp final_report.md _site/final_report.md
+          cp -R assets _site/assets
 
       - uses: actions/configure-pages@v5
 

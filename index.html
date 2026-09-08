@@ -260,6 +260,83 @@ body {
 
 .hero { padding: clamp(48px, 9vh, 96px) 0 0; }
 
+.hero__intro {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+  gap: clamp(22px, 5vw, 44px);
+  align-items: center;
+}
+
+.hero__copy { min-width: 0; }
+
+.hero__portrait {
+  margin: 0;
+  justify-self: start;
+  width: min(240px, 100%);
+  font-family: var(--sans);
+}
+
+.hero__portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 45%;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow-md);
+}
+
+.hero__portrait figcaption {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--muted);
+}
+
+.hero__profile {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 28px 0 0;
+  padding: 0;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-family: var(--sans);
+}
+
+.hero__profile div {
+  padding: 13px 16px;
+  background: var(--surface);
+}
+
+.hero__profile div:last-child { grid-column: 1 / -1; }
+
+.hero__profile dt {
+  margin: 0 0 3px;
+  font: 600 10.5px/1 var(--sans);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.hero__profile dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.hero__divider {
+  margin: 38px 0 0;
+  border: 0;
+  border-top: 1px solid var(--line-strong);
+}
+
 .hero__eyebrow {
   margin: 0 0 14px;
   font: 700 11px/1 var(--sans);
@@ -278,7 +355,7 @@ body {
 }
 
 .hero__lede {
-  margin: 14px 0 0;
+  margin: 22px 0 0;
   font-size: clamp(18px, 2.4vw, 21px);
   line-height: 1.45;
   color: var(--text-soft);
@@ -639,6 +716,13 @@ tr.warn:hover td { background: var(--warn-soft); }
 
 @media (max-width: 620px) {
   body { font-size: 16px; }
+  .hero__intro { grid-template-columns: 1fr; }
+  .hero__portrait {
+    justify-self: start;
+    width: min(180px, 70vw);
+  }
+  .hero__profile { grid-template-columns: 1fr; }
+  .hero__divider { margin-top: 28px; }
   .meta { grid-template-columns: 1fr; }
   .section { margin-top: 54px; }
   .entry { padding-left: 20px; }
@@ -664,7 +748,15 @@ tr.warn:hover td { background: var(--warn-soft); }
   .wrap { max-width: none; }
 
   .hero { padding-top: 0; }
+  .hero__intro { grid-template-columns: 34mm minmax(0, 1fr); gap: 10mm; }
+  .hero__portrait img { border-radius: 12px; box-shadow: none; }
+  .hero__portrait figcaption { font-size: 8pt; }
   .hero h1 { font-size: 26pt; }
+  .hero__profile { margin-top: 16px; }
+  .hero__profile div { padding: 7px 9px; }
+  .hero__profile dt { font-size: 7pt; }
+  .hero__profile dd { font-size: 9pt; }
+  .hero__divider { margin-top: 10mm; }
 
   .section { margin-top: 26px; }
   .section > h2 { font-size: 15pt; break-after: avoid; }
@@ -728,15 +820,25 @@ tr.warn:hover td { background: var(--warn-soft); }
   <main class="main">
     <div class="wrap">
       <header class="hero">
-        <p class="hero__eyebrow">Ветеринарный отчёт</p>
-        <h1>Варя (Varia)</h1>
-        <p class="hero__lede">Полная медицинская хронология</p>
-        <dl class="meta">
-<div><dt>Пациент</dt><dd>Кошка, британская длинношёрстная, кастрирована</dd></div>
-<div><dt>Период документов</dt><dd>24.06.2025 – 07.09.2026</dd></div>
-<div><dt>Отчёт составлен</dt><dd>08.09.2026</dd></div>
+        <div class="hero__intro">
+          <figure class="hero__portrait">
+          <img src="assets/varia-portrait.jpg" alt="Варя — чёрная британская длинношёрстная кошка">
+          <figcaption>Варя</figcaption>
+        </figure>
+          <div class="hero__copy">
+            <p class="hero__eyebrow">Ветеринарный отчёт</p>
+            <h1>Варя (Varia)</h1>
+            <dl class="hero__profile">
+<div><dt>Имя</dt><dd>Варя (Varia)</dd></div>
+<div><dt>Возраст</dt><dd>12 лет на 07.09.2026</dd></div>
+<div><dt>Дата рождения</dt><dd>25.08.2014</dd></div>
+<div><dt>Чип</dt><dd>968000011873589</dd></div>
 <div><dt>Владелец</dt><dd>Karina Grakova</dd></div>
-        </dl>
+            </dl>
+          </div>
+        </div>
+        <hr class="hero__divider">
+        <p class="hero__lede">Полная медицинская хронология</p>
       </header>
 
 <section class="section section--brief" id="klinicheskoe-rezyume-tekuschiy-status-na-07-09-2026">
@@ -746,7 +848,7 @@ tr.warn:hover td { background: var(--warn-soft); }
 <div class="table-wrap" tabindex="0" role="group"><table>
 <tbody><tr class="warn">
 <td><strong>Пациент</strong></td>
-<td>Кошка, британская длинношёрстная, кастрирована, чёрная. Возраст ориентировочно 12 лет — ⚠️ дата рождения не установлена, расхождение между клиниками ~8–9 месяцев (разд. 2). Вес 4.77 кг на 07.09.2026; снижение с 5.2 кг в июле.</td>
+<td>Кошка, британская длинношёрстная, кастрирована, чёрная. Дата рождения 25.08.2014, возраст 12 лет на 07.09.2026; ⚠️ в документах разных клиник встречаются возрастные расхождения (разд. 2). Вес 4.77 кг на 07.09.2026; снижение с 5.2 кг в июле.</td>
 </tr>
 <tr>
 <td><strong>Диагноз</strong></td>
@@ -846,7 +948,7 @@ tr.warn:hover td { background: var(--warn-soft); }
 </tr>
 <tr class="warn">
 <td>Дата рождения</td>
-<td>⚠️ <strong>Точно не установлена.</strong> Четыре последовательные записи ALVET указывают на ориентировочную дату рождения <strong>август–сентябрь 2014 года</strong>; записи Retina от 18.08 и 25.08.2026 (возраст 12 лет 7–8 месяцев) соответствуют более ранней дате — <strong>примерно декабрь 2013 — январь 2014</strong>. Возрастные данные разных клиник противоречат друг другу (см. ниже).</td>
+<td><strong>25.08.2014</strong> — подтверждено владельцем. ⚠️ В документах разных клиник встречаются возрастные расхождения (см. ниже); приоритетная дата для отчёта — 25.08.2014.</td>
 </tr>
 <tr>
 <td>Владелец</td>
@@ -910,7 +1012,7 @@ tr.warn:hover td { background: var(--warn-soft); }
 </tbody></table></div>
 <p>Отдельно на бланке IDEXX от 24.06.2025 возраст указан как «11 R» — это тоже лучше согласуется с более ранней датой рождения, чем с сентябрём 2014 года.</p>
 
-<p>Таким образом, <strong>возрастные данные разных клиник противоречат друг другу</strong>: расхождение между версиями ALVET и Retina составляет около 8–9 месяцев, и дату рождения нельзя считать установленной. Для окончательного её определения требуется подтверждение владельца или исходная регистрационная карта пациента. На бланке биохимии LoVet от 02.09.2026 указано «9 лет» — явная техническая ошибка, не использовать как источник возраста.</p>
+<p>Таким образом, <strong>возрастные данные разных клиник противоречат друг другу</strong>: записи ALVET в целом согласуются с датой рождения 25.08.2014, подтверждённой владельцем, а записи Retina дают более раннюю расчётную дату — примерно декабрь 2013 — январь 2014. На бланке биохимии LoVet от 02.09.2026 указано «9 лет» — явная техническая ошибка, не использовать как источник возраста.</p>
 
 <h4 id="kliniki-laboratorii-i-vrachi">Клиники, лаборатории и врачи<a class="anchor" href="#kliniki-laboratorii-i-vrachi" aria-hidden="true">#</a></h4>
 <div class="table-wrap" tabindex="0" role="group"><table>
