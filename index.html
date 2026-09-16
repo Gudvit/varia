@@ -170,6 +170,36 @@ body {
   color: var(--faint);
 }
 
+/* Переключатель документов: хронология / аналитическая часть. */
+.toc__pages {
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.toc__pages a {
+  display: block;
+  padding: 7px 10px;
+  margin-left: -9px;
+  border-radius: 7px;
+  border-left: 2px solid transparent;
+  color: var(--text-soft);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background .12s ease, color .12s ease;
+}
+
+.toc__pages a:hover { background: var(--surface); color: var(--text); }
+
+.toc__pages a.is-current {
+  background: var(--accent-soft);
+  border-left-color: var(--accent);
+  color: var(--accent);
+  font-weight: 650;
+}
+
 .toc ol { list-style: none; margin: 0; padding: 0; }
 
 .toc a {
@@ -794,6 +824,11 @@ tr.warn:hover td { background: var(--warn-soft); }
   <nav class="toc" id="toc" aria-label="Оглавление">
     <p class="toc__brand">Варя <span>medical file</span></p>
     <p class="toc__sub">24.06.2025 – 15.09.2026</p>
+    <p class="toc__label">Документы</p>
+    <ul class="toc__pages">
+<li><a href="index.html" class="is-current" aria-current="page">Полная хронология</a></li>
+<li><a href="analysis.html">Анализ</a></li>
+    </ul>
     <p class="toc__label">Разделы</p>
     <ol>
 <li><a href="#klinicheskoe-rezyume-tekuschiy-status-na-14-09-2026"><span class="num"></span><span>Клиническое резюме / текущий статус на 14.09.2026</span></a></li>

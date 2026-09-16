@@ -1,11 +1,15 @@
 /**
- * Сборка index.html из final_report.md.
+ * Сборка страниц отчёта из Markdown-источников.
  *
  * Отчёт — обычный Markdown, но у него есть повторяющиеся смысловые структуры,
  * которые стоит разметить явно: нумерованные разделы, годовые срезы хронологии,
  * датированные записи визитов, предупреждения ⚠️ и лабораторные таблицы.
  * Скрипт разбирает документ на токены и собирает из них семантический HTML,
- * после чего встраивает CSS и JS — на выходе один самодостаточный файл.
+ * после чего встраивает CSS и JS — на выходе самодостаточные файлы.
+ *
+ * Страниц две, и они собираются одним и тем же кодом: полная хронология
+ * (final_report.md → index.html) и аналитическая часть
+ * (analysis.md → analysis.html). Переключатель между ними — в шапке оглавления.
  *
  *   npm run build
  */
@@ -15,12 +19,19 @@ const path = require("path");
 const { marked } = require("marked");
 
 const ROOT = __dirname;
-const SRC = path.join(ROOT, "final_report.md");
-const OUT = path.join(ROOT, "index.html");
 
-const md = fs.readFileSync(SRC, "utf8");
 const css = fs.readFileSync(path.join(ROOT, "src", "style.css"), "utf8");
 const js = fs.readFileSync(path.join(ROOT, "src", "app.js"), "utf8");
+
+/**
+ * Страницы сайта. Порядок задаёт порядок переключателя в оглавлении.
+ * `profile` — показывать ли карточку пациента в шапке: она уместна на
+ * титульной странице истории и избыточна на аналитической.
+ */
+const PAGES = [
+  { src: "final_report.md", out: "index.html", nav: "Полная хронология", profile: true },
+  { src: "analysis.md", out: "analysis.html", nav: "Анализ", profile: false },
+];
 
 /* -------------------------------------------------------------------------
    Вспомогательное
@@ -33,98 +44,10 @@ const TRANSLIT = {
   ъ: "", ы: "y", ь: "", э: "e", ю: "yu", я: "ya",
 };
 
-const used = new Set();
-
-function slug(text) {
-  const base =
-    text
-      .toLowerCase()
-      .replace(/[а-яё]/g, (ch) => (ch in TRANSLIT ? TRANSLIT[ch] : ch))
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "")
-      .slice(0, 60) || "section";
-
-  let id = base;
-  for (let n = 2; used.has(id); n++) id = `${base}-${n}`;
-  used.add(id);
-  return id;
-}
-
 const escape = (s) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 const inline = (s) => marked.parseInline(s).trim();
-
-const anchor = (id) => `<a class="anchor" href="#${id}" aria-hidden="true">#</a>`;
-
-/* -------------------------------------------------------------------------
-   Шапка документа: заголовок, подзаголовок и курсивные строки-метаданные
-   ------------------------------------------------------------------------- */
-
-const all = marked.lexer(md);
-const bodyStart = all.findIndex((t) => t.type === "heading" && t.depth === 2);
-const head = all.slice(0, bodyStart);
-const body = all.slice(bodyStart);
-
-const title = (head.find((t) => t.type === "heading" && t.depth === 1) || { text: "Отчёт" }).text;
-const lede = (head.find((t) => t.type === "heading" && t.depth === 3) || { text: "" }).text;
-const heroImageToken = head.flatMap((t) => t.tokens || []).find((t) => t.type === "image");
-
-function localImageDataUrl(href) {
-  if (!href) return "";
-  const imagePath = path.resolve(ROOT, href);
-  if (!imagePath.startsWith(ROOT + path.sep) || !fs.existsSync(imagePath)) return "";
-  return href.replace(/\\/g, "/");
-}
-
-const heroImage = localImageDataUrl(heroImageToken && heroImageToken.href);
-const heroImageAlt = (heroImageToken && heroImageToken.text) || "Варя";
-
-// Курсивные строки вида «*Период документов: …*» превращаем в карточки метаданных.
-const meta = head
-  .filter((t) => t.type === "paragraph" && /^\*.+\*$/.test(t.raw.trim()))
-  .map((t) => {
-    const text = t.raw.trim().replace(/^\*|\*$/g, "");
-    const at = text.indexOf(":");
-    return at === -1
-      ? { label: "Пациент", value: text }
-      : { label: text.slice(0, at).trim(), value: text.slice(at + 1).trim() };
-  });
-
-/* -------------------------------------------------------------------------
-   Разметка тела отчёта
-   ------------------------------------------------------------------------- */
-
-// Заголовок вида «13.04.2026, 16:00 — LoVet, dr Drewniak: консультация»:
-// дата (возможно приблизительная или диапазоном) плюс необязательное описание.
-// Шаблон требует полную дату, иначе под него попадают нумерованные подразделы («8.1.»).
-const DATED = /^[~≈]?\s*(?:До\s+|С\s+)?\d{1,2}(?:[–—-]\d{1,2})?\.\d{2}\.\d{4}/u;
-
-// Завершающая заметка «О документе» — не часть нумерованных разделов.
-const lastHeading = body.reduce((at, t, i) => (t.type === "heading" ? i : at), -1);
-
-const out = [];
-const toc = [];
-let openSection = false;
-let openEntry = false;
-let openColophon = false;
-
-const closeEntry = () => {
-  if (openEntry) out.push("</div>");
-  openEntry = false;
-};
-
-const closeSection = () => {
-  closeEntry();
-  if (openSection) out.push("</section>");
-  openSection = false;
-};
-
-const closeAll = () => {
-  closeSection();
-  if (openColophon) out.push("</footer>");
-  openColophon = false;
-};
 
 /**
  * Помечает ⚠️-содержимое, чтобы оно читалось как предупреждение.
@@ -154,150 +77,260 @@ function render(token) {
   return markArrows(markWarnings(marked.parser([token]).trim()));
 }
 
-for (const [index, token] of body.entries()) {
-  if (token.type === "hr") continue; // разделители заменены отступами и линейками
+// Заголовок вида «13.04.2026, 16:00 — LoVet, dr Drewniak: консультация»:
+// дата (возможно приблизительная или диапазоном) плюс необязательное описание.
+// Шаблон требует полную дату, иначе под него попадают нумерованные подразделы («8.1.»).
+const DATED = /^[~≈]?\s*(?:До\s+|С\s+)?\d{1,2}(?:[–—-]\d{1,2})?\.\d{2}\.\d{4}/u;
 
-  if (token.type === "heading" && token.depth === 2) {
+/* -------------------------------------------------------------------------
+   Разбор одного Markdown-документа
+   ------------------------------------------------------------------------- */
+
+function buildPage(page) {
+  const md = fs.readFileSync(path.join(ROOT, page.src), "utf8");
+
+  // Идентификаторы уникальны в пределах страницы, поэтому счётчик свой на документ.
+  const used = new Set();
+
+  function slug(text) {
+    const base =
+      text
+        .toLowerCase()
+        .replace(/[а-яё]/g, (ch) => (ch in TRANSLIT ? TRANSLIT[ch] : ch))
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "")
+        .slice(0, 60) || "section";
+
+    let id = base;
+    for (let n = 2; used.has(id); n++) id = `${base}-${n}`;
+    used.add(id);
+    return id;
+  }
+
+  const anchor = (id) => `<a class="anchor" href="#${id}" aria-hidden="true">#</a>`;
+
+  /* --- Шапка документа: заголовок, подзаголовок и курсивные строки-метаданные --- */
+
+  const all = marked.lexer(md);
+  const bodyStart = all.findIndex((t) => t.type === "heading" && t.depth === 2);
+  const head = all.slice(0, bodyStart);
+  const body = all.slice(bodyStart);
+
+  const title = (head.find((t) => t.type === "heading" && t.depth === 1) || { text: "Отчёт" }).text;
+  const lede = (head.find((t) => t.type === "heading" && t.depth === 3) || { text: "" }).text;
+  const heroImageToken = head.flatMap((t) => t.tokens || []).find((t) => t.type === "image");
+
+  function localImage(href) {
+    if (!href) return "";
+    const imagePath = path.resolve(ROOT, href);
+    if (!imagePath.startsWith(ROOT + path.sep) || !fs.existsSync(imagePath)) return "";
+    return href.replace(/\\/g, "/");
+  }
+
+  const heroImage = localImage(heroImageToken && heroImageToken.href);
+  const heroImageAlt = (heroImageToken && heroImageToken.text) || "Варя";
+
+  // Курсивные строки вида «*Период документов: …*» превращаем в карточки метаданных.
+  const meta = head
+    .filter((t) => t.type === "paragraph" && /^\*.+\*$/.test(t.raw.trim()))
+    .map((t) => {
+      const text = t.raw.trim().replace(/^\*|\*$/g, "");
+      const at = text.indexOf(":");
+      return at === -1
+        ? { label: "Пациент", value: text }
+        : { label: text.slice(0, at).trim(), value: text.slice(at + 1).trim() };
+    });
+
+  /* --- Разметка тела --- */
+
+  // Завершающая заметка «О документе» — не часть нумерованных разделов.
+  const lastHeading = body.reduce((at, t, i) => (t.type === "heading" ? i : at), -1);
+
+  const out = [];
+  const toc = [];
+  let openSection = false;
+  let openEntry = false;
+  let openColophon = false;
+
+  const closeEntry = () => {
+    if (openEntry) out.push("</div>");
+    openEntry = false;
+  };
+
+  const closeSection = () => {
+    closeEntry();
+    if (openSection) out.push("</section>");
+    openSection = false;
+  };
+
+  const closeAll = () => {
     closeSection();
+    if (openColophon) out.push("</footer>");
+    openColophon = false;
+  };
 
-    const m = token.text.match(/^(\d+)\.\s*(.+)$/);
-    const num = m ? m[1] : "";
-    const text = m ? m[2] : token.text;
-    const id = slug(text);
+  for (const [index, token] of body.entries()) {
+    if (token.type === "hr") continue; // разделители заменены отступами и линейками
 
-    // Вводное резюме идёт без номера и оформляется как отдельная карточка.
-    const brief = num === "" && toc.length === 0;
+    if (token.type === "heading" && token.depth === 2) {
+      closeSection();
 
-    toc.push({ id, num, text, children: [] });
-    out.push(`<section class="section${brief ? " section--brief" : ""}" id="${id}">`);
-    out.push(
-      `<h2>${num ? `<span class="num">${num}</span>` : ""}` +
-        `<span>${inline(text)}</span>${anchor(id)}</h2>`
-    );
-    openSection = true;
-    continue;
-  }
+      const m = token.text.match(/^(\d+)\.\s*(.+)$/);
+      const num = m ? m[1] : "";
+      const text = m ? m[2] : token.text;
+      const id = slug(text);
 
-  if (token.type === "heading" && token.depth === 3 && index === lastHeading) {
-    closeAll();
-    const id = slug(token.text);
-    toc.push({ id, num: "", text: token.text, children: [] });
-    out.push(`<footer class="colophon" id="${id}">`);
-    out.push(`<h2>${inline(token.text)}${anchor(id)}</h2>`);
-    openColophon = true;
-    continue;
-  }
+      // Вводное резюме идёт без номера и оформляется как отдельная карточка.
+      const brief = num === "" && toc.length === 0;
 
-  if (token.type === "heading" && token.depth === 3) {
-    closeEntry();
-    const id = slug(token.text);
-    const year = /^\d{4}\s+год$/.test(token.text.trim());
-
-    if (toc.length) toc[toc.length - 1].children.push({ id, text: token.text });
-
-    out.push(
-      year
-        ? `<h3 class="year" id="${id}">${inline(token.text)}</h3>`
-        : `<h3 id="${id}">${inline(token.text)}${anchor(id)}</h3>`
-    );
-    continue;
-  }
-
-  if (token.type === "heading" && token.depth === 4) {
-    closeEntry();
-    const id = slug(token.text);
-
-    if (!DATED.test(token.text)) {
-      out.push(`<h4 id="${id}">${inline(token.text)}${anchor(id)}</h4>`);
+      toc.push({ id, num, text, children: [] });
+      out.push(`<section class="section${brief ? " section--brief" : ""}" id="${id}">`);
+      out.push(
+        `<h2>${num ? `<span class="num">${num}</span>` : ""}` +
+          `<span>${inline(text)}</span>${anchor(id)}</h2>`
+      );
+      openSection = true;
       continue;
     }
 
-    // Первое « — » отделяет дату от описания визита.
-    const at = token.text.indexOf(" — ");
-    const date = at === -1 ? token.text : token.text.slice(0, at);
-    const rest = at === -1 ? "" : token.text.slice(at + 3);
-
-    out.push(`<div class="entry" id="${id}">`);
-    out.push(
-      `<h4 class="entry__head"><span class="entry__date">${inline(date)}</span>` +
-        (rest ? `<span class="entry__title">${inline(rest)}</span>` : "") +
-        `${anchor(id)}</h4>`
-    );
-    openEntry = true;
-    continue;
-  }
-
-  if (token.type === "table") {
-    let html = render(token);
-
-    // Таблица-карточка «ключ → значение» задана без заголовков — пустую шапку убираем.
-    if (token.header.every((cell) => !cell.text.trim())) {
-      html = html.replace(/<thead>[\s\S]*?<\/thead>\s*/, "");
+    if (token.type === "heading" && token.depth === 3 && index === lastHeading) {
+      closeAll();
+      const id = slug(token.text);
+      toc.push({ id, num: "", text: token.text, children: [] });
+      out.push(`<footer class="colophon" id="${id}">`);
+      out.push(`<h2>${inline(token.text)}${anchor(id)}</h2>`);
+      openColophon = true;
+      continue;
     }
 
-    const cols = (html.match(/<th[\s>]/g) || []).length || token.header.length;
-    out.push(
-      `<div class="table-wrap"${cols >= 4 ? " data-wide" : ""} tabindex="0" role="group">${html}</div>`
-    );
-    continue;
+    if (token.type === "heading" && token.depth === 3) {
+      closeEntry();
+      const id = slug(token.text);
+      const year = /^\d{4}\s+год$/.test(token.text.trim());
+
+      if (toc.length) toc[toc.length - 1].children.push({ id, text: token.text });
+
+      out.push(
+        year
+          ? `<h3 class="year" id="${id}">${inline(token.text)}</h3>`
+          : `<h3 id="${id}">${inline(token.text)}${anchor(id)}</h3>`
+      );
+      continue;
+    }
+
+    if (token.type === "heading" && token.depth === 4) {
+      closeEntry();
+      const id = slug(token.text);
+
+      if (!DATED.test(token.text)) {
+        out.push(`<h4 id="${id}">${inline(token.text)}${anchor(id)}</h4>`);
+        continue;
+      }
+
+      // Первое « — » отделяет дату от описания визита.
+      const at = token.text.indexOf(" — ");
+      const date = at === -1 ? token.text : token.text.slice(0, at);
+      const rest = at === -1 ? "" : token.text.slice(at + 3);
+
+      out.push(`<div class="entry" id="${id}">`);
+      out.push(
+        `<h4 class="entry__head"><span class="entry__date">${inline(date)}</span>` +
+          (rest ? `<span class="entry__title">${inline(rest)}</span>` : "") +
+          `${anchor(id)}</h4>`
+      );
+      openEntry = true;
+      continue;
+    }
+
+    if (token.type === "table") {
+      let html = render(token);
+
+      // Таблица-карточка «ключ → значение» задана без заголовков — пустую шапку убираем.
+      if (token.header.every((cell) => !cell.text.trim())) {
+        html = html.replace(/<thead>[\s\S]*?<\/thead>\s*/, "");
+      }
+
+      const cols = (html.match(/<th[\s>]/g) || []).length || token.header.length;
+      out.push(
+        `<div class="table-wrap"${cols >= 4 ? " data-wide" : ""} tabindex="0" role="group">${html}</div>`
+      );
+      continue;
+    }
+
+    // Дисклеймер о том, что документ не заменяет врача, — выносим во врезку.
+    if (token.type === "paragraph" && token.text.includes("не заменяет осмотр")) {
+      out.push(`<div class="notice">${render(token)}</div>`);
+      continue;
+    }
+
+    out.push(render(token));
   }
 
-  // Дисклеймер в разделе 1 — ключевое предупреждение, выносим во врезку.
-  if (token.type === "paragraph" && token.text.includes("не заменяет осмотр")) {
-    out.push(`<div class="notice">${render(token)}</div>`);
-    continue;
-  }
+  closeAll();
 
-  out.push(render(token));
+  return { page, title, lede, meta, heroImage, heroImageAlt, toc, body: out.join("\n") };
 }
 
-closeAll();
-
 /* -------------------------------------------------------------------------
-   Оглавление
+   Сборка страницы
    ------------------------------------------------------------------------- */
 
-const tocHtml = toc
-  .map((s) => {
-    const kids = s.children.length
-      ? `<ol class="toc__sublist">${s.children
-          .map((c) => `<li><a href="#${c.id}">${escape(c.text)}</a></li>`)
-          .join("")}</ol>`
-      : "";
-    return (
-      `<li><a href="#${s.id}"><span class="num">${s.num}</span>` +
-      `<span>${escape(s.text)}</span></a>${kids}</li>`
-    );
-  })
-  .join("\n");
+function renderPage(doc, docs) {
+  const { page, title, lede, meta, heroImage, heroImageAlt, toc } = doc;
 
-const owner = (meta.find((m) => /владелец/i.test(m.label)) || {}).value || "Karina Grakova";
-const ownerName = owner.split(",")[0].trim();
-const heroProfile = [
-  ["Имя", "Варя (Varia)"],
-  ["Возраст", "12 лет на 07.09.2026"],
-  ["Дата рождения", "25.08.2014"],
-  ["Чип", "968000011873589"],
-  ["Владелец", ownerName],
-];
-const heroProfileHtml = heroProfile
+  const tocHtml = toc
+    .map((s) => {
+      const kids = s.children.length
+        ? `<ol class="toc__sublist">${s.children
+            .map((c) => `<li><a href="#${c.id}">${escape(c.text)}</a></li>`)
+            .join("")}</ol>`
+        : "";
+      return (
+        `<li><a href="#${s.id}"><span class="num">${s.num}</span>` +
+        `<span>${escape(s.text)}</span></a>${kids}</li>`
+      );
+    })
+    .join("\n");
+
+  // Переключатель документов: ссылки ведут на соседние страницы, поэтому
+  // подсветка активного пункта оглавления (она работает по якорям) их не трогает.
+  const pagesHtml = docs
+    .map((d) => {
+      const current = d.page.out === page.out;
+      return (
+        `<li><a href="${d.page.out}"${current ? ' class="is-current" aria-current="page"' : ""}>` +
+        `${escape(d.page.nav)}</a></li>`
+      );
+    })
+    .join("\n");
+
+  const owner = (meta.find((m) => /владелец/i.test(m.label)) || {}).value || "Karina Grakova";
+  const ownerName = owner.split(",")[0].trim();
+  const heroProfile = [
+    ["Имя", "Варя (Varia)"],
+    ["Возраст", "12 лет на 07.09.2026"],
+    ["Дата рождения", "25.08.2014"],
+    ["Чип", "968000011873589"],
+    ["Владелец", ownerName],
+  ];
+  const heroProfileHtml = page.profile
+    ? `<dl class="hero__profile">
+${heroProfile
   .map(([label, value]) => `<div><dt>${escape(label)}</dt><dd>${escape(value)}</dd></div>`)
-  .join("\n");
+  .join("\n")}
+            </dl>`
+    : "";
 
-const heroImageHtml = heroImage
-  ? `<figure class="hero__portrait">
+  const heroImageHtml = heroImage
+    ? `<figure class="hero__portrait">
           <img src="${heroImage}" alt="${escape(heroImageAlt)}">
           <figcaption>Варя</figcaption>
         </figure>`
-  : "";
+    : "";
 
-/* -------------------------------------------------------------------------
-   Страница
-   ------------------------------------------------------------------------- */
+  const period = (meta.find((m) => /период|данные/i.test(m.label)) || {}).value || "";
 
-const period = (meta.find((m) => /период/i.test(m.label)) || {}).value || "";
-
-const html = `<!doctype html>
+  return `<!doctype html>
 <html lang="ru" dir="ltr">
 <head>
 <meta charset="utf-8">
@@ -330,6 +363,10 @@ ${css}
   <nav class="toc" id="toc" aria-label="Оглавление">
     <p class="toc__brand">${escape(title.split(" ")[0])} <span>medical file</span></p>
     <p class="toc__sub">${escape(period)}</p>
+    <p class="toc__label">Документы</p>
+    <ul class="toc__pages">
+${pagesHtml}
+    </ul>
     <p class="toc__label">Разделы</p>
     <ol>
 ${tocHtml}
@@ -344,16 +381,14 @@ ${tocHtml}
           <div class="hero__copy">
             <p class="hero__eyebrow">Ветеринарный отчёт</p>
             <h1>${inline(title)}</h1>
-            <dl class="hero__profile">
-${heroProfileHtml}
-            </dl>
+            ${heroProfileHtml}
           </div>
         </div>
         <hr class="hero__divider">
         <p class="hero__lede">${inline(lede)}</p>
       </header>
 
-${out.join("\n")}
+${doc.body}
     </div>
   </main>
 </div>
@@ -364,10 +399,20 @@ ${js}
 </body>
 </html>
 `;
+}
 
-fs.writeFileSync(OUT, html, "utf8");
+/* -------------------------------------------------------------------------
+   Запуск
+   ------------------------------------------------------------------------- */
 
-console.log(
-  `index.html — ${(Buffer.byteLength(html) / 1024).toFixed(0)} КБ, ` +
-    `${toc.length} разделов, ${(html.match(/class="entry"/g) || []).length} записей хронологии`
-);
+const docs = PAGES.map(buildPage);
+
+for (const doc of docs) {
+  const html = renderPage(doc, docs);
+  fs.writeFileSync(path.join(ROOT, doc.page.out), html, "utf8");
+
+  console.log(
+    `${doc.page.out} — ${(Buffer.byteLength(html) / 1024).toFixed(0)} КБ, ` +
+      `${doc.toc.length} разделов, ${(html.match(/class="entry"/g) || []).length} записей хронологии`
+  );
+}

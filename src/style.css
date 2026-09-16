@@ -160,6 +160,36 @@ body {
   color: var(--faint);
 }
 
+/* Переключатель документов: хронология / аналитическая часть. */
+.toc__pages {
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.toc__pages a {
+  display: block;
+  padding: 7px 10px;
+  margin-left: -9px;
+  border-radius: 7px;
+  border-left: 2px solid transparent;
+  color: var(--text-soft);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background .12s ease, color .12s ease;
+}
+
+.toc__pages a:hover { background: var(--surface); color: var(--text); }
+
+.toc__pages a.is-current {
+  background: var(--accent-soft);
+  border-left-color: var(--accent);
+  color: var(--accent);
+  font-weight: 650;
+}
+
 .toc ol { list-style: none; margin: 0; padding: 0; }
 
 .toc a {

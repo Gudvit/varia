@@ -1,0 +1,1265 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Варя (Varia) — анализ данных</title>
+<meta name="description" content="Анализ данных. 13.04.2026 – 16.09.2026.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%88%3C/text%3E%3C/svg%3E">
+<style>
+/* ==========================================================================
+   Варя — медицинская хронология. Оформление печатного документа для экрана.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  --bg:          #faf9f7;
+  --bg-tint:     #f2efea;
+  --surface:     #ffffff;
+  --surface-alt: #f7f5f2;
+
+  --text:        #1b1a18;
+  --text-soft:   #4a4641;
+  --muted:       #7a736b;
+  --faint:       #a29a91;
+
+  --line:        #e4dfd8;
+  --line-strong: #cec7bd;
+
+  --accent:      #2b6a63;
+  --accent-soft: #e3efed;
+  --accent-line: #9cc4bf;
+
+  --warn:        #9a5b09;
+  --warn-soft:   #fdf3e2;
+  --warn-line:   #e3b872;
+
+  --up:          #a8371f;
+  --down:        #1f5f8b;
+
+  --shadow-sm: 0 1px 2px rgba(28, 24, 18, .05), 0 1px 3px rgba(28, 24, 18, .04);
+  --shadow-md: 0 4px 16px rgba(28, 24, 18, .08), 0 1px 3px rgba(28, 24, 18, .05);
+
+  --sans:  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --serif: Georgia, "Times New Roman", Times, serif;
+
+  --sidebar: 300px;
+  --measure: 74ch;
+  --radius: 10px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg:          #14161a;
+  --bg-tint:     #191c21;
+  --surface:     #1b1f25;
+  --surface-alt: #212630;
+
+  --text:        #e9e7e4;
+  --text-soft:   #c8c5c0;
+  --muted:       #97a0a9;
+  --faint:       #6d757e;
+
+  --line:        #2b313a;
+  --line-strong: #3a424d;
+
+  --accent:      #6fbdb3;
+  --accent-soft: #16302e;
+  --accent-line: #2f5f5a;
+
+  --warn:        #e0a95c;
+  --warn-soft:   #2b2416;
+  --warn-line:   #6b5528;
+
+  --up:          #e8836b;
+  --down:        #74b3dd;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, .45);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.68;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
+
+/* --- Прогресс чтения --------------------------------------------------- */
+
+#progress {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 2px;
+  width: 0;
+  background: var(--accent);
+  z-index: 60;
+  transition: width .1s linear;
+}
+
+/* --- Каркас ------------------------------------------------------------ */
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar) minmax(0, 1fr);
+  align-items: start;
+}
+
+/* --- Оглавление -------------------------------------------------------- */
+
+.toc {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 28px 20px 40px 32px;
+  border-right: 1px solid var(--line);
+  background: var(--bg-tint);
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.toc__brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: -.01em;
+  color: var(--text);
+}
+
+.toc__brand span { font-size: 13px; font-weight: 500; color: var(--muted); }
+
+.toc__sub {
+  margin: 0 0 22px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.toc__label {
+  margin: 0 0 10px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+/* Переключатель документов: хронология / аналитическая часть. */
+.toc__pages {
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.toc__pages a {
+  display: block;
+  padding: 7px 10px;
+  margin-left: -9px;
+  border-radius: 7px;
+  border-left: 2px solid transparent;
+  color: var(--text-soft);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background .12s ease, color .12s ease;
+}
+
+.toc__pages a:hover { background: var(--surface); color: var(--text); }
+
+.toc__pages a.is-current {
+  background: var(--accent-soft);
+  border-left-color: var(--accent);
+  color: var(--accent);
+  font-weight: 650;
+}
+
+.toc ol { list-style: none; margin: 0; padding: 0; }
+
+.toc a {
+  display: flex;
+  gap: 9px;
+  padding: 5px 10px 5px 9px;
+  margin-left: -9px;
+  border-radius: 7px;
+  color: var(--text-soft);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: background .12s ease, color .12s ease;
+}
+
+.toc a:hover { background: var(--surface); color: var(--text); }
+
+.toc a .num {
+  flex: none;
+  min-width: 1.35em;
+  font-variant-numeric: tabular-nums;
+  color: var(--faint);
+}
+
+.toc a.is-active {
+  background: var(--surface);
+  border-left-color: var(--accent);
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.toc a.is-active .num { color: var(--accent); }
+
+.toc__sublist {
+  margin: 2px 0 8px 12px;
+  padding-left: 22px;
+  border-left: 1px solid var(--line-strong);
+}
+
+.toc__sublist a {
+  margin-left: 0;
+  padding-block: 3px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+/* --- Панель управления ------------------------------------------------- */
+
+.controls {
+  position: fixed;
+  top: 14px;
+  right: 18px;
+  z-index: 50;
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  min-width: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-soft);
+  font: 500 13px/1 var(--sans);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: color .12s ease, border-color .12s ease, transform .12s ease;
+}
+
+.btn:hover { color: var(--accent); border-color: var(--accent-line); }
+.btn:active { transform: translateY(1px); }
+.btn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+#menu-btn { display: none; }
+
+/* --- Основная колонка -------------------------------------------------- */
+
+.main { min-width: 0; padding: 0 clamp(20px, 5vw, 72px) 120px; }
+.wrap { max-width: var(--measure); margin: 0 auto; }
+
+/* --- Шапка документа --------------------------------------------------- */
+
+.hero { padding: clamp(48px, 9vh, 96px) 0 0; }
+
+.hero__intro {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+  gap: clamp(22px, 5vw, 44px);
+  align-items: center;
+}
+
+.hero__copy { min-width: 0; }
+
+.hero__portrait {
+  margin: 0;
+  justify-self: start;
+  width: min(240px, 100%);
+  font-family: var(--sans);
+}
+
+.hero__portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 45%;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow-md);
+}
+
+.hero__portrait figcaption {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--muted);
+}
+
+.hero__profile {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 28px 0 0;
+  padding: 0;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-family: var(--sans);
+}
+
+.hero__profile div {
+  padding: 13px 16px;
+  background: var(--surface);
+}
+
+.hero__profile div:last-child { grid-column: 1 / -1; }
+
+.hero__profile dt {
+  margin: 0 0 3px;
+  font: 600 10.5px/1 var(--sans);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.hero__profile dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.hero__divider {
+  margin: 38px 0 0;
+  border: 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.hero__eyebrow {
+  margin: 0 0 14px;
+  font: 700 11px/1 var(--sans);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: clamp(34px, 5.4vw, 54px);
+  font-weight: 680;
+  line-height: 1.05;
+  letter-spacing: -.028em;
+}
+
+.hero__lede {
+  margin: 22px 0 0;
+  font-size: clamp(18px, 2.4vw, 21px);
+  line-height: 1.45;
+  color: var(--text-soft);
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px;
+  margin: 34px 0 0;
+  padding: 0;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.meta div {
+  padding: 13px 16px;
+  background: var(--surface);
+}
+
+.meta dt {
+  margin: 0 0 3px;
+  font: 600 10.5px/1 var(--sans);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.meta dd {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 550;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+/* --- Разделы ----------------------------------------------------------- */
+
+.section { margin-top: 72px; }
+.section:first-of-type { margin-top: 56px; }
+
+/* Вводное клиническое резюме — читается первым, отделено от нумерованных разделов */
+.section--brief {
+  padding: 4px clamp(18px, 3vw, 34px) 30px;
+  border: 1px solid var(--accent-line);
+  border-radius: 14px;
+  background: var(--bg-tint);
+}
+
+.section--brief > h2 { border-top: 0; }
+.section--brief .table-wrap { background: var(--surface); }
+.section--brief > *:last-child { margin-bottom: 0; }
+
+/* В сводке ⚠️ встречается почти в каждом пункте — там достаточно самого значка,
+   иначе половина страницы заливается плашками и подсветка перестаёт работать. */
+.section--brief tr.warn td,
+.section--brief tr.warn:hover td { background: var(--surface); }
+
+.section--brief li.warn {
+  margin-left: 0;
+  padding: 0;
+  border-left: 0;
+  background: none;
+  list-style: disc;
+}
+
+.section > h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0 0 26px;
+  padding-top: 26px;
+  border-top: 2px solid var(--line-strong);
+  font-family: var(--sans);
+  font-size: clamp(23px, 3.2vw, 30px);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -.022em;
+}
+
+.section > h2 .num {
+  flex: none;
+  font-size: .62em;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  transform: translateY(-.12em);
+}
+
+h3, h4 {
+  font-family: var(--sans);
+  letter-spacing: -.012em;
+  line-height: 1.3;
+}
+
+h3 { margin: 44px 0 18px; font-size: 20px; font-weight: 650; }
+h4 { margin: 34px 0 12px; font-size: 16.5px; font-weight: 650; }
+
+/* Разделитель года в хронологии */
+.year {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 52px 0 30px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.year::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--accent-line), transparent);
+}
+
+/* --- Текст ------------------------------------------------------------- */
+
+p { margin: 0 0 18px; }
+strong { font-weight: 700; color: var(--text); }
+em { color: var(--text-soft); }
+
+ul, ol { margin: 0 0 20px; padding-left: 1.35em; }
+li { margin-bottom: 9px; }
+li::marker { color: var(--faint); }
+
+a { color: var(--accent); text-underline-offset: 2px; }
+
+/* Якоря у заголовков */
+.anchor {
+  margin-left: .4em;
+  font-family: var(--sans);
+  font-size: .58em;
+  font-weight: 500;
+  color: var(--faint);
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity .12s ease;
+}
+
+h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, .entry:hover .anchor { opacity: 1; }
+.anchor:hover { color: var(--accent); }
+
+/* --- Врезки ------------------------------------------------------------ */
+
+.notice {
+  margin: 0 0 22px;
+  padding: 16px 20px;
+  border: 1px solid var(--accent-line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+.notice p:last-child { margin-bottom: 0; }
+
+p.warn, li.warn {
+  position: relative;
+  padding: 11px 16px 11px 15px;
+  border-left: 3px solid var(--warn-line);
+  border-radius: 0 8px 8px 0;
+  background: var(--warn-soft);
+}
+
+p.warn { margin-bottom: 20px; }
+li.warn { margin-left: -.35em; list-style: none; }
+li.warn::before { content: ""; }
+
+/* --- Записи хронологии ------------------------------------------------- */
+
+.entry {
+  position: relative;
+  margin: 0 0 32px;
+  padding: 0 0 0 26px;
+  border-left: 2px solid var(--line);
+}
+
+.entry::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.entry > .entry__head {
+  margin: 0 0 12px;
+  font-family: var(--sans);
+}
+
+.entry__date {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.entry__title {
+  display: block;
+  margin-top: 3px;
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.32;
+  letter-spacing: -.014em;
+  color: var(--text);
+}
+
+.entry > *:last-child { margin-bottom: 0; }
+
+/* --- Таблицы ----------------------------------------------------------- */
+
+.table-wrap {
+  position: relative;
+  margin: 0 0 26px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--line-strong);
+  background: var(--surface-alt);
+  color: var(--text);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  text-align: left;
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  color: var(--text-soft);
+}
+
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:hover td { background: var(--surface-alt); }
+
+/* Первый столбец — «шапка» строки; для широких таблиц закреплён при прокрутке */
+tbody td:first-child { color: var(--text); font-weight: 600; }
+
+.table-wrap[data-wide] th:first-child,
+.table-wrap[data-wide] td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--surface);
+  border-right: 1px solid var(--line);
+}
+
+.table-wrap[data-wide] thead th:first-child { z-index: 3; background: var(--surface-alt); }
+.table-wrap[data-wide] tbody tr:hover td:first-child { background: var(--surface-alt); }
+
+tr.warn td { background: var(--warn-soft); }
+tr.warn:hover td { background: var(--warn-soft); }
+
+.arr { font-weight: 700; }
+.arr.up { color: var(--up); }
+.arr.down { color: var(--down); }
+
+/* --- Подвал ------------------------------------------------------------ */
+
+.colophon {
+  margin-top: 80px;
+  padding-top: 26px;
+  border-top: 2px solid var(--line-strong);
+}
+
+.colophon h2 {
+  margin: 0 0 18px;
+  font-family: var(--sans);
+  font-size: 20px;
+  font-weight: 650;
+}
+
+.colophon p { color: var(--text-soft); font-size: 16px; }
+
+.footnote {
+  margin-top: 34px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--faint);
+}
+
+/* --- Адаптив ----------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+  html { scroll-padding-top: 20px; }
+
+  .layout { grid-template-columns: minmax(0, 1fr); }
+
+  .toc {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(320px, 86vw);
+    z-index: 70;
+    transform: translateX(-101%);
+    transition: transform .22s ease;
+    box-shadow: var(--shadow-md);
+  }
+
+  .toc.is-open { transform: none; }
+
+  #menu-btn { display: inline-flex; }
+
+  .scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 65;
+    background: rgba(20, 18, 15, .42);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease, visibility .2s ease;
+  }
+
+  .scrim.is-open { opacity: 1; visibility: visible; }
+
+  .controls {
+    top: auto;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .main { padding-bottom: 90px; }
+}
+
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  .hero__intro { grid-template-columns: 1fr; }
+  .hero__portrait {
+    justify-self: start;
+    width: min(180px, 70vw);
+  }
+  .hero__profile { grid-template-columns: 1fr; }
+  .hero__divider { margin-top: 28px; }
+  .meta { grid-template-columns: 1fr; }
+  .section { margin-top: 54px; }
+  .entry { padding-left: 20px; }
+}
+
+/* --- Печать / PDF ------------------------------------------------------ */
+
+@media print {
+  :root {
+    --bg: #fff; --bg-tint: #fff; --surface: #fff; --surface-alt: #f4f4f4;
+    --text: #000; --text-soft: #1a1a1a; --muted: #444; --faint: #666;
+    --line: #ccc; --line-strong: #888; --accent: #14524c;
+    --shadow-sm: none; --shadow-md: none;
+  }
+
+  @page { margin: 16mm 14mm; }
+
+  body { font-size: 10.5pt; line-height: 1.5; background: #fff; }
+
+  .toc, .controls, .scrim, #progress, .anchor { display: none !important; }
+  .layout { display: block; }
+  .main { padding: 0; }
+  .wrap { max-width: none; }
+
+  .hero { padding-top: 0; }
+  .hero__intro { grid-template-columns: 34mm minmax(0, 1fr); gap: 10mm; }
+  .hero__portrait img { border-radius: 12px; box-shadow: none; }
+  .hero__portrait figcaption { font-size: 8pt; }
+  .hero h1 { font-size: 26pt; }
+  .hero__profile { margin-top: 16px; }
+  .hero__profile div { padding: 7px 9px; }
+  .hero__profile dt { font-size: 7pt; }
+  .hero__profile dd { font-size: 9pt; }
+  .hero__divider { margin-top: 10mm; }
+
+  .section { margin-top: 26px; }
+  .section > h2 { font-size: 15pt; break-after: avoid; }
+  h3, h4, .entry__head { break-after: avoid; }
+
+  .entry, .table-wrap, .notice, p.warn { break-inside: avoid; }
+  .table-wrap { overflow: visible; box-shadow: none; }
+  thead th { position: static; }
+  .table-wrap[data-wide] th:first-child,
+  .table-wrap[data-wide] td:first-child { position: static; }
+
+  table { font-size: 8.5pt; }
+  a { color: inherit; text-decoration: none; }
+}
+
+</style>
+</head>
+<body>
+<div id="progress" role="presentation"></div>
+<div class="scrim" id="scrim"></div>
+
+<div class="controls">
+  <button class="btn" id="menu-btn" aria-label="Оглавление" aria-expanded="false" aria-controls="toc">
+    <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <button class="btn" id="theme-btn" aria-label="Сменить тему">
+    <svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+  </button>
+  <button class="btn" id="top-btn" aria-label="В начало">
+    <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</div>
+
+<div class="layout">
+  <nav class="toc" id="toc" aria-label="Оглавление">
+    <p class="toc__brand">Варя <span>medical file</span></p>
+    <p class="toc__sub">13.04.2026 – 16.09.2026</p>
+    <p class="toc__label">Документы</p>
+    <ul class="toc__pages">
+<li><a href="index.html">Полная хронология</a></li>
+<li><a href="analysis.html" class="is-current" aria-current="page">Анализ</a></li>
+    </ul>
+    <p class="toc__label">Разделы</p>
+    <ol>
+<li><a href="#chto-eto-za-dokument"><span class="num"></span><span>Что это за документ</span></a></li>
+<li><a href="#glaza-chto-pokazyvayut-dannye-za-17-08-16-09-2026"><span class="num">1</span><span>Глаза: что показывают данные за 17.08 – 16.09.2026</span></a><ol class="toc__sublist"><li><a href="#1-1-odnovremennye-izmeneniya-chto-s-chem-sovpalo-po-vremeni">1.1. Одновременные изменения: что с чем совпало по времени</a></li><li><a href="#1-2-gipoteza-vinovat-steroid-dannymi-ne-podtverzhdaetsya">1.2. Гипотеза «виноват стероид» данными не подтверждается</a></li><li><a href="#1-3-gipoteza-lekarstva-ne-dohodili-do-rogovicy-obyasnyaet-bo">1.3. Гипотеза «лекарства не доходили до роговицы» объясняет больше</a></li><li><a href="#1-4-chto-iz-oftalmologicheskih-dannyh-sopostavimo-a-chto-net">1.4. Что из офтальмологических данных сопоставимо, а что нет</a></li><li><a href="#1-5-chego-v-oftalmologicheskoy-sheme-net">1.5. Чего в офтальмологической схеме нет</a></li><li><a href="#1-6-pochemu-ocenka-uluchsheniya-k-16-09-2026-ne-mozhet-schit">1.6. Почему оценка улучшения к 16.09.2026 не может считаться подтверждением</a></li><li><a href="#1-7-vyvod-po-glazam">1.7. Вывод по глазам</a></li></ol></li>
+<li><a href="#dyhanie-i-plevralnyy-vypot-chto-pokazyvayut-dannye-za-13-04-"><span class="num">2</span><span>Дыхание и плевральный выпот: что показывают данные за 13.04 – 16.09.2026</span></a><ol class="toc__sublist"><li><a href="#2-1-invazivnye-vmeshatelstva-obemy-i-intervaly">2.1. Инвазивные вмешательства: объёмы и интервалы</a></li><li><a href="#2-2-to-zhe-samoe-so-storony-lekarstv">2.2. То же самое со стороны лекарств</a></li><li><a href="#2-3-chto-sovpadaet-s-uluchsheniem">2.3. Что совпадает с улучшением</a></li><li><a href="#2-4-santimetrovye-znacheniya-uzi-ispolzovat-kak-dinamiku-nel">2.4. Сантиметровые значения УЗИ использовать как динамику нельзя</a></li><li><a href="#2-5-domashniy-zhurnal-chdd-okazalsya-luchshim-instrumentom-n">2.5. Домашний журнал ЧДД оказался лучшим инструментом наблюдения</a></li><li><a href="#2-6-melkie-nesootvetstviya-kotorye-stoit-proyasnit">2.6. Мелкие несоответствия, которые стоит прояснить</a></li><li><a href="#2-7-vyvod-po-dyhaniyu">2.7. Вывод по дыханию</a></li></ol></li>
+<li><a href="#ob-etoy-chasti"><span class="num"></span><span>Об этой части</span></a></li>
+    </ol>
+  </nav>
+
+  <main class="main">
+    <div class="wrap">
+      <header class="hero">
+        <div class="hero__intro">
+          
+          <div class="hero__copy">
+            <p class="hero__eyebrow">Ветеринарный отчёт</p>
+            <h1>Варя (Varia)</h1>
+            
+          </div>
+        </div>
+        <hr class="hero__divider">
+        <p class="hero__lede">Анализ данных</p>
+      </header>
+
+<section class="section section--brief" id="chto-eto-za-dokument">
+<h2><span>Что это за документ</span><a class="anchor" href="#chto-eto-za-dokument" aria-hidden="true">#</a></h2>
+<p>Основной отчёт — <a href="index.html">полная хронология</a> — отвечает на вопрос «что задокументировано». Эта часть отвечает на другой вопрос: <strong>что из накопленных данных можно утверждать, а что нельзя.</strong></p>
+
+<p>Здесь сведены в одно место все данные по двум проблемам, которые определяют самочувствие Вари прямо сейчас, — роговица и дыхание/плевральный выпот, — и разобрано отдельно: какие показатели сопоставимы между собой, какие менялись одновременно с лечением, и какие выводы данные выдерживают, а какие нет. Каждый из двух разборов заканчивается отдельным выводом.</p>
+
+<p>Значком ⚠️ отмечены места, где документы противоречат друг другу или данные отсутствуют. Ссылки в скобках — на разделы полной хронологии.</p>
+
+<div class="notice"><p><strong>Документ не заменяет осмотр и заключение ветеринарного врача.</strong> Он составлен владелицей по имеющимся документам и предназначен для того, чтобы задать врачу правильные вопросы, а не заменить его решение.</p></div>
+
+
+</section>
+<section class="section" id="glaza-chto-pokazyvayut-dannye-za-17-08-16-09-2026">
+<h2><span class="num">1</span><span>Глаза: что показывают данные за 17.08 – 16.09.2026</span><a class="anchor" href="#glaza-chto-pokazyvayut-dannye-za-17-08-16-09-2026" aria-hidden="true">#</a></h2>
+<h3 id="1-1-odnovremennye-izmeneniya-chto-s-chem-sovpalo-po-vremeni">1.1. Одновременные изменения: что с чем совпало по времени<a class="anchor" href="#1-1-odnovremennye-izmeneniya-chto-s-chem-sovpalo-po-vremeni" aria-hidden="true">#</a></h3>
+<p>Ключ к интерпретации офтальмологической истории в том, что роговица никогда не наблюдалась изолированно: параллельно менялись доза стероида, линия химиотерапии и сопутствующие препараты.</p>
+
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Период</th>
+<th>Стероид</th>
+<th>Противоопухолевая терапия</th>
+<th>Состояние глаз</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>27.04 – 15.06.2026</td>
+<td>5 мг/день</td>
+<td>Palladia (до 08.06), карбоплатин 18.05</td>
+<td>Глазных жалоб в документах нет</td>
+</tr>
+<tr>
+<td><strong>15.06 – 17.08.2026</strong></td>
+<td><strong>7.5 мг/день</strong> (1.5 табл.)</td>
+<td>Доксорубицин I–III (15.06, 06.07, 27.07)</td>
+<td>~09.08 — выделения; ~11.08 — слезотечение, начат Veraflox</td>
+</tr>
+<tr>
+<td>17.08 – 07.09.2026</td>
+<td>5 мг/день</td>
+<td>Доксорубицин IV (17.08)</td>
+<td><strong>17.08 — язвы/эрозии обоих глаз, флюоресцеин +++</strong>; 18.08 — диагноз ZSO; 25.08 — ухудшение</td>
+</tr>
+<tr>
+<td>07.09 – 11.09.2026</td>
+<td>3.75 мг/день (3/4 табл.)</td>
+<td>Доксорубицин V (07.09)</td>
+<td>10.09 — <strong>ухудшение несмотря на интенсивное лечение</strong>, бандажные линзы, Acatavir</td>
+</tr>
+<tr>
+<td>с 11.09.2026</td>
+<td><strong>5 мг/день</strong> (возврат)</td>
+<td>Химиопрепарат не вводился</td>
+<td>13.09 — начато соблюдение интервалов между каплями; 14.09 — бупренорфин «для глаз»; 16.09 — улучшение со слов владельца</td>
+</tr>
+</tbody></table></div>
+<p>Из этой таблицы видно главное: <strong>глазная симптоматика появилась примерно через восемь недель после того, как 15.06.2026 одновременно произошли два события</strong> — доза преднизолона была повышена с 5 до 7.5 мг/день и была начата линия доксорубицина. По имеющимся данным разделить вклад этих двух факторов невозможно: они начались в один день.</p>
+
+<h3 id="1-2-gipoteza-vinovat-steroid-dannymi-ne-podtverzhdaetsya">1.2. Гипотеза «виноват стероид» данными не подтверждается<a class="anchor" href="#1-2-gipoteza-vinovat-steroid-dannymi-ne-podtverzhdaetsya" aria-hidden="true">#</a></h3>
+<p>Снижение дозы кортикостероида рекомендовал офтальмолог на первом же визите (18.08.2026), и оно дважды было выполнено: 17.08 — с 7.5 до 5 мг, 07.09 — с 5 до 3.75 мг.</p>
+
+<p><strong>Ни одно из двух снижений не сопровождалось улучшением роговицы.</strong> На визите 25.08 (через 8 дней после первого снижения) зафиксировано ухудшение; на визите 10.09 (через 3 дня после второго) — снова ухудшение. Наоборот, единственное отмеченное улучшение (со слов владельца, к 16.09) наступило <strong>после того, как 11.09 доза была возвращена к 5 мг/день.</strong></p>
+
+<p>Это не доказывает, что стероид ни при чём: диапазон, в котором доза менялась, узок (7.5 → 3.75 мг), интервалы наблюдения короткие, а системные кортикостероиды в принципе значимы для роговицы скорее тем, что замедляют эпителизацию и повышают риск инфекции, чем тем, что вызывают сухость. Но <strong>как объяснение наблюдаемой динамики гипотеза не работает: динамика идёт в обратную сторону.</strong></p>
+
+<p class="warn">⚠️ Отдельно стоит зафиксировать, что решение вернуть дозу к 5 мг было принято 11.09.2026 в LoVet — на следующий день после визита, зафиксировавшего ухудшение роговицы, — и в документах никак не соотнесено с рекомендацией офтальмолога. То есть две клиники приняли противоположные решения по одному и тому же параметру, не сославшись друг на друга (разд. 10, 15).</p>
+
+<h3 id="1-3-gipoteza-lekarstva-ne-dohodili-do-rogovicy-obyasnyaet-bo">1.3. Гипотеза «лекарства не доходили до роговицы» объясняет больше<a class="anchor" href="#1-3-gipoteza-lekarstva-ne-dohodili-do-rogovicy-obyasnyaet-bo" aria-hidden="true">#</a></h3>
+<p>С 17.08 по 12.09.2026, то есть почти четыре недели, схема закапывания состояла из 4–6 препаратов, но <strong>интервалы между ними не выдерживались</strong> — это установлено со слов владельца. Каждая следующая капля в этом режиме частично смывает предыдущую, и до роговицы доходит лишь часть дозы. Строгая последовательность с интервалами (2–10 минут между препаратами) была впервые прописана офтальмологом только 10.09.2026 и фактически начала соблюдаться с 13.09.</p>
+
+<p>Хронология совпадений здесь обратная той, что у стероида:</p>
+
+<ul>
+<li>весь период «ухудшения несмотря на интенсивное лечение» (17.08 – 10.09) — это период, когда лечение, вероятно, применялось неэффективно технически;</li>
+<li>первое отмеченное улучшение приходится на третьи сутки правильного применения.</li>
+</ul>
+
+<p><strong>Это меняет смысл заключения от 10.09.2026.</strong> Вывод «ухудшение несмотря на интенсивное лечение» обычно читается как «препараты не работают» и ведёт к эскалации терапии. Если же значительная часть дозы просто не доходила до глаза, то вывод должен читаться иначе — «лечение не было получено в назначенном объёме», и тогда сначала имеет смысл оценить эффект правильно применяемой прежней схемы.</p>
+
+<p class="warn">⚠️ Об изменении техники закапывания офтальмолог не знает: осмотра после 10.09.2026 не было. Это нужно сообщить на ближайшем контроле — иначе улучшение (если оно подтвердится) будет отнесено к бандажным линзам и Acatavir, начатым в тот же день.</p>
+
+<h3 id="1-4-chto-iz-oftalmologicheskih-dannyh-sopostavimo-a-chto-net">1.4. Что из офтальмологических данных сопоставимо, а что нет<a class="anchor" href="#1-4-chto-iz-oftalmologicheskih-dannyh-sopostavimo-a-chto-net" aria-hidden="true">#</a></h3>
+<p><strong>Сопоставимо и стабильно:</strong></p>
+
+<ul>
+<li><strong>Внутриглазное давление:</strong> 18.3/20 (18.08) → 19/19 (25.08) → 19/19 (03.09) мм рт.ст. Измерено прибором, значения устойчивы — признаков вторичного увеита или глаукомы нет.</li>
+<li><strong>Нейроофтальмологический статус (10.09):</strong> menace, dazzle и PLR сохранны с обеих сторон, зрачок адекватен освещённости, глазное дно без отклонений. <strong>Зрение сохранно.</strong> Это, вероятно, самая важная объективная находка последнего визита, и в резюме визита она не выделена.</li>
+<li><strong>Глубина поражения:</strong> во всех четырёх заключениях речь идёт о <strong>поверхностном</strong> дефекте эпителия. Ни на одном визите не описаны признаки, которые меняли бы прогноз качественно, — стромальный дефект, десцеметоцеле, перфорация, выраженная васкуляризация или секвестр роговицы.</li>
+</ul>
+
+<p><strong>Несопоставимо:</strong></p>
+
+<ul>
+<li class="warn">⚠️ <strong>Проценты площади дефекта — 70/80 (25.08), 70/80 (03.09), 70/70 (10.09)</strong> — не измерения, а глазомерные оценки двух разных врачей (Chybowska 25.08 и 03.09, Stefanowicz 18.08 и 10.09). На 10.09 цифра по левому глазу формально ниже предыдущей, а текстовый вывод того же документа — «ухудшение, бóльшие площади дефекта эпителия». Использовать этот ряд как динамику нельзя.</li>
+<li class="warn">⚠️ <strong>Флюоресцеиновая проба задокументирована с результатом только один раз</strong> — 17.08.2026 в LoVet («+++»). В записях Retina окрашивание как отдельный результат не фиксируется, фотодокументация не упоминается. Поэтому объективной, воспроизводимой шкалы динамики за месяц наблюдения в документах попросту нет.</li>
+<li class="warn">⚠️ <strong>Тест Ширмера (STT) не задокументирован ни разу.</strong> Диагноз «синдром сухого глаза» поставлен по косвенным признакам — низкий мениск слёзной плёнки и короткий NIBUT. Это правомерная клиническая оценка, но количественного измерения слезопродукции, от которого обычно отталкиваются при выборе слезостимулирующей терапии, в документах нет.</li>
+</ul>
+
+<h3 id="1-5-chego-v-oftalmologicheskoy-sheme-net">1.5. Чего в офтальмологической схеме нет<a class="anchor" href="#1-5-chego-v-oftalmologicheskoy-sheme-net" aria-hidden="true">#</a></h3>
+<p>Назначения на 10.09.2026 — Acatavir, Tobrex, Vital Drop, Corneregel, Optixcare, аллогенная сыворотка, бандажные линзы — это увлажнение, защита, антибактериальное прикрытие, трофика и противовирусный компонент. В этом перечне <strong>нет препарата, стимулирующего собственную слезопродукцию</strong> (циклоспорин, такролимус), хотя основным диагнозом заявлен именно синдром сухого глаза. Причина не обязательно в упущении: при активном дефекте эпителия и на фоне иммуносупрессии такие препараты применяют с осторожностью. Но в документах это решение не объяснено, и его стоит проговорить.</p>
+
+<p class="warn">⚠️ Также нигде не задокументировано <strong>подтверждение носительства FHV1</strong> (ПЦР с конъюнктивального мазка). Герпесвирус фигурирует во всех четырёх заключениях как предположение «типично для породы», и 10.09 на его основании назначен местный противовирусный препарат — но эмпирически, без теста. Системный противовирусный препарат (фамцикловир) не обсуждался.</p>
+
+<p class="warn">⚠️ Действующее вещество Acatavir в медицинской записи не указано — требуется сверка по упаковке (разд. 15).</p>
+
+<h3 id="1-6-pochemu-ocenka-uluchsheniya-k-16-09-2026-ne-mozhet-schit">1.6. Почему оценка улучшения к 16.09.2026 не может считаться подтверждением<a class="anchor" href="#1-6-pochemu-ocenka-uluchsheniya-k-16-09-2026-ne-mozhet-schit" aria-hidden="true">#</a></h3>
+<p>К 16.09.2026 владелец отмечает улучшение. В этот же промежуток изменились <strong>три</strong> обстоятельства сразу:</p>
+
+<ol>
+<li>с 13.09 капли даются с соблюдением интервалов (то есть доза стала доходить до роговицы);</li>
+<li>с 14.09 фактически начат бупренорфин каждые 12 часов — назначенный ещё 11.09, но до визита 14.09 не применявшийся;</li>
+<li>13.09 однократно, пробно, дан Yellox.</li>
+</ol>
+
+<p>Пункт 2 критичен методологически: <strong>владелец судит о состоянии глаз по тому, насколько кошка щурится и выглядит болезненной</strong>, а опиоидная анальгезия снимает именно этот признак — независимо от того, что происходит с эпителием. Поэтому по домашнему наблюдению отличить заживление от обезболивания нельзя в принципе. Разделить их может только окрашивание флюоресцеином на осмотре.</p>
+
+<p class="warn">⚠️ Вывод практического характера: <strong>до офтальмологического контроля нельзя снижать ни капли, ни обезболивание</strong> — улучшение может держаться на них.</p>
+
+<h3 id="1-7-vyvod-po-glazam">1.7. Вывод по глазам<a class="anchor" href="#1-7-vyvod-po-glazam" aria-hidden="true">#</a></h3>
+<ol>
+<li><strong>Объективно задокументировано:</strong> двусторонний поверхностный дефект эпителия роговицы на фоне нарушенного увлажнения, не заживший за период с 17.08 по 10.09.2026 — это <strong>более трёх недель</strong> между первым и последним осмотром, а к 16.09.2026 — уже месяц. Речь идёт не об острой абразии, а о хроническом, плохо заживающем дефекте. Такая длительность сама по себе меняет диагностическую категорию и заслуживает прямого обсуждения с офтальмологом.</li>
+<li><strong>Зрение и внутриглазное давление сохранны, поражение остаётся поверхностным</strong> — угрожающих глазу признаков за месяц наблюдения не появилось.</li>
+<li><strong>Динамику по документам оценить нельзя:</strong> проценты площади несопоставимы, флюоресцеин с результатом задокументирован один раз, фотодокументации нет. Все выводы об «ухудшении» и «улучшении» — словесные оценки разных врачей и владельца.</li>
+<li><strong>Из двух проверяемых объяснений «ухудшения несмотря на лечение» данные больше поддерживают техническое:</strong> дважды выполненное снижение стероида улучшения не дало, а первое улучшение совпало с началом правильного применения капель (и с началом обезболивания).</li>
+<li><strong>Ближайший офтальмологический контроль — до 24.09.2026 — является решающей точкой.</strong> От него нужно получить не словесную оценку, а сопоставимый результат: окрашивание флюоресцеином с фотографией и, желательно, измерение слезопродукции.</li>
+</ol>
+
+
+</section>
+<section class="section" id="dyhanie-i-plevralnyy-vypot-chto-pokazyvayut-dannye-za-13-04-">
+<h2><span class="num">2</span><span>Дыхание и плевральный выпот: что показывают данные за 13.04 – 16.09.2026</span><a class="anchor" href="#dyhanie-i-plevralnyy-vypot-chto-pokazyvayut-dannye-za-13-04-" aria-hidden="true">#</a></h2>
+<h3 id="2-1-invazivnye-vmeshatelstva-obemy-i-intervaly">2.1. Инвазивные вмешательства: объёмы и интервалы<a class="anchor" href="#2-1-invazivnye-vmeshatelstva-obemy-i-intervaly" aria-hidden="true">#</a></h3>
+<p>Это единственный полностью объективный ряд по выпоту за всю историю — объёмы фактически эвакуированной жидкости.</p>
+
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Дата</th>
+<th>Событие</th>
+<th>Объём</th>
+<th>Интервал от предыдущей</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>11.05.2026</td>
+<td>Пункция грудной клетки, LoVet (прогрессия по УЗИ)</td>
+<td><strong>160 мл</strong></td>
+<td>—</td>
+</tr>
+<tr class="warn">
+<td>~14.06.2026</td>
+<td>Дежурная клиника, после ночного шумного дыхания (⚠️ документ не загружен)</td>
+<td><strong>28 мл</strong></td>
+<td>34 дня</td>
+</tr>
+<tr>
+<td>06.07.2026</td>
+<td>Пункция на фоне ухудшения дыхания, LoVet</td>
+<td><strong>60 мл</strong> кровянистой жидкости</td>
+<td>22 дня</td>
+</tr>
+<tr>
+<td>14.09.2026</td>
+<td><strong>От пункции отказались</strong> ввиду стабильного состояния</td>
+<td>—</td>
+<td><strong>70 дней без пункции</strong></td>
+</tr>
+</tbody></table></div>
+<p><strong>Это самая содержательная находка всего анализа.</strong> За период с мая по начало июля выпот трижды потребовал вмешательства с интервалами в 3–5 недель, а с 06.07.2026 по 16.09.2026 — десять недель — не потребовал ни разу, включая визит 14.09, на котором пункция обсуждалась и была отклонена.</p>
+
+<h3 id="2-2-to-zhe-samoe-so-storony-lekarstv">2.2. То же самое со стороны лекарств<a class="anchor" href="#2-2-to-zhe-samoe-so-storony-lekarstv" aria-hidden="true">#</a></h3>
+<div class="table-wrap" tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Период</th>
+<th>Фуросемид</th>
+<th>Что происходило с дыханием</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>29.04 – 18.05.2026</td>
+<td>Начат (Libeo 10 мг, 1/2 табл.)</td>
+<td>ЧДД во сне 30/мин; 11.05 — пункция 160 мл</td>
+</tr>
+<tr>
+<td>18.05 – 13.06.2026</td>
+<td>Снижен до 1/4 табл.</td>
+<td>ЧДД на приёме 26–30/мин</td>
+</tr>
+<tr>
+<td>13.06 – 15.06.2026</td>
+<td><strong>Эскалация: 1/2 → 1.5 табл./сут, затем 3×1.5 табл.</strong></td>
+<td>13.06 — ЧДД 57/мин в покое; в ночь на 14.06 — шумное дыхание, пункция 28 мл</td>
+</tr>
+<tr>
+<td>15.06 – 27.07.2026</td>
+<td>Продолжается</td>
+<td>06.07 — ухудшение дыхания, пункция 60 мл</td>
+</tr>
+<tr>
+<td><strong>27.07 – 12.09.2026</strong></td>
+<td><strong>Отменён полностью</strong></td>
+<td>Эпизодов одышки в документах нет; 11.09 — ЧДД 27–38/мин</td>
+</tr>
+<tr class="warn">
+<td>13–14.09.2026</td>
+<td>⚠️ <strong>Возобновлён</strong> (10 мг, 1/4 табл., по потребности)</td>
+<td>ЧДД в эти дни 28–35/мин, без одышки</td>
+</tr>
+</tbody></table></div>
+<p class="warn">Обращает на себя внимание, что <strong>самый тяжёлый респираторный эпизод всей истории (13–14.06.2026) произошёл на фоне максимальных доз фуросемида</strong>, а самый спокойный период (конец июля — сентябрь) — на фоне его полной отмены. Это согласуется с общим правилом: выпот опухолевой природы плохо отвечает на диуретики, поскольку механизм его накопления не гидростатический. ⚠️ Показание к возобновлению фуросемида 13–14.09.2026 в документах не сформулировано, планируемая длительность не указана, при том что калий на 14.09 повышен (5.14 ммоль/л) — то есть препарат не даёт даже ожидаемого метаболического эффекта.</p>
+
+<h3 id="2-3-chto-sovpadaet-s-uluchsheniem">2.3. Что совпадает с улучшением<a class="anchor" href="#2-3-chto-sovpadaet-s-uluchsheniem" aria-hidden="true">#</a></h3>
+<p>Стабилизация респираторной картины (последняя пункция 06.07, отмена фуросемида 27.07) приходится на период, начавшийся <strong>через 3–6 недель после старта доксорубицина 15.06.2026.</strong></p>
+
+<p>Прямых доказательств причинной связи нет, и объективной оценки опухолевого ответа в документах тоже нет: последняя количественная визуализация грудной клетки — TFAST от 23.06.2026 с заключением «стабильная болезнь», после чего описания велись словесно. Но <strong>контроль выпота — единственный измеримый признак ответа на лечение, доступный по имеющимся данным</strong>, и он изменился в благоприятную сторону именно в период доксорубицина. Это существенно для решения о шестой дозе (ожидаемой ~28.09.2026), которое в документах пока не зафиксировано: вопрос «работает ли химиотерапия» не остаётся без всяких данных — косвенные данные есть, и они скорее за продолжение.</p>
+
+<h3 id="2-4-santimetrovye-znacheniya-uzi-ispolzovat-kak-dinamiku-nel">2.4. Сантиметровые значения УЗИ использовать как динамику нельзя<a class="anchor" href="#2-4-santimetrovye-znacheniya-uzi-ispolzovat-kak-dinamiku-nel" aria-hidden="true">#</a></h3>
+<div class="table-wrap" tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Дата</th>
+<th>Значение</th>
+<th>Врач</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>02.09.2026</td>
+<td>слева 0.8 см, справа 0.53 см</td>
+<td>dr Małgorzata Malec</td>
+</tr>
+<tr>
+<td>07.09.2026</td>
+<td>слева 2.0 см, справа 1.5 см</td>
+<td>dr Agata Drewniak (устно — «без изменений»)</td>
+</tr>
+<tr>
+<td>11.09.2026</td>
+<td>«столько же, сколько при последнем исследовании»</td>
+<td>lek. wet. Oliwia Szaflik</td>
+</tr>
+<tr>
+<td>14.09.2026</td>
+<td>«умеренное количество с обеих сторон»</td>
+<td>lek. wet. Aldona Gromny</td>
+</tr>
+</tbody></table></div>
+<p class="warn">⚠️ Четыре последовательные оценки выполнены <strong>четырьмя разными врачами</strong>, двумя разными форматами (число и словесная оценка), без указания точки и плоскости измерения. При таких условиях расхождение 0.8 → 2.0 см за пять дней объясняется межисследовательской вариацией не менее правдоподобно, чем реальным накоплением жидкости, — тем более что врач, получивший бóльшую цифру, сам оценил количество как неизменившееся.</p>
+
+<p>Практический смысл: <strong>этот ряд не подтверждает и не опровергает ничего.</strong> Он не может служить ни основанием для тревоги, ни основанием для спокойствия, и в таком виде его не следует передавать консультанту как динамику. Вопрос к клинике — фиксировать измерение стандартизованно (одна точка, одна плоскость, с указанием исследователя) либо честно вести только словесную оценку.</p>
+
+<h3 id="2-5-domashniy-zhurnal-chdd-okazalsya-luchshim-instrumentom-n">2.5. Домашний журнал ЧДД оказался лучшим инструментом наблюдения<a class="anchor" href="#2-5-domashniy-zhurnal-chdd-okazalsya-luchshim-instrumentom-n" aria-hidden="true">#</a></h3>
+<p>Журнал за 10–16.09.2026 (разд. 4) обладает двумя свойствами, которых нет у УЗИ-ряда: он ведётся одним наблюдателем по одной методике и он <strong>верифицирован</strong> — значение 28–29/мин в полночь 14.09 совпало с записью клиники за тот же день.</p>
+
+<p>Что он показывает:</p>
+
+<ul>
+<li><strong>Тренда к росту за неделю нет.</strong> Диапазон 10.09 — 26–37, диапазон 16.09 — 28–38; дни между ними укладываются в тот же коридор. За семь суток наблюдения быстрого накопления жидкости не происходило. Это объективно подкрепляет решение от 14.09 воздержаться от пункции.</li>
+<li><strong>Измерения во сне укладываются в норму.</strong> Клинический порог «менее 30/мин» установлен именно для сна, и все помеченные как сон или ночные значения ему соответствуют или близки: 22:57 — 26 (10.09), 00:29 — 28–29 (14.09), 11:57 — 28 (16.09). Более высокие значения 32–38 сопровождаются пометками «не сон, сидит», «поменяла позицию».</li>
+<li class="warn">⚠️ <strong>Ограничение:</strong> большинство измерений сделано не во сне, поэтому сравнивать весь массив между собой некорректно, а средние по дню завышены относительно клинически значимой величины.</li>
+</ul>
+
+<p>Отсюда конкретное предложение по дальнейшему мониторингу: <strong>не менее одного измерения в сутки строго во сне, с явной пометкой «сон»</strong> — только такой ряд будет сопоставим с порогом «менее 30» и пригоден для решения о пункции. Остальные измерения полезны, но ведутся отдельно.</p>
+
+<h3 id="2-6-melkie-nesootvetstviya-kotorye-stoit-proyasnit">2.6. Мелкие несоответствия, которые стоит прояснить<a class="anchor" href="#2-6-melkie-nesootvetstviya-kotorye-stoit-proyasnit" aria-hidden="true">#</a></h3>
+<ul>
+<li class="warn">⚠️ <strong>Оксигенотерапия 14.09.2026.</strong> В перечне услуг визита она есть, а в описании осмотра — «дыхание учащённое, <strong>без одышки</strong>, пациент в стабильном состоянии». Была ли она частью рутинной поддержки при манипуляциях и заборе крови или ответом на эпизод, по документу неясно. Для оценки респираторного резерва это существенная разница.</li>
+<li class="warn">⚠️ <strong>«На Varenzin дышала быстрее»</strong> (со слов владельца, запись 11.09.2026). Varenzin (молидустат) применялся 19.08–07.09.2026; домашний журнал ЧДД начат 10.09, то есть уже после отмены. Проверить это наблюдение по цифрам невозможно — сопоставимых измерений за период приёма нет.</li>
+<li class="warn">⚠️ <strong>Разрастания в пределах стенки грудной клетки</strong> (TFAST, 14.09.2026) — находка описана впервые и никак не откомментирована. Она находится ровно в той анатомической области, которая объясняет рецидивирующий выпот, и относится к тому же ряду, что и субплевральные консолидации от 13.04.2026 и очаги от 23.06.2026. Связаны ли эти описания между собой — по документам установить нельзя.</li>
+<li class="warn">⚠️ <strong>Критерии пункции нигде не заданы.</strong> 11.09 дренирование упомянуто как вариант «при отсутствии улучшения», 14.09 от него отказались «ввиду стабильного состояния». Числового порога — по ЧДД, по сантиметрам, по клиническим признакам — в документах нет, хотя именно он нужен владельцу дома.</li>
+</ul>
+
+<h3 id="2-7-vyvod-po-dyhaniyu">2.7. Вывод по дыханию<a class="anchor" href="#2-7-vyvod-po-dyhaniyu" aria-hidden="true">#</a></h3>
+<ol>
+<li><strong>За десять недель (06.07 – 16.09.2026) выпот ни разу не потребовал пункции</strong>, а за восемь недель до этого их было три, с интервалами 3–5 недель и объёмами 160, 28 и 60 мл. Это самый надёжный из имеющихся признаков, и он говорит о стабилизации.</li>
+<li><strong>Стабилизация сохраняется без диуретика:</strong> фуросемид был отменён 27.07.2026, и период без него оказался самым спокойным. Возобновление 13–14.09 клинически не обосновано в документах.</li>
+<li><strong>По времени стабилизация совпадает с линией доксорубицина.</strong> Это не доказательство ответа опухоли, но это единственный измеримый косвенный признак пользы от лечения, и его следует учитывать при решении о шестой дозе.</li>
+<li><strong>Текущий уровень ЧДД тревоги не вызывает:</strong> значения во сне — в пределах нормы, недельного тренда к росту нет, одышки при осмотре 14.09 не было.</li>
+<li><strong>Инструмент наблюдения нужно поменять местами с УЗИ:</strong> сантиметровый ряд четырёх разных врачей непригоден для оценки динамики, а домашний журнал — пригоден, если стандартизировать хотя бы одно измерение в сутки во сне. Решение о пункции разумнее привязывать к нему, а не к сантиметрам.</li>
+<li class="warn">⚠️ <strong>Главный незакрытый риск здесь не цифра, а отсутствие правила:</strong> ни один документ не говорит, при каком значении ЧДД или каком признаке владелец должен ехать в клинику немедленно.</li>
+</ol>
+
+
+</section>
+<footer class="colophon" id="ob-etoy-chasti">
+<h2>Об этой части<a class="anchor" href="#ob-etoy-chasti" aria-hidden="true">#</a></h2>
+<p>Аналитическая часть составлена владелицей на основании тех же документов, что и полная хронология, и не содержит данных, которых нет в разделах 1–16 основного отчёта. Все выводы здесь — о том, что позволяют и чего не позволяют утверждать имеющиеся записи; они не являются клиническим заключением и не заменяют осмотр врача.</p>
+
+<p>Последнее обновление — 16.09.2026.</p>
+</footer>
+    </div>
+  </main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var root = document.documentElement;
+  var STORE = "varia-theme";
+
+  /* --- Тема --------------------------------------------------------- */
+
+  function apply(theme) {
+    if (theme === "dark" || theme === "light") root.setAttribute("data-theme", theme);
+    else root.removeAttribute("data-theme");
+  }
+
+  function current() {
+    var saved = null;
+    try { saved = localStorage.getItem(STORE); } catch (e) {}
+    if (saved) return saved;
+    return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  apply(current());
+
+  var themeBtn = document.getElementById("theme-btn");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      var next = current() === "dark" ? "light" : "dark";
+      apply(next);
+      try { localStorage.setItem(STORE, next); } catch (e) {}
+      themeBtn.setAttribute("aria-label", next === "dark" ? "Светлая тема" : "Тёмная тема");
+    });
+  }
+
+  /* --- Мобильное меню ----------------------------------------------- */
+
+  var toc = document.getElementById("toc");
+  var scrim = document.getElementById("scrim");
+  var menuBtn = document.getElementById("menu-btn");
+
+  function setMenu(open) {
+    if (!toc || !scrim) return;
+    toc.classList.toggle("is-open", open);
+    scrim.classList.toggle("is-open", open);
+    if (menuBtn) menuBtn.setAttribute("aria-expanded", String(open));
+  }
+
+  if (menuBtn) menuBtn.addEventListener("click", function () { setMenu(!toc.classList.contains("is-open")); });
+  if (scrim) scrim.addEventListener("click", function () { setMenu(false); });
+  if (toc) toc.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
+
+  /* --- Прогресс чтения ---------------------------------------------- */
+
+  var bar = document.getElementById("progress");
+  var links = Array.prototype.slice.call(document.querySelectorAll(".toc a[href^='#']"));
+  var targets = links
+    .map(function (a) { return document.getElementById(decodeURIComponent(a.hash.slice(1))); })
+    .filter(Boolean);
+  var activeLink = null;
+  var ticking = false;
+
+  function update() {
+    ticking = false;
+
+    if (bar) {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (max > 0 ? Math.min(1, window.scrollY / max) * 100 : 0) + "%";
+    }
+
+    // Активный пункт оглавления — последний заголовок выше линии чтения.
+    var line = window.scrollY + window.innerHeight * 0.28;
+    var found = null;
+    for (var i = 0; i < targets.length; i++) {
+      if (targets[i].getBoundingClientRect().top + window.scrollY <= line) found = links[i];
+      else break;
+    }
+    if (!found && links.length) found = links[0];
+
+    if (found !== activeLink) {
+      if (activeLink) activeLink.classList.remove("is-active");
+      if (found) {
+        found.classList.add("is-active");
+        if (toc && window.innerWidth > 1000) {
+          var box = found.getBoundingClientRect();
+          var view = toc.getBoundingClientRect();
+          if (box.top < view.top + 40 || box.bottom > view.bottom - 40) {
+            found.scrollIntoView({ block: "center" });
+          }
+        }
+      }
+      activeLink = found;
+    }
+  }
+
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  update();
+
+  /* --- Наверх -------------------------------------------------------- */
+
+  var topBtn = document.getElementById("top-btn");
+  if (topBtn) {
+    topBtn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+})();
+
+</script>
+</body>
+</html>
