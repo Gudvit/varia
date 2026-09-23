@@ -33,7 +33,6 @@
   --shadow-md: 0 4px 16px rgba(28, 24, 18, .08), 0 1px 3px rgba(28, 24, 18, .05);
 
   --sans:  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --serif: Georgia, "Times New Roman", Times, serif;
 
   --sidebar: 300px;
   --measure: 74ch;
@@ -83,9 +82,9 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: var(--serif);
-  font-size: 17px;
-  line-height: 1.68;
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.62;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
