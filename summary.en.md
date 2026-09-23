@@ -13,8 +13,8 @@
 Female spayed British Longhair, 12 years, **4.6 kg** (5.2 kg in July). Metastatic high-grade mammary carcinoma, 5 doses of doxorubicin. Three problems are worsening at the same time: **both corneas** (keratomalacia), **pleural effusion**, and the **GI tract** (ultrasound signs of gastritis, nausea, markedly reduced appetite).
 
 - **Ophthalmologist (Retina, 23.09):** urgent surgery recommended — corneal cross-linking + ACell Vet + tarsorrhaphy; about 60% chance of success in writing (verbally: "without chemotherapy it would be about 95%"). Without surgery, enucleation may become necessary. Visual responses are still present.
-- **Primary vet (LoVet, 23.09):** "condition is not good"; not responding to treatment of stomach inflammation. Surgery only via 24-hour hospitalisation (IV analgesia and antiemetics, chest drainage, possibly a nasal feeding tube), high risk. If nothing changes over the next few days, consider euthanasia.
-- The two clinics' positions **have not been reconciled**, and no criteria for judging "the next few days" have been set.
+- **Primary vet (LoVet, 23.09):** "condition is not good"; not responding to treatment of stomach inflammation. Surgery only via 24-hour hospitalisation (IV analgesia and antiemetics, chest drainage, possibly a nasal feeding tube), high risk.
+- The two clinics' positions **have not been reconciled**.
 
 ## 1. Oncology
 
@@ -54,12 +54,11 @@ Female spayed British Longhair, 12 years, **4.6 kg** (5.2 kg in July). Metastati
 ## 5. Decisions needed
 
 1. **Eye surgery:** yes or no — and if yes, where and under what anaesthesia. The Retina and LoVet positions need to be brought together.
-2. **Goal of care:** specific criteria for judging "the next few days".
-3. **Nutrition and hydration:** how many ml of water per day are needed; whether SC fluids or a feeding tube are indicated.
-4. **Doxorubicin dose VI** (~28.09) given her current condition.
-5. **Effusion:** whether thoracocentesis is needed now; at what sleeping respiratory rate to come in.
-6. **Steroid:** helps hold back the effusion, but harms the stomach and lowers the chance of eye surgery succeeding. Needs a joint decision by both clinics.
-7. **Dosing order:** sucralfate may reduce absorption of omeprazole and prednisolone.
+2. **Nutrition and hydration:** how many ml of water per day are needed; whether SC fluids or a feeding tube are indicated.
+3. **Doxorubicin dose VI** (~28.09) given her current condition.
+4. **Effusion:** whether thoracocentesis is needed now; at what sleeping respiratory rate to come in.
+5. **Steroid:** helps hold back the effusion, but harms the stomach and lowers the chance of eye surgery succeeding. Needs a joint decision by both clinics.
+6. **Dosing order:** sucralfate may reduce absorption of omeprazole and prednisolone.
 
 ## About this summary
 

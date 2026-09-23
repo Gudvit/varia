@@ -13,8 +13,8 @@
 Kotka, brytyjska długowłosa, sterylizowana, 12 lat, **4,6 kg** (5,2 kg w lipcu). Przerzutowy rak gruczołu mlekowego o wysokiej złośliwości, 5 dawek doksorubicyny. Obecnie równocześnie pogarszają się trzy rzeczy: **rogówki obu oczu** (keratomalacja), **wysięk w jamie opłucnej** i **przewód pokarmowy** (cechy zapalenia żołądka w USG, nudności, znacznie obniżony apetyt).
 
 - **Okulista (Retina, 23.09):** pilny zabieg — cross-linking + ACell Vet + tarsorafia; szansa powodzenia ok. 60% na piśmie (ustnie: „bez chemioterapii byłoby ok. 95%”). Bez zabiegu możliwa enukleacja. Reakcje wzrokowe na razie zachowane.
-- **Lekarz prowadzący (LoVet, 23.09):** „stan nie jest dobry” (ang. „not good”), brak odpowiedzi na leczenie zapalenia żołądka. Zabieg — tylko przy hospitalizacji całodobowej (dożylne leki przeciwbólowe i przeciwwymiotne, drenaż klatki piersiowej, ewentualnie sonda nosowa), ryzyko wysokie. Jeśli w ciągu najbliższych dni nic się nie zmieni — rozważyć eutanazję.
-- Stanowiska obu przychodni **nie zostały ze sobą uzgodnione**, kryteria oceny „najbliższych dni” nie zostały określone.
+- **Lekarz prowadzący (LoVet, 23.09):** „stan nie jest dobry” (ang. „not good”), brak odpowiedzi na leczenie zapalenia żołądka. Zabieg — tylko przy hospitalizacji całodobowej (dożylne leki przeciwbólowe i przeciwwymiotne, drenaż klatki piersiowej, ewentualnie sonda nosowa), ryzyko wysokie.
+- Stanowiska obu przychodni **nie zostały ze sobą uzgodnione**.
 
 ## 1. Onkologia
 
@@ -54,12 +54,11 @@ Kotka, brytyjska długowłosa, sterylizowana, 12 lat, **4,6 kg** (5,2 kg w lipcu
 ## 5. Do decyzji
 
 1. **Zabieg na oczach:** tak czy nie, a jeśli tak — gdzie i w jakim znieczuleniu. Stanowiska Retina i LoVet trzeba ze sobą uzgodnić.
-2. **Cel leczenia:** konkretne kryteria, według których oceniać „najbliższe dni”.
-3. **Żywienie i nawodnienie:** ile ml wody na dobę jest potrzebne; czy potrzebne są płyny podskórne lub sonda.
-4. **Dawka VI doksorubicyny** (ok. 28.09) przy obecnym stanie.
-5. **Wysięk:** czy potrzebna jest punkcja teraz; przy jakiej częstości oddechów we śnie jechać do przychodni.
-6. **Steryd:** pomaga ograniczać wysięk, ale szkodzi żołądkowi i zmniejsza szansę powodzenia zabiegu na oczach. Potrzebna wspólna decyzja obu przychodni.
-7. **Kolejność podawania:** sukralfat może zmniejszać wchłanianie omeprazolu i prednizolonu.
+2. **Żywienie i nawodnienie:** ile ml wody na dobę jest potrzebne; czy potrzebne są płyny podskórne lub sonda.
+3. **Dawka VI doksorubicyny** (ok. 28.09) przy obecnym stanie.
+4. **Wysięk:** czy potrzebna jest punkcja teraz; przy jakiej częstości oddechów we śnie jechać do przychodni.
+5. **Steryd:** pomaga ograniczać wysięk, ale szkodzi żołądkowi i zmniejsza szansę powodzenia zabiegu na oczach. Potrzebna wspólna decyzja obu przychodni.
+6. **Kolejność podawania:** sukralfat może zmniejszać wchłanianie omeprazolu i prednizolonu.
 
 ## O tym podsumowaniu
 
