@@ -10,10 +10,10 @@
 
 ## Najważniejsze na 24.09.2026
 
-Kotka, brytyjska długowłosa, sterylizowana, 12 lat, **4,6 kg** (5,2 kg w lipcu). Przerzutowy rak gruczołu mlekowego o wysokiej złośliwości, 5 dawek doksorubicyny. Obecnie równocześnie pogarszają się trzy rzeczy: **rogówki obu oczu** (keratomalacja), **wysięk w jamie opłucnej** i **przewód pokarmowy** (zapalenie żołądka, nudności, znacznie obniżony apetyt).
+Kotka, brytyjska długowłosa, sterylizowana, 12 lat, **4,6 kg** (5,2 kg w lipcu). Przerzutowy rak gruczołu mlekowego o wysokiej złośliwości, 5 dawek doksorubicyny. Obecnie równocześnie pogarszają się trzy rzeczy: **rogówki obu oczu** (keratomalacja), **wysięk w jamie opłucnej** i **przewód pokarmowy** (cechy zapalenia żołądka w USG, nudności, znacznie obniżony apetyt).
 
 - **Okulista (Retina, 23.09):** pilny zabieg — cross-linking + ACell Vet + tarsorafia; szansa powodzenia ok. 60% na piśmie (ustnie: „bez chemioterapii byłoby ok. 95%”). Bez zabiegu możliwa enukleacja. Reakcje wzrokowe na razie zachowane.
-- **Lekarz prowadzący (LoVet, 23.09):** stan zły, zapalenie żołądka nie odpowiada na leczenie. Zabieg — tylko przy hospitalizacji całodobowej (dożylne leki przeciwbólowe i przeciwwymiotne, drenaż klatki piersiowej, ewentualnie sonda nosowa), ryzyko wysokie. Jeśli w ciągu najbliższych dni nic się nie zmieni — rozważyć eutanazję.
+- **Lekarz prowadzący (LoVet, 23.09):** „stan nie jest dobry” (ang. „not good”), brak odpowiedzi na leczenie zapalenia żołądka. Zabieg — tylko przy hospitalizacji całodobowej (dożylne leki przeciwbólowe i przeciwwymiotne, drenaż klatki piersiowej, ewentualnie sonda nosowa), ryzyko wysokie. Jeśli w ciągu najbliższych dni nic się nie zmieni — rozważyć eutanazję.
 - Stanowiska obu przychodni **nie zostały ze sobą uzgodnione**, kryteria oceny „najbliższych dni” nie zostały określone.
 
 ## 1. Onkologia
@@ -31,7 +31,7 @@ Kotka, brytyjska długowłosa, sterylizowana, 12 lat, **4,6 kg** (5,2 kg w lipcu
 | --- | --- | --- |
 | **Rogówki OU** | 23.09: ubytek nabłonka ok. 70%, głęboka waskularyzacja 4 mm, **keratomalacja**, precypitaty na śródbłonku, przekrwienie, gęsta zielonkawa wydzielina. Menace/dazzle/PLR obecne | Od 17.08 bez gojenia. 21.09 — naciek leukocytarny, pobrano posiew, dodano Vigamox; soczewka opatrunkowa w lewym oku nie utrzymuje się. Test Schirmera i PCR FHV1 niewykonane |
 | **Wysięk opłucnowy** | 23.09: lewa strona 1,6, prawa ok. 2,6 cm; oddech przyspieszony. W domu 34–40/min przez cały tydzień (tydzień wcześniej 30–36) | Narasta: 21.09 było 1,15/0,89 cm. Ostatnia punkcja — 06.07.2026 (60 ml, płyn krwisty) |
-| **Przewód pokarmowy** | 21.09 — cechy zapalenia żołądka w USG. Nudności nie ustępują po maropitancie, ondansetronie, drotawerynie | Apetyt znacznie obniżony od ok. tygodnia (ilość niemierzona); 23.09 po Mirataz zjadła. Sama nie pije — woda podawana strzykawką. fPL zaplanowane, niewykonane |
+| **Przewód pokarmowy** | 21.09 — cechy zapalenia żołądka w USG (bez endoskopii). Nudności nie ustępują po maropitancie, ondansetronie, drotawerynie | Apetyt znacznie obniżony od ok. tygodnia (ilość niemierzona); 23.09 po Mirataz zjadła. Sama nie pije — woda podawana strzykawką. fPL zaplanowane, niewykonane |
 | **Masa ciała** | 4,6 kg (23.09) | 4,78 → 4,6 kg w 9 dni (−4%) |
 | **Nerki** | Kreatynina 126 µmol/l (14.09, w normie). Mocz 21.09: UPC 0,164, bez krwiomoczu, ciężar właściwy 1,027 | Epizody azotemii od 12.2025 (maks. 221). USG 14.09 — obie nerki o nierównym obrysie |
 | **Ból** | Buprenorfina działa ok. 1 godziny (wg właściciela) | Lekarz: wyższe dawki opioidów mogą pogorszyć oddychanie |
