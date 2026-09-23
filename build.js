@@ -7,9 +7,11 @@
  * Скрипт разбирает документ на токены и собирает из них семантический HTML,
  * после чего встраивает CSS и JS — на выходе самодостаточные файлы.
  *
- * Страниц две, и они собираются одним и тем же кодом: полная хронология
- * (final_report.md → index.html) и аналитическая часть
- * (analysis.md → analysis.html). Переключатель между ними — в шапке оглавления.
+ * Все страницы собираются одним и тем же кодом: полная хронология
+ * (final_report.md → index.html), аналитическая часть (analysis.md →
+ * analysis.html) и краткая сводка для врача на трёх языках (summary*.md →
+ * summary*.html). Переключатель документов — в шапке оглавления, переключатель
+ * языка — в шапке краткой сводки.
  *
  *   npm run build
  */
@@ -26,12 +28,45 @@ const js = fs.readFileSync(path.join(ROOT, "src", "app.js"), "utf8");
 /**
  * Страницы сайта. Порядок задаёт порядок переключателя в оглавлении.
  * `profile` — показывать ли карточку пациента в шапке: она уместна на
- * титульной странице истории и избыточна на аналитической.
+ * титульной странице истории и сводке и избыточна на аналитической.
+ * `lang` — язык страницы. Страницы с одинаковым `group` — переводы одного
+ * документа: между ними работает переключатель языка, а в оглавлении
+ * показывается только вариант на языке текущей страницы.
  */
 const PAGES = [
-  { src: "final_report.md", out: "index.html", nav: "Полная хронология", profile: true },
-  { src: "analysis.md", out: "analysis.html", nav: "Анализ", profile: false },
+  { src: "summary.md", out: "summary.html", nav: "Кратко для врача", profile: true, lang: "ru", group: "summary", compact: true },
+  { src: "summary.pl.md", out: "summary-pl.html", nav: "Podsumowanie dla lekarza", profile: true, lang: "pl", group: "summary", compact: true },
+  { src: "summary.en.md", out: "summary-en.html", nav: "Summary for the vet", profile: true, lang: "en", group: "summary", compact: true },
+  { src: "final_report.md", out: "index.html", nav: "Полная хронология", profile: true, lang: "ru",
+    navIn: { pl: "Pełna chronologia", en: "Full chronology" } },
+  { src: "analysis.md", out: "analysis.html", nav: "Анализ", profile: false, lang: "ru",
+    navIn: { pl: "Analiza", en: "Analysis" } },
 ];
+
+/** Подписи интерфейса. Тексты документов живут в Markdown, здесь — только обвязка. */
+const UI = {
+  ru: {
+    eyebrow: "Ветеринарный отчёт", docs: "Документы", sections: "Разделы",
+    toc: "Оглавление", theme: "Сменить тему", top: "В начало", caption: "Варя",
+    name: "Имя", nameValue: "Варя (Varia)", age: "Возраст", ageValue: "12 лет",
+    born: "Дата рождения", chip: "Чип", owner: "Владелец", language: "Язык",
+    ruOnly: "",
+  },
+  pl: {
+    eyebrow: "Raport weterynaryjny", docs: "Dokumenty", sections: "Sekcje",
+    toc: "Spis treści", theme: "Zmień motyw", top: "Na górę", caption: "Varia",
+    name: "Imię", nameValue: "Varia (Waria)", age: "Wiek", ageValue: "12 lat",
+    born: "Data urodzenia", chip: "Chip", owner: "Właściciel", language: "Język",
+    ruOnly: " (RU)",
+  },
+  en: {
+    eyebrow: "Veterinary report", docs: "Documents", sections: "Sections",
+    toc: "Contents", theme: "Toggle theme", top: "Back to top", caption: "Varia",
+    name: "Name", nameValue: "Varia", age: "Age", ageValue: "12 years",
+    born: "Date of birth", chip: "Microchip", owner: "Owner", language: "Language",
+    ruOnly: " (RU)",
+  },
+};
 
 /* -------------------------------------------------------------------------
    Вспомогательное
@@ -55,7 +90,7 @@ const inline = (s) => marked.parseInline(s).trim();
  * а не сообщает о расхождении в документах.
  */
 function markWarnings(html) {
-  if (/Значком/.test(html)) return html;
+  if (/Значком|Symbolem|The ⚠️ symbol/.test(html)) return html;
   return html
     .replace(/<tr>(?:(?!<\/tr>)[\s\S])*<\/tr>/g, (row) =>
       row.includes("⚠️") ? row.replace("<tr>", '<tr class="warn">') : row
@@ -258,7 +293,7 @@ function buildPage(page) {
     }
 
     // Дисклеймер о том, что документ не заменяет врача, — выносим во врезку.
-    if (token.type === "paragraph" && token.text.includes("не заменяет осмотр")) {
+    if (token.type === "paragraph" && /не заменяет осмотр|nie zastępuje badania|does not replace/.test(token.text)) {
       out.push(`<div class="notice">${render(token)}</div>`);
       continue;
     }
@@ -277,6 +312,7 @@ function buildPage(page) {
 
 function renderPage(doc, docs) {
   const { page, title, lede, meta, heroImage, heroImageAlt, toc } = doc;
+  const t = UI[page.lang];
 
   const tocHtml = toc
     .map((s) => {
@@ -294,24 +330,39 @@ function renderPage(doc, docs) {
 
   // Переключатель документов: ссылки ведут на соседние страницы, поэтому
   // подсветка активного пункта оглавления (она работает по якорям) их не трогает.
+  // Из группы переводов в оглавлении виден только вариант на языке страницы;
+  // документы, существующие лишь по-русски, на других языках помечены «(RU)».
   const pagesHtml = docs
+    .filter((d) => !d.page.group || d.page.lang === page.lang)
     .map((d) => {
       const current = d.page.out === page.out;
+      const suffix = d.page.lang !== page.lang ? t.ruOnly : "";
       return (
         `<li><a href="${d.page.out}"${current ? ' class="is-current" aria-current="page"' : ""}>` +
-        `${escape(d.page.nav)}</a></li>`
+        `${escape(((d.page.navIn || {})[page.lang] || d.page.nav) + suffix)}</a></li>`
       );
     })
     .join("\n");
 
-  const owner = (meta.find((m) => /владелец/i.test(m.label)) || {}).value || "Karina Grakova";
+  const langHtml = page.group
+    ? `<nav class="lang" aria-label="${t.language}">${docs
+        .filter((d) => d.page.group === page.group)
+        .map((d) =>
+          `<a href="${d.page.out}" hreflang="${d.page.lang}" lang="${d.page.lang}"` +
+          `${d.page.out === page.out ? ' class="is-current" aria-current="page"' : ""}>` +
+          `${d.page.lang.toUpperCase()}</a>`
+        )
+        .join("")}</nav>`
+    : "";
+
+  const owner = (meta.find((m) => /владелец|właściciel|owner/i.test(m.label)) || {}).value || "Karina Grakova";
   const ownerName = owner.split(",")[0].trim();
   const heroProfile = [
-    ["Имя", "Варя (Varia)"],
-    ["Возраст", "12 лет на 07.09.2026"],
-    ["Дата рождения", "25.08.2014"],
-    ["Чип", "968000011873589"],
-    ["Владелец", ownerName],
+    [t.name, t.nameValue],
+    [t.age, t.ageValue],
+    [t.born, "25.08.2014"],
+    [t.chip, "968000011873589"],
+    [t.owner, ownerName],
   ];
   const heroProfileHtml = page.profile
     ? `<dl class="hero__profile">
@@ -324,14 +375,14 @@ ${heroProfile
   const heroImageHtml = heroImage
     ? `<figure class="hero__portrait">
           <img src="${heroImage}" alt="${escape(heroImageAlt)}">
-          <figcaption>Варя</figcaption>
+          <figcaption>${t.caption}</figcaption>
         </figure>`
     : "";
 
-  const period = (meta.find((m) => /период|данные/i.test(m.label)) || {}).value || "";
+  const period = (meta.find((m) => /период|данные|dane|data/i.test(m.label)) || {}).value || "";
 
   return `<!doctype html>
-<html lang="ru" dir="ltr">
+<html lang="${page.lang}" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -343,31 +394,31 @@ ${heroProfile
 ${css}
 </style>
 </head>
-<body>
+<body${page.compact ? ' class="page--compact"' : ""}>
 <div id="progress" role="presentation"></div>
 <div class="scrim" id="scrim"></div>
 
 <div class="controls">
-  <button class="btn" id="menu-btn" aria-label="Оглавление" aria-expanded="false" aria-controls="toc">
+  <button class="btn" id="menu-btn" aria-label="${t.toc}" aria-expanded="false" aria-controls="toc">
     <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
   </button>
-  <button class="btn" id="theme-btn" aria-label="Сменить тему">
+  <button class="btn" id="theme-btn" aria-label="${t.theme}">
     <svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
   </button>
-  <button class="btn" id="top-btn" aria-label="В начало">
+  <button class="btn" id="top-btn" aria-label="${t.top}">
     <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
   </button>
 </div>
 
 <div class="layout">
-  <nav class="toc" id="toc" aria-label="Оглавление">
+  <nav class="toc" id="toc" aria-label="${t.toc}">
     <p class="toc__brand">${escape(title.split(" ")[0])} <span>medical file</span></p>
     <p class="toc__sub">${escape(period)}</p>
-    <p class="toc__label">Документы</p>
+    <p class="toc__label">${t.docs}</p>
     <ul class="toc__pages">
 ${pagesHtml}
     </ul>
-    <p class="toc__label">Разделы</p>
+    <p class="toc__label">${t.sections}</p>
     <ol>
 ${tocHtml}
     </ol>
@@ -379,7 +430,8 @@ ${tocHtml}
         <div class="hero__intro">
           ${heroImageHtml}
           <div class="hero__copy">
-            <p class="hero__eyebrow">Ветеринарный отчёт</p>
+            <p class="hero__eyebrow">${t.eyebrow}</p>
+            ${langHtml}
             <h1>${inline(title)}</h1>
             ${heroProfileHtml}
           </div>

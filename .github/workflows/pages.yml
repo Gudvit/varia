@@ -38,8 +38,8 @@ jobs:
       - name: Собрать каталог публикации
         run: |
           mkdir -p _site
-          cp index.html analysis.html _site/
-          cp final_report.md analysis.md _site/
+          cp index.html analysis.html summary.html summary-pl.html summary-en.html _site/
+          cp final_report.md analysis.md summary.md summary.pl.md summary.en.md _site/
           cp -R assets _site/assets
 
       - uses: actions/configure-pages@v5

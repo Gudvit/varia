@@ -760,8 +760,38 @@ tr.warn:hover td { background: var(--warn-soft); }
 
 /* --- Печать / PDF ------------------------------------------------------ */
 
+/* --- Переключатель языка краткой сводки ------------------------------ */
+
+.lang {
+  display: inline-flex;
+  gap: 2px;
+  margin: 0 0 16px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+  font: 600 12px/1 var(--sans);
+  letter-spacing: .06em;
+}
+
+.lang a {
+  padding: 6px 11px;
+  border-radius: 6px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.lang a:hover { color: var(--text); background: var(--surface-alt); }
+
+.lang a.is-current {
+  background: var(--accent);
+  color: var(--bg);
+}
+
 @media print {
-  :root {
+  /* Печать всегда в светлой палитре, даже если на экране включена тёмная тема. */
+  :root, :root[data-theme="dark"] {
+    color-scheme: light;
     --bg: #fff; --bg-tint: #fff; --surface: #fff; --surface-alt: #f4f4f4;
     --text: #000; --text-soft: #1a1a1a; --muted: #444; --faint: #666;
     --line: #ccc; --line-strong: #888; --accent: #14524c;
@@ -800,6 +830,23 @@ tr.warn:hover td { background: var(--warn-soft); }
 
   table { font-size: 8.5pt; }
   a { color: inherit; text-decoration: none; }
+  .lang { display: none; }
+
+  /* Краткая сводка должна укладываться в 1–2 листа. */
+  .page--compact { font-size: 9.5pt; line-height: 1.4; }
+  .page--compact .hero__intro { grid-template-columns: 22mm minmax(0, 1fr); gap: 6mm; }
+  .page--compact .hero h1 { font-size: 20pt; }
+  .page--compact .hero__eyebrow { margin-bottom: 6px; }
+  .page--compact .hero__profile { margin-top: 8px; }
+  .page--compact .hero__divider { margin-top: 5mm; }
+  .page--compact .hero__lede { font-size: 11pt; margin: 3mm 0 0; }
+  .page--compact .section { margin-top: 12px; }
+  .page--compact .section > h2 { font-size: 12.5pt; margin: 0 0 4px; }
+  .page--compact p, .page--compact ul, .page--compact ol { margin-top: 3px; margin-bottom: 3px; }
+  .page--compact li { margin: 1px 0; }
+  .page--compact table { font-size: 8pt; }
+  .page--compact th, .page--compact td { padding: 3px 6px; }
+  .page--compact .notice { padding: 6px 10px; margin-top: 8px; }
 }
 
 </style>
@@ -826,6 +873,7 @@ tr.warn:hover td { background: var(--warn-soft); }
     <p class="toc__sub">24.06.2025 – 23.09.2026</p>
     <p class="toc__label">Документы</p>
     <ul class="toc__pages">
+<li><a href="summary.html">Кратко для врача</a></li>
 <li><a href="index.html" class="is-current" aria-current="page">Полная хронология</a></li>
 <li><a href="analysis.html">Анализ</a></li>
     </ul>
@@ -862,10 +910,11 @@ tr.warn:hover td { background: var(--warn-soft); }
         </figure>
           <div class="hero__copy">
             <p class="hero__eyebrow">Ветеринарный отчёт</p>
+            
             <h1>Варя (Varia)</h1>
             <dl class="hero__profile">
 <div><dt>Имя</dt><dd>Варя (Varia)</dd></div>
-<div><dt>Возраст</dt><dd>12 лет на 07.09.2026</dd></div>
+<div><dt>Возраст</dt><dd>12 лет</dd></div>
 <div><dt>Дата рождения</dt><dd>25.08.2014</dd></div>
 <div><dt>Чип</dt><dd>968000011873589</dd></div>
 <div><dt>Владелец</dt><dd>Karina Grakova</dd></div>
