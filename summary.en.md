@@ -10,7 +10,7 @@
 
 ## Key points as of 24.09.2026
 
-Female spayed British Longhair, 12 years, **4.6 kg** (5.2 kg in July). Metastatic high-grade mammary carcinoma, 5 doses of doxorubicin. Three problems are worsening at the same time: **both corneas** (keratomalacia), **pleural effusion**, and the **GI tract** (ultrasound signs of gastritis, nausea, markedly reduced appetite).
+Female spayed British Longhair, 12 years, **4.6 kg** (5.2 kg in July). Metastatic high-grade mammary carcinoma, 5 doses of doxorubicin. Main problems now: **both corneas** (worsening, keratomalacia), **pleural effusion** (persisting), and the **GI tract** (ultrasound signs of gastritis, nausea, markedly reduced appetite).
 
 - **Ophthalmologist (Retina, 23.09):** urgent surgery recommended — corneal cross-linking + ACell Vet + tarsorrhaphy; about 60% chance of success in writing (verbally: "without chemotherapy it would be about 95%"). Without surgery, enucleation may become necessary. Visual responses are still present.
 - **Primary vet (LoVet, 23.09):** "condition is not good".
@@ -29,7 +29,7 @@ Female spayed British Longhair, 12 years, **4.6 kg** (5.2 kg in July). Metastati
 | Problem | Latest findings | Course |
 | --- | --- | --- |
 | **Corneas OU** | 23.09: epithelial defect ~70%, deep vascularisation 4 mm, **keratomalacia**, endothelial precipitates, hyperaemia, thick greenish discharge. Menace/dazzle/PLR present | Not healing since 17.08. 21.09 — leukocyte infiltrate, culture taken, Vigamox added; bandage lens in the left eye keeps falling out. Schirmer tear test and FHV-1 PCR never performed |
-| **Pleural effusion** | 23.09: left 1.6 cm, right ~2.6 cm; tachypnoea. At home 34–40/min all week (30–36 the week before) | Increasing: 1.15/0.89 cm on 21.09. Last thoracocentesis 06.07.2026 (60 ml, haemorrhagic) |
+| **Pleural effusion** | 23.09: left 1.6 cm, right ~2.6 cm; tachypnoea. At home 34–40/min all week (30–36 the week before) | 1.15/0.89 cm on 21.09. Measurements by different vets are not comparable (different technique); verbally — about the same level. Last thoracocentesis 06.07.2026 (60 ml, haemorrhagic) |
 | **GI tract** | 21.09 — ultrasound signs of gastritis (no endoscopy). Nausea persists despite maropitant, ondansetron, drotaverine | Appetite markedly reduced for ~1 week (amount not measured); ate after Mirataz on 23.09. Does not drink on her own — water given by syringe. fPL planned, not done |
 | **Weight** | 4.6 kg (23.09) | 4.78 → 4.6 kg in 9 days (−4%) |
 | **Kidneys** | Creatinine 126 µmol/l (14.09, normal). Urine 21.09: UPC 0.164, no haematuria, USG 1.027 | Episodes of azotaemia since 12.2025 (max 221). Ultrasound 14.09 — both kidneys with irregular contour |
