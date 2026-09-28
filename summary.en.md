@@ -2,18 +2,19 @@
 
 ### Summary for the vet
 
-*Data: 24.06.2025 – 24.09.2026*
+*Data: 24.06.2025 – 28.09.2026*
 
 *Owner: Karina Grakova, tel. 577 682 296*
 
 ![Varia — a black British Longhair cat](assets/varia-portrait.jpg)
 
-## Key points as of 24.09.2026
+## Key points as of 28.09.2026
 
-Female spayed British Longhair, 12 years, **4.6 kg** (5.2 kg in July). Metastatic high-grade mammary carcinoma, 5 doses of doxorubicin. Main problems now: **both corneas** (worsening, keratomalacia), **pleural effusion** (persisting), and the **GI tract** (ultrasound signs of gastritis, nausea, markedly reduced appetite).
+Female spayed British Longhair, 12 years, **4.5 kg** (5.2 kg in July). Metastatic high-grade mammary carcinoma. After 5 doses of doxorubicin, **switched to Palladia on 28.09**. Main problems now: **pleural effusion** (thoracocentesis on 26.09 and 28.09), **eyes after surgery on 25.09**, and the **GI tract** (ultrasound signs of gastritis, no appetite).
 
-- **Ophthalmologist (Retina, 23.09):** urgent surgery recommended — corneal cross-linking + ACell Vet + tarsorrhaphy; about 60% chance of success in writing (verbally: "without chemotherapy it would be about 95%"). Without surgery, enucleation may become necessary. Visual responses are still present.
-- **Primary vet (LoVet, 23.09):** "condition is not good".
+- **25.09, Retina:** under general anaesthesia (uneventful) — corneal cross-linking of both eyes, antibiotic-impregnated collagen shield, both eyes closed with third eyelid flaps. Prognosis guarded. Suture removal in 14–21 days.
+- **26.09, university clinic:** RR 43/min, pale cyanotic mucous membranes, crackles over all lung fields. Bilateral thoracocentesis — **128 ml** of dark haemorrhagic fluid; breathing improved.
+- **28.09, LoVet (oncologist):** breathing worse again overnight — thoracocentesis, 50 ml from the right. Poor prognosis, high risk of progression on doxorubicin; at the owner's wish Palladia was started.
 
 ## 1. Oncology
 
@@ -21,46 +22,47 @@ Female spayed British Longhair, 12 years, **4.6 kg** (5.2 kg in July). Metastati
 | --- | --- |
 | **Diagnosis** | Mammary carcinoma. 08.08.2025 — solid carcinoma, Mills grade III, margin ~0.2 mm. 29.12.2025 — high grade, lymphovascular invasion. 20.03.2026 — poorly differentiated tumour, margins multifocally involved; IHC (pancytokeratin/vimentin) recommended, not performed |
 | **Surgery** | 4 operations, ALVET: 08.08.2025, 04.11.2025 (benign), 29.12.2025, 20.03.2026 |
-| **Stage** | Clinically metastatic since 13.04.2026 (lungs on TFAST, not confirmed cytologically). 14.09 — proliferative changes in the thoracic wall; 21.09 — 0.46 cm subcutaneous abdominal nodule (recurrence in the differential); 26.08 — 0.9×0.7 cm mass at the heart apex/mediastinum |
-| **Systemic therapy** | Palladia 13.04–08.06.2026. Carboplatin 200 mg/m² on 18.05.2026, followed by severe neutropenia (Neu 0.45). Doxorubicin 1 mg/kg every 21 days: 15.06, 06.07, 27.07, 17.08, 07.09.2026. Dose VI planned for ~28.09 |
+| **Stage** | Clinically metastatic since 13.04.2026 (lungs on TFAST, not confirmed cytologically). 14.09 — proliferative changes in the thoracic wall; 21.09 — 0.46 cm subcutaneous abdominal nodule (recurrence in the differential); **26.09 — ~1 × 1.5 cm mass in the thorax**; 26.08 — 0.9×0.7 cm mass at the heart apex/mediastinum (whether this is the same lesion as on 26.09 is unknown) |
+| **Systemic therapy** | Palladia 13.04–08.06.2026. Carboplatin 200 mg/m² on 18.05.2026, followed by severe neutropenia (Neu 0.45). Doxorubicin 1 mg/kg every 21 days: 15.06, 06.07, 27.07, 17.08, 07.09.2026; dose VI not given. **Palladia since 28.09.2026:** 10 mg Mon and Wed; if tolerated — 15 mg Fri and Mon |
 
 ## 2. Active problems
 
 | Problem | Latest findings | Course |
 | --- | --- | --- |
-| **Corneas OU** | 23.09: epithelial defect ~70%, deep vascularisation 4 mm, **keratomalacia**, endothelial precipitates, hyperaemia, thick greenish discharge. Menace/dazzle/PLR present | Not healing since 17.08. 21.09 — leukocyte infiltrate, culture taken, Vigamox added; bandage lens in the left eye keeps falling out. Schirmer tear test and FHV-1 PCR never performed |
-| **Pleural effusion** | 23.09: left 1.6 cm, right ~2.6 cm; tachypnoea. At home 34–40/min all week (30–36 the week before) | 1.15/0.89 cm on 21.09. Measurements by different vets are not comparable (different technique); verbally — about the same level. Last thoracocentesis 06.07.2026 (60 ml, haemorrhagic) |
-| **GI tract** | 21.09 — ultrasound signs of gastritis (no endoscopy). Nausea persists despite maropitant, ondansetron, drotaverine | Appetite markedly reduced for ~1 week (amount not measured); ate after Mirataz on 23.09. Does not drink on her own — water given by syringe. fPL planned, not done |
-| **Weight** | 4.6 kg (23.09) | 4.78 → 4.6 kg in 9 days (−4%) |
-| **Kidneys** | Creatinine 126 µmol/l (14.09, normal). Urine 21.09: UPC 0.164, no haematuria, USG 1.027 | Episodes of azotaemia since 12.2025 (max 221). Ultrasound 14.09 — both kidneys with irregular contour |
-| **Pain** | Buprenorphine lasts ~1 hour (per owner) | Vet: higher opioid doses may worsen breathing |
+| **Pleural effusion** | 26.09: TFAST 2.2 cm left / 2 cm right, RR 43 — thoracocentesis 128 ml (dark, haemorrhagic, non-clotting). 28.09 — 50 ml from the right; left side not tapped because the cat was too anxious | Refills within 1–2 days. Anaesthesia record mentions a tap on 24.09 as well (no document). Previous documented tap 06.07 (60 ml). Come in urgently if RR ≥ 40/min |
+| **Eyes OU** | 25.09 — surgery: CXL, antibiotic-impregnated VetShield, third eyelid flaps. Eyes closed | Before surgery: keratomalacia OU, leukocytic infiltration of the stroma. At check-ups — palpation through the lids (shape, size, sutures). Culture from 21.09 — no result |
+| **GI tract** | 26.09 and 28.09 — no appetite; being assist-fed. Mirataz on 26.09 | Ultrasound signs of gastritis since 14.09. fPL not done |
+| **Blood** | 28.09: leukocytosis with neutrophilia (printout not received) | No neutropenia on 14.09. Clamoxyl L.A. started |
+| **Kidneys** | 28.09: urea 12.0↑, creatinine 152 (normal; 126 on 14.09) | Probably dehydration. Urine 21.09: UPC 0.164, USG 1.027. Ultrasound 14.09 — both kidneys with irregular contour |
+| **Weight** | 4.5 kg (26.09) | 4.78 → 4.5 kg in 12 days (−6%) |
 
-## 3. Current treatment (23.09.2026)
+## 3. Current treatment (28.09.2026)
 
-- **Prednisolone** 3/4 of a 5 mg tablet = 3.75 mg/day (reduced 21.09; dose changed 3 times in 2 weeks).
-- **Buprenorphine** (Bunondol 0.3 mg/ml) 0.05–0.15 ml transmucosally every 8 h.
-- **GI:** maropitant SC once daily; drotaverine SC 1–2× daily; sucralfate 1 ml twice daily 30 min before meals; omeprazole (Helicid) 5 mg (1/4 of a 20 mg capsule) twice daily; transdermal mirtazapine (Mirataz) since 23.09.
-- **Furosemide** as needed.
-- **Eyes, strictly in this order with intervals:** Acatavir 4×, Tobrex 4×, Vigamox 4×, Vital Drop 3×, Corneregel 2×, Optixcare 4–6×, allogeneic serum 4×. Per owner, the eyes got worse after a new batch of serum.
+- **Palladia** 10 mg Mon and Wed; if no side effects — 15 mg Fri and Mon. Recheck in one week.
+- **Prednisolone** 5 mg: 3/4 tablet alternating with 1 tablet, once daily (since 28.09).
+- **Furosemide:** 28.09 — 1 mg/kg SC, in the evening — orally.
+- **Clamoxyl L.A.** (amoxicillin) SC on 28.09, repeat on 30.09 at the clinic.
+- **Buprenorphine** (Bupaq), diluted, low dose, transmucosally.
+- **GI:** sucralfate, omeprazole (Helicid); Mirataz if no appetite.
+- **Eyes, both, ≥ 2 min apart:** EMS 1 drop every 2 days; Acatavir, Tobrex, Vigamox, Vital Drop, Dexoftyal — 4× daily each; last, after ≥ 15 min — serum with Optixcare 4× daily. E-collar.
 
 ## 4. Latest tests
 
-- **Haematology, IDEXX, 14.09:** no neutropenia (Neu 5.09); RBC, Hct, Hb within range; MCH 11.1↓, RDW 31.4↑, lymphocytes 0.83↓, platelets 700↑.
-- **Biochemistry, LoVet, 14.09:** normal except glucose 8.55↑ and K 5.14↑. **Fructosamine 277 µmol/l (normal)** — hyperglycaemia is stress-related.
-- **Urine, 21.09:** protein 0.3 g/l, UPC 0.164 (normal), no RBCs or crystals, USG 1.027.
+- **Biochemistry, LoVet, 28.09:** urea 12.0↑ (5–11.3), creatinine 152 (1–168), glucose 8.79↑ (stress-related; fructosamine normal on 14.09), K 4.76, Na 145, ALT 18, ALP 22, albumin 30.4.
+- **Haematology, LoVet, 28.09:** leukocytosis with neutrophilia (per the vet; numbers not received). **IDEXX 14.09:** Neu 5.09, RBC/Hct/Hb within range, platelets 700↑.
+- **Urine, 21.09:** UPC 0.164 (normal), no RBCs or crystals, USG 1.027.
 - **Pending:** eye culture (21.09), fPL.
 
 ## 5. Decisions needed
 
-1. **Eye surgery:** yes or no — and if yes, where and under what anaesthesia. To be discussed together with the primary vet at LoVet.
-2. **Nutrition and hydration:** how many ml of water per day are needed; whether SC fluids or a feeding tube are indicated.
-3. **Doxorubicin dose VI** (~28.09) given her current condition.
-4. **Effusion:** whether thoracocentesis is needed now; at what sleeping respiratory rate to come in.
-5. **Steroid:** helps hold back the effusion, but harms the stomach and lowers the chance of eye surgery succeeding. Needs a joint decision by both clinics.
-6. **Dosing order:** sucralfate may reduce absorption of omeprazole and prednisolone.
+1. **Effusion:** a plan for thoracocentesis (criteria, where, how often) or an indwelling drain; role of furosemide and the steroid.
+2. **Palladia:** blood monitoring — it was stopped earlier after severe neutropenia (08.06, given together with carboplatin).
+3. **Hydration and nutrition:** urea has risen, no appetite.
+4. **Eyes:** palpation through the lids at check-ups; suture removal ≈ 09–16.10.
+5. **Steroid:** dose changed 4 times in 3 weeks; needs a joint decision by the clinics.
 
 ## About this summary
 
-Compiled by the owner from records of LoVet, Retina, ALVET, ALPHAVET and the IDEXX, ALAB and Vetlab laboratories. The full chronology with all sources and discrepancies between documents is on the "Full chronology" page (in Russian).
+Compiled by the owner from records of LoVet, Retina, ALVET, ALPHAVET, the university clinic (26.09) and the IDEXX, ALAB and Vetlab laboratories. The full chronology with all sources and discrepancies between documents is on the "Full chronology" page (in Russian).
 
 **This document does not replace examination and assessment by a veterinarian.**
