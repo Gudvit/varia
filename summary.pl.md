@@ -10,11 +10,12 @@
 
 ## Najważniejsze na 10.10.2026
 
-Kotka, brytyjska długowłosa, sterylizowana, 12 lat, **4,19 kg** 07.10 (4,5 kg 26.09, 5,2 kg w lipcu); 10.10 — BCS 4/9. Przerzutowy rak gruczołu mlekowego o wysokiej złośliwości. Po 5 dawkach doksorubicyny **od 28.09 — Palladia**. Główne problemy: **wysięk opłucnowy wymagający punkcji co kilka dni**, **oczy po zabiegu 25.09**, **skok parametrów nerkowych 07.10**, **apetyt i nawodnienie**.
+Kotka, brytyjska długowłosa, sterylizowana, 12 lat, **4,19 kg** 05.10 (4,5 kg 26.09, 5,2 kg w lipcu); 10.10 — BCS 4/9. Przerzutowy rak gruczołu mlekowego o wysokiej złośliwości. Po 5 dawkach doksorubicyny **od 28.09 — Palladia**. Główne problemy: **wysięk opłucnowy wymagający punkcji co kilka dni**, **oczy po zabiegu 25.09**, **skok parametrów nerkowych 07.10**, **apetyt i nawodnienie**.
 
 - **10.10, TENVET 24h (noc):** duszność, szczególnie po aktywności. RR 33, HR 150, błony śluzowe różowe, 38,2 °C. T-FAST: płyn 1,5 cm z prawej / 1,8 cm z lewej, **niedodma z ucisku w partiach dobrzusznych płuc**, opłucna fragmentaryczna. Noc w klatce tlenowej, butorfanol, etamsylat i.m. Rokowanie ostrożne (m.in. ryzyko zatorowości płucnej).
 - **10.10, TENVET 24h (rano):** RR 40, HR 160; ilość płynu jak w nocy. **Torakocenteza — 120 ml** krwistego płynu; stabilna, wypisana do domu. **Kontrola u lekarza prowadzącego — 11.10.**
-- **07.10, LoVet (onkolog):** pogorszenie oddechu — punkcja, **100 ml z prawej**. **Kreatynina 250↑, mocznik 16,5↑** (28.09 — 152 i 12,0); neutrofilia 15,08. Płyny s.c., 08.10 bez furosemidu, od 09.10 — 3/4 tabl. 2×/dobę; Palladia — 1 dzień przerwy; Nefrokrill. Zły stan, złe rokowanie.
+- **05.10, LoVet (onkolog):** 39,0 °C, oddech przyspieszony. USG — „pogorszenie”: płyn 1,9 / 1 cm, zapadnięcie płuca po prawej, **ognisko w wątrobie 0,78 × 0,65 cm — możliwa zmiana przerzutowa**. Palladia — co drugi dzień; furosemid 3/4 tabl. 3×/dobę; Convenia; Zofran 1/2 tabl. 3×/dobę; Elura. Wg właścicieli — mało moczu mimo furosemidu.
+- **07.10, LoVet (onkolog):** pogorszenie oddechu — punkcja, **100 ml z prawej**. **Kreatynina 250↑, mocznik 16,5↑** (28.09 — 152 i 12,0); neutrofilia 15,08. Płyny s.c., 08.10 bez furosemidu, od 09.10 — 3/4 tabl. 2×/dobę (zmniejszono); Palladia — 1 dzień przerwy; Nefrokrill. Zły stan, złe rokowanie.
 - **Wcześniejsze punkcje:** 26.09 — 128 ml, 28.09 — 50 ml (z prawej).
 - **25.09, Retina:** cross-linking obu rogówek, opatrunek kolagenowy z antybiotykiem, płaty trzeciej powieki. Zdjęcie szwów ok. 09–16.10.
 
@@ -24,8 +25,8 @@ Kotka, brytyjska długowłosa, sterylizowana, 12 lat, **4,19 kg** 07.10 (4,5 kg 
 | --- | --- |
 | **Rozpoznanie** | Rak gruczołu mlekowego. 08.08.2025 — rak prosty lity, III stopień wg Millsa, margines ok. 0,2 mm. 29.12.2025 — wysoka złośliwość, naciekanie naczyń chłonnych. 20.03.2026 — nowotwór nisko zróżnicowany, wieloogniskowo w marginesach; IHC (pancytokeratyna/wimentyna) zalecana, niewykonana |
 | **Zabiegi** | 4 operacje, ALVET: 08.08.2025, 04.11.2025 (zmiana łagodna), 29.12.2025, 20.03.2026 |
-| **Zaawansowanie** | Od 13.04.2026 klinicznie choroba przerzutowa (płuca w TFAST, bez potwierdzenia morfologicznego). 14.09 — rozrosty w obrębie ściany klatki piersiowej; 21.09 — podskórna zmiana 0,46 cm na brzuchu (w diagnostyce różnicowej wznowa); 26.09 — rozrost w klatce piersiowej ok. 1 × 1,5 cm; 26.08 — zmiana 0,9×0,7 cm przy koniuszku serca/w śródpiersiu (czy to ta sama zmiana co 26.09 — nie wiadomo) |
-| **Leczenie systemowe** | Palladia 13.04–08.06.2026. Karboplatyna 200 mg/m² — 18.05.2026, następnie ciężka neutropenia (Neu 0,45). Doksorubicyna 1 mg/kg co 21 dni: 15.06, 06.07, 27.07, 17.08, 07.09.2026; dawka VI niepodana. **Od 28.09.2026 — Palladia:** zalecono 10 mg pon. i śr., przy dobrej tolerancji — 15 mg pt. i pon.; faktycznie 10 mg; 07.10 — 1 dzień przerwy |
+| **Zaawansowanie** | Od 13.04.2026 klinicznie choroba przerzutowa (płuca w TFAST, bez potwierdzenia morfologicznego). 14.09 — rozrosty w obrębie ściany klatki piersiowej; 21.09 — podskórna zmiana 0,46 cm na brzuchu (w diagnostyce różnicowej wznowa); 26.09 — rozrost w klatce piersiowej ok. 1 × 1,5 cm; 26.08 — zmiana 0,9×0,7 cm przy koniuszku serca/w śródpiersiu (czy to ta sama zmiana co 26.09 — nie wiadomo); **05.10 — ognisko w wątrobie 0,78 × 0,65 cm, możliwa zmiana przerzutowa** |
+| **Leczenie systemowe** | Palladia 13.04–08.06.2026. Karboplatyna 200 mg/m² — 18.05.2026, następnie ciężka neutropenia (Neu 0,45). Doksorubicyna 1 mg/kg co 21 dni: 15.06, 06.07, 27.07, 17.08, 07.09.2026; dawka VI niepodana. **Od 28.09.2026 — Palladia:** zalecono 10 mg pon. i śr., przy dobrej tolerancji — 15 mg pt. i pon.; faktycznie 10 mg; **od 05.10 — co drugi dzień**; 07.10 — 1 dzień przerwy |
 
 ## 2. Aktywne problemy
 
@@ -40,13 +41,14 @@ Kotka, brytyjska długowłosa, sterylizowana, 12 lat, **4,19 kg** 07.10 (4,5 kg 
 
 ## 3. Leczenie (ostatnie zalecenia)
 
-- **Palladia** 10 mg (zalecenie z 28.09: 10 mg pon. i śr.; przy dobrej tolerancji — 15 mg pt. i pon.); 07.10 — 1 dzień przerwy.
-- **Furosemid** (07.10): 08.10 — bez furosemidu, od 09.10 — 3/4 tabl. 2×/dobę; 10.10 — ok. 01:00 w domu i rano w klinice.
+- **Palladia** 10 mg co drugi dzień (od 05.10); 07.10 — 1 dzień przerwy.
+- **Convenia** s.c. na 2 tygodnie (od 05.10).
+- **Furosemid** (Furosoral 10 mg): 05.10 — 3/4 tabl. 3×/dobę; 07.10 — 08.10 bez furosemidu, od 09.10 — 3/4 tabl. 2×/dobę; 10.10 — ok. 01:00 w domu i rano w klinice.
 - **Nefrokrill Gatto** (od 07.10) — wsparcie nerek.
 - **Prednizolon** 5 mg: 3/4 tabl. na przemian z 1 tabl., 1×/dobę (od 28.09).
 - **Cyclonamina** (etamsylat) 1/4 tabl. 2×/dobę; 10.10 — i.m., bo nie udało się podać tabletki.
 - **Buprenorfina** (Bupaq), rozcieńczona, w niskiej dawce, na błonę śluzową.
-- **Przewód pokarmowy:** sukralfat, omeprazol (Helicid); Mirataz przy braku apetytu; Zofran (wydany 07.10).
+- **Przewód pokarmowy:** sukralfat, omeprazol (Helicid); Mirataz przy braku apetytu; Zofran 1/2 tabl. 3×/dobę (przy braku poprawy — metoklopramid); Cerenia; Elura — do zamówienia. Sukralfat 2–3×/dobę lub Gastrovom rano + sukralfat na noc.
 - **Oczy, oba, co najmniej 2 min przerwy:** EMS 1 kropla co 2 dni; Acatavir, Tobrex, Vigamox, Vital Drop, Dexoftyal — każdy 4×/dobę; na końcu, po ≥ 15 min — surowica z Optixcare 4×/dobę. Kołnierz ochronny.
 
 ## 4. Ostatnie badania
@@ -57,7 +59,7 @@ Kotka, brytyjska długowłosa, sterylizowana, 12 lat, **4,19 kg** 07.10 (4,5 kg 
 - **Biochemia, LoVet, 07.10:** kreatynina 250↑ (1–168), mocznik 16,5↑ (5–11,3), amylaza 2158↑, glukoza 10,33↑, K 4,54, Na 150, P 1,21, Ca 2,75, ALT 19, ALP 36, albumina 34,1, globuliny 47,6.
 - **IDEXX, 07.10:** WBC 17,38↑, Neu 15,08↑, Lym 1,19, RBC 10,99, Hct 0,394, Hb 121, MCH 11,0↓, RDW 31,2↑, PLT 550.
 - **Mocz, 21.09:** UPC 0,164 (norma), bez erytrocytów i kryształów, ciężar właściwy 1,027.
-- **Oczekujące:** posiew z oczu (21.09), fPL; dokumenty LoVet z 29.09–06.10 nieotrzymane.
+- **Oczekujące:** kontrola krwi z potasem i fruktozaminą 12.10 (wizyta 20:30); posiew z oczu (21.09), fPL.
 
 ## 5. Do decyzji
 
@@ -65,7 +67,8 @@ Kotka, brytyjska długowłosa, sterylizowana, 12 lat, **4,19 kg** 07.10 (4,5 kg 
 2. **Nerki i nawodnienie:** kreatynina 250 (07.10) → ≈ 159 (10.10, inny analizator) — potrzebna kontrola na analizatorze LoVet; furosemid od 09.10 znów 2×/dobę; cechy odwodnienia, prawie brak apetytu, nie pije, masa 4,19 kg.
 3. **Palladia:** dalsza kontrola krwi (10.10 bez neutropenii); decyzja o dawce 15 mg.
 4. **Oczy:** zdjęcie szwów i kontrola w Retina ok. 09–16.10.
-5. **Steryd:** dawka zmieniana 4 razy w ciągu 3 tygodni; potrzebna wspólna decyzja przychodni.
+5. **Ognisko w wątrobie** 0,78 × 0,65 cm — możliwa zmiana przerzutowa; bez weryfikacji.
+6. **Steryd:** dawka zmieniana 4 razy w ciągu 3 tygodni; potrzebna wspólna decyzja przychodni.
 
 ## O tym podsumowaniu
 
