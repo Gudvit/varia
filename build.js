@@ -41,6 +41,8 @@ const PAGES = [
     navIn: { pl: "Pełna chronologia", en: "Full chronology" } },
   { src: "analysis.md", out: "analysis.html", nav: "Анализ", profile: false, lang: "ru",
     navIn: { pl: "Analiza", en: "Analysis" } },
+  { src: "labs.md", out: "labs.html", nav: "Анализы в динамике", profile: false, lang: "ru", highlight: true,
+    navIn: { pl: "Badania w dynamice", en: "Lab trends" } },
 ];
 
 /** Подписи интерфейса. Тексты документов живут в Markdown, здесь — только обвязка. */
@@ -283,6 +285,11 @@ function buildPage(page) {
       // Таблица-карточка «ключ → значение» задана без заголовков — пустую шапку убираем.
       if (token.header.every((cell) => !cell.text.trim())) {
         html = html.replace(/<thead>[\s\S]*?<\/thead>\s*/, "");
+      }
+
+      // На странице анализов ячейка со стрелкой ↑/↓ — значение вне референса, выделяем её целиком.
+      if (page.highlight) {
+        html = html.replace(/<td>(?=(?:(?!<\/td>)[\s\S])*class="arr )/g, '<td class="abn">');
       }
 
       const cols = (html.match(/<th[\s>]/g) || []).length || token.header.length;
