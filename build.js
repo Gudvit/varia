@@ -432,12 +432,13 @@ ${css}
     <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
     <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13.4A8.5 8.5 0 1 1 10.6 3.5a6.6 6.6 0 0 0 9.9 9.9Z"/></svg>
   </button>
+  <span class="toolbar__sep toolbar__sep--menu" aria-hidden="true"></span>
+  <button class="toolbar__btn" id="menu-btn" type="button" aria-label="${t.toc}" title="${t.toc}" aria-expanded="false" aria-controls="toc">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
 </div>
 
 <div class="controls">
-  <button class="btn" id="menu-btn" aria-label="${t.toc}" aria-expanded="false" aria-controls="toc">
-    <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-  </button>
   <button class="btn" id="top-btn" aria-label="${t.top}">
     <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
   </button>

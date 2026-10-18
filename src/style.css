@@ -330,8 +330,6 @@ body {
 .btn:active { transform: scale(.96); }
 .btn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 
-#menu-btn { display: none; }
-
 /* --- Шапка: карточка пациента ------------------------------------------ */
 
 .hero { padding: clamp(84px, 11vh, 108px) 0 0; }
@@ -534,7 +532,7 @@ body {
   background: var(--bar-line);
 }
 
-.toolbar__theme svg {
+.toolbar__btn svg {
   width: 22px;
   height: 22px;
   fill: none;
@@ -543,6 +541,9 @@ body {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+/* Кнопка меню — только когда оглавление уходит в выезжающую панель. */
+#menu-btn, .toolbar__sep--menu { display: none; }
 
 /* Иконка показывает, на что переключит кнопка: в тёмной теме — солнце, в светлой — луна. */
 .toolbar__theme .icon-sun { display: none; }
@@ -922,6 +923,7 @@ td.abn .arr { color: var(--abn); }
   .toc.is-open { transform: none; }
 
   #menu-btn { display: inline-flex; }
+  .toolbar__sep--menu { display: block; }
 
   .scrim {
     position: fixed;
