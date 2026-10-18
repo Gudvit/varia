@@ -72,6 +72,6 @@ Kotka, brytyjska długowłosa, sterylizowana, 12 lat, **3,90 kg** 12.10 (4,19 kg
 
 ## O tym podsumowaniu
 
-Opracowane przez właściciela na podstawie dokumentacji przychodni LoVet, Retina, ALVET, ALPHAVET, przychodni uniwersyteckiej (26.09), kliniki TENVET 24h (10.10, 16.10) oraz laboratoriów IDEXX, ALAB, Vetlab. Pełna chronologia ze wszystkimi źródłami i rozbieżnościami między dokumentami — na stronie „Pełna chronologia” (po rosyjsku).
+Opracowane przez właściciela na podstawie dokumentacji przychodni LoVet, Retina, ALVET, ALPHAVET, przychodni uniwersyteckiej (26.09), kliniki TENVET 24h (10.10, 16.10) oraz laboratoriów IDEXX, ALAB, Vetlab. Pełna chronologia ze wszystkimi źródłami i rozbieżnościami między dokumentami — na stronie „Pełna chronologia”.
 
 **Dokument nie zastępuje badania ani opinii lekarza weterynarii.**

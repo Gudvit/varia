@@ -72,6 +72,6 @@ Female spayed British Longhair, 12 years, **3.90 kg** on 12.10 (4.19 kg on 05.10
 
 ## About this summary
 
-Compiled by the owner from records of LoVet, Retina, ALVET, ALPHAVET, the university clinic (26.09), TENVET 24h (10.10, 16.10) and the IDEXX, ALAB and Vetlab laboratories. The full chronology with all sources and discrepancies between documents is on the "Full chronology" page (in Russian).
+Compiled by the owner from records of LoVet, Retina, ALVET, ALPHAVET, the university clinic (26.09), TENVET 24h (10.10, 16.10) and the IDEXX, ALAB and Vetlab laboratories. The full chronology with all sources and discrepancies between documents is on the "Full chronology" page.
 
 **This document does not replace examination and assessment by a veterinarian.**

@@ -1,0 +1,2724 @@
+<!doctype html>
+<html lang="pl" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Varia — badania w dynamice</title>
+<meta name="description" content="Badania w dynamice. 24.06.2025 – 16.10.2026.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%88%3C/text%3E%3C/svg%3E">
+<style>
+/* ==========================================================================
+   Варя — медицинская карта.
+   Спокойная «клиническая бумага» на тёплом графите: иерархия строится
+   типографикой и отступами, бирюзовый акцент — только для активного
+   и для актуального состояния.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  --bg:            #f7f5f1;
+  --bg-tint:       #f1eee8;
+  --surface:       #ffffff;
+  --surface-alt:   #f6f3ee;
+  --surface-hover: #f0ece6;
+
+  --text:        #1c1b19;
+  --text-soft:   #45413c;
+  --muted:       #6e675f;
+  --faint:       #9d958b;
+
+  --line:        #e6e1d9;
+  --line-strong: #d2cbc0;
+
+  --accent:      #23675f;
+  --accent-soft: #e3efec;
+  --accent-line: #a7ccc6;
+
+  --warn:        #8a5207;
+  --warn-tint:   rgba(201, 138, 40, .09);
+  --warn-line:   #d9a85a;
+
+  --up:          #a8371f;
+  --down:        #1f5f8b;
+  --abn:         #b3261e;
+  --abn-soft:    rgba(179, 38, 30, .045);
+
+  --glass:         rgba(255, 255, 255, .78);
+
+  --bar-bg:        #ffffff;
+  --bar-line:      #cfc7bb;
+  --bar-text:      #1c1b19;
+  --bar-hover:     #f0ece6;
+  --bar-sel:       #23675f;
+  --bar-on-sel:    #ffffff;
+  --bar-ping:      rgba(35, 103, 95, .45);
+  --hero-glow:     rgba(35, 103, 95, .06);
+  --portrait-ring: rgba(28, 24, 18, .08);
+
+  --shadow-sm: 0 1px 2px rgba(28, 24, 18, .05), 0 1px 3px rgba(28, 24, 18, .04);
+  --shadow-md: 0 8px 24px rgba(28, 24, 18, .09), 0 2px 6px rgba(28, 24, 18, .05);
+
+  --sans: system-ui, -apple-system, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --sidebar: 288px;
+  --content: 760px;
+  --radius:  14px;
+  --ease:    cubic-bezier(.2, .7, .2, 1);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg:            #151412;
+  --bg-tint:       #1a1917;
+  --surface:       #1f1d1b;
+  --surface-alt:   #252320;
+  --surface-hover: #2a2825;
+
+  --text:        #edeae5;
+  --text-soft:   #cfc9c1;
+  --muted:       #a1998f;
+  --faint:       #776f66;
+
+  --line:        #2e2b27;
+  --line-strong: #3f3a34;
+
+  --accent:      #74bdb2;
+  --accent-soft: rgba(116, 189, 178, .12);
+  --accent-line: rgba(116, 189, 178, .36);
+
+  --warn:        #e2ad62;
+  --warn-tint:   rgba(226, 173, 98, .055);
+  --warn-line:   rgba(226, 173, 98, .5);
+
+  --up:          #ef8a72;
+  --down:        #7db8e0;
+  --abn:         #ff958a;
+  --abn-soft:    rgba(255, 120, 105, .06);
+
+  --glass:         rgba(31, 29, 27, .74);
+
+  --bar-bg:        #2b2825;
+  --bar-line:      #4d473f;
+  --bar-text:      #f3efe9;
+  --bar-hover:     #36322e;
+  --bar-sel:       #74bdb2;
+  --bar-on-sel:    #0d211e;
+  --bar-ping:      rgba(116, 189, 178, .55);
+  --hero-glow:     rgba(116, 189, 178, .07);
+  --portrait-ring: rgba(255, 255, 255, .07);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .35);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, .42), 0 2px 6px rgba(0, 0, 0, .28);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: var(--accent-soft); color: var(--text); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* --- Прогресс чтения --------------------------------------------------- */
+
+#progress {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 2px;
+  width: 0;
+  background: var(--accent);
+  z-index: 60;
+  transition: width .1s linear;
+}
+
+/* --- Каркас ------------------------------------------------------------ */
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar) minmax(0, 1fr);
+  align-items: start;
+}
+
+.main { min-width: 0; padding: 0 clamp(20px, 5vw, 64px) 128px; }
+.wrap { max-width: var(--content); margin: 0 auto; }
+
+/* --- Боковая навигация ------------------------------------------------- */
+
+.toc {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 26px 16px 48px 22px;
+  border-right: 1px solid var(--line);
+  background: var(--bg-tint);
+  font-size: 13.5px;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.toc__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 26px;
+  padding: 0 6px;
+}
+
+.toc__avatar {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px var(--portrait-ring);
+}
+
+.toc__name {
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 650;
+  letter-spacing: -.01em;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.toc__name span { font-size: 12.5px; font-weight: 500; color: var(--muted); }
+
+.toc__sub {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.toc__label {
+  margin: 0 0 6px;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.toc ol { list-style: none; margin: 0; padding: 0; }
+
+.toc a {
+  display: flex;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: var(--text-soft);
+  text-decoration: none;
+  transition: background-color .15s var(--ease), color .15s var(--ease), box-shadow .15s var(--ease);
+}
+
+.toc a:hover { background: var(--surface-hover); color: var(--text); }
+
+.toc a .num {
+  flex: none;
+  min-width: 1.5em;
+  font-variant-numeric: tabular-nums;
+  color: var(--faint);
+}
+
+.toc a.is-active {
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: inset 2px 0 0 var(--accent), var(--shadow-sm);
+}
+
+.toc a.is-active .num { color: var(--accent); }
+
+.toc__sublist {
+  margin: 2px 0 6px 20px;
+  padding-left: 8px;
+  border-left: 1px solid var(--line-strong);
+}
+
+.toc__sublist a {
+  padding-block: 4px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+/* Документы сайта: текущий — приподнятая плашка с точкой-акцентом. */
+.toc__pages {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+}
+
+.toc__pages a {
+  align-items: center;
+  padding: 8px 10px;
+  font-weight: 500;
+}
+
+.toc__pages a::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--line-strong);
+  transition: background-color .15s var(--ease);
+}
+
+.toc__pages a.is-current {
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: 0 0 0 1px var(--line), var(--shadow-sm);
+}
+
+.toc__pages a.is-current::before { background: var(--accent); }
+
+/* --- Плавающие кнопки -------------------------------------------------- */
+
+.controls {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 50;
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  backdrop-filter: blur(14px) saturate(1.4);
+  color: var(--text-soft);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: color .15s var(--ease), border-color .15s var(--ease), transform .15s var(--ease);
+}
+
+.btn:hover { color: var(--text); border-color: var(--line-strong); }
+.btn:active { transform: scale(.96); }
+.btn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+#menu-btn { display: none; }
+
+/* --- Шапка: карточка пациента ------------------------------------------ */
+
+.hero { padding: clamp(84px, 11vh, 108px) 0 0; }
+
+/* Строка над карточкой: тип документа слева, язык справа. */
+.hero__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  flex-wrap: wrap;
+  margin: 0 0 18px;
+  min-height: 34px;
+}
+
+.hero__eyebrow {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  color: var(--muted);
+}
+
+/* Портрет и сведения — одна композиция на общей поверхности. */
+.hero__card {
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 40px);
+  align-items: center;
+  padding: clamp(14px, 2vw, 18px);
+  padding-right: clamp(20px, 3.4vw, 36px);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background:
+    radial-gradient(120% 140% at 0% 0%, var(--hero-glow) 0%, transparent 55%),
+    linear-gradient(180deg, var(--surface) 0%, var(--bg-tint) 100%);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero__card--plain {
+  grid-template-columns: minmax(0, 1fr);
+  padding: clamp(22px, 3.4vw, 34px);
+}
+
+.hero__portrait { margin: 0; min-width: 0; }
+
+/* Исходные пропорции фото сохраняются: без обрезки, только скругление. */
+.hero__portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px var(--portrait-ring), var(--shadow-md);
+}
+
+.hero__copy { min-width: 0; padding: 8px 0; }
+
+.hero__name {
+  margin: 0;
+  font-size: clamp(42px, 6.2vw, 64px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.035em;
+  color: var(--text);
+}
+
+.hero__alias {
+  margin-left: .12em;
+  font-size: .46em;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  color: var(--muted);
+}
+
+.hero__subtitle {
+  margin: 14px 0 0;
+  font-size: 16.5px;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+/* Части не рвутся, а «·» при переносе остаётся в конце строки, а не в начале. */
+.hero__subtitle span { white-space: nowrap; }
+
+.hero__subtitle span:not(:last-child)::after {
+  content: "·";
+  margin-left: .3em;
+  color: var(--faint);
+}
+
+/* Сведения о пациенте — строки с тонкими разделителями, без ячеек. */
+.hero__facts { margin: 24px 0 0; padding: 0; max-width: 26rem; }
+
+.hero__facts div {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.hero__facts dt { margin: 0; font-size: 13.5px; color: var(--muted); }
+
+.hero__facts dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 560;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+/* Название документа и период — под карточкой. */
+.hero__doc {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin: 30px 0 0;
+  padding: 0 4px;
+}
+
+.hero__lede {
+  margin: 0;
+  font-size: clamp(19px, 2.4vw, 22px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -.012em;
+  color: var(--text);
+}
+
+.hero__period {
+  margin: 0;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+/* --- Панель языка и темы --------------------------------------------- */
+
+/* Одна заметная панель в правом верхнем углу: всегда видна, не прозрачная. */
+.toolbar {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--bar-line);
+  border-radius: 16px;
+  background: var(--bar-bg);
+  box-shadow: var(--shadow-md);
+  animation: toolbar-in .45s var(--ease) both;
+}
+
+.toolbar__lang { display: flex; gap: 2px; }
+
+.toolbar__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--bar-text);
+  font: 650 14px/1 var(--sans);
+  letter-spacing: .04em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .15s var(--ease), color .15s var(--ease), transform .12s var(--ease);
+}
+
+.toolbar__btn:hover { background: var(--bar-hover); }
+.toolbar__btn:active { transform: scale(.95); }
+
+.toolbar__btn:focus-visible {
+  outline: 2px solid var(--bar-sel);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+/* Выбранный язык — сплошная бирюзовая плашка. */
+.toolbar__btn[aria-current="page"],
+.toolbar__btn[aria-current="page"]:hover {
+  background: var(--bar-sel);
+  color: var(--bar-on-sel);
+}
+
+.toolbar__sep {
+  width: 1px;
+  height: 26px;
+  margin: 0 4px;
+  background: var(--bar-line);
+}
+
+.toolbar__theme svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Иконка показывает, на что переключит кнопка: в тёмной теме — солнце, в светлой — луна. */
+.toolbar__theme .icon-sun { display: none; }
+:root[data-theme="dark"] .toolbar__theme .icon-sun { display: block; }
+:root[data-theme="dark"] .toolbar__theme .icon-moon { display: none; }
+
+/* Подсказка при первом визите: два мягких кольца вокруг панели. */
+.toolbar--hint::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  animation: toolbar-ping 1.5s ease-out .6s 2;
+}
+
+@keyframes toolbar-in {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes toolbar-ping {
+  0%   { box-shadow: 0 0 0 0 var(--bar-ping); }
+  100% { box-shadow: 0 0 0 16px transparent; }
+}
+
+/* --- Разделы ----------------------------------------------------------- */
+
+.section { margin-top: clamp(68px, 9vw, 104px); }
+.section:first-of-type { margin-top: 44px; }
+
+.section > h2 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 26px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -.024em;
+  color: var(--text);
+}
+
+/* Номер раздела — тихая метка, а не акцент. */
+.section > h2 .num {
+  flex: none;
+  min-width: 2.1em;
+  padding: 4px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+/* Вводный раздел — актуальное состояние. Приподнятая панель, отделённая от истории. */
+.section--brief {
+  margin-top: 40px;
+  padding: clamp(22px, 3.4vw, 36px);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.section.section--brief > h2 {
+  margin-bottom: 18px;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.section--brief > *:last-child { margin-bottom: 0; }
+.section--brief .table-wrap { background: var(--surface); }
+
+.section__flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.section__flag::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+/* В сводке ⚠️ встречается почти в каждом пункте — там достаточно самого значка,
+   иначе половина панели размечается полосами и подсветка перестаёт работать. */
+.section--brief tr.warn td,
+.section--brief tr.warn:hover td { background: var(--surface); }
+
+.section--brief li.warn {
+  margin-left: 0;
+  padding: 0;
+  border-left: 0;
+  background: none;
+  list-style: disc;
+}
+
+h3, h4 { letter-spacing: -.014em; line-height: 1.3; color: var(--text); }
+
+h3 { margin: 48px 0 16px; font-size: 20px; font-weight: 650; }
+h4 { margin: 36px 0 12px; font-size: 16.5px; font-weight: 650; }
+
+/* Год в хронологии — крупный разделитель эпох. */
+.year {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 64px 0 32px;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.year::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* --- Текст ------------------------------------------------------------- */
+
+p { margin: 0 0 16px; color: var(--text-soft); }
+strong { font-weight: 650; color: var(--text); }
+em { color: var(--text-soft); }
+
+ul, ol { margin: 0 0 20px; padding-left: 1.3em; color: var(--text-soft); }
+li { margin-bottom: 8px; padding-left: .15em; }
+li::marker { color: var(--faint); }
+
+a {
+  color: var(--accent);
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent-line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color .15s var(--ease);
+}
+
+a:hover { text-decoration-color: currentColor; }
+
+blockquote {
+  margin: 0 0 22px;
+  padding: 2px 0 2px 20px;
+  border-left: 2px solid var(--accent-line);
+}
+
+blockquote p { color: var(--text-soft); }
+blockquote > *:last-child { margin-bottom: 0; }
+
+/* Якоря у заголовков */
+.anchor {
+  margin-left: .4em;
+  font-size: .58em;
+  font-weight: 500;
+  color: var(--faint);
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity .15s var(--ease);
+}
+
+h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, .entry:hover .anchor { opacity: 1; }
+.anchor:hover { color: var(--accent); }
+
+/* --- Врезки ------------------------------------------------------------ */
+
+/* Оговорка «не заменяет врача» — спокойная служебная плашка. */
+.notice {
+  margin: 0 0 22px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-tint);
+  font-size: 14.5px;
+}
+
+.notice p:last-child { margin-bottom: 0; }
+
+/* ⚠️ — расхождение или пробел в документах: тонкая полоса, без заливки страницы. */
+p.warn, li.warn {
+  padding: 9px 14px;
+  border-left: 2px solid var(--warn-line);
+  border-radius: 0 10px 10px 0;
+  background: var(--warn-tint);
+}
+
+p.warn { margin-bottom: 18px; }
+li.warn { margin-left: -.3em; list-style: none; }
+
+/* --- Записи хронологии ------------------------------------------------- */
+
+.entry {
+  position: relative;
+  margin: 0;
+  padding: 0 0 38px 30px;
+  border-left: 1px solid var(--line-strong);
+}
+
+.entry::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
+  transition: background-color .15s var(--ease);
+}
+
+.entry:hover::before, .entry:target::before { background: var(--accent); }
+
+.entry > .entry__head { position: relative; margin: 0 0 12px; padding-right: 1.6em; }
+
+/* Якорь записи не должен занимать отдельную строку после блочных даты и заголовка. */
+.entry__head .anchor { position: absolute; top: 0; right: 0; margin: 0; font-size: 13px; }
+
+.entry__date {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+
+.entry__title {
+  display: block;
+  margin-top: 3px;
+  font-size: 17.5px;
+  font-weight: 650;
+  line-height: 1.35;
+  letter-spacing: -.015em;
+  color: var(--text);
+}
+
+.entry > *:last-child { margin-bottom: 0; }
+
+/* --- Таблицы ----------------------------------------------------------- */
+
+.table-wrap {
+  position: relative;
+  margin: 4px 0 26px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.table-wrap:focus-visible { outline-offset: 3px; border-radius: var(--radius); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-alt);
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  color: var(--text-soft);
+  transition: background-color .12s var(--ease);
+}
+
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:hover td { background: var(--surface-hover); }
+
+/* Первый столбец — «шапка» строки; у широких таблиц закреплён при прокрутке. */
+tbody td:first-child { color: var(--text); font-weight: 600; }
+
+.table-wrap[data-wide] th:first-child,
+.table-wrap[data-wide] td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--surface);
+  box-shadow: inset -1px 0 0 var(--line);
+}
+
+.table-wrap[data-wide] thead th:first-child { z-index: 3; background: var(--surface-alt); }
+.table-wrap[data-wide] td:first-child { min-width: 10rem; }
+.table-wrap[data-wide] tbody tr:hover td:first-child { background: var(--surface-hover); }
+
+/* Подложки рисуются поверх непрозрачного фона, чтобы закреплённый столбец не просвечивал. */
+tr.warn td,
+tr.warn:hover td,
+.table-wrap[data-wide] tr.warn td:first-child {
+  background: linear-gradient(var(--warn-tint), var(--warn-tint)), var(--surface);
+}
+
+.arr { font-weight: 700; }
+.arr.up { color: var(--up); }
+.arr.down { color: var(--down); }
+
+/* Значение вне референса на странице анализов */
+td.abn,
+tbody tr:hover td.abn {
+  background: linear-gradient(var(--abn-soft), var(--abn-soft)), var(--surface);
+  color: var(--abn);
+  font-weight: 600;
+}
+
+td.abn .arr { color: var(--abn); }
+
+/* --- Подвал ------------------------------------------------------------ */
+
+.colophon {
+  margin-top: 104px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.colophon h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -.012em;
+}
+
+.colophon p { font-size: 15px; }
+
+/* --- Адаптив ----------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+  html { scroll-padding-top: 20px; }
+
+  .layout { grid-template-columns: minmax(0, 1fr); }
+
+  .toc {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(320px, 86vw);
+    z-index: 70;
+    transform: translateX(-101%);
+    transition: transform .25s var(--ease);
+    box-shadow: var(--shadow-md);
+  }
+
+  .toc.is-open { transform: none; }
+
+  #menu-btn { display: inline-flex; }
+
+  .scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 65;
+    background: rgba(12, 11, 10, .45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease, visibility .2s ease;
+  }
+
+  .scrim.is-open { opacity: 1; visibility: visible; }
+
+  .controls { bottom: 16px; right: 16px; }
+
+  .main { padding-bottom: 96px; }
+}
+
+@media (max-width: 760px) {
+  .hero__card { grid-template-columns: minmax(0, 11.5rem) minmax(0, 1fr); }
+  .hero__facts div { grid-template-columns: 8rem minmax(0, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .main { padding-inline: 16px; }
+
+  .hero { padding-top: 78px; }
+  .toolbar { top: 12px; right: 12px; gap: 2px; padding: 3px; border-radius: 15px; }
+  .toolbar__btn { padding: 0 8px; }
+  .toolbar__sep { margin: 0 2px; }
+
+  .hero__card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 12px 12px 18px;
+    border-radius: 26px;
+  }
+  .hero__portrait img { border-radius: 18px; }
+  .hero__copy { padding: 0 8px; }
+  .hero__facts { max-width: none; }
+  .hero__doc { margin-top: 24px; }
+
+  .section { margin-top: 64px; }
+  .section > h2 { gap: 12px; font-size: 23px; }
+  .section--brief { padding: 22px 18px; border-radius: 20px; }
+
+  .year { margin-top: 52px; font-size: 20px; }
+
+  .entry { padding: 0 0 32px 20px; }
+  .entry__title { font-size: 16.5px; }
+
+  table { font-size: 13px; }
+  .table-wrap[data-wide] td:first-child { min-width: 8.5rem; }
+  thead th, tbody td { padding: 9px 12px; }
+
+  blockquote { padding-left: 14px; }
+}
+
+/* --- Печать / PDF ------------------------------------------------------ */
+
+@media print {
+  /* Печать всегда в светлой палитре, даже если на экране включена тёмная тема. */
+  :root, :root[data-theme="dark"] {
+    color-scheme: light;
+    --bg: #fff; --bg-tint: #fff; --surface: #fff; --surface-alt: #f4f4f4; --surface-hover: #fff;
+    --text: #000; --text-soft: #1a1a1a; --muted: #444; --faint: #666;
+    --line: #ccc; --line-strong: #888; --accent: #14524c; --accent-line: #8bb;
+    --warn-tint: #fdf5e8; --abn-soft: #fbeceb; --abn: #a01d16;
+    --shadow-sm: none; --shadow-md: none;
+  }
+
+  @page { margin: 16mm 14mm; }
+
+  body { font-size: 10.5pt; line-height: 1.5; background: #fff; }
+
+  .toc, .controls, .toolbar, .scrim, #progress, .anchor { display: none !important; }
+  .layout { display: block; }
+  .main { padding: 0; }
+  .wrap { max-width: none; }
+
+  .hero { padding-top: 0; }
+  .hero__bar { margin-bottom: 4mm; min-height: 0; }
+  .hero__card {
+    grid-template-columns: 34mm minmax(0, 1fr);
+    gap: 8mm;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+  }
+  .hero__portrait img { border-radius: 10px; }
+  .hero__name { font-size: 26pt; }
+  .hero__subtitle { margin-top: 2mm; font-size: 10pt; }
+  .hero__facts { margin-top: 3mm; max-width: none; }
+  .hero__facts div { padding: 1.5mm 0; }
+  .hero__facts dt, .hero__facts dd { font-size: 9pt; }
+  .hero__doc { margin-top: 6mm; padding: 3mm 0 0; border-top: 1px solid var(--line-strong); }
+
+  .section { margin-top: 26px; }
+  .section > h2 { font-size: 15pt; break-after: avoid; }
+  .section--brief { padding: 0; border: 0; border-radius: 0; }
+  h3, h4, .entry__head { break-after: avoid; }
+
+  .entry, .table-wrap, .notice, p.warn { break-inside: avoid; }
+  .table-wrap { overflow: visible; }
+  thead th { position: static; }
+  .table-wrap[data-wide] th:first-child,
+  .table-wrap[data-wide] td:first-child { position: static; }
+
+  table { font-size: 8.5pt; }
+  a { color: inherit; text-decoration: none; }
+
+  /* Краткая сводка должна укладываться в 1–2 листа. */
+  .page--compact { font-size: 9.5pt; line-height: 1.4; }
+  .page--compact .hero__bar { margin-bottom: 2mm; }
+  .page--compact .hero__card { grid-template-columns: 24mm minmax(0, 1fr); gap: 6mm; }
+  .page--compact .hero__name { font-size: 20pt; }
+  .page--compact .hero__subtitle { margin-top: 1mm; font-size: 9pt; }
+  .page--compact .hero__facts { margin-top: 2mm; }
+  .page--compact .hero__facts div { padding: 1mm 0; }
+  .page--compact .hero__doc { margin-top: 4mm; padding-top: 2mm; }
+  .page--compact .hero__lede { font-size: 11pt; }
+  .page--compact .section { margin-top: 12px; }
+  .page--compact .section > h2 { font-size: 12.5pt; margin: 0 0 4px; padding-bottom: 2mm; }
+  .page--compact .section__flag { margin-bottom: 1mm; font-size: 8.5pt; }
+  .page--compact p, .page--compact ul, .page--compact ol { margin-top: 3px; margin-bottom: 3px; }
+  .page--compact li { margin: 1px 0; }
+  .page--compact table { font-size: 8pt; }
+  .page--compact th, .page--compact td { padding: 3px 6px; }
+  .page--compact .notice { padding: 6px 10px; margin-top: 8px; }
+}
+
+</style>
+</head>
+<body>
+<div id="progress" role="presentation"></div>
+<div class="scrim" id="scrim"></div>
+
+<div class="toolbar" id="toolbar">
+  <nav class="toolbar__lang" aria-label="Język"><a class="toolbar__btn" href="labs.html" hreflang="ru" lang="ru">RU</a><a class="toolbar__btn" href="labs-pl.html" hreflang="pl" lang="pl" aria-current="page">PL</a><a class="toolbar__btn" href="labs-en.html" hreflang="en" lang="en">EN</a></nav>
+  <span class="toolbar__sep" aria-hidden="true"></span>
+  <button class="toolbar__btn toolbar__theme" id="theme-btn" type="button" aria-label="Zmień motyw" title="Zmień motyw">
+    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13.4A8.5 8.5 0 1 1 10.6 3.5a6.6 6.6 0 0 0 9.9 9.9Z"/></svg>
+  </button>
+</div>
+
+<div class="controls">
+  <button class="btn" id="menu-btn" aria-label="Spis treści" aria-expanded="false" aria-controls="toc">
+    <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <button class="btn" id="top-btn" aria-label="Na górę">
+    <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</div>
+
+<div class="layout">
+  <nav class="toc" id="toc" aria-label="Spis treści">
+    <div class="toc__brand">
+      <img class="toc__avatar" src="assets/varia-portrait.jpg" alt="" width="40" height="40">
+      <div>
+        <p class="toc__name">Varia <span>medical file</span></p>
+        <p class="toc__sub">24.06.2025 – 16.10.2026</p>
+      </div>
+    </div>
+    <p class="toc__label">Dokumenty</p>
+    <ul class="toc__pages">
+<li><a href="summary-pl.html">Podsumowanie dla lekarza</a></li>
+<li><a href="chronology-pl.html">Pełna chronologia</a></li>
+<li><a href="analysis-pl.html">Analiza</a></li>
+<li><a href="labs-pl.html" class="is-current" aria-current="page">Badania w dynamice</a></li>
+    </ul>
+    <p class="toc__label">Sekcje</p>
+    <ol>
+<li><a href="#jak-czyta-te-tabele"><span class="num"></span><span>Jak czytać te tabele</span></a></li>
+<li><a href="#najwa-niejsze-z-ostatniego-miesi-ca"><span class="num">1</span><span>Najważniejsze z ostatniego miesiąca</span></a></li>
+<li><a href="#masa-cia-a"><span class="num">2</span><span>Masa ciała</span></a></li>
+<li><a href="#cz-sto-oddech-w-i-punkcje"><span class="num">3</span><span>Częstość oddechów i punkcje</span></a></li>
+<li><a href="#temperatura"><span class="num">4</span><span>Temperatura</span></a></li>
+<li><a href="#nerki-kreatynina-i-mocznik-w-ca-ej-historii"><span class="num">5</span><span>Nerki: kreatynina i mocznik w całej historii</span></a></li>
+<li><a href="#biochemia-wewn-trzne-laboratorium-lovet"><span class="num">6</span><span>Biochemia — wewnętrzne laboratorium LoVet</span></a></li>
+<li><a href="#krew-wewn-trzne-laboratorium-lovet"><span class="num">7</span><span>Krew — wewnętrzne laboratorium LoVet</span></a></li>
+<li><a href="#krew-idexx"><span class="num">8</span><span>Krew — IDEXX</span></a></li>
+<li><a href="#badania-tenvet-10-10-2026"><span class="num">9</span><span>Badania TENVET, 10.10.2026</span></a></li>
+<li><a href="#mocz"><span class="num">10</span><span>Mocz</span></a></li>
+<li><a href="#o-tej-stronie"><span class="num"></span><span>O tej stronie</span></a></li>
+    </ol>
+  </nav>
+
+  <main class="main">
+    <div class="wrap">
+      <header class="hero">
+        <div class="hero__bar">
+          <p class="hero__eyebrow">Raport weterynaryjny</p>
+        </div>
+        <div class="hero__card">
+          <figure class="hero__portrait">
+            <img src="assets/varia-portrait.jpg" alt="Varia — czarna kotka brytyjska długowłosa">
+          </figure>
+          <div class="hero__copy">
+            <h1 class="hero__name">Varia</h1>
+            <p class="hero__subtitle"><span>Kotka</span> <span>brytyjska długowłosa</span> <span>12 lat</span></p>
+            
+          </div>
+        </div>
+        <div class="hero__doc">
+          <p class="hero__lede">Badania w dynamice</p>
+          <p class="hero__period">24.06.2025 – 16.10.2026</p>
+        </div>
+      </header>
+
+<section class="section section--brief" id="jak-czyta-te-tabele">
+<h2><span>Jak czytać te tabele</span><a class="anchor" href="#jak-czyta-te-tabele" aria-hidden="true">#</a></h2>
+<p>Wszystkie wyniki laboratoryjne z dokumentów zebrano w tabelach według dat: <strong>daty biegną w kolumnach od lewej do prawej</strong>, parametry — w wierszach. <strong>Na czerwono zaznaczono wartości poza zakresem referencyjnym</strong> laboratorium, które wykonało badanie; strzałka pokazuje kierunek: <span class="arr up">↑</span> — powyżej normy, <span class="arr down">↓</span> — poniżej. Kreska oznacza, że parametru tego dnia nie badano lub nie ma go w dokumentach.</p>
+
+<p class="warn">⚠️ Różne laboratoria to różne analizatory i różne zakresy referencyjne. Dlatego tabele podzielono według laboratoriów: wewnętrzne laboratorium LoVet, IDEXX, całodobowa klinika TENVET. Liczby można porównywać bezpośrednio tylko w obrębie jednej tabeli. Tabela zbiorcza w rozdziale 1 służy do ogólnego przeglądu, a nie do dokładnego porównania.</p>
+
+<p>Szczegóły każdego badania — we wpisie z odpowiednią datą w <a href="chronology-pl.html">pełnej chronologii</a>.</p>
+
+</section>
+<section class="section" id="najwa-niejsze-z-ostatniego-miesi-ca">
+<h2><span class="num">1</span><span>Najważniejsze z ostatniego miesiąca</span><a class="anchor" href="#najwa-niejsze-z-ostatniego-miesi-ca" aria-hidden="true">#</a></h2>
+<p>Kluczowe parametry od 14.09.2026. Laboratorium podano w nagłówku kolumny.</p>
+
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Parametr</th>
+<th>14.09<br>LoVet / IDEXX</th>
+<th>28.09<br>LoVet</th>
+<th>07.10<br>LoVet / IDEXX</th>
+<th>10.10<br>TENVET</th>
+<th>16.10<br>LoVet / IDEXX</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Kreatynina, µmol/l</td>
+<td>126</td>
+<td>152</td>
+<td class="abn"><strong>250 <span class="arr up">↑</span></strong></td>
+<td>≈ 159</td>
+<td>156</td>
+</tr>
+<tr>
+<td>Mocznik, mmol/l</td>
+<td>6.85</td>
+<td class="abn"><strong>12.0 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>16.5 <span class="arr up">↑</span></strong></td>
+<td>≈ 11.4</td>
+<td class="abn"><strong>23.7 <span class="arr up">↑</span></strong></td>
+</tr>
+<tr>
+<td>Glukoza, mmol/l</td>
+<td class="abn"><strong>8.55 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>8.79 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>10.33 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>≈ 11.3 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>8.90 <span class="arr up">↑</span></strong></td>
+</tr>
+<tr>
+<td>Potas, mmol/l</td>
+<td class="abn"><strong>5.14 <span class="arr up">↑</span></strong></td>
+<td>4.76</td>
+<td>4.54</td>
+<td>3.57</td>
+<td>4.71</td>
+</tr>
+<tr>
+<td>Sód, mmol/l</td>
+<td>150</td>
+<td>145</td>
+<td>150</td>
+<td>148.2</td>
+<td>148</td>
+</tr>
+<tr>
+<td>Amylaza, U/l</td>
+<td>1503</td>
+<td>1509</td>
+<td class="abn"><strong>2158 <span class="arr up">↑</span></strong></td>
+<td>—</td>
+<td class="abn"><strong>2145 <span class="arr up">↑</span></strong></td>
+</tr>
+<tr>
+<td>Albumina, g/l</td>
+<td>33.0</td>
+<td>30.4</td>
+<td>34.1</td>
+<td>33</td>
+<td>33.6</td>
+</tr>
+<tr>
+<td>Leukocyty (WBC), ×10⁹/l</td>
+<td>6.67</td>
+<td class="abn">„leukocytoza” <span class="arr up">↑</span></td>
+<td class="abn"><strong>17.38 <span class="arr up">↑</span></strong></td>
+<td>11.77</td>
+<td>13.95</td>
+</tr>
+<tr>
+<td>Neutrofile, ×10⁹/l</td>
+<td>5.09</td>
+<td class="abn">„neutrofilia” <span class="arr up">↑</span></td>
+<td class="abn"><strong>15.08 <span class="arr up">↑</span></strong></td>
+<td>10.43</td>
+<td class="abn"><strong>11.86 <span class="arr up">↑</span></strong></td>
+</tr>
+<tr>
+<td>Limfocyty, ×10⁹/l</td>
+<td class="abn"><strong>0.83 <span class="arr down">↓</span></strong></td>
+<td>—</td>
+<td>1.19</td>
+<td class="abn"><strong>0.44 <span class="arr down">↓</span></strong></td>
+<td>1.30</td>
+</tr>
+<tr>
+<td>Hematokryt</td>
+<td>0.38 l/l</td>
+<td>—</td>
+<td>0.394 l/l</td>
+<td>49 %</td>
+<td>0.331 l/l</td>
+</tr>
+<tr>
+<td>Hemoglobina</td>
+<td>114 g/l</td>
+<td>—</td>
+<td>121 g/l</td>
+<td class="abn"><strong>16.2 g/dl <span class="arr up">↑</span></strong></td>
+<td>98 g/l</td>
+</tr>
+<tr>
+<td>Płytki krwi, ×10⁹/l</td>
+<td class="abn"><strong>700 <span class="arr up">↑</span></strong></td>
+<td>—</td>
+<td>550</td>
+<td>372</td>
+<td class="abn"><strong>840 <span class="arr up">↑</span></strong></td>
+</tr>
+<tr>
+<td>Masa ciała, kg</td>
+<td>4.78</td>
+<td>—</td>
+<td>4.19 (05.10)</td>
+<td>—</td>
+<td>3.90 (12.10)</td>
+</tr>
+</tbody></table></div>
+<p class="warn">Co widać: <strong>kreatynina gwałtownie wzrosła do 07.10 i do 16.10 wróciła do normy (156), ale mocznik dalej rośnie — 23.7 mmol/l, najwyższa wartość w historii</strong> (⚠️ 10.10 — inny analizator). <strong>Neutrofilia z 28.09–07.10</strong> zmniejszyła się; <strong>na Palladii nie ma neutropenii</strong>. <strong>Hemoglobina 16.10 — 98 g/l, na dolnej granicy</strong> (07.10 — 121), <strong>płytki 840 — najwyższa wartość</strong>. Masa ciała — 3.90 kg. Glukoza jest stale podwyższona, ale fruktozamina 14.09 w normie (277 µmol/l) — wzrosty są stresowe. 10.10 parametry czerwonokrwinkowe powyżej normy — wg lekarza z powodu odwodnienia.</p>
+
+</section>
+<section class="section" id="masa-cia-a">
+<h2><span class="num">2</span><span>Masa ciała</span><a class="anchor" href="#masa-cia-a" aria-hidden="true">#</a></h2>
+<p>Ważenia z opisów badania. Wartości z pola „Waga” formularzy LoVet, które od 14.09 do 28.09 nie było aktualizowane (4.87 kg), nie zostały uwzględnione. Normy masy dla tej konkretnej kotki nie ma, dlatego <strong>na czerwono zaznaczono utratę ponad 10% w stosunku do lipcowej masy 5.2 kg</strong>. Wagi w różnych przychodniach są różne.</p>
+
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Masa, kg</th>
+<th>Od 5.2 kg (lipiec)</th>
+<th>Gdzie ważono</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>29.04.2026</td>
+<td>4.80</td>
+<td>—</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>18.05.2026</td>
+<td>4.80</td>
+<td>—</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>08.06.2026</td>
+<td>4.80</td>
+<td>—</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>13.06.2026</td>
+<td>4.80</td>
+<td>—</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>15.06.2026</td>
+<td>5.30</td>
+<td>—</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>23.06.2026</td>
+<td>5.00</td>
+<td>—</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>24.06.2026</td>
+<td>5.00</td>
+<td>—</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>06.07.2026</td>
+<td>5.20</td>
+<td>+0.0 %</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>10.07.2026</td>
+<td>5.20</td>
+<td>+0.0 %</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>03.08.2026</td>
+<td>5.10</td>
+<td>−1.9 %</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>17.08.2026</td>
+<td>4.94</td>
+<td>−5.0 %</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>19.08.2026</td>
+<td>4.94</td>
+<td>−5.0 %</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>26.08.2026</td>
+<td>5.00</td>
+<td>−3.8 %</td>
+<td>ALPHAVET</td>
+</tr>
+<tr>
+<td>02.09.2026</td>
+<td>4.81</td>
+<td>−7.5 %</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>07.09.2026</td>
+<td>4.77</td>
+<td>−8.3 %</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>11.09.2026</td>
+<td>4.86</td>
+<td>−6.5 %</td>
+<td>LoVet, wg właściciela</td>
+</tr>
+<tr>
+<td>14.09.2026</td>
+<td>4.78</td>
+<td>−8.1 %</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>21.09.2026</td>
+<td>4.75</td>
+<td>−8.7 %</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>23.09.2026</td>
+<td class="abn"><strong>4.6 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>−11.5 % <span class="arr down">↓</span></strong></td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>25.09.2026</td>
+<td class="abn"><strong>4.55 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>−12.5 % <span class="arr down">↓</span></strong></td>
+<td>Retina</td>
+</tr>
+<tr>
+<td>26.09.2026</td>
+<td class="abn"><strong>4.5 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>−13.5 % <span class="arr down">↓</span></strong></td>
+<td>przychodnia uniwersytecka</td>
+</tr>
+<tr>
+<td>05.10.2026</td>
+<td class="abn"><strong>4.19 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>−19.4 % <span class="arr down">↓</span></strong></td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>12.10.2026</td>
+<td class="abn"><strong>3.90 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>−25.0 % <span class="arr down">↓</span></strong></td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>16.10.2026</td>
+<td class="abn"><strong>3.90 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>−25.0 % <span class="arr down">↓</span></strong></td>
+<td>LoVet, ta sama wartość w polu „Waga”</td>
+</tr>
+</tbody></table></div>
+<p>Do połowy września masa utrzymywała się w przedziale 4.8–5.3 kg. <strong>Od 14.09 do 05.10 — z 4.78 do 4.19 kg, czyli −0.6 kg (−12%) w trzy tygodnie;</strong> do 12.10 — <strong>3.90 kg</strong>, kolejne −0.3 kg w tydzień. Od masy z lipca — <strong>−25%</strong>. 10.10 w TENVET kotki nie ważono (BCS 4/9); 16.10 w polu LoVet — te same 3.90 kg, nie wiadomo, czy ważono ponownie.</p>
+
+</section>
+<section class="section" id="cz-sto-oddech-w-i-punkcje">
+<h2><span class="num">3</span><span>Częstość oddechów i punkcje</span><a class="anchor" href="#cz-sto-oddech-w-i-punkcje" aria-hidden="true">#</a></h2>
+<p>Częstość oddechów (RR) — z zapisów przychodni i wg właścicieli. U kota w spoczynku i we śnie za normę uważa się <strong>mniej niż 30 oddechów na minutę</strong>; próg pilnej wizyty wg zalecenia z 26.09 — <strong>40 i więcej</strong>. <strong>Na czerwono zaznaczono wartości 40 i wyższe.</strong> W ostatniej kolumnie — punkcje klatki piersiowej i ilość usuniętego płynu.</p>
+
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Data</th>
+<th>RR, /min</th>
+<th>Warunki</th>
+<th>Kto mierzył</th>
+<th>Punkcja</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>29.04.2026</td>
+<td>30</td>
+<td>we śnie</td>
+<td>właściciel</td>
+<td>—</td>
+</tr>
+<tr>
+<td>11.05.2026</td>
+<td>—</td>
+<td></td>
+<td></td>
+<td><strong>160 ml</strong></td>
+</tr>
+<tr>
+<td>18.05.2026</td>
+<td>26–30</td>
+<td>na wizycie</td>
+<td>LoVet</td>
+<td>—</td>
+</tr>
+<tr>
+<td>13.06.2026</td>
+<td class="abn"><strong>~57 <span class="arr up">↑</span></strong>, po furosemidzie ~30</td>
+<td>w spoczynku, nie we śnie</td>
+<td>właściciel</td>
+<td>—</td>
+</tr>
+<tr>
+<td>~14.06.2026</td>
+<td>głośny oddech w nocy</td>
+<td></td>
+<td>właściciel</td>
+<td><strong>28 ml</strong> (klinika dyżurna)</td>
+</tr>
+<tr>
+<td>24.06.2026</td>
+<td>~30</td>
+<td></td>
+<td>właściciel</td>
+<td>—</td>
+</tr>
+<tr>
+<td>06.07.2026</td>
+<td>pogorszenie (liczby nie zapisano)</td>
+<td></td>
+<td>LoVet</td>
+<td><strong>60 ml</strong></td>
+</tr>
+<tr>
+<td>10–16.09.2026</td>
+<td>26–38; we śnie 26–29</td>
+<td>dziennik domowy</td>
+<td>właściciel</td>
+<td>—</td>
+</tr>
+<tr>
+<td>11.09.2026</td>
+<td>27–38</td>
+<td></td>
+<td>właściciel</td>
+<td>—</td>
+</tr>
+<tr>
+<td>14.09.2026</td>
+<td>w nocy 28–29, maksymalnie 34–35</td>
+<td></td>
+<td>właściciel</td>
+<td>—</td>
+</tr>
+<tr>
+<td>17–24.09.2026</td>
+<td>34–40</td>
+<td>bez dziennika</td>
+<td>właściciel</td>
+<td>—</td>
+</tr>
+<tr>
+<td>23.09.2026</td>
+<td>35–36</td>
+<td>czy we śnie — nie podano</td>
+<td>właściciel</td>
+<td>—</td>
+</tr>
+<tr>
+<td>24.09.2026</td>
+<td>32</td>
+<td>zasypia</td>
+<td>właściciel</td>
+<td>możliwe (wspomniana w karcie znieczulenia, brak dokumentu)</td>
+</tr>
+<tr>
+<td>25.09.2026</td>
+<td>20–28</td>
+<td>w znieczuleniu, na respiratorze</td>
+<td>Retina</td>
+<td>—</td>
+</tr>
+<tr>
+<td>26.09.2026</td>
+<td class="abn"><strong>43 <span class="arr up">↑</span></strong></td>
+<td>na wizycie, z udziałem tłoczni brzusznej</td>
+<td>przychodnia uniwersytecka</td>
+<td><strong>128 ml</strong></td>
+</tr>
+<tr>
+<td>28.09.2026</td>
+<td>pogorszenie w nocy (liczby nie zapisano)</td>
+<td></td>
+<td>LoVet</td>
+<td><strong>50 ml</strong> (z prawej)</td>
+</tr>
+<tr>
+<td>04.10.2026</td>
+<td class="abn"><strong>46 <span class="arr up">↑</span></strong></td>
+<td>przed drugą dawką furosemidu</td>
+<td>właściciel</td>
+<td>—</td>
+</tr>
+<tr>
+<td>05.10.2026</td>
+<td>przyspieszony, przeponowy (liczby nie zapisano)</td>
+<td>na wizycie</td>
+<td>LoVet</td>
+<td>—</td>
+</tr>
+<tr>
+<td>07.10.2026</td>
+<td>pogorszenie (liczby nie zapisano)</td>
+<td></td>
+<td>LoVet</td>
+<td><strong>100 ml</strong> (z prawej)</td>
+</tr>
+<tr>
+<td>10.10.2026, 02:53</td>
+<td>33</td>
+<td>na wizycie, przed klatką tlenową</td>
+<td>TENVET</td>
+<td>—</td>
+</tr>
+<tr>
+<td>10.10.2026, 09:40</td>
+<td class="abn"><strong>40 <span class="arr up">↑</span></strong></td>
+<td>rano, po nocy w tlenie</td>
+<td>TENVET</td>
+<td><strong>120 ml</strong></td>
+</tr>
+<tr>
+<td>12.10.2026</td>
+<td>do 30</td>
+<td>w domu</td>
+<td>właściciel</td>
+<td>—</td>
+</tr>
+<tr>
+<td>16.10.2026, rano</td>
+<td>32–34, piersiowy</td>
+<td>w domu</td>
+<td>właściciel</td>
+<td>—</td>
+</tr>
+<tr>
+<td>16.10.2026, wieczór</td>
+<td class="abn">do 40; o 18:40 — <strong>44–46 <span class="arr up">↑</span></strong></td>
+<td>w domu, przed wizytą</td>
+<td>właściciel</td>
+<td><strong>ok. 140 ml</strong> (60 z prawej + 80 z lewej)</td>
+</tr>
+<tr>
+<td>16.10.2026, po punkcji</td>
+<td>34</td>
+<td>w domu</td>
+<td>właściciel</td>
+<td>—</td>
+</tr>
+<tr>
+<td>17.10.2026</td>
+<td>26 i 28</td>
+<td>nie we śnie, po furosemidzie i Palladii</td>
+<td>właściciel</td>
+<td>—</td>
+</tr>
+</tbody></table></div>
+<p>Od lipca do września punkcje nie były potrzebne. <strong>Od 26.09 do 16.10 — pięć punkcji w trzy tygodnie</strong> (26.09, 28.09, 07.10, 10.10, 16.10; możliwe, że także 24.09), objętości 50–140 ml, odstępy 2–9 dni. Przed każdą — pogorszenie oddechu. 16.10 — największa objętość, sześć dni po poprzedniej punkcji. Zaraz po niej — 34 oddechy, a następnego dnia (17.10), po furosemidzie i Palladii, — 26–28 nawet nie we śnie. Wartości w znieczuleniu (25.09) nie są porównywalne z pozostałymi.</p>
+
+</section>
+<section class="section" id="temperatura">
+<h2><span class="num">4</span><span>Temperatura</span><a class="anchor" href="#temperatura" aria-hidden="true">#</a></h2>
+<p>Temperatura mierzona w odbycie, z opisów badania. Za normę u kota zwykle uważa się <strong>38.0–39.2 °C</strong>; formularze przychodni nie podają zakresu referencyjnego. <strong>Na czerwono zaznaczono wartości powyżej 39.2 °C.</strong></p>
+
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Temperatura, °C</th>
+<th>Gdzie mierzono</th>
+<th>Uwagi</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>23.06.2026</td>
+<td>38.3</td>
+<td>LoVet</td>
+<td></td>
+</tr>
+<tr>
+<td>06.07.2026</td>
+<td>38.5</td>
+<td>LoVet</td>
+<td></td>
+</tr>
+<tr>
+<td>10.07.2026</td>
+<td class="abn"><strong>39.5 <span class="arr up">↑</span></strong></td>
+<td>LoVet</td>
+<td>silne zaparcie, lekko powiększone węzły podżuchwowe</td>
+</tr>
+<tr>
+<td>11.09.2026</td>
+<td>38.8</td>
+<td>LoVet</td>
+<td></td>
+</tr>
+<tr>
+<td>14.09.2026</td>
+<td>38.5</td>
+<td>LoVet</td>
+<td></td>
+</tr>
+<tr>
+<td>21.09.2026</td>
+<td>38.5</td>
+<td>LoVet</td>
+<td></td>
+</tr>
+<tr>
+<td>23.09.2026</td>
+<td>38.5</td>
+<td>LoVet</td>
+<td></td>
+</tr>
+<tr>
+<td>25.09.2026</td>
+<td>38.5–37.9</td>
+<td>Retina</td>
+<td>w trakcie zabiegu w znieczuleniu</td>
+</tr>
+<tr>
+<td>05.10.2026</td>
+<td>39.0</td>
+<td>LoVet</td>
+<td>przy górnej granicy; zalecono Convenię (antybiotyk)</td>
+</tr>
+<tr>
+<td>10.10.2026, 02:53</td>
+<td>38.2</td>
+<td>TENVET</td>
+<td></td>
+</tr>
+<tr>
+<td>10.10.2026, 09:40</td>
+<td>37.7</td>
+<td>TENVET</td>
+<td></td>
+</tr>
+<tr>
+<td>16.10.2026</td>
+<td>38.2</td>
+<td>LoVet</td>
+<td>osłabienie, nudności, zaparcie</td>
+</tr>
+</tbody></table></div>
+<p>Temperatura była powyżej normy tylko raz — 10.07.2026, przy silnym zaparciu. 05.10 — 39.0, przy górnej granicy. W znieczuleniu temperatura zwykle spada, więc wartości z 25.09 nie są porównywalne z pozostałymi. Na wizytach, których nie ma w tabeli, temperatury nie zapisano w dokumentach.</p>
+
+</section>
+<section class="section" id="nerki-kreatynina-i-mocznik-w-ca-ej-historii">
+<h2><span class="num">5</span><span>Nerki: kreatynina i mocznik w całej historii</span><a class="anchor" href="#nerki-kreatynina-i-mocznik-w-ca-ej-historii" aria-hidden="true">#</a></h2>
+<p>Zakresy referencyjne laboratoriów są różne — podano je w każdym wierszu.</p>
+
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Kreatynina, µmol/l</th>
+<th>Zakres</th>
+<th>Mocznik, mmol/l</th>
+<th>Zakres</th>
+<th>Laboratorium</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>24.06.2025</td>
+<td>159</td>
+<td>80–203</td>
+<td>12.14</td>
+<td>5.71–13.57</td>
+<td>IDEXX</td>
+</tr>
+<tr>
+<td>06.08.2025</td>
+<td>150</td>
+<td>80–203</td>
+<td>—</td>
+<td></td>
+<td>IDEXX</td>
+</tr>
+<tr>
+<td>31.10.2025</td>
+<td>186</td>
+<td>80–203</td>
+<td>8.57</td>
+<td>5.71–13.57</td>
+<td>IDEXX</td>
+</tr>
+<tr>
+<td>20.12.2025</td>
+<td class="abn"><strong>221 <span class="arr up">↑</span></strong></td>
+<td>80–203</td>
+<td>9.28</td>
+<td>5.71–13.57</td>
+<td>IDEXX</td>
+</tr>
+<tr>
+<td>17.03.2026</td>
+<td class="abn"><strong>212 <span class="arr up">↑</span></strong></td>
+<td>80–203</td>
+<td>13.21</td>
+<td>5.71–13.57</td>
+<td>IDEXX</td>
+</tr>
+<tr>
+<td>13.04.2026</td>
+<td class="abn"><strong>202 <span class="arr up">↑</span></strong></td>
+<td>1–168</td>
+<td>9.50</td>
+<td>5–11.3</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>27.04.2026</td>
+<td>161</td>
+<td>1–168</td>
+<td>—</td>
+<td></td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>06.07.2026</td>
+<td>136</td>
+<td>1–168</td>
+<td class="abn"><strong>11.5 <span class="arr up">↑</span></strong></td>
+<td>5–11.3</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>10.07.2026</td>
+<td>107</td>
+<td>1–168</td>
+<td>9.45</td>
+<td>5–11.3</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>02.09.2026</td>
+<td>120</td>
+<td>1–168</td>
+<td>8.39</td>
+<td>5–11.3</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>14.09.2026</td>
+<td>126</td>
+<td>1–168</td>
+<td>6.85</td>
+<td>5–11.3</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>28.09.2026</td>
+<td>152</td>
+<td>1–168</td>
+<td class="abn"><strong>12.0 <span class="arr up">↑</span></strong></td>
+<td>5–11.3</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>07.10.2026</td>
+<td class="abn"><strong>250 <span class="arr up">↑</span></strong></td>
+<td>1–168</td>
+<td class="abn"><strong>16.5 <span class="arr up">↑</span></strong></td>
+<td>5–11.3</td>
+<td>LoVet</td>
+</tr>
+<tr>
+<td>10.10.2026</td>
+<td>≈ 159 (1.8 mg/dl)</td>
+<td>≈ 44–212</td>
+<td>≈ 11.4 (68.51 mg/dl)</td>
+<td>≈ 4.0–12.9</td>
+<td>TENVET</td>
+</tr>
+<tr>
+<td>16.10.2026</td>
+<td>156</td>
+<td>1–168</td>
+<td class="abn"><strong>23.7 <span class="arr up">↑</span></strong></td>
+<td>5–11.3</td>
+<td>LoVet</td>
+</tr>
+</tbody></table></div>
+<p>Kreatynina 250 µmol/l 07.10.2026 — najwyższa wartość w historii; do 16.10 — 156, w normie. <strong>Mocznik 23.7 mmol/l 16.10.2026 — najwyższa wartość w historii</strong>: rośnie, choć kreatynina spadła (stosunek BUN/CRE 16 → 38). Wartości TENVET przeliczono z mg/dl i podano orientacyjnie.</p>
+
+</section>
+<section class="section" id="biochemia-wewn-trzne-laboratorium-lovet">
+<h2><span class="num">6</span><span>Biochemia — wewnętrzne laboratorium LoVet</span><a class="anchor" href="#biochemia-wewn-trzne-laboratorium-lovet" aria-hidden="true">#</a></h2>
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Parametr</th>
+<th>Zakres</th>
+<th>13.04.26</th>
+<th>27.04.26</th>
+<th>06.07.26</th>
+<th>10.07.26</th>
+<th>02.09.26</th>
+<th>14.09.26</th>
+<th>28.09.26</th>
+<th>07.10.26</th>
+<th>16.10.26</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Kreatynina, µmol/l</td>
+<td>1–168</td>
+<td class="abn"><strong>202 <span class="arr up">↑</span></strong></td>
+<td>161</td>
+<td>136</td>
+<td>107</td>
+<td>120</td>
+<td>126</td>
+<td>152</td>
+<td class="abn"><strong>250 <span class="arr up">↑</span></strong></td>
+<td>156</td>
+</tr>
+<tr>
+<td>Mocznik (BUN), mmol/l</td>
+<td>5–11.3</td>
+<td>9.50</td>
+<td>—</td>
+<td class="abn"><strong>11.5 <span class="arr up">↑</span></strong></td>
+<td>9.45</td>
+<td>8.39</td>
+<td>6.85</td>
+<td class="abn"><strong>12.0 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>16.5 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>23.7 <span class="arr up">↑</span></strong></td>
+</tr>
+<tr>
+<td>Glukoza, mmol/l</td>
+<td>3.05–6.1</td>
+<td class="abn"><strong>7.87 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>6.73 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>6.85 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>16.47 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>6.93 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>8.55 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>8.79 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>10.33 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>8.90 <span class="arr up">↑</span></strong></td>
+</tr>
+<tr>
+<td>Potas, mmol/l</td>
+<td>3–4.8</td>
+<td>—</td>
+<td class="abn"><strong>5.23 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>5.19 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>5.04 <span class="arr up">↑</span></strong></td>
+<td>—</td>
+<td class="abn"><strong>5.14 <span class="arr up">↑</span></strong></td>
+<td>4.76</td>
+<td>4.54</td>
+<td>4.71</td>
+</tr>
+<tr>
+<td>Sód, mmol/l</td>
+<td>145–158</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>150</td>
+<td>145</td>
+<td>150</td>
+<td>148</td>
+</tr>
+<tr>
+<td>Wapń, mmol/l</td>
+<td>2.3–3</td>
+<td>2.85</td>
+<td class="abn"><strong>3.01 <span class="arr up">↑</span></strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>2.56</td>
+<td>2.50</td>
+<td>2.75</td>
+<td>2.80</td>
+</tr>
+<tr>
+<td>Fosfor, mmol/l</td>
+<td>0.8–1.9</td>
+<td>1.19</td>
+<td>—</td>
+<td>1.26</td>
+<td class="abn"><strong>0.62 <span class="arr down">↓</span></strong></td>
+<td>0.88</td>
+<td>0.89</td>
+<td>1.33</td>
+<td>1.21</td>
+<td>1.20</td>
+</tr>
+<tr>
+<td>Białko całkowite, g/l</td>
+<td>57–94</td>
+<td>71.0</td>
+<td>—</td>
+<td>74.4</td>
+<td>72.1</td>
+<td>72.7</td>
+<td>73.2</td>
+<td>69.6</td>
+<td>81.7</td>
+<td>78.6</td>
+</tr>
+<tr>
+<td>Albumina, g/l</td>
+<td>26–46</td>
+<td>32.0</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>33.0</td>
+<td>30.4</td>
+<td>34.1</td>
+<td>33.6</td>
+</tr>
+<tr>
+<td>Globuliny, g/l</td>
+<td>19–66</td>
+<td>39.0</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>40.2</td>
+<td>39.2</td>
+<td>47.6</td>
+<td>45.0</td>
+</tr>
+<tr>
+<td>ALT, U/l</td>
+<td>1–91</td>
+<td>43</td>
+<td>—</td>
+<td>26</td>
+<td>28</td>
+<td>20</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>16</td>
+</tr>
+<tr>
+<td>ALP, U/l</td>
+<td>1–140</td>
+<td>40</td>
+<td>—</td>
+<td>31</td>
+<td>30</td>
+<td>37</td>
+<td>39</td>
+<td>22</td>
+<td>36</td>
+<td>24</td>
+</tr>
+<tr>
+<td>Bilirubina całkowita, µmol/l</td>
+<td>2–15</td>
+<td>2.79</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>3.32</td>
+<td>2.76</td>
+<td>4.27</td>
+<td>5.13</td>
+</tr>
+<tr>
+<td>Kwasy żółciowe, µmol/l</td>
+<td>0–15</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>5.10</td>
+<td>3.65</td>
+<td>7.18</td>
+<td>7.27</td>
+</tr>
+<tr>
+<td>Amylaza, U/l</td>
+<td>200–1800</td>
+<td>1328</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>1503</td>
+<td>1509</td>
+<td class="abn"><strong>2158 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>2145 <span class="arr up">↑</span></strong></td>
+</tr>
+<tr>
+<td>Cholesterol, mmol/l</td>
+<td>1.8–6.5</td>
+<td>5.12</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>4.22</td>
+<td>4.74</td>
+<td>6.02</td>
+<td class="abn"><strong>6.73 <span class="arr up">↑</span></strong></td>
+</tr>
+</tbody></table></div>
+<p>Glukoza powyżej normy we wszystkich pomiarach, ale fruktozamina 14.09.2026 — <strong>277 µmol/l (norma 160–335)</strong>: cukrzycy nie ma, wzrosty są stresowe. Potas był podwyższony od kwietnia do września i znormalizował się do 28.09. Amylaza powyżej normy od 07.10; cholesterol 16.10 po raz pierwszy nieco powyżej normy.</p>
+
+</section>
+<section class="section" id="krew-wewn-trzne-laboratorium-lovet">
+<h2><span class="num">7</span><span>Krew — wewnętrzne laboratorium LoVet</span><a class="anchor" href="#krew-wewn-trzne-laboratorium-lovet" aria-hidden="true">#</a></h2>
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Parametr</th>
+<th>Zakres</th>
+<th>13.04.26</th>
+<th>27.04.26</th>
+<th>08.06.26</th>
+<th>13.06.26</th>
+<th>06.07.26</th>
+<th>10.07.26</th>
+<th>03.08.26</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Leukocyty (WBC), ×10⁹/l</td>
+<td>5.50–19.50</td>
+<td>7.33</td>
+<td>9.94</td>
+<td class="abn"><strong>2.56 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>3.53 <span class="arr down">↓</span></strong></td>
+<td>9.74</td>
+<td>10.62</td>
+<td>6.06</td>
+</tr>
+<tr>
+<td>Neutrofile, ×10⁹/l</td>
+<td>3.12–12.58</td>
+<td>4.18</td>
+<td>—</td>
+<td class="abn"><strong>0.45 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>1.42 <span class="arr down">↓</span></strong></td>
+<td>7.49</td>
+<td>10.01</td>
+<td class="abn"><strong>1.41 <span class="arr down">↓</span></strong></td>
+</tr>
+<tr>
+<td>Limfocyty, ×10⁹/l</td>
+<td>0.73–7.86</td>
+<td>2.73</td>
+<td>—</td>
+<td>1.71</td>
+<td>1.98</td>
+<td>1.48</td>
+<td class="abn"><strong>0.40 <span class="arr down">↓</span></strong></td>
+<td>4.36</td>
+</tr>
+<tr>
+<td>Erytrocyty (RBC), ×10¹²/l</td>
+<td>4.60–10.20</td>
+<td>8.03</td>
+<td>—</td>
+<td>7.85</td>
+<td>7.23</td>
+<td>7.02</td>
+<td>7.35</td>
+<td>6.74</td>
+</tr>
+<tr>
+<td>Hemoglobina, g/dl</td>
+<td>~8.5–15.3</td>
+<td>10.0</td>
+<td>11.0</td>
+<td>~9.7</td>
+<td>9.9</td>
+<td>9.2</td>
+<td>9.2</td>
+<td class="abn"><strong>8.3 <span class="arr down">↓</span></strong></td>
+</tr>
+<tr>
+<td>Hematokryt, %</td>
+<td>~26–54</td>
+<td>28.7</td>
+<td>31.9</td>
+<td>~28.9</td>
+<td>26.7</td>
+<td>26.1</td>
+<td>27.2</td>
+<td class="abn"><strong>23.5 <span class="arr down">↓</span></strong></td>
+</tr>
+<tr>
+<td>MCV, fl</td>
+<td>~38–54</td>
+<td class="abn"><strong>35.8 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>34.9 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>36.8 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>36.9 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>37.3 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>37.0 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>34.9 <span class="arr down">↓</span></strong></td>
+</tr>
+<tr>
+<td>Płytki krwi, ×10⁹/l</td>
+<td>~100–518</td>
+<td>266</td>
+<td>—</td>
+<td>~399</td>
+<td class="abn"><strong>699 <span class="arr up">↑</span></strong></td>
+<td>304</td>
+<td>335</td>
+<td>426</td>
+</tr>
+</tbody></table></div>
+<p class="warn">08.06.2026 — ciężka neutropenia, z powodu której odwołano karboplatynę. 10.07.2026 — obraz stresowy przy silnym zaparciu. ⚠️ Na formularzu z 13.04.2026 erytrocyty, hemoglobina i hematokryt oznaczone jako obniżone — prawdopodobnie laboratorium stosowało wtedy inne zakresy; tutaj zaznaczono tylko MCV. Wartości ze znakiem „~” są słabo czytelne na wydruku termicznym.</p>
+
+</section>
+<section class="section" id="krew-idexx">
+<h2><span class="num">8</span><span>Krew — IDEXX</span><a class="anchor" href="#krew-idexx" aria-hidden="true">#</a></h2>
+<p>Zakresy referencyjne — z formularzy z 2026 roku; w 2025 roku IDEXX stosował inny zakres MCV (39–56 fl).</p>
+
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Parametr</th>
+<th>Zakres</th>
+<th>24.06.25</th>
+<th>06.08.25</th>
+<th>31.10.25</th>
+<th>20.12.25</th>
+<th>17.03.26</th>
+<th>14.09.26</th>
+<th>07.10.26</th>
+<th>16.10.26</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Leukocyty (WBC), ×10⁹/l</td>
+<td>2.87–17.02</td>
+<td>7.05</td>
+<td>—</td>
+<td>—</td>
+<td>11.28</td>
+<td>—</td>
+<td>6.67</td>
+<td class="abn"><strong>17.38 <span class="arr up">↑</span></strong></td>
+<td>13.95</td>
+</tr>
+<tr>
+<td>Neutrofile, ×10⁹/l</td>
+<td>2.30–10.29</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>5.09</td>
+<td class="abn"><strong>15.08 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>11.86 <span class="arr up">↑</span></strong></td>
+</tr>
+<tr>
+<td>Limfocyty, ×10⁹/l</td>
+<td>0.92–6.88</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td class="abn"><strong>0.83 <span class="arr down">↓</span></strong></td>
+<td>1.19</td>
+<td>1.30</td>
+</tr>
+<tr>
+<td>Monocyty, ×10⁹/l</td>
+<td>0.05–0.67</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>0.34</td>
+<td>0.58</td>
+<td>0.50</td>
+</tr>
+<tr>
+<td>Eozynofile, ×10⁹/l</td>
+<td>0.17–1.57</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>0.39</td>
+<td>0.50</td>
+<td>0.27</td>
+</tr>
+<tr>
+<td>Erytrocyty (RBC), ×10¹²/l</td>
+<td>6.54–12.20</td>
+<td>9.46</td>
+<td>10.81</td>
+<td>—</td>
+<td>10.62</td>
+<td>—</td>
+<td>10.27</td>
+<td>10.99</td>
+<td>9.00</td>
+</tr>
+<tr>
+<td>Hematokryt, l/l</td>
+<td>0.303–0.523</td>
+<td>0.415</td>
+<td>0.386</td>
+<td>—</td>
+<td>0.38</td>
+<td>—</td>
+<td>0.38</td>
+<td>0.394</td>
+<td>0.331</td>
+</tr>
+<tr>
+<td>Hemoglobina, g/l</td>
+<td>98–162</td>
+<td>128</td>
+<td>138</td>
+<td>—</td>
+<td>120</td>
+<td>103</td>
+<td>114</td>
+<td>121</td>
+<td>98</td>
+</tr>
+<tr>
+<td>MCV, fl</td>
+<td>35.9–53.1</td>
+<td>43.9</td>
+<td class="abn"><strong>35.7 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>37.6 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>35.6 <span class="arr down">↓</span></strong></td>
+<td>—</td>
+<td>37.0</td>
+<td>35.9</td>
+<td>36.8</td>
+</tr>
+<tr>
+<td>MCH, pg</td>
+<td>11.8–17.3</td>
+<td>13.5</td>
+<td>—</td>
+<td class="abn"><strong>12.0 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>11.3 <span class="arr down">↓</span></strong></td>
+<td>—</td>
+<td class="abn"><strong>11.1 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>11.0 <span class="arr down">↓</span></strong></td>
+<td class="abn"><strong>10.9 <span class="arr down">↓</span></strong></td>
+</tr>
+<tr>
+<td>MCHC, g/l</td>
+<td>281–358</td>
+<td>308</td>
+<td>—</td>
+<td>—</td>
+<td>317</td>
+<td>—</td>
+<td>300</td>
+<td>307</td>
+<td>296</td>
+</tr>
+<tr>
+<td>RDW, %</td>
+<td>15.0–27.0</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td class="abn"><strong>31.4 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>31.2 <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>28.9 <span class="arr up">↑</span></strong></td>
+</tr>
+<tr>
+<td>Retikulocyty, K/µl</td>
+<td>3.0–50.0</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>20.5</td>
+<td>15.4</td>
+<td>38.7</td>
+</tr>
+<tr>
+<td>Płytki krwi, ×10⁹/l</td>
+<td>151–600</td>
+<td>427</td>
+<td>325</td>
+<td>—</td>
+<td>279</td>
+<td>—</td>
+<td class="abn"><strong>700 <span class="arr up">↑</span></strong></td>
+<td>550</td>
+<td class="abn"><strong>840 <span class="arr up">↑</span></strong></td>
+</tr>
+</tbody></table></div>
+<p>Od sierpnia 2025 roku — drobne erytrocyty (mikrocytoza) i obniżone MCH, jeszcze przed pierwszą operacją. 07.10 i 16.10.2026 laboratorium IDEXX odnotowało podwyższone RDW (erytrocyty różnej wielkości) i zaleciło rozmaz krwi — według dokumentów nie został wykonany. <strong>16.10 hemoglobina — 98 g/l, dokładnie na dolnej granicy</strong> (07.10 — 121), hematokryt 0.331; retikulocyty wzrosły do 38.7. Płytki 840 — więcej niż kiedykolwiek wcześniej. Formularzy IDEXX z liczbami z 02.09 i 07.09.2026 nie otrzymano.</p>
+
+</section>
+<section class="section" id="badania-tenvet-10-10-2026">
+<h2><span class="num">9</span><span>Badania TENVET, 10.10.2026</span><a class="anchor" href="#badania-tenvet-10-10-2026" aria-hidden="true">#</a></h2>
+<p>Oddzielny analizator (Seamaty, BC-60R) z własnymi zakresami — nie porównywać bezpośrednio z tabelami powyżej.</p>
+
+<div class="table-wrap" tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Parametr</th>
+<th>Wynik</th>
+<th>Zakres</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Kreatynina, mg/dl</td>
+<td>1.8 (≈ 159 µmol/l)</td>
+<td>0.5–2.4</td>
+</tr>
+<tr>
+<td>Mocznik, mg/dl</td>
+<td>68.51 (≈ 11.4 mmol/l)</td>
+<td>24.08–77.66</td>
+</tr>
+<tr>
+<td>Glukoza, mg/dl</td>
+<td class="abn"><strong>202.73 <span class="arr up">↑</span></strong> (≈ 11.3 mmol/l)</td>
+<td>74.06–159.12</td>
+</tr>
+<tr>
+<td>Białko całkowite / albumina, g/l</td>
+<td>71.4 / 33</td>
+<td>57–89 / 22–44</td>
+</tr>
+<tr>
+<td>ALT / ALP, U/l</td>
+<td>21 / 45</td>
+<td>5–130 / 14–111</td>
+</tr>
+<tr>
+<td>Sód, mmol/l</td>
+<td>148.2</td>
+<td>147–156</td>
+</tr>
+<tr>
+<td>Potas, mmol/l</td>
+<td>3.57</td>
+<td>3–4.4</td>
+</tr>
+<tr>
+<td>Chlorki, mmol/l</td>
+<td class="abn"><strong>106.8 <span class="arr down">↓</span></strong></td>
+<td>110–125</td>
+</tr>
+<tr>
+<td>Wapń zjonizowany, mmol/l</td>
+<td>1.34</td>
+<td>1.15–1.35</td>
+</tr>
+<tr>
+<td>Wodorowęglany (HCO₃⁻), mmol/l</td>
+<td class="abn"><strong>24.4 <span class="arr up">↑</span></strong></td>
+<td>17–23</td>
+</tr>
+<tr>
+<td>pH</td>
+<td>7.408</td>
+<td>7.35–7.45</td>
+</tr>
+<tr>
+<td>Mleczany, mmol/l</td>
+<td class="abn"><strong>2.47 <span class="arr up">↑</span></strong></td>
+<td>0.5–2</td>
+</tr>
+<tr>
+<td>Leukocyty (WBC), ×10⁹/l</td>
+<td>11.77</td>
+<td>3.46–17.5</td>
+</tr>
+<tr>
+<td>Neutrofile, ×10⁹/l</td>
+<td class="abn">10.43 (<strong>88.6 % <span class="arr up">↑</span></strong>)</td>
+<td>1.95–11.5 (30–83.5 %)</td>
+</tr>
+<tr>
+<td>Limfocyty, ×10⁹/l</td>
+<td class="abn"><strong>0.44 <span class="arr down">↓</span></strong></td>
+<td>0.73–7.4</td>
+</tr>
+<tr>
+<td>Erytrocyty (RBC), ×10¹²/l</td>
+<td class="abn"><strong>13.31 <span class="arr up">↑</span></strong></td>
+<td>6.3–11.82</td>
+</tr>
+<tr>
+<td>Hemoglobina, g/dl</td>
+<td class="abn"><strong>16.2 <span class="arr up">↑</span></strong></td>
+<td>9–16</td>
+</tr>
+<tr>
+<td>Hematokryt, %</td>
+<td>49</td>
+<td>26–50.2</td>
+</tr>
+<tr>
+<td>MCV, fl</td>
+<td>36.8</td>
+<td>34–55</td>
+</tr>
+<tr>
+<td>Płytki krwi, ×10⁹/l</td>
+<td>372</td>
+<td>140–595</td>
+</tr>
+</tbody></table></div>
+<p>Wysokie erytrocyty i hemoglobina to wg lekarza TENVET objaw odwodnienia. pO₂ i saturacji nie podano: krew była najprawdopodobniej żylna, a na podstawie takich wartości nie ocenia się utlenowania.</p>
+
+</section>
+<section class="section" id="mocz">
+<h2><span class="num">10</span><span>Mocz</span><a class="anchor" href="#mocz" aria-hidden="true">#</a></h2>
+<div class="table-wrap" data-wide tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Parametr</th>
+<th>Norma</th>
+<th>19.03.2026<br>ALAB</th>
+<th>21.09.2026<br>Zakrzówek</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Białko</td>
+<td>ujemne</td>
+<td class="abn"><strong>+ (27.38 mg/dl) <span class="arr up">↑</span></strong></td>
+<td class="abn"><strong>+ (0.3 g/l) <span class="arr up">↑</span></strong></td>
+</tr>
+<tr>
+<td>Białko/kreatynina (UPC)</td>
+<td>&lt; 0.2</td>
+<td>—</td>
+<td>0.164</td>
+</tr>
+<tr>
+<td>Krew / hemoglobina</td>
+<td>ujemne</td>
+<td class="abn"><strong>++ <span class="arr up">↑</span></strong></td>
+<td>ujemne</td>
+</tr>
+<tr>
+<td>Erytrocyty w osadzie, wpw</td>
+<td>pojedyncze</td>
+<td class="abn"><strong>20–25 <span class="arr up">↑</span></strong></td>
+<td>0–3</td>
+</tr>
+<tr>
+<td>Leukocyty w osadzie, wpw</td>
+<td>0–5</td>
+<td>—</td>
+<td>0–3</td>
+</tr>
+<tr>
+<td>Ciężar właściwy</td>
+<td>u kotów zwykle &gt; 1.035</td>
+<td>—</td>
+<td class="abn"><strong>1.027 <span class="arr down">↓</span></strong></td>
+</tr>
+<tr>
+<td>pH</td>
+<td>6–7</td>
+<td>—</td>
+<td>6.5</td>
+</tr>
+<tr>
+<td>Glukoza, ketony, bilirubina</td>
+<td>ujemne</td>
+<td>—</td>
+<td>ujemne</td>
+</tr>
+<tr>
+<td>Bakterie, kryształy</td>
+<td>brak</td>
+<td>—</td>
+<td>brak</td>
+</tr>
+</tbody></table></div>
+<p class="warn">We wrześniu 2026 roku krew i białkomocz stwierdzone w marcu się nie potwierdziły: białko w pojedynczej próbce jest obecne, ale stosunek białko/kreatynina jest w normie. ⚠️ Ciężar właściwy 1.027 jest poniżej poziomu, który u kotów zwykle świadczy o dobrej zdolności zagęszczania moczu przez nerki; z jednego pomiaru nie można wyciągnąć jednoznacznego wniosku. Próg 1.035 to powszechnie przyjęty punkt odniesienia, a nie zakres laboratorium.</p>
+
+</section>
+<footer class="colophon" id="o-tej-stronie">
+<h2>O tej stronie<a class="anchor" href="#o-tej-stronie" aria-hidden="true">#</a></h2>
+<p>Stronę opracował właściciel na podstawie tych samych dokumentów co pełna chronologia; nie zawiera danych, których tam nie ma. Wartości przepisano z formularzy; tam, gdzie formularz jest słabo czytelny, zostało to zaznaczone.</p>
+
+<div class="notice"><p><strong>Dokument nie zastępuje badania ani opinii lekarza weterynarii.</strong></p></div>
+</footer>
+    </div>
+  </main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var root = document.documentElement;
+  var STORE = "varia-theme";
+
+  /* --- Тема --------------------------------------------------------- */
+
+  function apply(theme) {
+    if (theme === "dark" || theme === "light") root.setAttribute("data-theme", theme);
+    else root.removeAttribute("data-theme");
+  }
+
+  function current() {
+    var saved = null;
+    try { saved = localStorage.getItem(STORE); } catch (e) {}
+    if (saved) return saved;
+    return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  apply(current());
+
+  var themeBtn = document.getElementById("theme-btn");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      var next = current() === "dark" ? "light" : "dark";
+      apply(next);
+      try { localStorage.setItem(STORE, next); } catch (e) {}
+    });
+  }
+
+  /* --- Подсказка: панель языка и темы мягко пульсирует при первом визите в сессии --- */
+
+  var toolbar = document.getElementById("toolbar");
+  if (toolbar) {
+    var seen = false;
+    try { seen = sessionStorage.getItem("varia-toolbar-hint") === "1"; } catch (e) {}
+    if (!seen) {
+      toolbar.classList.add("toolbar--hint");
+      try { sessionStorage.setItem("varia-toolbar-hint", "1"); } catch (e) {}
+    }
+  }
+
+  /* --- Мобильное меню ----------------------------------------------- */
+
+  var toc = document.getElementById("toc");
+  var scrim = document.getElementById("scrim");
+  var menuBtn = document.getElementById("menu-btn");
+
+  function setMenu(open) {
+    if (!toc || !scrim) return;
+    toc.classList.toggle("is-open", open);
+    scrim.classList.toggle("is-open", open);
+    if (menuBtn) menuBtn.setAttribute("aria-expanded", String(open));
+  }
+
+  if (menuBtn) menuBtn.addEventListener("click", function () { setMenu(!toc.classList.contains("is-open")); });
+  if (scrim) scrim.addEventListener("click", function () { setMenu(false); });
+  if (toc) toc.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
+
+  /* --- Прогресс чтения ---------------------------------------------- */
+
+  var bar = document.getElementById("progress");
+  var links = Array.prototype.slice.call(document.querySelectorAll(".toc a[href^='#']"));
+  var targets = links
+    .map(function (a) { return document.getElementById(decodeURIComponent(a.hash.slice(1))); })
+    .filter(Boolean);
+  var activeLink = null;
+  var ticking = false;
+
+  function update() {
+    ticking = false;
+
+    if (bar) {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (max > 0 ? Math.min(1, window.scrollY / max) * 100 : 0) + "%";
+    }
+
+    // Активный пункт оглавления — последний заголовок выше линии чтения.
+    var line = window.scrollY + window.innerHeight * 0.28;
+    var found = null;
+    for (var i = 0; i < targets.length; i++) {
+      if (targets[i].getBoundingClientRect().top + window.scrollY <= line) found = links[i];
+      else break;
+    }
+    if (!found && links.length) found = links[0];
+
+    if (found !== activeLink) {
+      if (activeLink) activeLink.classList.remove("is-active");
+      if (found) {
+        found.classList.add("is-active");
+        if (toc && window.innerWidth > 1000) {
+          var box = found.getBoundingClientRect();
+          var view = toc.getBoundingClientRect();
+          if (box.top < view.top + 40 || box.bottom > view.bottom - 40) {
+            found.scrollIntoView({ block: "center" });
+          }
+        }
+      }
+      activeLink = found;
+    }
+  }
+
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  update();
+
+  /* --- Наверх -------------------------------------------------------- */
+
+  var topBtn = document.getElementById("top-btn");
+  if (topBtn) {
+    topBtn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+})();
+
+</script>
+</body>
+</html>

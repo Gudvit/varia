@@ -1,0 +1,1338 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Varia — analysis: key points as of 16.10.2026</title>
+<meta name="description" content="Analysis: key points as of 16.10.2026. 13.04.2026 – 16.10.2026.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%88%3C/text%3E%3C/svg%3E">
+<style>
+/* ==========================================================================
+   Варя — медицинская карта.
+   Спокойная «клиническая бумага» на тёплом графите: иерархия строится
+   типографикой и отступами, бирюзовый акцент — только для активного
+   и для актуального состояния.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  --bg:            #f7f5f1;
+  --bg-tint:       #f1eee8;
+  --surface:       #ffffff;
+  --surface-alt:   #f6f3ee;
+  --surface-hover: #f0ece6;
+
+  --text:        #1c1b19;
+  --text-soft:   #45413c;
+  --muted:       #6e675f;
+  --faint:       #9d958b;
+
+  --line:        #e6e1d9;
+  --line-strong: #d2cbc0;
+
+  --accent:      #23675f;
+  --accent-soft: #e3efec;
+  --accent-line: #a7ccc6;
+
+  --warn:        #8a5207;
+  --warn-tint:   rgba(201, 138, 40, .09);
+  --warn-line:   #d9a85a;
+
+  --up:          #a8371f;
+  --down:        #1f5f8b;
+  --abn:         #b3261e;
+  --abn-soft:    rgba(179, 38, 30, .045);
+
+  --glass:         rgba(255, 255, 255, .78);
+
+  --bar-bg:        #ffffff;
+  --bar-line:      #cfc7bb;
+  --bar-text:      #1c1b19;
+  --bar-hover:     #f0ece6;
+  --bar-sel:       #23675f;
+  --bar-on-sel:    #ffffff;
+  --bar-ping:      rgba(35, 103, 95, .45);
+  --hero-glow:     rgba(35, 103, 95, .06);
+  --portrait-ring: rgba(28, 24, 18, .08);
+
+  --shadow-sm: 0 1px 2px rgba(28, 24, 18, .05), 0 1px 3px rgba(28, 24, 18, .04);
+  --shadow-md: 0 8px 24px rgba(28, 24, 18, .09), 0 2px 6px rgba(28, 24, 18, .05);
+
+  --sans: system-ui, -apple-system, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --sidebar: 288px;
+  --content: 760px;
+  --radius:  14px;
+  --ease:    cubic-bezier(.2, .7, .2, 1);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg:            #151412;
+  --bg-tint:       #1a1917;
+  --surface:       #1f1d1b;
+  --surface-alt:   #252320;
+  --surface-hover: #2a2825;
+
+  --text:        #edeae5;
+  --text-soft:   #cfc9c1;
+  --muted:       #a1998f;
+  --faint:       #776f66;
+
+  --line:        #2e2b27;
+  --line-strong: #3f3a34;
+
+  --accent:      #74bdb2;
+  --accent-soft: rgba(116, 189, 178, .12);
+  --accent-line: rgba(116, 189, 178, .36);
+
+  --warn:        #e2ad62;
+  --warn-tint:   rgba(226, 173, 98, .055);
+  --warn-line:   rgba(226, 173, 98, .5);
+
+  --up:          #ef8a72;
+  --down:        #7db8e0;
+  --abn:         #ff958a;
+  --abn-soft:    rgba(255, 120, 105, .06);
+
+  --glass:         rgba(31, 29, 27, .74);
+
+  --bar-bg:        #2b2825;
+  --bar-line:      #4d473f;
+  --bar-text:      #f3efe9;
+  --bar-hover:     #36322e;
+  --bar-sel:       #74bdb2;
+  --bar-on-sel:    #0d211e;
+  --bar-ping:      rgba(116, 189, 178, .55);
+  --hero-glow:     rgba(116, 189, 178, .07);
+  --portrait-ring: rgba(255, 255, 255, .07);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .35);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, .42), 0 2px 6px rgba(0, 0, 0, .28);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: var(--accent-soft); color: var(--text); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* --- Прогресс чтения --------------------------------------------------- */
+
+#progress {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 2px;
+  width: 0;
+  background: var(--accent);
+  z-index: 60;
+  transition: width .1s linear;
+}
+
+/* --- Каркас ------------------------------------------------------------ */
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar) minmax(0, 1fr);
+  align-items: start;
+}
+
+.main { min-width: 0; padding: 0 clamp(20px, 5vw, 64px) 128px; }
+.wrap { max-width: var(--content); margin: 0 auto; }
+
+/* --- Боковая навигация ------------------------------------------------- */
+
+.toc {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 26px 16px 48px 22px;
+  border-right: 1px solid var(--line);
+  background: var(--bg-tint);
+  font-size: 13.5px;
+  line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.toc__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 26px;
+  padding: 0 6px;
+}
+
+.toc__avatar {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px var(--portrait-ring);
+}
+
+.toc__name {
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 650;
+  letter-spacing: -.01em;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.toc__name span { font-size: 12.5px; font-weight: 500; color: var(--muted); }
+
+.toc__sub {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.toc__label {
+  margin: 0 0 6px;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.toc ol { list-style: none; margin: 0; padding: 0; }
+
+.toc a {
+  display: flex;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: var(--text-soft);
+  text-decoration: none;
+  transition: background-color .15s var(--ease), color .15s var(--ease), box-shadow .15s var(--ease);
+}
+
+.toc a:hover { background: var(--surface-hover); color: var(--text); }
+
+.toc a .num {
+  flex: none;
+  min-width: 1.5em;
+  font-variant-numeric: tabular-nums;
+  color: var(--faint);
+}
+
+.toc a.is-active {
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: inset 2px 0 0 var(--accent), var(--shadow-sm);
+}
+
+.toc a.is-active .num { color: var(--accent); }
+
+.toc__sublist {
+  margin: 2px 0 6px 20px;
+  padding-left: 8px;
+  border-left: 1px solid var(--line-strong);
+}
+
+.toc__sublist a {
+  padding-block: 4px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+/* Документы сайта: текущий — приподнятая плашка с точкой-акцентом. */
+.toc__pages {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+}
+
+.toc__pages a {
+  align-items: center;
+  padding: 8px 10px;
+  font-weight: 500;
+}
+
+.toc__pages a::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--line-strong);
+  transition: background-color .15s var(--ease);
+}
+
+.toc__pages a.is-current {
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: 0 0 0 1px var(--line), var(--shadow-sm);
+}
+
+.toc__pages a.is-current::before { background: var(--accent); }
+
+/* --- Плавающие кнопки -------------------------------------------------- */
+
+.controls {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 50;
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  backdrop-filter: blur(14px) saturate(1.4);
+  color: var(--text-soft);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: color .15s var(--ease), border-color .15s var(--ease), transform .15s var(--ease);
+}
+
+.btn:hover { color: var(--text); border-color: var(--line-strong); }
+.btn:active { transform: scale(.96); }
+.btn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+#menu-btn { display: none; }
+
+/* --- Шапка: карточка пациента ------------------------------------------ */
+
+.hero { padding: clamp(84px, 11vh, 108px) 0 0; }
+
+/* Строка над карточкой: тип документа слева, язык справа. */
+.hero__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  flex-wrap: wrap;
+  margin: 0 0 18px;
+  min-height: 34px;
+}
+
+.hero__eyebrow {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  color: var(--muted);
+}
+
+/* Портрет и сведения — одна композиция на общей поверхности. */
+.hero__card {
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 40px);
+  align-items: center;
+  padding: clamp(14px, 2vw, 18px);
+  padding-right: clamp(20px, 3.4vw, 36px);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background:
+    radial-gradient(120% 140% at 0% 0%, var(--hero-glow) 0%, transparent 55%),
+    linear-gradient(180deg, var(--surface) 0%, var(--bg-tint) 100%);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero__card--plain {
+  grid-template-columns: minmax(0, 1fr);
+  padding: clamp(22px, 3.4vw, 34px);
+}
+
+.hero__portrait { margin: 0; min-width: 0; }
+
+/* Исходные пропорции фото сохраняются: без обрезки, только скругление. */
+.hero__portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px var(--portrait-ring), var(--shadow-md);
+}
+
+.hero__copy { min-width: 0; padding: 8px 0; }
+
+.hero__name {
+  margin: 0;
+  font-size: clamp(42px, 6.2vw, 64px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.035em;
+  color: var(--text);
+}
+
+.hero__alias {
+  margin-left: .12em;
+  font-size: .46em;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  color: var(--muted);
+}
+
+.hero__subtitle {
+  margin: 14px 0 0;
+  font-size: 16.5px;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+/* Части не рвутся, а «·» при переносе остаётся в конце строки, а не в начале. */
+.hero__subtitle span { white-space: nowrap; }
+
+.hero__subtitle span:not(:last-child)::after {
+  content: "·";
+  margin-left: .3em;
+  color: var(--faint);
+}
+
+/* Сведения о пациенте — строки с тонкими разделителями, без ячеек. */
+.hero__facts { margin: 24px 0 0; padding: 0; max-width: 26rem; }
+
+.hero__facts div {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.hero__facts dt { margin: 0; font-size: 13.5px; color: var(--muted); }
+
+.hero__facts dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 560;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+/* Название документа и период — под карточкой. */
+.hero__doc {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin: 30px 0 0;
+  padding: 0 4px;
+}
+
+.hero__lede {
+  margin: 0;
+  font-size: clamp(19px, 2.4vw, 22px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -.012em;
+  color: var(--text);
+}
+
+.hero__period {
+  margin: 0;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+/* --- Панель языка и темы --------------------------------------------- */
+
+/* Одна заметная панель в правом верхнем углу: всегда видна, не прозрачная. */
+.toolbar {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--bar-line);
+  border-radius: 16px;
+  background: var(--bar-bg);
+  box-shadow: var(--shadow-md);
+  animation: toolbar-in .45s var(--ease) both;
+}
+
+.toolbar__lang { display: flex; gap: 2px; }
+
+.toolbar__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--bar-text);
+  font: 650 14px/1 var(--sans);
+  letter-spacing: .04em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .15s var(--ease), color .15s var(--ease), transform .12s var(--ease);
+}
+
+.toolbar__btn:hover { background: var(--bar-hover); }
+.toolbar__btn:active { transform: scale(.95); }
+
+.toolbar__btn:focus-visible {
+  outline: 2px solid var(--bar-sel);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+/* Выбранный язык — сплошная бирюзовая плашка. */
+.toolbar__btn[aria-current="page"],
+.toolbar__btn[aria-current="page"]:hover {
+  background: var(--bar-sel);
+  color: var(--bar-on-sel);
+}
+
+.toolbar__sep {
+  width: 1px;
+  height: 26px;
+  margin: 0 4px;
+  background: var(--bar-line);
+}
+
+.toolbar__theme svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Иконка показывает, на что переключит кнопка: в тёмной теме — солнце, в светлой — луна. */
+.toolbar__theme .icon-sun { display: none; }
+:root[data-theme="dark"] .toolbar__theme .icon-sun { display: block; }
+:root[data-theme="dark"] .toolbar__theme .icon-moon { display: none; }
+
+/* Подсказка при первом визите: два мягких кольца вокруг панели. */
+.toolbar--hint::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  animation: toolbar-ping 1.5s ease-out .6s 2;
+}
+
+@keyframes toolbar-in {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes toolbar-ping {
+  0%   { box-shadow: 0 0 0 0 var(--bar-ping); }
+  100% { box-shadow: 0 0 0 16px transparent; }
+}
+
+/* --- Разделы ----------------------------------------------------------- */
+
+.section { margin-top: clamp(68px, 9vw, 104px); }
+.section:first-of-type { margin-top: 44px; }
+
+.section > h2 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 26px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -.024em;
+  color: var(--text);
+}
+
+/* Номер раздела — тихая метка, а не акцент. */
+.section > h2 .num {
+  flex: none;
+  min-width: 2.1em;
+  padding: 4px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+/* Вводный раздел — актуальное состояние. Приподнятая панель, отделённая от истории. */
+.section--brief {
+  margin-top: 40px;
+  padding: clamp(22px, 3.4vw, 36px);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.section.section--brief > h2 {
+  margin-bottom: 18px;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.section--brief > *:last-child { margin-bottom: 0; }
+.section--brief .table-wrap { background: var(--surface); }
+
+.section__flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.section__flag::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+/* В сводке ⚠️ встречается почти в каждом пункте — там достаточно самого значка,
+   иначе половина панели размечается полосами и подсветка перестаёт работать. */
+.section--brief tr.warn td,
+.section--brief tr.warn:hover td { background: var(--surface); }
+
+.section--brief li.warn {
+  margin-left: 0;
+  padding: 0;
+  border-left: 0;
+  background: none;
+  list-style: disc;
+}
+
+h3, h4 { letter-spacing: -.014em; line-height: 1.3; color: var(--text); }
+
+h3 { margin: 48px 0 16px; font-size: 20px; font-weight: 650; }
+h4 { margin: 36px 0 12px; font-size: 16.5px; font-weight: 650; }
+
+/* Год в хронологии — крупный разделитель эпох. */
+.year {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 64px 0 32px;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.year::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* --- Текст ------------------------------------------------------------- */
+
+p { margin: 0 0 16px; color: var(--text-soft); }
+strong { font-weight: 650; color: var(--text); }
+em { color: var(--text-soft); }
+
+ul, ol { margin: 0 0 20px; padding-left: 1.3em; color: var(--text-soft); }
+li { margin-bottom: 8px; padding-left: .15em; }
+li::marker { color: var(--faint); }
+
+a {
+  color: var(--accent);
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent-line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color .15s var(--ease);
+}
+
+a:hover { text-decoration-color: currentColor; }
+
+blockquote {
+  margin: 0 0 22px;
+  padding: 2px 0 2px 20px;
+  border-left: 2px solid var(--accent-line);
+}
+
+blockquote p { color: var(--text-soft); }
+blockquote > *:last-child { margin-bottom: 0; }
+
+/* Якоря у заголовков */
+.anchor {
+  margin-left: .4em;
+  font-size: .58em;
+  font-weight: 500;
+  color: var(--faint);
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity .15s var(--ease);
+}
+
+h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, .entry:hover .anchor { opacity: 1; }
+.anchor:hover { color: var(--accent); }
+
+/* --- Врезки ------------------------------------------------------------ */
+
+/* Оговорка «не заменяет врача» — спокойная служебная плашка. */
+.notice {
+  margin: 0 0 22px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-tint);
+  font-size: 14.5px;
+}
+
+.notice p:last-child { margin-bottom: 0; }
+
+/* ⚠️ — расхождение или пробел в документах: тонкая полоса, без заливки страницы. */
+p.warn, li.warn {
+  padding: 9px 14px;
+  border-left: 2px solid var(--warn-line);
+  border-radius: 0 10px 10px 0;
+  background: var(--warn-tint);
+}
+
+p.warn { margin-bottom: 18px; }
+li.warn { margin-left: -.3em; list-style: none; }
+
+/* --- Записи хронологии ------------------------------------------------- */
+
+.entry {
+  position: relative;
+  margin: 0;
+  padding: 0 0 38px 30px;
+  border-left: 1px solid var(--line-strong);
+}
+
+.entry::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
+  transition: background-color .15s var(--ease);
+}
+
+.entry:hover::before, .entry:target::before { background: var(--accent); }
+
+.entry > .entry__head { position: relative; margin: 0 0 12px; padding-right: 1.6em; }
+
+/* Якорь записи не должен занимать отдельную строку после блочных даты и заголовка. */
+.entry__head .anchor { position: absolute; top: 0; right: 0; margin: 0; font-size: 13px; }
+
+.entry__date {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+
+.entry__title {
+  display: block;
+  margin-top: 3px;
+  font-size: 17.5px;
+  font-weight: 650;
+  line-height: 1.35;
+  letter-spacing: -.015em;
+  color: var(--text);
+}
+
+.entry > *:last-child { margin-bottom: 0; }
+
+/* --- Таблицы ----------------------------------------------------------- */
+
+.table-wrap {
+  position: relative;
+  margin: 4px 0 26px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.table-wrap:focus-visible { outline-offset: 3px; border-radius: var(--radius); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-alt);
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  color: var(--text-soft);
+  transition: background-color .12s var(--ease);
+}
+
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:hover td { background: var(--surface-hover); }
+
+/* Первый столбец — «шапка» строки; у широких таблиц закреплён при прокрутке. */
+tbody td:first-child { color: var(--text); font-weight: 600; }
+
+.table-wrap[data-wide] th:first-child,
+.table-wrap[data-wide] td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--surface);
+  box-shadow: inset -1px 0 0 var(--line);
+}
+
+.table-wrap[data-wide] thead th:first-child { z-index: 3; background: var(--surface-alt); }
+.table-wrap[data-wide] td:first-child { min-width: 10rem; }
+.table-wrap[data-wide] tbody tr:hover td:first-child { background: var(--surface-hover); }
+
+/* Подложки рисуются поверх непрозрачного фона, чтобы закреплённый столбец не просвечивал. */
+tr.warn td,
+tr.warn:hover td,
+.table-wrap[data-wide] tr.warn td:first-child {
+  background: linear-gradient(var(--warn-tint), var(--warn-tint)), var(--surface);
+}
+
+.arr { font-weight: 700; }
+.arr.up { color: var(--up); }
+.arr.down { color: var(--down); }
+
+/* Значение вне референса на странице анализов */
+td.abn,
+tbody tr:hover td.abn {
+  background: linear-gradient(var(--abn-soft), var(--abn-soft)), var(--surface);
+  color: var(--abn);
+  font-weight: 600;
+}
+
+td.abn .arr { color: var(--abn); }
+
+/* --- Подвал ------------------------------------------------------------ */
+
+.colophon {
+  margin-top: 104px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.colophon h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -.012em;
+}
+
+.colophon p { font-size: 15px; }
+
+/* --- Адаптив ----------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+  html { scroll-padding-top: 20px; }
+
+  .layout { grid-template-columns: minmax(0, 1fr); }
+
+  .toc {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(320px, 86vw);
+    z-index: 70;
+    transform: translateX(-101%);
+    transition: transform .25s var(--ease);
+    box-shadow: var(--shadow-md);
+  }
+
+  .toc.is-open { transform: none; }
+
+  #menu-btn { display: inline-flex; }
+
+  .scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 65;
+    background: rgba(12, 11, 10, .45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease, visibility .2s ease;
+  }
+
+  .scrim.is-open { opacity: 1; visibility: visible; }
+
+  .controls { bottom: 16px; right: 16px; }
+
+  .main { padding-bottom: 96px; }
+}
+
+@media (max-width: 760px) {
+  .hero__card { grid-template-columns: minmax(0, 11.5rem) minmax(0, 1fr); }
+  .hero__facts div { grid-template-columns: 8rem minmax(0, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .main { padding-inline: 16px; }
+
+  .hero { padding-top: 78px; }
+  .toolbar { top: 12px; right: 12px; gap: 2px; padding: 3px; border-radius: 15px; }
+  .toolbar__btn { padding: 0 8px; }
+  .toolbar__sep { margin: 0 2px; }
+
+  .hero__card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 12px 12px 18px;
+    border-radius: 26px;
+  }
+  .hero__portrait img { border-radius: 18px; }
+  .hero__copy { padding: 0 8px; }
+  .hero__facts { max-width: none; }
+  .hero__doc { margin-top: 24px; }
+
+  .section { margin-top: 64px; }
+  .section > h2 { gap: 12px; font-size: 23px; }
+  .section--brief { padding: 22px 18px; border-radius: 20px; }
+
+  .year { margin-top: 52px; font-size: 20px; }
+
+  .entry { padding: 0 0 32px 20px; }
+  .entry__title { font-size: 16.5px; }
+
+  table { font-size: 13px; }
+  .table-wrap[data-wide] td:first-child { min-width: 8.5rem; }
+  thead th, tbody td { padding: 9px 12px; }
+
+  blockquote { padding-left: 14px; }
+}
+
+/* --- Печать / PDF ------------------------------------------------------ */
+
+@media print {
+  /* Печать всегда в светлой палитре, даже если на экране включена тёмная тема. */
+  :root, :root[data-theme="dark"] {
+    color-scheme: light;
+    --bg: #fff; --bg-tint: #fff; --surface: #fff; --surface-alt: #f4f4f4; --surface-hover: #fff;
+    --text: #000; --text-soft: #1a1a1a; --muted: #444; --faint: #666;
+    --line: #ccc; --line-strong: #888; --accent: #14524c; --accent-line: #8bb;
+    --warn-tint: #fdf5e8; --abn-soft: #fbeceb; --abn: #a01d16;
+    --shadow-sm: none; --shadow-md: none;
+  }
+
+  @page { margin: 16mm 14mm; }
+
+  body { font-size: 10.5pt; line-height: 1.5; background: #fff; }
+
+  .toc, .controls, .toolbar, .scrim, #progress, .anchor { display: none !important; }
+  .layout { display: block; }
+  .main { padding: 0; }
+  .wrap { max-width: none; }
+
+  .hero { padding-top: 0; }
+  .hero__bar { margin-bottom: 4mm; min-height: 0; }
+  .hero__card {
+    grid-template-columns: 34mm minmax(0, 1fr);
+    gap: 8mm;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+  }
+  .hero__portrait img { border-radius: 10px; }
+  .hero__name { font-size: 26pt; }
+  .hero__subtitle { margin-top: 2mm; font-size: 10pt; }
+  .hero__facts { margin-top: 3mm; max-width: none; }
+  .hero__facts div { padding: 1.5mm 0; }
+  .hero__facts dt, .hero__facts dd { font-size: 9pt; }
+  .hero__doc { margin-top: 6mm; padding: 3mm 0 0; border-top: 1px solid var(--line-strong); }
+
+  .section { margin-top: 26px; }
+  .section > h2 { font-size: 15pt; break-after: avoid; }
+  .section--brief { padding: 0; border: 0; border-radius: 0; }
+  h3, h4, .entry__head { break-after: avoid; }
+
+  .entry, .table-wrap, .notice, p.warn { break-inside: avoid; }
+  .table-wrap { overflow: visible; }
+  thead th { position: static; }
+  .table-wrap[data-wide] th:first-child,
+  .table-wrap[data-wide] td:first-child { position: static; }
+
+  table { font-size: 8.5pt; }
+  a { color: inherit; text-decoration: none; }
+
+  /* Краткая сводка должна укладываться в 1–2 листа. */
+  .page--compact { font-size: 9.5pt; line-height: 1.4; }
+  .page--compact .hero__bar { margin-bottom: 2mm; }
+  .page--compact .hero__card { grid-template-columns: 24mm minmax(0, 1fr); gap: 6mm; }
+  .page--compact .hero__name { font-size: 20pt; }
+  .page--compact .hero__subtitle { margin-top: 1mm; font-size: 9pt; }
+  .page--compact .hero__facts { margin-top: 2mm; }
+  .page--compact .hero__facts div { padding: 1mm 0; }
+  .page--compact .hero__doc { margin-top: 4mm; padding-top: 2mm; }
+  .page--compact .hero__lede { font-size: 11pt; }
+  .page--compact .section { margin-top: 12px; }
+  .page--compact .section > h2 { font-size: 12.5pt; margin: 0 0 4px; padding-bottom: 2mm; }
+  .page--compact .section__flag { margin-bottom: 1mm; font-size: 8.5pt; }
+  .page--compact p, .page--compact ul, .page--compact ol { margin-top: 3px; margin-bottom: 3px; }
+  .page--compact li { margin: 1px 0; }
+  .page--compact table { font-size: 8pt; }
+  .page--compact th, .page--compact td { padding: 3px 6px; }
+  .page--compact .notice { padding: 6px 10px; margin-top: 8px; }
+}
+
+</style>
+</head>
+<body>
+<div id="progress" role="presentation"></div>
+<div class="scrim" id="scrim"></div>
+
+<div class="toolbar" id="toolbar">
+  <nav class="toolbar__lang" aria-label="Language"><a class="toolbar__btn" href="analysis.html" hreflang="ru" lang="ru">RU</a><a class="toolbar__btn" href="analysis-pl.html" hreflang="pl" lang="pl">PL</a><a class="toolbar__btn" href="analysis-en.html" hreflang="en" lang="en" aria-current="page">EN</a></nav>
+  <span class="toolbar__sep" aria-hidden="true"></span>
+  <button class="toolbar__btn toolbar__theme" id="theme-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
+    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13.4A8.5 8.5 0 1 1 10.6 3.5a6.6 6.6 0 0 0 9.9 9.9Z"/></svg>
+  </button>
+</div>
+
+<div class="controls">
+  <button class="btn" id="menu-btn" aria-label="Contents" aria-expanded="false" aria-controls="toc">
+    <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <button class="btn" id="top-btn" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</div>
+
+<div class="layout">
+  <nav class="toc" id="toc" aria-label="Contents">
+    <div class="toc__brand">
+      <img class="toc__avatar" src="assets/varia-portrait.jpg" alt="" width="40" height="40">
+      <div>
+        <p class="toc__name">Varia <span>medical file</span></p>
+        <p class="toc__sub">13.04.2026 – 16.10.2026</p>
+      </div>
+    </div>
+    <p class="toc__label">Documents</p>
+    <ul class="toc__pages">
+<li><a href="summary-en.html">Summary for the vet</a></li>
+<li><a href="chronology-en.html">Full chronology</a></li>
+<li><a href="analysis-en.html" class="is-current" aria-current="page">Analysis</a></li>
+<li><a href="labs-en.html">Lab trends</a></li>
+    </ul>
+    <p class="toc__label">Sections</p>
+    <ol>
+<li><a href="#main-conclusions"><span class="num"></span><span>Main conclusions</span></a></li>
+<li><a href="#questions-for-the-vet-at-the-next-visit"><span class="num"></span><span>Questions for the vet at the next visit</span></a></li>
+<li><a href="#about-this-part"><span class="num"></span><span>About this part</span></a></li>
+    </ol>
+  </nav>
+
+  <main class="main">
+    <div class="wrap">
+      <header class="hero">
+        <div class="hero__bar">
+          <p class="hero__eyebrow">Veterinary report</p>
+        </div>
+        <div class="hero__card">
+          <figure class="hero__portrait">
+            <img src="assets/varia-portrait.jpg" alt="Varia — a black British Longhair cat">
+          </figure>
+          <div class="hero__copy">
+            <h1 class="hero__name">Varia</h1>
+            <p class="hero__subtitle"><span>Cat</span> <span>British Longhair</span> <span>12 years</span></p>
+            
+          </div>
+        </div>
+        <div class="hero__doc">
+          <p class="hero__lede">Analysis: key points as of 16.10.2026</p>
+          <p class="hero__period">13.04.2026 – 16.10.2026</p>
+        </div>
+      </header>
+
+<section class="section section--brief" id="main-conclusions">
+<h2><span>Main conclusions</span><a class="anchor" href="#main-conclusions" aria-hidden="true">#</a></h2>
+<p>What the records do and do not support. Numbers are in <a href="labs-en.html">“Lab trends”</a>, details in the <a href="chronology-en.html">full chronology</a>.</p>
+
+<div class="table-wrap" tabindex="0" role="group"><table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>What the data show</th>
+<th>Conclusion</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Pleural effusion</strong></td>
+<td>No taps from July to September. From 26.09 to 16.10 — five: 128, 50, 100, 120 and ~140 ml, 2–9 days apart. Breathing worsened before each one</td>
+<td>Fluid reaccumulates quickly and volumes are not decreasing. Volumes and intervals are a reliable measure; ultrasound centimetres from different vets cannot be compared</td>
+</tr>
+<tr>
+<td><strong>Breathing at home</strong></td>
+<td>Before deteriorations the owners counted 34–40 (17–24.09), 46 (04.10) and 44–46 (16.10); after taps — up to 30 (12.10) and 34 (16.10); on 17.10, after furosemide and Palladia, — 26–28 while awake</td>
+<td>Counting at home is the best early warning. Threshold for an urgent visit — 40/min or more</td>
+</tr>
+<tr>
+<td><strong>Furosemide and kidneys</strong></td>
+<td>07.10 — creatinine 250. 16.10 — creatinine 156 (normal), but <strong>urea 23.7 — highest on record</strong>. On the morning of 16.10 furosemide was reduced to 1/2 tablet twice daily, that evening — a 140 ml tap; now back to 3/4 tablet (per the owners)</td>
+<td>Creatinine has recovered, urea has not; the vets have not discussed why. Neoplastic effusion usually responds poorly to diuretics: the calmest period (July–September) was without furosemide</td>
+</tr>
+<tr>
+<td><strong>Blood</strong></td>
+<td>Haemoglobin 121 → 98 g/l (07.10 → 16.10), platelets 840 — highest on record; neutrophils 11.86</td>
+<td>No neutropenia on Palladia. The drop in haemoglobin coincided with two taps of haemorrhagic fluid; the vet described the CBC as “stable”</td>
+</tr>
+<tr>
+<td><strong>Palladia</strong></td>
+<td>No neutropenia on 07.10, 10.10 or 16.10. Every other day; the 16.10 dose was skipped because of weakness and nausea, given on 17.10</td>
+<td>Tolerated as far as the blood counts show. <strong>In the owners’ observation, it is the only part of the treatment that works</strong>; the records do not show this yet — the effusion reaccumulates just as fast</td>
+</tr>
+<tr>
+<td><strong>Signs of progression</strong></td>
+<td>26.09 — ~1 × 1.5 cm mass in the thorax; 05.10 — 0.78 × 0.65 cm liver lesion (“possible metastasis”), right lung collapse</td>
+<td>Probable progression; none of it has been verified</td>
+</tr>
+<tr>
+<td><strong>Weight, nutrition, GI</strong></td>
+<td>4.78 → 4.19 → <strong>3.90 kg</strong> (14.09 → 05.10 → 12.10), −25% from July. Eats a little home-cooked food; 16.10 — nausea and constipation; 18.10, per the owners, — eating, drinking, urinating and defecating</td>
+<td>Weight loss continues — about 0.3 kg per week</td>
+</tr>
+<tr>
+<td><strong>Eyes</strong></td>
+<td>Sutures removed on 15.10: corneas clearer, no discomfort, visual responses preserved</td>
+<td>The surgery on 25.09 worked; the drop regimen has been simplified</td>
+</tr>
+</tbody></table></div>
+</section>
+<section class="section" id="questions-for-the-vet-at-the-next-visit">
+<h2><span>Questions for the vet at the next visit</span><a class="anchor" href="#questions-for-the-vet-at-the-next-visit" aria-hidden="true">#</a></h2>
+<ol>
+<li><strong>Thoracocentesis plan:</strong> the last three taps were 3–6 days apart. At what respiratory rate, where and by whom should a tap be done — including at night. Is an indwelling drain needed.</li>
+<li><strong>Furosemide:</strong> now back to 3/4 tablet (reduced to 1/2 on the morning of 16.10, a 140 ml tap that evening). Confirm the dose and what it achieves.</li>
+<li><strong>Urea 23.7 with normal creatinine:</strong> what is causing it and whether anything should change — food, fluids, steroid.</li>
+<li><strong>Haemoglobin 98 and platelets 840:</strong> whether to monitor more often; the blood smear IDEXX has recommended since 07.10.</li>
+<li><strong>Palladia:</strong> the owners see an effect only from it — how to confirm this when the effusion reaccumulates just as fast; which day the next dose is due (last given on 17.10).</li>
+<li><strong>Nausea and constipation:</strong> what to give long-term; Convenia — repeat or not (open since 12.10).</li>
+</ol>
+
+</section>
+<footer class="colophon" id="about-this-part">
+<h2>About this part<a class="anchor" href="#about-this-part" aria-hidden="true">#</a></h2>
+<p>The analysis was compiled by the owner from the same records as the full chronology and contains no data that are not there. A detailed review from 16.09–28.09.2026 is kept in the repository history.</p>
+
+<div class="notice"><p><strong>This document does not replace examination and assessment by a veterinarian.</strong></p></div>
+</footer>
+    </div>
+  </main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var root = document.documentElement;
+  var STORE = "varia-theme";
+
+  /* --- Тема --------------------------------------------------------- */
+
+  function apply(theme) {
+    if (theme === "dark" || theme === "light") root.setAttribute("data-theme", theme);
+    else root.removeAttribute("data-theme");
+  }
+
+  function current() {
+    var saved = null;
+    try { saved = localStorage.getItem(STORE); } catch (e) {}
+    if (saved) return saved;
+    return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  apply(current());
+
+  var themeBtn = document.getElementById("theme-btn");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      var next = current() === "dark" ? "light" : "dark";
+      apply(next);
+      try { localStorage.setItem(STORE, next); } catch (e) {}
+    });
+  }
+
+  /* --- Подсказка: панель языка и темы мягко пульсирует при первом визите в сессии --- */
+
+  var toolbar = document.getElementById("toolbar");
+  if (toolbar) {
+    var seen = false;
+    try { seen = sessionStorage.getItem("varia-toolbar-hint") === "1"; } catch (e) {}
+    if (!seen) {
+      toolbar.classList.add("toolbar--hint");
+      try { sessionStorage.setItem("varia-toolbar-hint", "1"); } catch (e) {}
+    }
+  }
+
+  /* --- Мобильное меню ----------------------------------------------- */
+
+  var toc = document.getElementById("toc");
+  var scrim = document.getElementById("scrim");
+  var menuBtn = document.getElementById("menu-btn");
+
+  function setMenu(open) {
+    if (!toc || !scrim) return;
+    toc.classList.toggle("is-open", open);
+    scrim.classList.toggle("is-open", open);
+    if (menuBtn) menuBtn.setAttribute("aria-expanded", String(open));
+  }
+
+  if (menuBtn) menuBtn.addEventListener("click", function () { setMenu(!toc.classList.contains("is-open")); });
+  if (scrim) scrim.addEventListener("click", function () { setMenu(false); });
+  if (toc) toc.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
+
+  /* --- Прогресс чтения ---------------------------------------------- */
+
+  var bar = document.getElementById("progress");
+  var links = Array.prototype.slice.call(document.querySelectorAll(".toc a[href^='#']"));
+  var targets = links
+    .map(function (a) { return document.getElementById(decodeURIComponent(a.hash.slice(1))); })
+    .filter(Boolean);
+  var activeLink = null;
+  var ticking = false;
+
+  function update() {
+    ticking = false;
+
+    if (bar) {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (max > 0 ? Math.min(1, window.scrollY / max) * 100 : 0) + "%";
+    }
+
+    // Активный пункт оглавления — последний заголовок выше линии чтения.
+    var line = window.scrollY + window.innerHeight * 0.28;
+    var found = null;
+    for (var i = 0; i < targets.length; i++) {
+      if (targets[i].getBoundingClientRect().top + window.scrollY <= line) found = links[i];
+      else break;
+    }
+    if (!found && links.length) found = links[0];
+
+    if (found !== activeLink) {
+      if (activeLink) activeLink.classList.remove("is-active");
+      if (found) {
+        found.classList.add("is-active");
+        if (toc && window.innerWidth > 1000) {
+          var box = found.getBoundingClientRect();
+          var view = toc.getBoundingClientRect();
+          if (box.top < view.top + 40 || box.bottom > view.bottom - 40) {
+            found.scrollIntoView({ block: "center" });
+          }
+        }
+      }
+      activeLink = found;
+    }
+  }
+
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  update();
+
+  /* --- Наверх -------------------------------------------------------- */
+
+  var topBtn = document.getElementById("top-btn");
+  if (topBtn) {
+    topBtn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+})();
+
+</script>
+</body>
+</html>

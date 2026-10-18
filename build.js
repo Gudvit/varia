@@ -37,12 +37,15 @@ const PAGES = [
   { src: "summary.md", out: "summary.html", nav: "Кратко для врача", profile: true, lang: "ru", group: "summary", compact: true },
   { src: "summary.pl.md", out: "summary-pl.html", nav: "Podsumowanie dla lekarza", profile: true, lang: "pl", group: "summary", compact: true },
   { src: "summary.en.md", out: "summary-en.html", nav: "Summary for the vet", profile: true, lang: "en", group: "summary", compact: true },
-  { src: "final_report.md", out: "index.html", nav: "Полная хронология", profile: true, lang: "ru",
-    navIn: { pl: "Pełna chronologia", en: "Full chronology" } },
-  { src: "analysis.md", out: "analysis.html", nav: "Анализ", profile: false, lang: "ru",
-    navIn: { pl: "Analiza", en: "Analysis" } },
-  { src: "labs.md", out: "labs.html", nav: "Анализы в динамике", profile: false, lang: "ru", highlight: true,
-    navIn: { pl: "Badania w dynamice", en: "Lab trends" } },
+  { src: "final_report.md", out: "index.html", nav: "Полная хронология", profile: true, lang: "ru", group: "report" },
+  { src: "final_report.pl.md", out: "chronology-pl.html", nav: "Pełna chronologia", profile: true, lang: "pl", group: "report" },
+  { src: "final_report.en.md", out: "chronology-en.html", nav: "Full chronology", profile: true, lang: "en", group: "report" },
+  { src: "analysis.md", out: "analysis.html", nav: "Анализ", profile: false, lang: "ru", group: "analysis" },
+  { src: "analysis.pl.md", out: "analysis-pl.html", nav: "Analiza", profile: false, lang: "pl", group: "analysis" },
+  { src: "analysis.en.md", out: "analysis-en.html", nav: "Analysis", profile: false, lang: "en", group: "analysis" },
+  { src: "labs.md", out: "labs.html", nav: "Анализы в динамике", profile: false, lang: "ru", group: "labs", highlight: true },
+  { src: "labs.pl.md", out: "labs-pl.html", nav: "Badania w dynamice", profile: false, lang: "pl", group: "labs", highlight: true },
+  { src: "labs.en.md", out: "labs-en.html", nav: "Lab trends", profile: false, lang: "en", group: "labs", highlight: true },
 ];
 
 /** Подписи интерфейса. Тексты документов живут в Markdown, здесь — только обвязка. */
@@ -92,7 +95,7 @@ const inline = (s) => marked.parseInline(s).trim();
  * а не сообщает о расхождении в документах.
  */
 function markWarnings(html) {
-  if (/Значком|Symbolem|The ⚠️ symbol/.test(html)) return html;
+  if (/Значком|Symbolem|Znakiem|The (?:<strong>)?⚠️(?:<\/strong>)? (?:symbol|sign)/.test(html)) return html;
   return html
     .replace(/<tr>(?:(?!<\/tr>)[\s\S])*<\/tr>/g, (row) =>
       row.includes("⚠️") ? row.replace("<tr>", '<tr class="warn">') : row
@@ -117,7 +120,7 @@ function render(token) {
 // Заголовок вида «13.04.2026, 16:00 — LoVet, dr Drewniak: консультация»:
 // дата (возможно приблизительная или диапазоном) плюс необязательное описание.
 // Шаблон требует полную дату, иначе под него попадают нумерованные подразделы («8.1.»).
-const DATED = /^[~≈]?\s*(?:До\s+|С\s+)?\d{1,2}(?:[–—-]\d{1,2})?\.\d{2}\.\d{4}/u;
+const DATED = /^[~≈]?\s*(?:(?:До|С|Do|Od|By|From)\s+)?\d{1,2}(?:[–—-]\d{1,2})?\.\d{2}\.\d{4}/u;
 
 /* -------------------------------------------------------------------------
    Разбор одного Markdown-документа
@@ -246,7 +249,7 @@ function buildPage(page) {
     if (token.type === "heading" && token.depth === 3) {
       closeEntry();
       const id = slug(token.text);
-      const year = /^\d{4}\s+год$/.test(token.text.trim());
+      const year = /^(?:\d{4}\s+год|rok\s+\d{4}|\d{4})$/i.test(token.text.trim());
 
       if (toc.length) toc[toc.length - 1].children.push({ id, text: token.text });
 
