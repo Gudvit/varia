@@ -49,22 +49,22 @@ const PAGES = [
 const UI = {
   ru: {
     eyebrow: "Ветеринарный отчёт", docs: "Документы", sections: "Разделы",
-    toc: "Оглавление", theme: "Сменить тему", top: "В начало", caption: "Варя",
-    name: "Имя", nameValue: "Варя (Varia)", age: "Возраст", ageValue: "12 лет",
+    toc: "Оглавление", theme: "Сменить тему", top: "В начало",
+    species: "Кошка", breed: "британская длинношёрстная", ageValue: "12 лет",
     born: "Дата рождения", chip: "Чип", owner: "Владелец", language: "Язык",
     ruOnly: "",
   },
   pl: {
     eyebrow: "Raport weterynaryjny", docs: "Dokumenty", sections: "Sekcje",
-    toc: "Spis treści", theme: "Zmień motyw", top: "Na górę", caption: "Varia",
-    name: "Imię", nameValue: "Varia (Waria)", age: "Wiek", ageValue: "12 lat",
+    toc: "Spis treści", theme: "Zmień motyw", top: "Na górę",
+    species: "Kotka", breed: "brytyjska długowłosa", ageValue: "12 lat",
     born: "Data urodzenia", chip: "Chip", owner: "Właściciel", language: "Język",
     ruOnly: " (RU)",
   },
   en: {
     eyebrow: "Veterinary report", docs: "Documents", sections: "Sections",
-    toc: "Contents", theme: "Toggle theme", top: "Back to top", caption: "Varia",
-    name: "Name", nameValue: "Varia", age: "Age", ageValue: "12 years",
+    toc: "Contents", theme: "Toggle theme", top: "Back to top",
+    species: "Cat", breed: "British Longhair", ageValue: "12 years",
     born: "Date of birth", chip: "Microchip", owner: "Owner", language: "Language",
     ruOnly: " (RU)",
   },
@@ -364,26 +364,30 @@ function renderPage(doc, docs) {
 
   const owner = (meta.find((m) => /владелец|właściciel|owner/i.test(m.label)) || {}).value || "Karina Grakova";
   const ownerName = owner.split(",")[0].trim();
-  const heroProfile = [
-    [t.name, t.nameValue],
-    [t.age, t.ageValue],
+  // Имя и возраст стоят в заголовке и подзаголовке карточки, поэтому в списке фактов их нет.
+  const heroFacts = [
     [t.born, "25.08.2014"],
     [t.chip, "968000011873589"],
     [t.owner, ownerName],
   ];
-  const heroProfileHtml = page.profile
-    ? `<dl class="hero__profile">
-${heroProfile
-  .map(([label, value]) => `<div><dt>${escape(label)}</dt><dd>${escape(value)}</dd></div>`)
+  const heroFactsHtml = page.profile
+    ? `<dl class="hero__facts">
+${heroFacts
+  .map(([label, value]) => `              <div><dt>${escape(label)}</dt><dd>${escape(value)}</dd></div>`)
   .join("\n")}
             </dl>`
     : "";
 
+  // «Варя (Varia)» → основное имя крупно, вариант в скобках — вторым планом.
+  const nameMatch = title.match(/^(.+?)\s*\((.+)\)$/);
+  const heroName = nameMatch
+    ? `${inline(nameMatch[1])} <span class="hero__alias">${inline(nameMatch[2])}</span>`
+    : inline(title);
+
   const heroImageHtml = heroImage
     ? `<figure class="hero__portrait">
-          <img src="${heroImage}" alt="${escape(heroImageAlt)}">
-          <figcaption>${t.caption}</figcaption>
-        </figure>`
+            <img src="${heroImage}" alt="${escape(heroImageAlt)}">
+          </figure>`
     : "";
 
   const period = (meta.find((m) => /период|данные|dane|data/i.test(m.label)) || {}).value || "";
@@ -434,17 +438,22 @@ ${tocHtml}
   <main class="main">
     <div class="wrap">
       <header class="hero">
-        <div class="hero__intro">
+        <div class="hero__bar">
+          <p class="hero__eyebrow">${t.eyebrow}</p>
+          ${langHtml}
+        </div>
+        <div class="hero__card${heroImage ? "" : " hero__card--plain"}">
           ${heroImageHtml}
           <div class="hero__copy">
-            <p class="hero__eyebrow">${t.eyebrow}</p>
-            ${langHtml}
-            <h1>${inline(title)}</h1>
-            ${heroProfileHtml}
+            <h1 class="hero__name">${heroName}</h1>
+            <p class="hero__subtitle"><span>${t.species}</span> <span>${t.breed}</span> <span>${t.ageValue}</span></p>
+            ${heroFactsHtml}
           </div>
         </div>
-        <hr class="hero__divider">
-        <p class="hero__lede">${inline(lede)}</p>
+        <div class="hero__doc">
+          <p class="hero__lede">${inline(lede)}</p>
+          ${period ? `<p class="hero__period">${escape(period)}</p>` : ""}
+        </div>
       </header>
 
 ${doc.body}

@@ -44,6 +44,9 @@
   --shadow-sm: 0 1px 2px rgba(28, 24, 18, .05), 0 1px 3px rgba(28, 24, 18, .04);
   --shadow-md: 0 4px 16px rgba(28, 24, 18, .08), 0 1px 3px rgba(28, 24, 18, .05);
 
+  --hero-glow:     rgba(43, 106, 99, .06);
+  --portrait-ring: rgba(28, 24, 18, .08);
+
   --sans:  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   --sidebar: 300px;
@@ -54,22 +57,25 @@
 :root[data-theme="dark"] {
   color-scheme: dark;
 
-  --bg:          #14161a;
-  --bg-tint:     #191c21;
-  --surface:     #1b1f25;
-  --surface-alt: #212630;
+  --bg:          #161513;
+  --bg-tint:     #1b1a17;
+  --surface:     #211f1c;
+  --surface-alt: #292622;
 
-  --text:        #e9e7e4;
-  --text-soft:   #c8c5c0;
-  --muted:       #97a0a9;
-  --faint:       #6d757e;
+  --text:        #eeeae4;
+  --text-soft:   #d0cac2;
+  --muted:       #a39b91;
+  --faint:       #786f66;
 
-  --line:        #2b313a;
-  --line-strong: #3a424d;
+  --line:        #322e29;
+  --line-strong: #433e37;
 
-  --accent:      #6fbdb3;
-  --accent-soft: #16302e;
-  --accent-line: #2f5f5a;
+  --accent:      #72bdb2;
+  --accent-soft: #17302d;
+  --accent-line: #2f5c56;
+
+  --hero-glow:     rgba(114, 189, 178, .07);
+  --portrait-ring: rgba(255, 255, 255, .07);
 
   --warn:        #e0a95c;
   --warn-soft:   #2b2416;
@@ -81,7 +87,7 @@
   --abn-soft:    #3a1d1b;
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
-  --shadow-md: 0 6px 20px rgba(0, 0, 0, .45);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, .45), 0 2px 6px rgba(0, 0, 0, .3);
 }
 
 * { box-sizing: border-box; }
@@ -289,109 +295,163 @@ body {
 .main { min-width: 0; padding: 0 clamp(20px, 5vw, 72px) 120px; }
 .wrap { max-width: var(--measure); margin: 0 auto; }
 
-/* --- Шапка документа --------------------------------------------------- */
+/* --- Шапка документа: карточка пациента -------------------------------- */
 
-.hero { padding: clamp(48px, 9vh, 96px) 0 0; }
+.hero {
+  padding: clamp(40px, 8vh, 84px) 0 0;
+  font-family: var(--sans);
+}
 
-.hero__intro {
-  display: grid;
-  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
-  gap: clamp(22px, 5vw, 44px);
+/* Строка над карточкой: тип документа слева, язык справа. */
+.hero__bar {
+  display: flex;
   align-items: center;
-}
-
-.hero__copy { min-width: 0; }
-
-.hero__portrait {
-  margin: 0;
-  justify-self: start;
-  width: min(240px, 100%);
-  font-family: var(--sans);
-}
-
-.hero__portrait img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: 50% 50%;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  box-shadow: var(--shadow-md);
-}
-
-.hero__portrait figcaption {
-  margin-top: 8px;
-  font-size: 12px;
-  line-height: 1.2;
-  text-align: center;
-  color: var(--muted);
-}
-
-.hero__profile {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  margin: 28px 0 0;
-  padding: 0;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  font-family: var(--sans);
-}
-
-.hero__profile div {
-  padding: 13px 16px;
-  background: var(--surface);
-}
-
-.hero__profile div:last-child { grid-column: 1 / -1; }
-
-.hero__profile dt {
-  margin: 0 0 3px;
-  font: 600 10.5px/1 var(--sans);
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--faint);
-}
-
-.hero__profile dd {
-  margin: 0;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1.35;
-  color: var(--text);
-}
-
-.hero__divider {
-  margin: 38px 0 0;
-  border: 0;
-  border-top: 1px solid var(--line-strong);
+  justify-content: space-between;
+  gap: 12px 20px;
+  flex-wrap: wrap;
+  margin: 0 0 18px;
+  min-height: 34px;
 }
 
 .hero__eyebrow {
-  margin: 0 0 14px;
-  font: 700 11px/1 var(--sans);
+  margin: 0;
+  font: 600 11.5px/1 var(--sans);
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--accent);
 }
 
-.hero h1 {
+/* Портрет и сведения — одна композиция на общей поверхности. */
+.hero__card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 40px);
+  align-items: center;
+  padding: clamp(14px, 2vw, 18px);
+  padding-right: clamp(20px, 3.4vw, 36px);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background:
+    radial-gradient(120% 140% at 0% 0%, var(--hero-glow) 0%, transparent 55%),
+    linear-gradient(180deg, var(--surface) 0%, var(--bg-tint) 100%);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero__card--plain {
+  grid-template-columns: minmax(0, 1fr);
+  padding: clamp(22px, 3.4vw, 34px);
+}
+
+.hero__portrait {
+  margin: 0;
+  min-width: 0;
+}
+
+/* Исходные пропорции фото сохраняются: без обрезки, только скругление. */
+.hero__portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px var(--portrait-ring), var(--shadow-md);
+}
+
+.hero__copy {
+  min-width: 0;
+  padding: 8px 0;
+}
+
+.hero__name {
   margin: 0;
   font-family: var(--sans);
-  font-size: clamp(34px, 5.4vw, 54px);
-  font-weight: 680;
-  line-height: 1.05;
-  letter-spacing: -.028em;
+  font-size: clamp(42px, 6.2vw, 64px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.035em;
+  color: var(--text);
+}
+
+.hero__alias {
+  margin-left: .12em;
+  font-size: .46em;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  color: var(--muted);
+}
+
+.hero__subtitle {
+  margin: 14px 0 0;
+  font-size: 16.5px;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+/* Части не рвутся, а «·» при переносе остаётся в конце строки, а не в начале. */
+.hero__subtitle span { white-space: nowrap; }
+
+.hero__subtitle span:not(:last-child)::after {
+  content: "·";
+  margin-left: .3em;
+  color: var(--faint);
+}
+
+/* Сведения о пациенте — строки с тонкими разделителями, без ячеек. */
+.hero__facts {
+  margin: 24px 0 0;
+  padding: 0;
+  max-width: 26rem;
+}
+
+.hero__facts div {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.hero__facts dt {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.hero__facts dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 560;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+/* Название документа и период — под карточкой. */
+.hero__doc {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin: 30px 0 0;
+  padding: 0 4px;
 }
 
 .hero__lede {
-  margin: 22px 0 0;
-  font-size: clamp(18px, 2.4vw, 21px);
-  line-height: 1.45;
-  color: var(--text-soft);
+  margin: 0;
+  font-size: clamp(19px, 2.4vw, 22px);
+  font-weight: 560;
+  line-height: 1.35;
+  letter-spacing: -.01em;
+  color: var(--text);
+}
+
+.hero__period {
+  margin: 0;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
 }
 
 .meta {
@@ -751,49 +811,68 @@ td.abn .arr { color: var(--abn); }
   .main { padding-bottom: 90px; }
 }
 
+@media (max-width: 760px) {
+  .hero__card { grid-template-columns: minmax(0, 11.5rem) minmax(0, 1fr); }
+  .hero__facts div { grid-template-columns: 8rem minmax(0, 1fr); }
+}
+
 @media (max-width: 620px) {
   body { font-size: 16px; }
-  .hero__intro { grid-template-columns: 1fr; }
-  .hero__portrait {
-    justify-self: start;
-    width: min(180px, 70vw);
+  .hero { padding-top: 28px; }
+  .hero__card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 12px 12px 18px;
+    border-radius: 26px;
   }
-  .hero__profile { grid-template-columns: 1fr; }
-  .hero__divider { margin-top: 28px; }
+  .hero__portrait img { border-radius: 18px; }
+  .hero__copy { padding: 0 8px; }
+  .hero__facts { max-width: none; }
+  .hero__doc { margin-top: 24px; }
   .meta { grid-template-columns: 1fr; }
   .section { margin-top: 54px; }
   .entry { padding-left: 20px; }
 }
 
-/* --- Печать / PDF ------------------------------------------------------ */
-
 /* --- Переключатель языка краткой сводки ------------------------------ */
 
+/* Сегментированный контрол: активный язык — приподнятая «таблетка». */
 .lang {
   display: inline-flex;
   gap: 2px;
-  margin: 0 0 16px;
+  margin: 0;
   padding: 3px;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  background: var(--surface);
+  border-radius: 999px;
+  background: var(--surface-alt);
+  box-shadow: inset 0 0 0 1px var(--line);
   font: 600 12px/1 var(--sans);
-  letter-spacing: .06em;
+  letter-spacing: .08em;
 }
 
 .lang a {
-  padding: 6px 11px;
-  border-radius: 6px;
+  min-width: 40px;
+  padding: 8px 12px;
+  border-radius: 999px;
   color: var(--muted);
+  text-align: center;
   text-decoration: none;
+  transition: color .15s ease, background-color .15s ease;
 }
 
-.lang a:hover { color: var(--text); background: var(--surface-alt); }
+.lang a:hover { color: var(--text); }
+
+.lang a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
 
 .lang a.is-current {
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--surface);
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--line-strong), var(--shadow-sm);
 }
+
+/* --- Печать / PDF ------------------------------------------------------ */
 
 @media print {
   /* Печать всегда в светлой палитре, даже если на экране включена тёмная тема. */
@@ -815,15 +894,23 @@ td.abn .arr { color: var(--abn); }
   .wrap { max-width: none; }
 
   .hero { padding-top: 0; }
-  .hero__intro { grid-template-columns: 34mm minmax(0, 1fr); gap: 10mm; }
-  .hero__portrait img { border-radius: 12px; box-shadow: none; }
-  .hero__portrait figcaption { font-size: 8pt; }
-  .hero h1 { font-size: 26pt; }
-  .hero__profile { margin-top: 16px; }
-  .hero__profile div { padding: 7px 9px; }
-  .hero__profile dt { font-size: 7pt; }
-  .hero__profile dd { font-size: 9pt; }
-  .hero__divider { margin-top: 10mm; }
+  .hero__bar { margin-bottom: 4mm; min-height: 0; }
+  .hero__card {
+    grid-template-columns: 34mm minmax(0, 1fr);
+    gap: 8mm;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .hero__portrait img { border-radius: 10px; box-shadow: none; }
+  .hero__name { font-size: 26pt; }
+  .hero__subtitle { margin-top: 2mm; font-size: 10pt; }
+  .hero__facts { margin-top: 3mm; max-width: none; }
+  .hero__facts div { padding: 1.5mm 0; }
+  .hero__facts dt, .hero__facts dd { font-size: 9pt; }
+  .hero__doc { margin-top: 6mm; padding: 3mm 0 0; border-top: 1px solid var(--line-strong); }
 
   .section { margin-top: 26px; }
   .section > h2 { font-size: 15pt; break-after: avoid; }
@@ -841,12 +928,14 @@ td.abn .arr { color: var(--abn); }
 
   /* Краткая сводка должна укладываться в 1–2 листа. */
   .page--compact { font-size: 9.5pt; line-height: 1.4; }
-  .page--compact .hero__intro { grid-template-columns: 22mm minmax(0, 1fr); gap: 6mm; }
-  .page--compact .hero h1 { font-size: 20pt; }
-  .page--compact .hero__eyebrow { margin-bottom: 6px; }
-  .page--compact .hero__profile { margin-top: 8px; }
-  .page--compact .hero__divider { margin-top: 5mm; }
-  .page--compact .hero__lede { font-size: 11pt; margin: 3mm 0 0; }
+  .page--compact .hero__bar { margin-bottom: 2mm; }
+  .page--compact .hero__card { grid-template-columns: 24mm minmax(0, 1fr); gap: 6mm; }
+  .page--compact .hero__name { font-size: 20pt; }
+  .page--compact .hero__subtitle { margin-top: 1mm; font-size: 9pt; }
+  .page--compact .hero__facts { margin-top: 2mm; }
+  .page--compact .hero__facts div { padding: 1mm 0; }
+  .page--compact .hero__doc { margin-top: 4mm; padding-top: 2mm; }
+  .page--compact .hero__lede { font-size: 11pt; }
   .page--compact .section { margin-top: 12px; }
   .page--compact .section > h2 { font-size: 12.5pt; margin: 0 0 4px; }
   .page--compact p, .page--compact ul, .page--compact ol { margin-top: 3px; margin-bottom: 3px; }
@@ -905,20 +994,24 @@ td.abn .arr { color: var(--abn); }
   <main class="main">
     <div class="wrap">
       <header class="hero">
-        <div class="hero__intro">
+        <div class="hero__bar">
+          <p class="hero__eyebrow">Ветеринарный отчёт</p>
+          
+        </div>
+        <div class="hero__card">
           <figure class="hero__portrait">
-          <img src="assets/varia-portrait.jpg" alt="Варя — чёрная британская длинношёрстная кошка">
-          <figcaption>Варя</figcaption>
-        </figure>
+            <img src="assets/varia-portrait.jpg" alt="Варя — чёрная британская длинношёрстная кошка">
+          </figure>
           <div class="hero__copy">
-            <p class="hero__eyebrow">Ветеринарный отчёт</p>
-            
-            <h1>Варя (Varia)</h1>
+            <h1 class="hero__name">Варя <span class="hero__alias">Varia</span></h1>
+            <p class="hero__subtitle"><span>Кошка</span> <span>британская длинношёрстная</span> <span>12 лет</span></p>
             
           </div>
         </div>
-        <hr class="hero__divider">
-        <p class="hero__lede">Анализы в динамике</p>
+        <div class="hero__doc">
+          <p class="hero__lede">Анализы в динамике</p>
+          <p class="hero__period">24.06.2025 – 16.10.2026</p>
+        </div>
       </header>
 
 <section class="section section--brief" id="kak-chitat-eti-tablicy">
