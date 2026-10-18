@@ -302,9 +302,9 @@ body {
 .hero__portrait img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: 50% 45%;
+  object-position: 50% 50%;
   border: 1px solid var(--line);
   border-radius: 22px;
   box-shadow: var(--shadow-md);
