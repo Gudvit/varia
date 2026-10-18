@@ -9,85 +9,93 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%88%3C/text%3E%3C/svg%3E">
 <style>
 /* ==========================================================================
-   Варя — медицинская хронология. Оформление печатного документа для экрана.
+   Варя — медицинская карта.
+   Спокойная «клиническая бумага» на тёплом графите: иерархия строится
+   типографикой и отступами, бирюзовый акцент — только для активного
+   и для актуального состояния.
    ========================================================================== */
 
 :root {
   color-scheme: light;
 
-  --bg:          #faf9f7;
-  --bg-tint:     #f2efea;
-  --surface:     #ffffff;
-  --surface-alt: #f7f5f2;
+  --bg:            #f7f5f1;
+  --bg-tint:       #f1eee8;
+  --surface:       #ffffff;
+  --surface-alt:   #f6f3ee;
+  --surface-hover: #f0ece6;
 
-  --text:        #1b1a18;
-  --text-soft:   #4a4641;
-  --muted:       #7a736b;
-  --faint:       #a29a91;
+  --text:        #1c1b19;
+  --text-soft:   #45413c;
+  --muted:       #6e675f;
+  --faint:       #9d958b;
 
-  --line:        #e4dfd8;
-  --line-strong: #cec7bd;
+  --line:        #e6e1d9;
+  --line-strong: #d2cbc0;
 
-  --accent:      #2b6a63;
-  --accent-soft: #e3efed;
-  --accent-line: #9cc4bf;
+  --accent:      #23675f;
+  --accent-soft: #e3efec;
+  --accent-line: #a7ccc6;
 
-  --warn:        #9a5b09;
-  --warn-soft:   #fdf3e2;
-  --warn-line:   #e3b872;
+  --warn:        #8a5207;
+  --warn-tint:   rgba(201, 138, 40, .09);
+  --warn-line:   #d9a85a;
 
   --up:          #a8371f;
   --down:        #1f5f8b;
   --abn:         #b3261e;
-  --abn-soft:    #fbe9e7;
+  --abn-soft:    rgba(179, 38, 30, .045);
 
-  --shadow-sm: 0 1px 2px rgba(28, 24, 18, .05), 0 1px 3px rgba(28, 24, 18, .04);
-  --shadow-md: 0 4px 16px rgba(28, 24, 18, .08), 0 1px 3px rgba(28, 24, 18, .05);
-
-  --hero-glow:     rgba(43, 106, 99, .06);
+  --glass:         rgba(255, 255, 255, .78);
+  --hero-glow:     rgba(35, 103, 95, .06);
   --portrait-ring: rgba(28, 24, 18, .08);
 
-  --sans:  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --shadow-sm: 0 1px 2px rgba(28, 24, 18, .05), 0 1px 3px rgba(28, 24, 18, .04);
+  --shadow-md: 0 8px 24px rgba(28, 24, 18, .09), 0 2px 6px rgba(28, 24, 18, .05);
 
-  --sidebar: 300px;
-  --measure: 74ch;
-  --radius: 10px;
+  --sans: system-ui, -apple-system, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --sidebar: 288px;
+  --content: 760px;
+  --radius:  14px;
+  --ease:    cubic-bezier(.2, .7, .2, 1);
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
 
-  --bg:          #161513;
-  --bg-tint:     #1b1a17;
-  --surface:     #211f1c;
-  --surface-alt: #292622;
+  --bg:            #151412;
+  --bg-tint:       #1a1917;
+  --surface:       #1f1d1b;
+  --surface-alt:   #252320;
+  --surface-hover: #2a2825;
 
-  --text:        #eeeae4;
-  --text-soft:   #d0cac2;
-  --muted:       #a39b91;
-  --faint:       #786f66;
+  --text:        #edeae5;
+  --text-soft:   #cfc9c1;
+  --muted:       #a1998f;
+  --faint:       #776f66;
 
-  --line:        #322e29;
-  --line-strong: #433e37;
+  --line:        #2e2b27;
+  --line-strong: #3f3a34;
 
-  --accent:      #72bdb2;
-  --accent-soft: #17302d;
-  --accent-line: #2f5c56;
+  --accent:      #74bdb2;
+  --accent-soft: rgba(116, 189, 178, .12);
+  --accent-line: rgba(116, 189, 178, .36);
 
-  --hero-glow:     rgba(114, 189, 178, .07);
+  --warn:        #e2ad62;
+  --warn-tint:   rgba(226, 173, 98, .055);
+  --warn-line:   rgba(226, 173, 98, .5);
+
+  --up:          #ef8a72;
+  --down:        #7db8e0;
+  --abn:         #ff958a;
+  --abn-soft:    rgba(255, 120, 105, .06);
+
+  --glass:         rgba(31, 29, 27, .74);
+  --hero-glow:     rgba(116, 189, 178, .07);
   --portrait-ring: rgba(255, 255, 255, .07);
 
-  --warn:        #e0a95c;
-  --warn-soft:   #2b2416;
-  --warn-line:   #6b5528;
-
-  --up:          #e8836b;
-  --down:        #74b3dd;
-  --abn:         #ff8a80;
-  --abn-soft:    #3a1d1b;
-
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, .45), 0 2px 6px rgba(0, 0, 0, .3);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .35);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, .42), 0 2px 6px rgba(0, 0, 0, .28);
 }
 
 * { box-sizing: border-box; }
@@ -104,14 +112,23 @@ body {
   color: var(--text);
   font-family: var(--sans);
   font-size: 16px;
-  line-height: 1.62;
+  line-height: 1.65;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: var(--accent-soft); color: var(--text); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  * { transition: none !important; animation: none !important; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 
 /* --- Прогресс чтения --------------------------------------------------- */
@@ -134,7 +151,10 @@ body {
   align-items: start;
 }
 
-/* --- Оглавление -------------------------------------------------------- */
+.main { min-width: 0; padding: 0 clamp(20px, 5vw, 64px) 128px; }
+.wrap { max-width: var(--content); margin: 0 auto; }
+
+/* --- Боковая навигация ------------------------------------------------- */
 
 .toc {
   position: sticky;
@@ -143,119 +163,135 @@ body {
   height: 100dvh;
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding: 28px 20px 40px 32px;
+  padding: 26px 16px 48px 22px;
   border-right: 1px solid var(--line);
   background: var(--bg-tint);
-  font-family: var(--sans);
   font-size: 13.5px;
   line-height: 1.45;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
 }
 
 .toc__brand {
   display: flex;
-  align-items: baseline;
-  gap: 8px;
-  margin-bottom: 4px;
-  font-size: 17px;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 26px;
+  padding: 0 6px;
+}
+
+.toc__avatar {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px var(--portrait-ring);
+}
+
+.toc__name {
+  margin: 0;
+  font-size: 15.5px;
   font-weight: 650;
   letter-spacing: -.01em;
+  line-height: 1.25;
   color: var(--text);
 }
 
-.toc__brand span { font-size: 13px; font-weight: 500; color: var(--muted); }
+.toc__name span { font-size: 12.5px; font-weight: 500; color: var(--muted); }
 
 .toc__sub {
-  margin: 0 0 22px;
+  margin: 2px 0 0;
   font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
   color: var(--muted);
 }
 
 .toc__label {
-  margin: 0 0 10px;
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  color: var(--faint);
-}
-
-/* Переключатель документов: хронология / аналитическая часть. */
-.toc__pages {
-  list-style: none;
-  margin: 0 0 22px;
-  padding: 0;
-  display: grid;
-  gap: 2px;
-}
-
-.toc__pages a {
-  display: block;
-  padding: 7px 10px;
-  margin-left: -9px;
-  border-radius: 7px;
-  border-left: 2px solid transparent;
-  color: var(--text-soft);
-  text-decoration: none;
-  font-weight: 500;
-  transition: background .12s ease, color .12s ease;
-}
-
-.toc__pages a:hover { background: var(--surface); color: var(--text); }
-
-.toc__pages a.is-current {
-  background: var(--accent-soft);
-  border-left-color: var(--accent);
-  color: var(--accent);
-  font-weight: 650;
+  margin: 0 0 6px;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
 }
 
 .toc ol { list-style: none; margin: 0; padding: 0; }
 
 .toc a {
   display: flex;
-  gap: 9px;
-  padding: 5px 10px 5px 9px;
-  margin-left: -9px;
-  border-radius: 7px;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
   color: var(--text-soft);
   text-decoration: none;
-  border-left: 2px solid transparent;
-  transition: background .12s ease, color .12s ease;
+  transition: background-color .15s var(--ease), color .15s var(--ease), box-shadow .15s var(--ease);
 }
 
-.toc a:hover { background: var(--surface); color: var(--text); }
+.toc a:hover { background: var(--surface-hover); color: var(--text); }
 
 .toc a .num {
   flex: none;
-  min-width: 1.35em;
+  min-width: 1.5em;
   font-variant-numeric: tabular-nums;
   color: var(--faint);
 }
 
 .toc a.is-active {
   background: var(--surface);
-  border-left-color: var(--accent);
   color: var(--text);
   font-weight: 600;
-  box-shadow: var(--shadow-sm);
+  box-shadow: inset 2px 0 0 var(--accent), var(--shadow-sm);
 }
 
 .toc a.is-active .num { color: var(--accent); }
 
 .toc__sublist {
-  margin: 2px 0 8px 12px;
-  padding-left: 22px;
+  margin: 2px 0 6px 20px;
+  padding-left: 8px;
   border-left: 1px solid var(--line-strong);
 }
 
 .toc__sublist a {
-  margin-left: 0;
-  padding-block: 3px;
+  padding-block: 4px;
   font-size: 12.5px;
   color: var(--muted);
 }
 
-/* --- Панель управления ------------------------------------------------- */
+/* Документы сайта: текущий — приподнятая плашка с точкой-акцентом. */
+.toc__pages {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+}
+
+.toc__pages a {
+  align-items: center;
+  padding: 8px 10px;
+  font-weight: 500;
+}
+
+.toc__pages a::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--line-strong);
+  transition: background-color .15s var(--ease);
+}
+
+.toc__pages a.is-current {
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: 0 0 0 1px var(--line), var(--shadow-sm);
+}
+
+.toc__pages a.is-current::before { background: var(--accent); }
+
+/* --- Плавающие кнопки -------------------------------------------------- */
 
 .controls {
   position: fixed;
@@ -270,37 +306,29 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  height: 36px;
-  min-width: 36px;
-  padding: 0 10px;
-  border: 1px solid var(--line-strong);
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--line);
   border-radius: 999px;
-  background: var(--surface);
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  backdrop-filter: blur(14px) saturate(1.4);
   color: var(--text-soft);
-  font: 500 13px/1 var(--sans);
   cursor: pointer;
   box-shadow: var(--shadow-sm);
-  transition: color .12s ease, border-color .12s ease, transform .12s ease;
+  transition: color .15s var(--ease), border-color .15s var(--ease), transform .15s var(--ease);
 }
 
-.btn:hover { color: var(--accent); border-color: var(--accent-line); }
-.btn:active { transform: translateY(1px); }
+.btn:hover { color: var(--text); border-color: var(--line-strong); }
+.btn:active { transform: scale(.96); }
 .btn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 
 #menu-btn { display: none; }
 
-/* --- Основная колонка -------------------------------------------------- */
+/* --- Шапка: карточка пациента ------------------------------------------ */
 
-.main { min-width: 0; padding: 0 clamp(20px, 5vw, 72px) 120px; }
-.wrap { max-width: var(--measure); margin: 0 auto; }
-
-/* --- Шапка документа: карточка пациента -------------------------------- */
-
-.hero {
-  padding: clamp(40px, 8vh, 84px) 0 0;
-  font-family: var(--sans);
-}
+.hero { padding: clamp(40px, 8vh, 84px) 0 0; }
 
 /* Строка над карточкой: тип документа слева, язык справа. */
 .hero__bar {
@@ -315,15 +343,14 @@ body {
 
 .hero__eyebrow {
   margin: 0;
-  font: 600 11.5px/1 var(--sans);
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  color: var(--muted);
 }
 
 /* Портрет и сведения — одна композиция на общей поверхности. */
 .hero__card {
-  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
   gap: clamp(24px, 4vw, 40px);
@@ -343,10 +370,7 @@ body {
   padding: clamp(22px, 3.4vw, 34px);
 }
 
-.hero__portrait {
-  margin: 0;
-  min-width: 0;
-}
+.hero__portrait { margin: 0; min-width: 0; }
 
 /* Исходные пропорции фото сохраняются: без обрезки, только скругление. */
 .hero__portrait img {
@@ -357,14 +381,10 @@ body {
   box-shadow: 0 0 0 1px var(--portrait-ring), var(--shadow-md);
 }
 
-.hero__copy {
-  min-width: 0;
-  padding: 8px 0;
-}
+.hero__copy { min-width: 0; padding: 8px 0; }
 
 .hero__name {
   margin: 0;
-  font-family: var(--sans);
   font-size: clamp(42px, 6.2vw, 64px);
   font-weight: 700;
   line-height: 1;
@@ -397,11 +417,7 @@ body {
 }
 
 /* Сведения о пациенте — строки с тонкими разделителями, без ячеек. */
-.hero__facts {
-  margin: 24px 0 0;
-  padding: 0;
-  max-width: 26rem;
-}
+.hero__facts { margin: 24px 0 0; padding: 0; max-width: 26rem; }
 
 .hero__facts div {
   display: grid;
@@ -412,11 +428,7 @@ body {
   border-top: 1px solid var(--line);
 }
 
-.hero__facts dt {
-  margin: 0;
-  font-size: 13.5px;
-  color: var(--muted);
-}
+.hero__facts dt { margin: 0; font-size: 13.5px; color: var(--muted); }
 
 .hero__facts dd {
   margin: 0;
@@ -441,9 +453,9 @@ body {
 .hero__lede {
   margin: 0;
   font-size: clamp(19px, 2.4vw, 22px);
-  font-weight: 560;
+  font-weight: 600;
   line-height: 1.35;
-  letter-spacing: -.01em;
+  letter-spacing: -.012em;
   color: var(--text);
 }
 
@@ -454,393 +466,12 @@ body {
   color: var(--muted);
 }
 
-.meta {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1px;
-  margin: 34px 0 0;
-  padding: 0;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-.meta div {
-  padding: 13px 16px;
-  background: var(--surface);
-}
-
-.meta dt {
-  margin: 0 0 3px;
-  font: 600 10.5px/1 var(--sans);
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--faint);
-}
-
-.meta dd {
-  margin: 0;
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 550;
-  line-height: 1.4;
-  color: var(--text);
-}
-
-/* --- Разделы ----------------------------------------------------------- */
-
-.section { margin-top: 72px; }
-.section:first-of-type { margin-top: 56px; }
-
-/* Вводное клиническое резюме — читается первым, отделено от нумерованных разделов */
-.section--brief {
-  padding: 4px clamp(18px, 3vw, 34px) 30px;
-  border: 1px solid var(--accent-line);
-  border-radius: 14px;
-  background: var(--bg-tint);
-}
-
-.section--brief > h2 { border-top: 0; }
-.section--brief .table-wrap { background: var(--surface); }
-.section--brief > *:last-child { margin-bottom: 0; }
-
-/* В сводке ⚠️ встречается почти в каждом пункте — там достаточно самого значка,
-   иначе половина страницы заливается плашками и подсветка перестаёт работать. */
-.section--brief tr.warn td,
-.section--brief tr.warn:hover td { background: var(--surface); }
-
-.section--brief li.warn {
-  margin-left: 0;
-  padding: 0;
-  border-left: 0;
-  background: none;
-  list-style: disc;
-}
-
-.section > h2 {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-  margin: 0 0 26px;
-  padding-top: 26px;
-  border-top: 2px solid var(--line-strong);
-  font-family: var(--sans);
-  font-size: clamp(23px, 3.2vw, 30px);
-  font-weight: 650;
-  line-height: 1.2;
-  letter-spacing: -.022em;
-}
-
-.section > h2 .num {
-  flex: none;
-  font-size: .62em;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  color: var(--accent);
-  transform: translateY(-.12em);
-}
-
-h3, h4 {
-  font-family: var(--sans);
-  letter-spacing: -.012em;
-  line-height: 1.3;
-}
-
-h3 { margin: 44px 0 18px; font-size: 20px; font-weight: 650; }
-h4 { margin: 34px 0 12px; font-size: 16.5px; font-weight: 650; }
-
-/* Разделитель года в хронологии */
-.year {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 52px 0 30px;
-  font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-.year::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, var(--accent-line), transparent);
-}
-
-/* --- Текст ------------------------------------------------------------- */
-
-p { margin: 0 0 18px; }
-strong { font-weight: 700; color: var(--text); }
-em { color: var(--text-soft); }
-
-ul, ol { margin: 0 0 20px; padding-left: 1.35em; }
-li { margin-bottom: 9px; }
-li::marker { color: var(--faint); }
-
-a { color: var(--accent); text-underline-offset: 2px; }
-
-/* Якоря у заголовков */
-.anchor {
-  margin-left: .4em;
-  font-family: var(--sans);
-  font-size: .58em;
-  font-weight: 500;
-  color: var(--faint);
-  text-decoration: none;
-  opacity: 0;
-  transition: opacity .12s ease;
-}
-
-h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, .entry:hover .anchor { opacity: 1; }
-.anchor:hover { color: var(--accent); }
-
-/* --- Врезки ------------------------------------------------------------ */
-
-.notice {
-  margin: 0 0 22px;
-  padding: 16px 20px;
-  border: 1px solid var(--accent-line);
-  border-left: 3px solid var(--accent);
-  border-radius: var(--radius);
-  background: var(--accent-soft);
-  color: var(--text);
-}
-
-.notice p:last-child { margin-bottom: 0; }
-
-p.warn, li.warn {
-  position: relative;
-  padding: 11px 16px 11px 15px;
-  border-left: 3px solid var(--warn-line);
-  border-radius: 0 8px 8px 0;
-  background: var(--warn-soft);
-}
-
-p.warn { margin-bottom: 20px; }
-li.warn { margin-left: -.35em; list-style: none; }
-li.warn::before { content: ""; }
-
-/* --- Записи хронологии ------------------------------------------------- */
-
-.entry {
-  position: relative;
-  margin: 0 0 32px;
-  padding: 0 0 0 26px;
-  border-left: 2px solid var(--line);
-}
-
-.entry::before {
-  content: "";
-  position: absolute;
-  left: -6px;
-  top: 8px;
-  width: 10px;
-  height: 10px;
-  border: 2px solid var(--accent);
-  border-radius: 50%;
-  background: var(--bg);
-}
-
-.entry > .entry__head {
-  margin: 0 0 12px;
-  font-family: var(--sans);
-}
-
-.entry__date {
-  display: block;
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: .05em;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
-}
-
-.entry__title {
-  display: block;
-  margin-top: 3px;
-  font-size: 17px;
-  font-weight: 650;
-  line-height: 1.32;
-  letter-spacing: -.014em;
-  color: var(--text);
-}
-
-.entry > *:last-child { margin-bottom: 0; }
-
-/* --- Таблицы ----------------------------------------------------------- */
-
-.table-wrap {
-  position: relative;
-  margin: 0 0 26px;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: var(--sans);
-  font-size: 13.5px;
-  line-height: 1.5;
-  font-variant-numeric: tabular-nums;
-}
-
-thead th {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  padding: 11px 14px;
-  border-bottom: 1px solid var(--line-strong);
-  background: var(--surface-alt);
-  color: var(--text);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  text-align: left;
-  white-space: nowrap;
-}
-
-tbody td {
-  padding: 11px 14px;
-  border-bottom: 1px solid var(--line);
-  vertical-align: top;
-  color: var(--text-soft);
-}
-
-tbody tr:last-child td { border-bottom: 0; }
-tbody tr:hover td { background: var(--surface-alt); }
-
-/* Первый столбец — «шапка» строки; для широких таблиц закреплён при прокрутке */
-tbody td:first-child { color: var(--text); font-weight: 600; }
-
-.table-wrap[data-wide] th:first-child,
-.table-wrap[data-wide] td:first-child {
-  position: sticky;
-  left: 0;
-  z-index: 1;
-  background: var(--surface);
-  border-right: 1px solid var(--line);
-}
-
-.table-wrap[data-wide] thead th:first-child { z-index: 3; background: var(--surface-alt); }
-.table-wrap[data-wide] tbody tr:hover td:first-child { background: var(--surface-alt); }
-
-tr.warn td { background: var(--warn-soft); }
-tr.warn:hover td { background: var(--warn-soft); }
-
-.arr { font-weight: 700; }
-.arr.up { color: var(--up); }
-.arr.down { color: var(--down); }
-
-/* Значение вне референса на странице анализов */
-td.abn, tbody tr:hover td.abn { background: var(--abn-soft); color: var(--abn); font-weight: 600; }
-td.abn .arr { color: var(--abn); }
-
-/* --- Подвал ------------------------------------------------------------ */
-
-.colophon {
-  margin-top: 80px;
-  padding-top: 26px;
-  border-top: 2px solid var(--line-strong);
-}
-
-.colophon h2 {
-  margin: 0 0 18px;
-  font-family: var(--sans);
-  font-size: 20px;
-  font-weight: 650;
-}
-
-.colophon p { color: var(--text-soft); font-size: 16px; }
-
-.footnote {
-  margin-top: 34px;
-  font-family: var(--sans);
-  font-size: 12.5px;
-  color: var(--faint);
-}
-
-/* --- Адаптив ----------------------------------------------------------- */
-
-@media (max-width: 1000px) {
-  html { scroll-padding-top: 20px; }
-
-  .layout { grid-template-columns: minmax(0, 1fr); }
-
-  .toc {
-    position: fixed;
-    inset: 0 auto 0 0;
-    width: min(320px, 86vw);
-    z-index: 70;
-    transform: translateX(-101%);
-    transition: transform .22s ease;
-    box-shadow: var(--shadow-md);
-  }
-
-  .toc.is-open { transform: none; }
-
-  #menu-btn { display: inline-flex; }
-
-  .scrim {
-    position: fixed;
-    inset: 0;
-    z-index: 65;
-    background: rgba(20, 18, 15, .42);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .2s ease, visibility .2s ease;
-  }
-
-  .scrim.is-open { opacity: 1; visibility: visible; }
-
-  .controls {
-    top: auto;
-    bottom: 16px;
-    right: 16px;
-  }
-
-  .main { padding-bottom: 90px; }
-}
-
-@media (max-width: 760px) {
-  .hero__card { grid-template-columns: minmax(0, 11.5rem) minmax(0, 1fr); }
-  .hero__facts div { grid-template-columns: 8rem minmax(0, 1fr); }
-}
-
-@media (max-width: 620px) {
-  body { font-size: 16px; }
-  .hero { padding-top: 28px; }
-  .hero__card {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-    padding: 12px 12px 18px;
-    border-radius: 26px;
-  }
-  .hero__portrait img { border-radius: 18px; }
-  .hero__copy { padding: 0 8px; }
-  .hero__facts { max-width: none; }
-  .hero__doc { margin-top: 24px; }
-  .meta { grid-template-columns: 1fr; }
-  .section { margin-top: 54px; }
-  .entry { padding-left: 20px; }
-}
-
-/* --- Переключатель языка краткой сводки ------------------------------ */
+/* --- Переключатель языка ----------------------------------------------- */
 
 /* Сегментированный контрол: активный язык — приподнятая «таблетка». */
 .lang {
   display: inline-flex;
   gap: 2px;
-  margin: 0;
   padding: 3px;
   border-radius: 999px;
   background: var(--surface-alt);
@@ -856,20 +487,422 @@ td.abn .arr { color: var(--abn); }
   color: var(--muted);
   text-align: center;
   text-decoration: none;
-  transition: color .15s ease, background-color .15s ease;
+  transition: color .15s var(--ease), background-color .15s var(--ease);
 }
 
 .lang a:hover { color: var(--text); }
-
-.lang a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 1px;
-}
 
 .lang a.is-current {
   background: var(--surface);
   color: var(--accent);
   box-shadow: 0 0 0 1px var(--line-strong), var(--shadow-sm);
+}
+
+/* --- Разделы ----------------------------------------------------------- */
+
+.section { margin-top: clamp(68px, 9vw, 104px); }
+.section:first-of-type { margin-top: 44px; }
+
+.section > h2 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 26px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -.024em;
+  color: var(--text);
+}
+
+/* Номер раздела — тихая метка, а не акцент. */
+.section > h2 .num {
+  flex: none;
+  min-width: 2.1em;
+  padding: 4px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+/* Вводный раздел — актуальное состояние. Приподнятая панель, отделённая от истории. */
+.section--brief {
+  margin-top: 40px;
+  padding: clamp(22px, 3.4vw, 36px);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.section.section--brief > h2 {
+  margin-bottom: 18px;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.section--brief > *:last-child { margin-bottom: 0; }
+.section--brief .table-wrap { background: var(--surface); }
+
+.section__flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.section__flag::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+/* В сводке ⚠️ встречается почти в каждом пункте — там достаточно самого значка,
+   иначе половина панели размечается полосами и подсветка перестаёт работать. */
+.section--brief tr.warn td,
+.section--brief tr.warn:hover td { background: var(--surface); }
+
+.section--brief li.warn {
+  margin-left: 0;
+  padding: 0;
+  border-left: 0;
+  background: none;
+  list-style: disc;
+}
+
+h3, h4 { letter-spacing: -.014em; line-height: 1.3; color: var(--text); }
+
+h3 { margin: 48px 0 16px; font-size: 20px; font-weight: 650; }
+h4 { margin: 36px 0 12px; font-size: 16.5px; font-weight: 650; }
+
+/* Год в хронологии — крупный разделитель эпох. */
+.year {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 64px 0 32px;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.year::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* --- Текст ------------------------------------------------------------- */
+
+p { margin: 0 0 16px; color: var(--text-soft); }
+strong { font-weight: 650; color: var(--text); }
+em { color: var(--text-soft); }
+
+ul, ol { margin: 0 0 20px; padding-left: 1.3em; color: var(--text-soft); }
+li { margin-bottom: 8px; padding-left: .15em; }
+li::marker { color: var(--faint); }
+
+a {
+  color: var(--accent);
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent-line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color .15s var(--ease);
+}
+
+a:hover { text-decoration-color: currentColor; }
+
+blockquote {
+  margin: 0 0 22px;
+  padding: 2px 0 2px 20px;
+  border-left: 2px solid var(--accent-line);
+}
+
+blockquote p { color: var(--text-soft); }
+blockquote > *:last-child { margin-bottom: 0; }
+
+/* Якоря у заголовков */
+.anchor {
+  margin-left: .4em;
+  font-size: .58em;
+  font-weight: 500;
+  color: var(--faint);
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity .15s var(--ease);
+}
+
+h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, .entry:hover .anchor { opacity: 1; }
+.anchor:hover { color: var(--accent); }
+
+/* --- Врезки ------------------------------------------------------------ */
+
+/* Оговорка «не заменяет врача» — спокойная служебная плашка. */
+.notice {
+  margin: 0 0 22px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-tint);
+  font-size: 14.5px;
+}
+
+.notice p:last-child { margin-bottom: 0; }
+
+/* ⚠️ — расхождение или пробел в документах: тонкая полоса, без заливки страницы. */
+p.warn, li.warn {
+  padding: 9px 14px;
+  border-left: 2px solid var(--warn-line);
+  border-radius: 0 10px 10px 0;
+  background: var(--warn-tint);
+}
+
+p.warn { margin-bottom: 18px; }
+li.warn { margin-left: -.3em; list-style: none; }
+
+/* --- Записи хронологии ------------------------------------------------- */
+
+.entry {
+  position: relative;
+  margin: 0;
+  padding: 0 0 38px 30px;
+  border-left: 1px solid var(--line-strong);
+}
+
+.entry::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
+  transition: background-color .15s var(--ease);
+}
+
+.entry:hover::before, .entry:target::before { background: var(--accent); }
+
+.entry > .entry__head { position: relative; margin: 0 0 12px; padding-right: 1.6em; }
+
+/* Якорь записи не должен занимать отдельную строку после блочных даты и заголовка. */
+.entry__head .anchor { position: absolute; top: 0; right: 0; margin: 0; font-size: 13px; }
+
+.entry__date {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+
+.entry__title {
+  display: block;
+  margin-top: 3px;
+  font-size: 17.5px;
+  font-weight: 650;
+  line-height: 1.35;
+  letter-spacing: -.015em;
+  color: var(--text);
+}
+
+.entry > *:last-child { margin-bottom: 0; }
+
+/* --- Таблицы ----------------------------------------------------------- */
+
+.table-wrap {
+  position: relative;
+  margin: 4px 0 26px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.table-wrap:focus-visible { outline-offset: 3px; border-radius: var(--radius); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-alt);
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  color: var(--text-soft);
+  transition: background-color .12s var(--ease);
+}
+
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:hover td { background: var(--surface-hover); }
+
+/* Первый столбец — «шапка» строки; у широких таблиц закреплён при прокрутке. */
+tbody td:first-child { color: var(--text); font-weight: 600; }
+
+.table-wrap[data-wide] th:first-child,
+.table-wrap[data-wide] td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--surface);
+  box-shadow: inset -1px 0 0 var(--line);
+}
+
+.table-wrap[data-wide] thead th:first-child { z-index: 3; background: var(--surface-alt); }
+.table-wrap[data-wide] td:first-child { min-width: 10rem; }
+.table-wrap[data-wide] tbody tr:hover td:first-child { background: var(--surface-hover); }
+
+/* Подложки рисуются поверх непрозрачного фона, чтобы закреплённый столбец не просвечивал. */
+tr.warn td,
+tr.warn:hover td,
+.table-wrap[data-wide] tr.warn td:first-child {
+  background: linear-gradient(var(--warn-tint), var(--warn-tint)), var(--surface);
+}
+
+.arr { font-weight: 700; }
+.arr.up { color: var(--up); }
+.arr.down { color: var(--down); }
+
+/* Значение вне референса на странице анализов */
+td.abn,
+tbody tr:hover td.abn {
+  background: linear-gradient(var(--abn-soft), var(--abn-soft)), var(--surface);
+  color: var(--abn);
+  font-weight: 600;
+}
+
+td.abn .arr { color: var(--abn); }
+
+/* --- Подвал ------------------------------------------------------------ */
+
+.colophon {
+  margin-top: 104px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.colophon h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -.012em;
+}
+
+.colophon p { font-size: 15px; }
+
+/* --- Адаптив ----------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+  html { scroll-padding-top: 20px; }
+
+  .layout { grid-template-columns: minmax(0, 1fr); }
+
+  .toc {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(320px, 86vw);
+    z-index: 70;
+    transform: translateX(-101%);
+    transition: transform .25s var(--ease);
+    box-shadow: var(--shadow-md);
+  }
+
+  .toc.is-open { transform: none; }
+
+  #menu-btn { display: inline-flex; }
+
+  .scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 65;
+    background: rgba(12, 11, 10, .45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease, visibility .2s ease;
+  }
+
+  .scrim.is-open { opacity: 1; visibility: visible; }
+
+  .controls { top: auto; bottom: 16px; right: 16px; }
+
+  .main { padding-bottom: 96px; }
+}
+
+@media (max-width: 760px) {
+  .hero__card { grid-template-columns: minmax(0, 11.5rem) minmax(0, 1fr); }
+  .hero__facts div { grid-template-columns: 8rem minmax(0, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .main { padding-inline: 16px; }
+
+  .hero { padding-top: 24px; }
+  .hero__card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 12px 12px 18px;
+    border-radius: 26px;
+  }
+  .hero__portrait img { border-radius: 18px; }
+  .hero__copy { padding: 0 8px; }
+  .hero__facts { max-width: none; }
+  .hero__doc { margin-top: 24px; }
+
+  .section { margin-top: 64px; }
+  .section > h2 { gap: 12px; font-size: 23px; }
+  .section--brief { padding: 22px 18px; border-radius: 20px; }
+
+  .year { margin-top: 52px; font-size: 20px; }
+
+  .entry { padding: 0 0 32px 20px; }
+  .entry__title { font-size: 16.5px; }
+
+  table { font-size: 13px; }
+  .table-wrap[data-wide] td:first-child { min-width: 8.5rem; }
+  thead th, tbody td { padding: 9px 12px; }
+
+  blockquote { padding-left: 14px; }
 }
 
 /* --- Печать / PDF ------------------------------------------------------ */
@@ -878,9 +911,10 @@ td.abn .arr { color: var(--abn); }
   /* Печать всегда в светлой палитре, даже если на экране включена тёмная тема. */
   :root, :root[data-theme="dark"] {
     color-scheme: light;
-    --bg: #fff; --bg-tint: #fff; --surface: #fff; --surface-alt: #f4f4f4;
+    --bg: #fff; --bg-tint: #fff; --surface: #fff; --surface-alt: #f4f4f4; --surface-hover: #fff;
     --text: #000; --text-soft: #1a1a1a; --muted: #444; --faint: #666;
-    --line: #ccc; --line-strong: #888; --accent: #14524c;
+    --line: #ccc; --line-strong: #888; --accent: #14524c; --accent-line: #8bb;
+    --warn-tint: #fdf5e8; --abn-soft: #fbeceb; --abn: #a01d16;
     --shadow-sm: none; --shadow-md: none;
   }
 
@@ -888,7 +922,7 @@ td.abn .arr { color: var(--abn); }
 
   body { font-size: 10.5pt; line-height: 1.5; background: #fff; }
 
-  .toc, .controls, .scrim, #progress, .anchor { display: none !important; }
+  .toc, .controls, .scrim, #progress, .anchor, .lang { display: none !important; }
   .layout { display: block; }
   .main { padding: 0; }
   .wrap { max-width: none; }
@@ -902,9 +936,8 @@ td.abn .arr { color: var(--abn); }
     border: 0;
     border-radius: 0;
     background: none;
-    box-shadow: none;
   }
-  .hero__portrait img { border-radius: 10px; box-shadow: none; }
+  .hero__portrait img { border-radius: 10px; }
   .hero__name { font-size: 26pt; }
   .hero__subtitle { margin-top: 2mm; font-size: 10pt; }
   .hero__facts { margin-top: 3mm; max-width: none; }
@@ -914,17 +947,17 @@ td.abn .arr { color: var(--abn); }
 
   .section { margin-top: 26px; }
   .section > h2 { font-size: 15pt; break-after: avoid; }
+  .section--brief { padding: 0; border: 0; border-radius: 0; }
   h3, h4, .entry__head { break-after: avoid; }
 
   .entry, .table-wrap, .notice, p.warn { break-inside: avoid; }
-  .table-wrap { overflow: visible; box-shadow: none; }
+  .table-wrap { overflow: visible; }
   thead th { position: static; }
   .table-wrap[data-wide] th:first-child,
   .table-wrap[data-wide] td:first-child { position: static; }
 
   table { font-size: 8.5pt; }
   a { color: inherit; text-decoration: none; }
-  .lang { display: none; }
 
   /* Краткая сводка должна укладываться в 1–2 листа. */
   .page--compact { font-size: 9.5pt; line-height: 1.4; }
@@ -937,7 +970,8 @@ td.abn .arr { color: var(--abn); }
   .page--compact .hero__doc { margin-top: 4mm; padding-top: 2mm; }
   .page--compact .hero__lede { font-size: 11pt; }
   .page--compact .section { margin-top: 12px; }
-  .page--compact .section > h2 { font-size: 12.5pt; margin: 0 0 4px; }
+  .page--compact .section > h2 { font-size: 12.5pt; margin: 0 0 4px; padding-bottom: 2mm; }
+  .page--compact .section__flag { margin-bottom: 1mm; font-size: 8.5pt; }
   .page--compact p, .page--compact ul, .page--compact ol { margin-top: 3px; margin-bottom: 3px; }
   .page--compact li { margin: 1px 0; }
   .page--compact table { font-size: 8pt; }
@@ -965,8 +999,13 @@ td.abn .arr { color: var(--abn); }
 
 <div class="layout">
   <nav class="toc" id="toc" aria-label="Spis treści">
-    <p class="toc__brand">Varia <span>medical file</span></p>
-    <p class="toc__sub">24.06.2025 – 16.10.2026</p>
+    <div class="toc__brand">
+      <img class="toc__avatar" src="assets/varia-portrait.jpg" alt="" width="40" height="40">
+      <div>
+        <p class="toc__name">Varia <span>medical file</span></p>
+        <p class="toc__sub">24.06.2025 – 16.10.2026</p>
+      </div>
+    </div>
     <p class="toc__label">Dokumenty</p>
     <ul class="toc__pages">
 <li><a href="summary-pl.html" class="is-current" aria-current="page">Podsumowanie dla lekarza</a></li>
@@ -1014,6 +1053,7 @@ td.abn .arr { color: var(--abn); }
       </header>
 
 <section class="section section--brief" id="najwa-niejsze-na-16-10-2026">
+<p class="section__flag">Aktualne</p>
 <h2><span>Najważniejsze na 16.10.2026</span><a class="anchor" href="#najwa-niejsze-na-16-10-2026" aria-hidden="true">#</a></h2>
 <p>Kotka, brytyjska długowłosa, sterylizowana, 12 lat, <strong>3,90 kg</strong> 12.10 (4,19 kg 05.10, 4,78 kg 14.09, 5,2 kg w lipcu). Przerzutowy rak gruczołu mlekowego o wysokiej złośliwości. Po 5 dawkach doksorubicyny <strong>od 28.09 — Palladia</strong>. Główne problemy: <strong>wysięk opłucnowy wymagający punkcji co kilka dni</strong>, <strong>utrata masy ciała, nudności i zaparcie</strong>, <strong>mocznik 23,7 mmol/l</strong> przy prawidłowej kreatyninie, <strong>hemoglobina na dolnej granicy</strong>.</p>
 

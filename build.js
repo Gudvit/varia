@@ -52,21 +52,21 @@ const UI = {
     toc: "Оглавление", theme: "Сменить тему", top: "В начало",
     species: "Кошка", breed: "британская длинношёрстная", ageValue: "12 лет",
     born: "Дата рождения", chip: "Чип", owner: "Владелец", language: "Язык",
-    ruOnly: "",
+    ruOnly: "", current: "Актуально",
   },
   pl: {
     eyebrow: "Raport weterynaryjny", docs: "Dokumenty", sections: "Sekcje",
     toc: "Spis treści", theme: "Zmień motyw", top: "Na górę",
     species: "Kotka", breed: "brytyjska długowłosa", ageValue: "12 lat",
     born: "Data urodzenia", chip: "Chip", owner: "Właściciel", language: "Język",
-    ruOnly: " (RU)",
+    ruOnly: " (RU)", current: "Aktualne",
   },
   en: {
     eyebrow: "Veterinary report", docs: "Documents", sections: "Sections",
     toc: "Contents", theme: "Toggle theme", top: "Back to top",
     species: "Cat", breed: "British Longhair", ageValue: "12 years",
     born: "Date of birth", chip: "Microchip", owner: "Owner", language: "Language",
-    ruOnly: " (RU)",
+    ruOnly: " (RU)", current: "Current",
   },
 };
 
@@ -222,6 +222,9 @@ function buildPage(page) {
 
       toc.push({ id, num, text, children: [] });
       out.push(`<section class="section${brief ? " section--brief" : ""}" id="${id}">`);
+      if (brief && /\d{2}\.\d{2}\.\d{4}/.test(text)) {
+        out.push(`<p class="section__flag">${UI[page.lang].current}</p>`);
+      }
       out.push(
         `<h2>${num ? `<span class="num">${num}</span>` : ""}` +
           `<span>${inline(text)}</span>${anchor(id)}</h2>`
@@ -423,8 +426,13 @@ ${css}
 
 <div class="layout">
   <nav class="toc" id="toc" aria-label="${t.toc}">
-    <p class="toc__brand">${escape(title.split(" ")[0])} <span>medical file</span></p>
-    <p class="toc__sub">${escape(period)}</p>
+    <div class="toc__brand">
+      ${heroImage ? `<img class="toc__avatar" src="${heroImage}" alt="" width="40" height="40">` : ""}
+      <div>
+        <p class="toc__name">${escape(title.split(" ")[0])} <span>medical file</span></p>
+        <p class="toc__sub">${escape(period)}</p>
+      </div>
+    </div>
     <p class="toc__label">${t.docs}</p>
     <ul class="toc__pages">
 ${pagesHtml}
