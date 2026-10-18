@@ -354,16 +354,26 @@ function renderPage(doc, docs) {
     })
     .join("\n");
 
-  const langHtml = page.group
-    ? `<nav class="lang" aria-label="${t.language}">${docs
-        .filter((d) => d.page.group === page.group)
-        .map((d) =>
-          `<a href="${d.page.out}" hreflang="${d.page.lang}" lang="${d.page.lang}"` +
-          `${d.page.out === page.out ? ' class="is-current" aria-current="page"' : ""}>` +
-          `${d.page.lang.toUpperCase()}</a>`
-        )
-        .join("")}</nav>`
-    : "";
+  // Переключатель языка есть на всех страницах. У переведённых документов он ведёт
+  // на тот же документ на другом языке; у документов только на русском PL/EN ведут
+  // на краткую сводку — единственное, что переведено.
+  const summaryGroup = (PAGES.find((p) => p.group) || {}).group;
+  const langTargets = ["ru", "pl", "en"].map((lang) => {
+    if (lang === page.lang) return page;
+    const group = page.group || summaryGroup;
+    return (docs.find((d) => d.page.group === group && d.page.lang === lang) || {}).page;
+  });
+  const langHtml = `<nav class="toolbar__lang" aria-label="${t.language}">${langTargets
+    .filter(Boolean)
+    .map((p) => {
+      const current = p.out === page.out;
+      const hint = !current && !page.group ? ` title="${escape(p.nav)}"` : "";
+      return (
+        `<a class="toolbar__btn" href="${p.out}" hreflang="${p.lang}" lang="${p.lang}"${hint}` +
+        `${current ? ' aria-current="page"' : ""}>${p.lang.toUpperCase()}</a>`
+      );
+    })
+    .join("")}</nav>`;
 
   const owner = (meta.find((m) => /владелец|właściciel|owner/i.test(m.label)) || {}).value || "Karina Grakova";
   const ownerName = owner.split(",")[0].trim();
@@ -412,12 +422,18 @@ ${css}
 <div id="progress" role="presentation"></div>
 <div class="scrim" id="scrim"></div>
 
+<div class="toolbar" id="toolbar">
+  ${langHtml}
+  <span class="toolbar__sep" aria-hidden="true"></span>
+  <button class="toolbar__btn toolbar__theme" id="theme-btn" type="button" aria-label="${t.theme}" title="${t.theme}">
+    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13.4A8.5 8.5 0 1 1 10.6 3.5a6.6 6.6 0 0 0 9.9 9.9Z"/></svg>
+  </button>
+</div>
+
 <div class="controls">
   <button class="btn" id="menu-btn" aria-label="${t.toc}" aria-expanded="false" aria-controls="toc">
     <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-  </button>
-  <button class="btn" id="theme-btn" aria-label="${t.theme}">
-    <svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
   </button>
   <button class="btn" id="top-btn" aria-label="${t.top}">
     <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
@@ -448,7 +464,6 @@ ${tocHtml}
       <header class="hero">
         <div class="hero__bar">
           <p class="hero__eyebrow">${t.eyebrow}</p>
-          ${langHtml}
         </div>
         <div class="hero__card${heroImage ? "" : " hero__card--plain"}">
           ${heroImageHtml}

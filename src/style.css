@@ -36,6 +36,14 @@
   --abn-soft:    rgba(179, 38, 30, .045);
 
   --glass:         rgba(255, 255, 255, .78);
+
+  --bar-bg:        #ffffff;
+  --bar-line:      #cfc7bb;
+  --bar-text:      #1c1b19;
+  --bar-hover:     #f0ece6;
+  --bar-sel:       #23675f;
+  --bar-on-sel:    #ffffff;
+  --bar-ping:      rgba(35, 103, 95, .45);
   --hero-glow:     rgba(35, 103, 95, .06);
   --portrait-ring: rgba(28, 24, 18, .08);
 
@@ -81,6 +89,14 @@
   --abn-soft:    rgba(255, 120, 105, .06);
 
   --glass:         rgba(31, 29, 27, .74);
+
+  --bar-bg:        #2b2825;
+  --bar-line:      #4d473f;
+  --bar-text:      #f3efe9;
+  --bar-hover:     #36322e;
+  --bar-sel:       #74bdb2;
+  --bar-on-sel:    #0d211e;
+  --bar-ping:      rgba(116, 189, 178, .55);
   --hero-glow:     rgba(116, 189, 178, .07);
   --portrait-ring: rgba(255, 255, 255, .07);
 
@@ -285,7 +301,7 @@ body {
 
 .controls {
   position: fixed;
-  top: 14px;
+  bottom: 18px;
   right: 18px;
   z-index: 50;
   display: flex;
@@ -318,7 +334,7 @@ body {
 
 /* --- Шапка: карточка пациента ------------------------------------------ */
 
-.hero { padding: clamp(40px, 8vh, 84px) 0 0; }
+.hero { padding: clamp(84px, 11vh, 108px) 0 0; }
 
 /* Строка над карточкой: тип документа слева, язык справа. */
 .hero__bar {
@@ -456,36 +472,101 @@ body {
   color: var(--muted);
 }
 
-/* --- Переключатель языка ----------------------------------------------- */
+/* --- Панель языка и темы --------------------------------------------- */
 
-/* Сегментированный контрол: активный язык — приподнятая «таблетка». */
-.lang {
+/* Одна заметная панель в правом верхнем углу: всегда видна, не прозрачная. */
+.toolbar {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--bar-line);
+  border-radius: 16px;
+  background: var(--bar-bg);
+  box-shadow: var(--shadow-md);
+  animation: toolbar-in .45s var(--ease) both;
+}
+
+.toolbar__lang { display: flex; gap: 2px; }
+
+.toolbar__btn {
   display: inline-flex;
-  gap: 2px;
-  padding: 3px;
-  border-radius: 999px;
-  background: var(--surface-alt);
-  box-shadow: inset 0 0 0 1px var(--line);
-  font: 600 12px/1 var(--sans);
-  letter-spacing: .08em;
-}
-
-.lang a {
-  min-width: 40px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  color: var(--muted);
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--bar-text);
+  font: 650 14px/1 var(--sans);
+  letter-spacing: .04em;
   text-decoration: none;
-  transition: color .15s var(--ease), background-color .15s var(--ease);
+  cursor: pointer;
+  transition: background-color .15s var(--ease), color .15s var(--ease), transform .12s var(--ease);
 }
 
-.lang a:hover { color: var(--text); }
+.toolbar__btn:hover { background: var(--bar-hover); }
+.toolbar__btn:active { transform: scale(.95); }
 
-.lang a.is-current {
-  background: var(--surface);
-  color: var(--accent);
-  box-shadow: 0 0 0 1px var(--line-strong), var(--shadow-sm);
+.toolbar__btn:focus-visible {
+  outline: 2px solid var(--bar-sel);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+/* Выбранный язык — сплошная бирюзовая плашка. */
+.toolbar__btn[aria-current="page"],
+.toolbar__btn[aria-current="page"]:hover {
+  background: var(--bar-sel);
+  color: var(--bar-on-sel);
+}
+
+.toolbar__sep {
+  width: 1px;
+  height: 26px;
+  margin: 0 4px;
+  background: var(--bar-line);
+}
+
+.toolbar__theme svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Иконка показывает, на что переключит кнопка: в тёмной теме — солнце, в светлой — луна. */
+.toolbar__theme .icon-sun { display: none; }
+:root[data-theme="dark"] .toolbar__theme .icon-sun { display: block; }
+:root[data-theme="dark"] .toolbar__theme .icon-moon { display: none; }
+
+/* Подсказка при первом визите: два мягких кольца вокруг панели. */
+.toolbar--hint::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  animation: toolbar-ping 1.5s ease-out .6s 2;
+}
+
+@keyframes toolbar-in {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes toolbar-ping {
+  0%   { box-shadow: 0 0 0 0 var(--bar-ping); }
+  100% { box-shadow: 0 0 0 16px transparent; }
 }
 
 /* --- Разделы ----------------------------------------------------------- */
@@ -854,7 +935,7 @@ td.abn .arr { color: var(--abn); }
 
   .scrim.is-open { opacity: 1; visibility: visible; }
 
-  .controls { top: auto; bottom: 16px; right: 16px; }
+  .controls { bottom: 16px; right: 16px; }
 
   .main { padding-bottom: 96px; }
 }
@@ -867,7 +948,11 @@ td.abn .arr { color: var(--abn); }
 @media (max-width: 620px) {
   .main { padding-inline: 16px; }
 
-  .hero { padding-top: 24px; }
+  .hero { padding-top: 78px; }
+  .toolbar { top: 12px; right: 12px; gap: 2px; padding: 3px; border-radius: 15px; }
+  .toolbar__btn { padding: 0 8px; }
+  .toolbar__sep { margin: 0 2px; }
+
   .hero__card {
     grid-template-columns: minmax(0, 1fr);
     gap: 20px;
@@ -912,7 +997,7 @@ td.abn .arr { color: var(--abn); }
 
   body { font-size: 10.5pt; line-height: 1.5; background: #fff; }
 
-  .toc, .controls, .scrim, #progress, .anchor, .lang { display: none !important; }
+  .toc, .controls, .toolbar, .scrim, #progress, .anchor { display: none !important; }
   .layout { display: block; }
   .main { padding: 0; }
   .wrap { max-width: none; }

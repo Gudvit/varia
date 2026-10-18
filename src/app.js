@@ -26,8 +26,19 @@
       var next = current() === "dark" ? "light" : "dark";
       apply(next);
       try { localStorage.setItem(STORE, next); } catch (e) {}
-      themeBtn.setAttribute("aria-label", next === "dark" ? "Светлая тема" : "Тёмная тема");
     });
+  }
+
+  /* --- Подсказка: панель языка и темы мягко пульсирует при первом визите в сессии --- */
+
+  var toolbar = document.getElementById("toolbar");
+  if (toolbar) {
+    var seen = false;
+    try { seen = sessionStorage.getItem("varia-toolbar-hint") === "1"; } catch (e) {}
+    if (!seen) {
+      toolbar.classList.add("toolbar--hint");
+      try { sessionStorage.setItem("varia-toolbar-hint", "1"); } catch (e) {}
+    }
   }
 
   /* --- Мобильное меню ----------------------------------------------- */
