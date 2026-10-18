@@ -12,10 +12,11 @@
 
 Female spayed British Longhair, 12 years, **3.90 kg** on 12.10 (4.19 kg on 05.10, 4.78 kg on 14.09, 5.2 kg in July). Metastatic high-grade mammary carcinoma. After 5 doses of doxorubicin, **on Palladia since 28.09**. Main problems: **pleural effusion needing thoracocentesis every few days**, **weight loss, nausea and constipation**, **urea 23.7 mmol/l** with normal creatinine, **haemoglobin at the lower limit**.
 
+- **17–18.10, per the owners:** **Palladia given on 17.10**; in the owners' observation, it is the only part of the treatment that works. **Furosemide — back to 3/4 tablet.**
 - **16.10, TENVET 24h (evening):** RR up to 40 at home, 44–46 at 18:40. About an hour in an oxygen cage, then **thoracocentesis — ~140 ml** of haemorrhagic fluid (60 ml right, 80 ml left); discharged home.
 - **16.10, LoVet (morning):** weakness, nausea, difficulty swallowing; RR 32–34 at home, thoracic breathing; 38.2 °C; **constipation — hard faeces in the rectum**; small dry lesion on the nose. **Creatinine 156 (normal), urea 23.7↑**, Hb 98 g/l, PLT 840↑, Neu 11.86↑. Furosemide reduced to 1/2 tablet twice daily (if breathing speeds up — back to 3/4 tablet and an ultrasound); **Palladia dose on 16.10 skipped**, next on 18.10; metoclopramide SC; Dicopeg, Dulcobis.
 - **15.10, Retina:** **sutures removed**. Corneas clearer, IOP 13 / 14 mmHg, no squinting, menace and dazzle present OU. Simplified drop regimen; recheck within 14 days.
-- **12.10, LoVet (oncologist):** a little better, RR up to 30; has lost weight — **3.90 kg**; eats a little (tuna, liver, chicken), drinks on her own twice daily; Zofran twice daily helps. Ultrasound: fluid "1.6–2". Furosemide 3/4 tablet twice daily, Palladia continued. Recheck in a week — decide whether to repeat Convenia.
+- **12.10, LoVet (oncologist):** a little better, RR up to 30; has lost weight — **3.90 kg**; eats a little (tuna, liver, chicken), drinks on her own twice daily; Zofran twice daily helps. Ultrasound: fluid 1.6–2 cm. Furosemide 3/4 tablet twice daily, Palladia continued. Recheck in a week — decide whether to repeat Convenia.
 - **10.10, TENVET 24h:** night in an oxygen cage, **thoracocentesis 120 ml**; signs of dehydration (RBC 13.31↑, Hb 16.2↑).
 - **07.10, LoVet:** tap of 100 ml from the right; **creatinine 250↑, urea 16.5↑**; SC fluids. **05.10:** ultrasound — "worse", right lung collapse, **0.78 × 0.65 cm liver lesion**.
 - **Previous taps:** 26.09 — 128 ml, 28.09 — 50 ml (right).
@@ -27,7 +28,7 @@ Female spayed British Longhair, 12 years, **3.90 kg** on 12.10 (4.19 kg on 05.10
 | **Diagnosis** | Mammary carcinoma. 08.08.2025 — solid carcinoma, Mills grade III, margin ~0.2 mm. 29.12.2025 — high grade, lymphovascular invasion. 20.03.2026 — poorly differentiated tumour, margins multifocally involved; IHC (pancytokeratin/vimentin) recommended, not performed |
 | **Surgery** | 4 operations, ALVET: 08.08.2025, 04.11.2025 (benign), 29.12.2025, 20.03.2026 |
 | **Stage** | Clinically metastatic since 13.04.2026 (lungs on TFAST, not confirmed cytologically). 14.09 — proliferative changes in the thoracic wall; 21.09 — 0.46 cm subcutaneous abdominal nodule (recurrence in the differential); 26.09 — ~1 × 1.5 cm mass in the thorax; 26.08 — 0.9×0.7 cm mass at the heart apex/mediastinum (whether this is the same lesion as on 26.09 is unknown); **05.10 — 0.78 × 0.65 cm liver lesion, possible metastasis** |
-| **Systemic therapy** | Palladia 13.04–08.06.2026. Carboplatin 200 mg/m² on 18.05.2026, followed by severe neutropenia (Neu 0.45). Doxorubicin 1 mg/kg every 21 days: 15.06, 06.07, 27.07, 17.08, 07.09.2026; dose VI not given. **Palladia 10 mg since 28.09.2026**, **every other day since 05.10**; paused for 1 day on 07.10; **dose skipped on 16.10** (weakness, nausea), next on 18.10 |
+| **Systemic therapy** | Palladia 13.04–08.06.2026. Carboplatin 200 mg/m² on 18.05.2026, followed by severe neutropenia (Neu 0.45). Doxorubicin 1 mg/kg every 21 days: 15.06, 06.07, 27.07, 17.08, 07.09.2026; dose VI not given. **Palladia 10 mg since 28.09.2026**, **every other day since 05.10**; paused for 1 day on 07.10; **dose skipped on 16.10** (weakness, nausea), **given on 17.10** |
 
 ## 2. Active problems
 
@@ -41,8 +42,8 @@ Female spayed British Longhair, 12 years, **3.90 kg** on 12.10 (4.19 kg on 05.10
 
 ## 3. Treatment (latest prescriptions)
 
-- **Palladia** 10 mg every other day (since 05.10); skipped on 16.10, next on 18.10.
-- **Furosemide** (Furosoral 10 mg): from 16.10 — **1/2 tablet twice daily**; if breathing speeds up worryingly — 3/4 tablet twice daily and an ultrasound.
+- **Palladia** 10 mg every other day (since 05.10); skipped on 16.10, given on 17.10. In the owners' observation, it is the only thing that works.
+- **Furosemide** (Furosoral 10 mg): reduced to 1/2 tablet twice daily on 16.10 (if breathing speeds up — 3/4 tablet twice daily and an ultrasound); after the tap on 16.10 **back to 3/4 tablet** (per the owners, as of 18.10).
 - **Convenia** SC on 05.10; whether to repeat — to be decided at the recheck.
 - **Nefrokrill Gatto** (since 07.10) — renal support supplement.
 - **Prednisolone** 5 mg: 3/4 tablet alternating with 1 tablet, once daily (since 28.09).
@@ -63,10 +64,10 @@ Female spayed British Longhair, 12 years, **3.90 kg** on 12.10 (4.19 kg on 05.10
 ## 5. Decisions needed
 
 1. **Effusion:** five taps in three weeks — a plan for thoracocentesis (criteria, where, how often, including at night) or an indwelling drain.
-2. **Furosemide:** the dose after 16.10 (reduced in the morning, a 140 ml tap the same evening) and what it achieves.
+2. **Furosemide:** now back to 3/4 tablet (reduced to 1/2 on the morning of 16.10, a 140 ml tap the same evening) — confirm the dose and what it achieves.
 3. **Urea 23.7 with creatinine 156:** the cause; diet, fluids, steroid.
 4. **Blood:** Hb 98 and platelets 840 — how often to recheck; blood smear.
-5. **Palladia:** how to assess the effect; nausea and weakness on 16.10.
+5. **Palladia:** the owners see an effect only from it — how to confirm this; the day of the next dose (last given on 17.10); nausea and weakness on 16.10.
 6. **Nutrition and GI:** weight 3.90 kg, nausea, constipation — a standing plan.
 
 ## About this summary

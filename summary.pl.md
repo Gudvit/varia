@@ -12,10 +12,11 @@
 
 Kotka, brytyjska długowłosa, sterylizowana, 12 lat, **3,90 kg** 12.10 (4,19 kg 05.10, 4,78 kg 14.09, 5,2 kg w lipcu). Przerzutowy rak gruczołu mlekowego o wysokiej złośliwości. Po 5 dawkach doksorubicyny **od 28.09 — Palladia**. Główne problemy: **wysięk opłucnowy wymagający punkcji co kilka dni**, **utrata masy ciała, nudności i zaparcie**, **mocznik 23,7 mmol/l** przy prawidłowej kreatyninie, **hemoglobina na dolnej granicy**.
 
+- **17–18.10, wg właścicieli:** **Palladia podana 17.10**; według obserwacji właścicieli z całego leczenia działa tylko ona. **Furosemid — z powrotem 3/4 tabl.**
 - **16.10, TENVET 24h (wieczór):** w domu RR do 40, o 18:40 — 44–46. Ok. godziny w klatce tlenowej, następnie **torakocenteza — ok. 140 ml** krwistego płynu (60 ml z prawej, 80 ml z lewej); wypisana do domu.
 - **16.10, LoVet (rano):** osłabienie, nudności, trudności z przełykaniem; RR w domu 32–34, oddech piersiowy; 38,2 °C; **zaparcie — twardy kał w odbytnicy**; mała sucha ranka na nosie. **Kreatynina 156 (norma), mocznik 23,7↑**, Hb 98 g/l, PLT 840↑, Neu 11,86↑. Furosemid zmniejszony do 1/2 tabl. 2×/dobę (przy przyspieszeniu oddechu — z powrotem 3/4 tabl. i USG); **dawka Palladii 16.10 pominięta**, następna — 18.10; metoklopramid s.c.; Dicopeg, Dulcobis.
 - **15.10, Retina:** **zdjęte szwy**. Rogówki bardziej przezierne, IOP 13 / 14 mmHg, brak mrużenia, odruch zagrożenia i olśnienia obecne OU. Uproszczony schemat kropli; kontrola do 14 dni.
-- **12.10, LoVet (onkolog):** trochę lepiej, RR do 30; schudła — **3,90 kg**; je niewiele (tuńczyk, wątróbka, kurczak), pije sama 2×/dobę; Zofran 2×/dobę pomaga. USG: płyn „1,6–2”. Furosemid 3/4 tabl. 2×/dobę, Palladia kontynuowana. Kontrola za tydzień — decyzja o powtórce Convenii.
+- **12.10, LoVet (onkolog):** trochę lepiej, RR do 30; schudła — **3,90 kg**; je niewiele (tuńczyk, wątróbka, kurczak), pije sama 2×/dobę; Zofran 2×/dobę pomaga. USG: płyn 1,6–2 cm. Furosemid 3/4 tabl. 2×/dobę, Palladia kontynuowana. Kontrola za tydzień — decyzja o powtórce Convenii.
 - **10.10, TENVET 24h:** noc w klatce tlenowej, **torakocenteza 120 ml**; cechy odwodnienia (RBC 13,31↑, Hb 16,2↑).
 - **07.10, LoVet:** punkcja 100 ml z prawej; **kreatynina 250↑, mocznik 16,5↑**; płyny s.c. **05.10:** USG — „pogorszenie”, zapadnięcie płuca po prawej, **ognisko w wątrobie 0,78 × 0,65 cm**.
 - **Wcześniejsze punkcje:** 26.09 — 128 ml, 28.09 — 50 ml (z prawej).
@@ -27,7 +28,7 @@ Kotka, brytyjska długowłosa, sterylizowana, 12 lat, **3,90 kg** 12.10 (4,19 kg
 | **Rozpoznanie** | Rak gruczołu mlekowego. 08.08.2025 — rak prosty lity, III stopień wg Millsa, margines ok. 0,2 mm. 29.12.2025 — wysoka złośliwość, naciekanie naczyń chłonnych. 20.03.2026 — nowotwór nisko zróżnicowany, wieloogniskowo w marginesach; IHC (pancytokeratyna/wimentyna) zalecana, niewykonana |
 | **Zabiegi** | 4 operacje, ALVET: 08.08.2025, 04.11.2025 (zmiana łagodna), 29.12.2025, 20.03.2026 |
 | **Zaawansowanie** | Od 13.04.2026 klinicznie choroba przerzutowa (płuca w TFAST, bez potwierdzenia morfologicznego). 14.09 — rozrosty w obrębie ściany klatki piersiowej; 21.09 — podskórna zmiana 0,46 cm na brzuchu (w diagnostyce różnicowej wznowa); 26.09 — rozrost w klatce piersiowej ok. 1 × 1,5 cm; 26.08 — zmiana 0,9×0,7 cm przy koniuszku serca/w śródpiersiu (czy to ta sama zmiana co 26.09 — nie wiadomo); **05.10 — ognisko w wątrobie 0,78 × 0,65 cm, możliwa zmiana przerzutowa** |
-| **Leczenie systemowe** | Palladia 13.04–08.06.2026. Karboplatyna 200 mg/m² — 18.05.2026, następnie ciężka neutropenia (Neu 0,45). Doksorubicyna 1 mg/kg co 21 dni: 15.06, 06.07, 27.07, 17.08, 07.09.2026; dawka VI niepodana. **Od 28.09.2026 — Palladia 10 mg**, **od 05.10 — co drugi dzień**; 07.10 — 1 dzień przerwy; **16.10 — dawka pominięta** (osłabienie, nudności), następna — 18.10 |
+| **Leczenie systemowe** | Palladia 13.04–08.06.2026. Karboplatyna 200 mg/m² — 18.05.2026, następnie ciężka neutropenia (Neu 0,45). Doksorubicyna 1 mg/kg co 21 dni: 15.06, 06.07, 27.07, 17.08, 07.09.2026; dawka VI niepodana. **Od 28.09.2026 — Palladia 10 mg**, **od 05.10 — co drugi dzień**; 07.10 — 1 dzień przerwy; **16.10 — dawka pominięta** (osłabienie, nudności), **podana 17.10** |
 
 ## 2. Aktywne problemy
 
@@ -41,8 +42,8 @@ Kotka, brytyjska długowłosa, sterylizowana, 12 lat, **3,90 kg** 12.10 (4,19 kg
 
 ## 3. Leczenie (ostatnie zalecenia)
 
-- **Palladia** 10 mg co drugi dzień (od 05.10); 16.10 — pominięta, następna — 18.10.
-- **Furosemid** (Furosoral 10 mg): od 16.10 — **1/2 tabl. 2×/dobę**; przy niepokojącym przyspieszeniu oddechu — 3/4 tabl. 2×/dobę i USG.
+- **Palladia** 10 mg co drugi dzień (od 05.10); 16.10 — pominięta, podana 17.10. Według obserwacji właścicieli działa tylko ona.
+- **Furosemid** (Furosoral 10 mg): 16.10 zmniejszony do 1/2 tabl. 2×/dobę (przy przyspieszeniu oddechu — 3/4 tabl. 2×/dobę i USG); po punkcji 16.10 **z powrotem 3/4 tabl.** (wg właścicieli, stan na 18.10).
 - **Convenia** s.c. 05.10; decyzja o powtórce — na kontroli.
 - **Nefrokrill Gatto** (od 07.10) — wsparcie nerek.
 - **Prednizolon** 5 mg: 3/4 tabl. na przemian z 1 tabl., 1×/dobę (od 28.09).
@@ -63,10 +64,10 @@ Kotka, brytyjska długowłosa, sterylizowana, 12 lat, **3,90 kg** 12.10 (4,19 kg
 ## 5. Do decyzji
 
 1. **Wysięk:** pięć punkcji w trzy tygodnie — plan punkcji (kryteria, gdzie, jak często, także w nocy) lub stały drenaż.
-2. **Furosemid:** dawka po 16.10 (zmniejszona rano, wieczorem — punkcja 140 ml) i jego skuteczność.
+2. **Furosemid:** obecnie znów 3/4 tabl. (16.10 rano zmniejszony do 1/2, wieczorem — punkcja 140 ml) — potwierdzić dawkę i jego skuteczność.
 3. **Mocznik 23,7 przy kreatyninie 156:** przyczyna; dieta, płyny, steryd.
 4. **Krew:** Hb 98 i płytki 840 — jak często kontrolować; rozmaz krwi.
-5. **Palladia:** jak ocenić efekt; nudności i osłabienie 16.10.
+5. **Palladia:** właściciele widzą efekt tylko po niej — jak to potwierdzić; dzień następnej dawki (ostatnia — 17.10); nudności i osłabienie 16.10.
 6. **Żywienie i przewód pokarmowy:** masa 3,90 kg, nudności, zaparcie — stały schemat.
 
 ## O tym podsumowaniu
