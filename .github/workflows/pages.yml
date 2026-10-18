@@ -38,8 +38,9 @@ jobs:
       - name: Собрать каталог публикации
         run: |
           mkdir -p _site
-          cp index.html analysis.html labs.html summary.html summary-pl.html summary-en.html _site/
-          cp final_report.md analysis.md labs.md summary.md summary.pl.md summary.en.md _site/
+          # Все собранные страницы и их источники — включая переводы на PL и EN.
+          cp *.html _site/
+          cp final_report*.md analysis*.md labs*.md summary*.md _site/
           cp -R assets _site/assets
 
       - uses: actions/configure-pages@v5
