@@ -4,19 +4,21 @@
 
 *Kotka, brytyjska długowłosa, sterylizowana*
 
-*Dane z dokumentów: 24.06.2025 – 16.10.2026*
+*Dane z dokumentów: 24.06.2025 – 19.10.2026*
 
-*Raport opracowano: 08.09.2026; aktualizacja 18.10.2026*
+*Raport opracowano: 08.09.2026; aktualizacja 20.10.2026*
 
 *Właściciel: Karina Grakova*
 
 ![Varia — czarna kotka brytyjska długowłosa](assets/varia-portrait.jpg)
 
-## Podsumowanie kliniczne / aktualny stan na 16.10.2026
+## Podsumowanie kliniczne / aktualny stan na 19.10.2026
 
 Jednostronicowe podsumowanie, aby zapoznać się z historią w 1–2 minuty. Wszystko, co tu opisano, rozwinięto w rozdziałach 1–16; odwołania do rozdziałów podano w nawiasach. Symbolem ⚠️ oznaczono miejsca, w których dokumenty są ze sobą sprzeczne lub brakuje danych.
 
-> **Sytuacja na 16.10.2026 — wysięk gromadzi się w ciągu sześciu dni, masa ciała nadal spada.** **16.10 wieczorem** — RR 44–46/min; w TENVET 24h ok. godziny w klatce tlenowej, następnie **torakocenteza ok. 140 ml** krwistego płynu (60 ml z prawej, 80 ml z lewej) — piąta punkcja od 26.09 i największa objętość. **Rano 16.10 w LoVet:** osłabienie, nudności, zaparcie (twardy kał w odbytnicy), 38.2 °C, RR w domu 32–34. **Kreatynina wróciła do normy — 156 µmol/l, ale mocznik 23.7 mmol/l — najwyższa wartość w historii**; hemoglobina 98 g/l — na dolnej granicy (07.10 — 121), płytki 840 ↑, neutrofile 11.86 ↑ — brak neutropenii. Furosemid zmniejszony do 1/2 tabl. 2×/dobę, dawka Palladii 16.10 pominięta (następna — 18.10), metoklopramid s.c., Dicopeg i Dulcobis. **Masa ciała 3.90 kg** (12.10) — −7% w tydzień i −25% od lipcowych 5.2 kg. **15.10 w Retinie zdjęto szwy z oczu:** rogówki bardziej przezierne, IOP 13 / 14 mmHg, odruch zagrożenia i olśnienia zachowane, brak dyskomfortu. **12.10 w LoVet** (kontrola po TENVET): nieco lepiej, RR do 30, je niewiele (jedzenie domowe), w USG płyn 1.6–2 cm; furosemid 3/4 tabl. 2×/dobę, Palladia kontynuowana (rozdz. 4, wpisy 12–16.10.2026). **Wg właścicieli:** po punkcji 16.10 RR wynosiła 34, a 17.10, po furosemidzie i Palladii, oddech się poprawił — **RR 26 i 28 nawet nie we śnie**; 18.10 je, pije, oddaje mocz i kał; furosemid znów 3/4 tabl.; Palladia podana 17.10 — według obserwacji właścicieli z całego leczenia działa tylko ona.
+> **Sytuacja na 19.10.2026 — progresja; onkolożka zaleciła rozważenie eutanazji.** **19.10 w LoVet** (dr Agata Drewniak): wg właścicieli obecnie zły oddech, a 18.10 był dobry dzień, aktywna. W badaniu — **schudła znowu, oddech przeponowy, ciężki, Varia osowiała**. Lekarka poinformowała o **progresji choroby i złym rokowaniu**, odradziła punkcję ze względu na dobrostan zwierzęcia i wątpliwą zasadność tak częstych punkcji i **zaleciła, na tym etapie, rozważenie eutanazji**. **Decyzją właścicieli** w Comfortanie (metadon) wykonano **punkcję — 90 ml płynu surowiczo-krwistego** (szósta od 26.09, trzy dni po ok. 140 ml) i podano **karboplatynę 200 mg/m² i.v.** w powolnym wlewie z 5% glukozy. Leki bez zmian; przy złym oddechu — do rozważenia **furosemid 1 tabl. 2×/dobę i steryd 1 tabl. 1×/dobę**. Krew 19.10 (IDEXX): **neutrofile 17.38 ↑, WBC 19.25 ↑**, hemoglobina 100 g/l (przy dolnej granicy), płytki 673 ↑; biochemii nie wykonano (rozdz. 4, wpis z 19.10.2026).
+>
+> **16.10.2026 — wysięk gromadzi się w ciągu sześciu dni, masa ciała nadal spada.** **16.10 wieczorem** — RR 44–46/min; w TENVET 24h ok. godziny w klatce tlenowej, następnie **torakocenteza ok. 140 ml** krwistego płynu (60 ml z prawej, 80 ml z lewej) — piąta punkcja od 26.09 i największa objętość. **Rano 16.10 w LoVet:** osłabienie, nudności, zaparcie (twardy kał w odbytnicy), 38.2 °C, RR w domu 32–34. **Kreatynina wróciła do normy — 156 µmol/l, ale mocznik 23.7 mmol/l — najwyższa wartość w historii**; hemoglobina 98 g/l — na dolnej granicy (07.10 — 121), płytki 840 ↑, neutrofile 11.86 ↑ — brak neutropenii. Furosemid zmniejszony do 1/2 tabl. 2×/dobę, dawka Palladii 16.10 pominięta (następna — 18.10), metoklopramid s.c., Dicopeg i Dulcobis. **Masa ciała 3.90 kg** (12.10) — −7% w tydzień i −25% od lipcowych 5.2 kg. **15.10 w Retinie zdjęto szwy z oczu:** rogówki bardziej przezierne, IOP 13 / 14 mmHg, odruch zagrożenia i olśnienia zachowane, brak dyskomfortu. **12.10 w LoVet** (kontrola po TENVET): nieco lepiej, RR do 30, je niewiele (jedzenie domowe), w USG płyn 1.6–2 cm; furosemid 3/4 tabl. 2×/dobę, Palladia kontynuowana (rozdz. 4, wpisy 12–16.10.2026). **Wg właścicieli:** po punkcji 16.10 RR wynosiła 34, a 17.10, po furosemidzie i Palladii, oddech się poprawił — **RR 26 i 28 nawet nie we śnie**; 18.10 je, pije, oddaje mocz i kał; furosemid znów 3/4 tabl.; Palladia podana 17.10 — według obserwacji właścicieli z całego leczenia działa tylko ona.
 >
 > **05–10.10.2026:** w nocy na 10.10 — duszność; w całodobowej klinice TENVET 24h RR 33, płyn po obu stronach (1.5 / 1.8 cm), niedodma z ucisku; noc w klatce tlenowej. Rano RR 40 — **torakocenteza, 120 ml** krwistego płynu; wypisana w stanie stabilnym, kontrola u lekarza prowadzącego 11.10. **05.10 w LoVet** (kontrola onkologiczna): USG — „pogorszenie obrazu”, zapadnięcie płuca po prawej, **ognisko w wątrobie 0.78 × 0.65 cm — możliwa zmiana przerzutowa**; temperatura 39.0 °C; Palladia co drugi dzień, furosemid zwiększony do 3/4 tabl. 3×/dobę, Convenia. **07.10 w LoVet — punkcja 100 ml z prawej i skok parametrów nerkowych: kreatynina 250 µmol/l, mocznik 16.5 mmol/l** (28.09 — 152 i 12.0), neutrofilia 15.08; masa 4.19 kg (jak 05.10). Onkolog poinformowała o złym stanie i złym rokowaniu; płyny s.c., doba bez furosemidu, potem 3/4 tabl. 2×/dobę; Palladia — jeden dzień przerwy. 10.10 w TENVET: kreatynina ≈ 159 µmol/l, mocznik ≈ 11.4 mmol/l (inny analizator), **brak neutropenii** (Neu 10.43), cechy odwodnienia (RBC i Hb powyżej zakresu). Rokowanie TENVET — ostrożne (rozdz. 4, wpisy 29.09–10.10.2026).
 >
@@ -28,17 +30,17 @@ Jednostronicowe podsumowanie, aby zapoznać się z historią w 1–2 minuty. Wsz
 | **Rozpoznanie** | Rak gruczołu mlekowego o wysokiej złośliwości. Próbka pierwotna 08.08.2025 — rak prosty lity, III stopień wg Millsa (rozdz. 5). |
 | **Zaawansowanie** | Od 13.04.2026 onkolog **klinicznie** ocenia chorobę jako przerzutową z zajęciem płuc (TFAST + obraz ogólny). ⚠️ Brak weryfikacji morfologicznej zmiany w płucach. Od kwietnia 2026 — nawracający wysięk opłucnowy. 21.09.2026 w AFAST — nowa zmiana podskórna w okolicy brzucha 0.46 cm, w diagnostyce różnicowej wznowa. 26.09.2026 w TFAST — **rozrost w klatce piersiowej ok. 1 × 1.5 cm**. **05.10.2026 w USG — ognisko w wątrobie 0.78 × 0.65 cm, niejednorodne, „możliwa zmiana przerzutowa”**; niezweryfikowane. |
 | **Chirurgia (4 operacje onkologiczne, ALVET)** | 08.08.2025 — całkowita mastektomia prawej listwy + węzeł chłonny pachwinowy (margines ok. 0.2 mm); 04.11.2025 — guzek przy bliźnie, **histologicznie łagodny**; 29.12.2025 — zmiana za prawą łopatką, wysoka złośliwość + naciekanie naczyń chłonnych; 20.03.2026 — zmiany w okolicy pachowej i na brzuchu; nisko zróżnicowany nowotwór o wysokiej złośliwości, komórki nowotworowe wieloogniskowo dochodzą do marginesów histologicznych (rozdz. 6). **25.09.2026 — zabieg na oczach w Retinie** (cross-linking obu rogówek, płaty trzeciej powieki). |
-| **Chemioterapia** | Karboplatyna 200 mg/m² — jedna dawka 18.05.2026; podanie 08.06.2026 odwołane z powodu ciężkiej neutropenii (Neu# 0.45). Od 15.06.2026 — doksorubicyna 1 mg/kg co 21 dni; podano 5 dawek, ostatnią 07.09.2026. **Szóstej dawki nie podano: 28.09.2026 doksorubicynę zastąpiono Palladią** (rozdz. 7). |
+| **Chemioterapia** | Karboplatyna 200 mg/m² — jedna dawka 18.05.2026; podanie 08.06.2026 odwołane z powodu ciężkiej neutropenii (Neu# 0.45). Od 15.06.2026 — doksorubicyna 1 mg/kg co 21 dni; podano 5 dawek, ostatnią 07.09.2026. **Szóstej dawki nie podano: 28.09.2026 doksorubicynę zastąpiono Palladią** (rozdz. 7). **19.10.2026 — karboplatyna 200 mg/m² i.v.** — decyzją właścicieli, po tym jak onkolożka zaleciła rozważenie eutanazji. |
 | **Terapia celowana** | Palladia (toceranib) 13.04–08.06.2026: 10 → 15 → 10 mg pon./śr./pt.; odstawiona po ciężkiej neutropenii 08.06.2026 (podawana równolegle z karboplatyną). **Wznowiona 28.09.2026:** 10 mg w pon. i śr.; jeśli brak działań niepożądanych — 15 mg w pt. i pon. 07.10 — jeden dzień przerwy, potem znów 10 mg; wg wywiadu z 10.10 — „dwa tygodnie Palladii 10 mg na kota”; 12.10 — podana; **16.10 — dawka pominięta z powodu osłabienia i nudności** (następną zaplanowano na 18.10); **wg właścicieli podana 17.10**. **Brak neutropenii** ani 07.10 (Neu 15.08), ani 10.10 (Neu 10.43), ani 16.10 (Neu 11.86 ×10⁹/l). |
-| **Leczenie** (ostatnie zalecenia 12–16.10) | **Palladia** — zob. wyżej. **Furosemid (Furosoral 10 mg):** od 09.10 — 3/4 tabl. 2×/dobę; **16.10 — zmniejszony do 1/2 tabl. 2×/dobę**; przy niepokojącym przyspieszeniu oddechu — wrócić do 3/4 tabl. 2×/dobę i wykonać USG. **Wg właścicieli na 18.10 — znów 3/4 tabl.** **Convenia** s.c. 05.10; o powtórce — zdecydować na kontroli (zalecenie z 12.10). **Przeciwwymiotne:** Zofran 2×/dobę (12.10 — „pomaga”), metoklopramid s.c. w przychodni 16.10. **Zaparcie:** Dicopeg, Dulcobis (16.10). **Nefrokrill Gatto** (od 07.10). **Mirataz** (wydany 12.10). **Cyclonamina** w iniekcji — 2 ampułki (12.10). **Prednizolon:** 3/4 tabl. na przemian z 1 tabl. (5 mg), 1×/dobę (od 28.09). **Przeciwbólowo:** buprenorfina (Bupaq) na błonę śluzową. **Przewód pokarmowy:** sukralfat, Helicid. **Oczy (od 15.10, oba):** Vigamox 4×/dobę do kontroli; po 3 min — Vital Drop 3×/dobę do końca opakowania; po 15 min — surowica z Optixcare 4×/dobę do końca buteleczki; po 3 min — Optixcare 4×/dobę na stałe; przy utrzymaniu dobrego stanu — przejście na Dexoftyal 3×/dobę i Optixcare żel 4×/dobę (rozdz. 9, 10). |
+| **Leczenie** (ostatnie zalecenia 12–19.10) | **19.10 (LoVet): leki bez zmian; przy złym oddechu — do rozważenia furosemid 1 tabl. 2×/dobę i prednizolon 1 tabl. 1×/dobę.** **Palladia** — zob. wyżej. **Furosemid (Furosoral 10 mg):** od 09.10 — 3/4 tabl. 2×/dobę; **16.10 — zmniejszony do 1/2 tabl. 2×/dobę**; przy niepokojącym przyspieszeniu oddechu — wrócić do 3/4 tabl. 2×/dobę i wykonać USG. **Wg właścicieli na 18.10 — znów 3/4 tabl.** **Convenia** s.c. 05.10; o powtórce — zdecydować na kontroli (zalecenie z 12.10). **Przeciwwymiotne:** Zofran 2×/dobę (12.10 — „pomaga”), metoklopramid s.c. w przychodni 16.10. **Zaparcie:** Dicopeg, Dulcobis (16.10). **Nefrokrill Gatto** (od 07.10). **Mirataz** (wydany 12.10). **Cyclonamina** w iniekcji — 2 ampułki (12.10). **Prednizolon:** 3/4 tabl. na przemian z 1 tabl. (5 mg), 1×/dobę (od 28.09). **Przeciwbólowo:** buprenorfina (Bupaq) na błonę śluzową. **Przewód pokarmowy:** sukralfat, Helicid. **Oczy (od 15.10, oba):** Vigamox 4×/dobę do kontroli; po 3 min — Vital Drop 3×/dobę do końca opakowania; po 15 min — surowica z Optixcare 4×/dobę do końca buteleczki; po 3 min — Optixcare 4×/dobę na stałe; przy utrzymaniu dobrego stanu — przejście na Dexoftyal 3×/dobę i Optixcare żel 4×/dobę (rozdz. 9, 10). |
 
 #### Aktywne problemy na ostatnią udokumentowaną datę
 
-- **Wysięk opłucnowy — punkcje co kilka dni:** 26.09 — 128 ml, 28.09 — 50 ml z prawej, **07.10 — 100 ml z prawej** (LoVet), **10.10 — 120 ml**, **16.10 — ok. 140 ml** (TENVET 24h: 60 ml z prawej, 80 ml z lewej, po godzinie w klatce tlenowej; wcześniej w domu RR 44–46/min). 12.10 w USG LoVet — płyn 1.6–2 cm (strony nie podano). 10.10 — 120 ml (TENVET 24h, po nocy w klatce tlenowej; T-FAST 1.5 cm z prawej / 1.8 cm z lewej, niedodma z ucisku w dobrzusznych partiach płuc, opłucna fragmentaryczna, o nieregularnym przebiegu). W nocy RR 33 i duszność po aktywności, rano — 40/min. Rokowanie TENVET — ostrożne, w tym ryzyko zatorowości płucnej. 26.09 — TFAST 2.2 cm z lewej / 2 cm z prawej, RR 43/min z udziałem tłoczni brzusznej, blado-sine suche błony śluzowe, rzężenia nad wszystkimi polami płucnymi; obustronna torakocenteza, **128 ml** ciemnokrwistego, niekrzepnącego płynu, po czym oddech stał się głębszy i wolniejszy. W nocy na 28.09 oddech znów się pogorszył; 28.09 usunięto kolejne **50 ml z prawej** (z lewej nie nakłuwano z powodu niepokoju kotki). W karcie znieczulenia z 25.09 wspomniano punkcję „wczoraj również” (24.09) — brak dokumentu. Próg pilnej wizyty wg zalecenia z 26.09 — **RR 40/min i więcej** (rozdz. 4).
+- **Wysięk opłucnowy — punkcje co kilka dni:** 26.09 — 128 ml, 28.09 — 50 ml z prawej, **07.10 — 100 ml z prawej** (LoVet), **10.10 — 120 ml**, **16.10 — ok. 140 ml** (TENVET 24h: 60 ml z prawej, 80 ml z lewej, po godzinie w klatce tlenowej; wcześniej w domu RR 44–46/min). 12.10 w USG LoVet — płyn 1.6–2 cm (strony nie podano). 10.10 — 120 ml (TENVET 24h, po nocy w klatce tlenowej; T-FAST 1.5 cm z prawej / 1.8 cm z lewej, niedodma z ucisku w dobrzusznych partiach płuc, opłucna fragmentaryczna, o nieregularnym przebiegu). W nocy RR 33 i duszność po aktywności, rano — 40/min. Rokowanie TENVET — ostrożne, w tym ryzyko zatorowości płucnej. 26.09 — TFAST 2.2 cm z lewej / 2 cm z prawej, RR 43/min z udziałem tłoczni brzusznej, blado-sine suche błony śluzowe, rzężenia nad wszystkimi polami płucnymi; obustronna torakocenteza, **128 ml** ciemnokrwistego, niekrzepnącego płynu, po czym oddech stał się głębszy i wolniejszy. W nocy na 28.09 oddech znów się pogorszył; 28.09 usunięto kolejne **50 ml z prawej** (z lewej nie nakłuwano z powodu niepokoju kotki). W karcie znieczulenia z 25.09 wspomniano punkcję „wczoraj również” (24.09) — brak dokumentu. Próg pilnej wizyty wg zalecenia z 26.09 — **RR 40/min i więcej** (rozdz. 4). **19.10 — 90 ml** płynu surowiczo-krwistego (LoVet; oddech przeponowy, ciężki; lekarka punkcję odradzała, wykonana decyzją właścicieli).
 - **Oczy po zabiegu 25.09:** cross-linking obu rogówek, opatrunek kolagenowy z antybiotykiem, płaty trzeciej powieki. **15.10 w Retinie zdjęto szwy:** brak ropnej wydzieliny, **przezierność rogówek poprawiła się**, IOP 13 (prawe) / 14 (lewe) mmHg, nie mruży oczu, brak oznak dyskomfortu, odruch zagrożenia i olśnienia zachowane obustronnie. Schemat kropli uproszczony (Vigamox, Vital Drop, surowica z Optixcare, Optixcare); przy utrzymaniu dobrego stanu — przejście na Dexoftyal i Optixcare żel. Kontrola — w ciągu 14 dni (rozdz. 10).
 - **Onkologia — zmiana strategii:** 28.09 onkolog poinformowała o złym rokowaniu i wysokim ryzyku progresji na doksorubicynie; na życzenie właściciela rozpoczęto Palladię. Nowy **rozrost w klatce piersiowej ok. 1 × 1.5 cm** (26.09) i zmiana podskórna 0.46 cm w okolicy brzucha (21.09) nie są zweryfikowane.
 - **Apetyt, żołądek, nawodnienie:** 26.09 i rano 28.09 — brak apetytu; Retina 25.09 zapisuje, że kotka jest dokarmiana; Mirataz 26.09 w przychodni i dawka zapasowa 27.09. Cechy zapalenia żołądka w USG (21.09), w karcie znieczulenia — „zapalenie żołądka / trzustki”. **Masa 3.90 kg (12.10)** — −0.3 kg w tydzień po 4.19 kg (05.10); od 4.78 kg (14.09) — ok. −18%, od lipcowych 5.2 kg — −25%. 10.10 — tylko wylizała sosik, brak pragnienia, cechy odwodnienia. 12.10 — je niewiele (właścicielka gotuje tuńczyka, wątróbkę, kurczaka), pije sama rano i wieczorem, Zofran 2×/dobę pomaga. **16.10 — nudności, trudności z przełykaniem, osłabienie; zaparcie** (ostatni stolec 14.10, twardy kał w odbytnicy) — metoklopramid, Dicopeg, Dulcobis (rozdz. 8.3, 12).
-- **Krew:** 28.09 — leukocytoza z neutrofilią (wg lekarza; formularza nie otrzymano), zalecono Clamoxyl L.A. **07.10 (IDEXX) — WBC 17.38 ↑, neutrofile 15.08 ↑**; parametry czerwonokrwinkowe w normie, MCH 11.0 ↓, RDW 31.2 ↑, płytki 550. **10.10 — WBC 11.77, neutrofile 10.43 (w normie), limfopenia 0.44; RBC 13.31 i Hb 16.2 powyżej zakresu** — zagęszczenie krwi przy odwodnieniu. Chlorki obniżone (106.8), mleczany 2.47 ↑. **16.10 (IDEXX) — hemoglobina 98 g/l (dolna granica; 07.10 — 121), hematokryt 0.331, retikulocyty 38.7; płytki 840 ↑ — najwyższa wartość w historii; neutrofile 11.86 ↑** (rozdz. 4, wpisy 10.10 i 16.10).
+- **Krew:** 28.09 — leukocytoza z neutrofilią (wg lekarza; formularza nie otrzymano), zalecono Clamoxyl L.A. **07.10 (IDEXX) — WBC 17.38 ↑, neutrofile 15.08 ↑**; parametry czerwonokrwinkowe w normie, MCH 11.0 ↓, RDW 31.2 ↑, płytki 550. **10.10 — WBC 11.77, neutrofile 10.43 (w normie), limfopenia 0.44; RBC 13.31 i Hb 16.2 powyżej zakresu** — zagęszczenie krwi przy odwodnieniu. Chlorki obniżone (106.8), mleczany 2.47 ↑. **16.10 (IDEXX) — hemoglobina 98 g/l (dolna granica; 07.10 — 121), hematokryt 0.331, retikulocyty 38.7; płytki 840 ↑ — najwyższa wartość w historii; neutrofile 11.86 ↑** (rozdz. 4, wpisy 10.10 i 16.10). **19.10 (IDEXX) — neutrofile 17.38 ↑, WBC 19.25 ↑, eozynofile 0.11 ↓; hemoglobina 100 g/l, płytki 673 ↑.**
 - **Leczenie przeciwbólowe ograniczone przez oddech:** buprenorfina, wg właściciela, działa ok. godziny; lekarka LoVet 23.09 wskazywała, że wyższe dawki opioidów mogą pogorszyć oddech.
 - **Zmiana ok. 0.9×0.7 cm** przy koniuszku serca/w śródpiersiu z torbielą w środku — znalezisko z 26.08.2026, charakter nieustalony; ⚠️ czy to ta sama zmiana co „rozrost ok. 1 × 1.5 cm” z 26.09, nie podano (rozdz. 11).
 - **Nerki — skok 07.10, mocznik 16.10:** kreatynina 126 (14.09) → 152 (28.09) → **250 µmol/l (07.10, ↑)** → **156 (16.10, w normie)**, mocznik 6.85 → 12.0 → 16.5 → **23.7 mmol/l (16.10, ↑ — najwyższy w historii)** — w jednym laboratorium LoVet; BUN/CRE 16.10 — 38 (07.10 — 16). 10.10 (TENVET, inny analizator) — ≈ 159 µmol/l i ≈ 11.4 mmol/l. Zmienione obie nerki w AFAST 14.09.2026. Amylaza 07.10 — 2158 U/l (↑) (rozdz. 8.1, 13).
@@ -46,13 +48,15 @@ Jednostronicowe podsumowanie, aby zapoznać się z historią w 1–2 minuty. Wsz
 
 #### Co wymaga decyzji w pierwszej kolejności
 
-1. **Wysięk opłucnowy:** 26.09 — 128 ml, 28.09 — 50 ml (tylko z prawej), 07.10 — 100 ml (z prawej), 10.10 — 120 ml, **16.10 — ok. 140 ml** (obie strony); możliwa także punkcja 24.09. Pięć punkcji w trzy tygodnie, odstępy 2–9 dni, objętości nie maleją. Potrzebny plan: kryteria i miejsce punkcji (obie ostatnie — w TENVET; 10.10 w nocy właściciele początkowo zgodzili się tylko na leczenie zachowawcze), rola furosemidu i sterydu, czy potrzebny jest stały drenaż.
-2. **Furosemid:** 16.10 rano dawkę zmniejszono do 1/2 tabl. 2×/dobę, wieczorem tego samego dnia — RR 44–46 i punkcja 140 ml. Po punkcji właściciele wrócili do 3/4 tabl. (na 18.10). Trzeba potwierdzić dawkę z lekarzem i zdecydować, jaki daje efekt przy punkcjach co kilka dni — z uwzględnieniem mocznika 23.7 mmol/l.
-3. **Mocznik i żywienie:** kreatynina 250 (07.10) → 156 µmol/l (16.10, norma), ale **mocznik 16.5 → 23.7 mmol/l — najwyższy w historii**, BUN/CRE 38; przyczyny w dokumentach nie omówiono. **Hemoglobina 121 → 98 g/l** w dziewięć dni (dwie punkcje krwistego płynu między badaniami). **Masa 3.90 kg** (−25% od lipca); je niewiele, jedzenie domowe (tuńczyk, wątróbka, kurczak); 16.10 — nudności, zaparcie. Dzienną ilość wody i jedzenia warto zapisywać i przekazywać lekarzowi.
-4. **Palladia** od 28.09, co drugi dzień; brak neutropenii (16.10 — Neu 11.86). 16.10 dawka pominięta z powodu osłabienia i nudności, podana 17.10. **Według obserwacji właścicieli z całego leczenia działa tylko Palladia**; lekarze nie ocenili jej efektu w dokumentach. Płytki 840 ↑. Dzień następnej dawki trzeba uzgodnić z lekarzem.
-5. **Dawka sterydu** nie zmieniała się od 28.09 (3/4 tabl. na przemian z 1 tabl.), ale 16.10 o 18:40, przy przyspieszonym oddechu, właścicielka podała Prednicortone (czy była to dawka planowa, nie podano); skutki dla wysięku, żołądka i rogówki nie zostały uzgodnione między przychodniami.
-6. **Ognisko w wątrobie 0.78 × 0.65 cm** (05.10), **rozrost w klatce piersiowej ok. 1 × 1.5 cm** (26.09), **zmiana podskórna 0.46 cm** (21.09) i **rozrosty ściany klatki piersiowej** (14.09) — prawdopodobne cechy progresji, niezweryfikowane.
-7. **Oczy:** szwy zdjęte 15.10, stan lepszy; kontrola w Retinie — w ciągu 14 dni (do ok. 29.10).
+1. **Cel leczenia:** 19.10 onkolożka poinformowała o progresji i złym rokowaniu i zaleciła, na tym etapie, rozważenie eutanazji; decyzją właścicieli wykonano punkcję 90 ml i podano karboplatynę. Trzeba uzgodnić z lekarzem, po czym oceniać efekt karboplatyny i samopoczucie kotki, kiedy następna kontrola i co robić przy nagłym pogorszeniu oddechu w nocy.
+2. **Karboplatyna razem z Palladią:** 19.10 — „leki bez zmian”, czyli Palladia najwyraźniej jest kontynuowana. W maju–czerwcu to samo połączenie (karboplatyna 18.05 + Palladia) poprzedziło ciężką neutropenię 08.06 (Neu 0.45). Biochemii przed karboplatyną 19.10 nie wykonano (16.10 — kreatynina 156, mocznik 23.7 ↑); karboplatyna jest wydalana przez nerki. Termin kontroli krwi w dokumencie nie jest podany.
+3. **Wysięk opłucnowy:** 26.09 — 128 ml, 28.09 — 50 ml (tylko z prawej), 07.10 — 100 ml (z prawej), 10.10 — 120 ml, **16.10 — ok. 140 ml** (obie strony); możliwa także punkcja 24.09. Pięć punkcji w trzy tygodnie, odstępy 2–9 dni, objętości nie maleją. Potrzebny plan: kryteria i miejsce punkcji (obie ostatnie — w TENVET; 10.10 w nocy właściciele początkowo zgodzili się tylko na leczenie zachowawcze), rola furosemidu i sterydu, czy potrzebny jest stały drenaż. **19.10 — kolejne 90 ml**, trzy dni po poprzedniej punkcji; lekarka odradzała ją ze względu na dobrostan zwierzęcia.
+4. **Furosemid:** 16.10 rano dawkę zmniejszono do 1/2 tabl. 2×/dobę, wieczorem tego samego dnia — RR 44–46 i punkcja 140 ml. Po punkcji właściciele wrócili do 3/4 tabl. (na 18.10). Trzeba potwierdzić dawkę z lekarzem i zdecydować, jaki daje efekt przy punkcjach co kilka dni — z uwzględnieniem mocznika 23.7 mmol/l. 19.10 lekarka dopuszcza zwiększenie do 1 tabl. 2×/dobę przy złym oddechu.
+5. **Mocznik i żywienie:** kreatynina 250 (07.10) → 156 µmol/l (16.10, norma), ale **mocznik 16.5 → 23.7 mmol/l — najwyższy w historii**, BUN/CRE 38; przyczyny w dokumentach nie omówiono. **Hemoglobina 121 → 98 g/l** w dziewięć dni (dwie punkcje krwistego płynu między badaniami). **Masa 3.90 kg** (−25% od lipca); je niewiele, jedzenie domowe (tuńczyk, wątróbka, kurczak); 16.10 — nudności, zaparcie. Dzienną ilość wody i jedzenia warto zapisywać i przekazywać lekarzowi.
+6. **Palladia** od 28.09, co drugi dzień; brak neutropenii (16.10 — Neu 11.86). 16.10 dawka pominięta z powodu osłabienia i nudności, podana 17.10. **Według obserwacji właścicieli z całego leczenia działa tylko Palladia**; lekarze nie ocenili jej efektu w dokumentach. Płytki 840 ↑. Dzień następnej dawki trzeba uzgodnić z lekarzem.
+7. **Dawka sterydu** nie zmieniała się od 28.09 (3/4 tabl. na przemian z 1 tabl.), ale 16.10 o 18:40, przy przyspieszonym oddechu, właścicielka podała Prednicortone (czy była to dawka planowa, nie podano); skutki dla wysięku, żołądka i rogówki nie zostały uzgodnione między przychodniami. 19.10 onkolożka dopuszcza zwiększenie do 1 tabl. 1×/dobę przy złym oddechu.
+8. **Ognisko w wątrobie 0.78 × 0.65 cm** (05.10), **rozrost w klatce piersiowej ok. 1 × 1.5 cm** (26.09), **zmiana podskórna 0.46 cm** (21.09) i **rozrosty ściany klatki piersiowej** (14.09) — prawdopodobne cechy progresji, niezweryfikowane.
+9. **Oczy:** szwy zdjęte 15.10, stan lepszy; kontrola w Retinie — w ciągu 14 dni (do ok. 29.10).
 
 Pełna lista otwartych pytań i rozbieżności między dokumentami — rozdział 15.
 
@@ -162,6 +166,7 @@ Zatem **dane o wieku z różnych przychodni są sprzeczne**: wpisy ALVET w zasad
 | 10.10.2026 | nie podano | TENVET 24h; BCS 4/9 |
 | 12.10.2026 | **3.90** (pole „Waga”) | LoVet; w opisie badania — „schudła” |
 | 16.10.2026 | 3.90 (pole „Waga”) | LoVet; ta sama wartość co 12.10 |
+| 19.10.2026 | 3.90 (pole „Waga”) | LoVet; ⚠️ ta sama wartość pola, a w opisie badania — „schudła znowu”; nowej masy nie zapisano |
 
 Ogólny przebieg: masa była względnie stabilna (4.8–5.3 kg) w trakcie chemioterapii, ze stopniowym niewielkim spadkiem do września 2026 roku. W okresie 07–14.09.2026 masa wahała się w granicach 4.77–4.87 kg. **Po 14.09.2026 spadek przyspieszył: 4.78 → 4.75 (21.09) → 4.6 (23.09) → 4.55 (25.09) → 4.5 kg (26.09)**, czyli ok. 6% masy ciała w 12 dni, przy gwałtownie zmniejszonym apetycie (⚠️ sformułowanie „1 łyżeczka dziennie” z 23.09 jest przejaskrawione przez właściciela, rzeczywistej ilości nie mierzono; spadek masy jest jednak obiektywny). Wagi w trzech przychodniach są różne. **05.10.2026 — 4.19 kg**: kolejne −0.3 kg w 9 dni po 26.09; od 4.78 kg (14.09) — ok. −12% w trzy tygodnie. **12.10.2026 — 3.90 kg**: kolejne −0.3 kg (−7%) w tydzień; od 4.78 kg (14.09) — ok. −18%, od lipcowych 5.2 kg — −25%.
 
@@ -1284,7 +1289,74 @@ Po zabiegu **wypisana do domu**. Zalecenia: dalsza diagnostyka i postępowanie �
 - **18.10 — je, pije, oddaje mocz i kał** (16.10 było zaparcie).
 - **Furosemid — znów 3/4 tabl.** (na 18.10). To poprzednia dawka, do której LoVet 16.10 kazał wrócić przy przyspieszeniu oddechu; wieczorem 16.10 była punkcja ok. 140 ml.
 
-**To ostatnia data udokumentowana we wgranych materiałach w chwili aktualizacji raportu (18.10.2026).**
+#### 19.10.2026 (poniedziałek), 20:30 — LoVet, dr Agata Drewniak: progresja, zalecenie rozważenia eutanazji; decyzją właścicieli — punkcja 90 ml i karboplatyna
+
+Podsumowanie wizyty („Podsumowanie wizyty”), 2 str. Pole „Waga” — 3.90 kg (ta sama wartość co 12.10 i 16.10).
+
+Produkty i usługi: Comfortan 10 mg/ml (**metadon**) — 0.1; materiały jednorazowe; badanie krwi — morfologia LoVet (IDEXX); Glucosum 5% 250 ml — 1; Cerenia 10 mg/ml (fiolka 20 ml) — 1; **Carboplatin Ebewe 10 mg/ml (fiolka 45 ml) — 4.8**; podanie chemioterapii dożylnie; punkcja klatki piersiowej. ⚠️ Jednostki ilości w rachunku nie są podpisane; 4.8 ml koncentratu 10 mg/ml to 48 mg, co odpowiada 200 mg/m² przy masie ok. 3.9 kg (wyliczenie autora raportu).
+
+**Wywiad (wg właścicieli):**
+
+- obecnie zły oddech;
+- w czwartek (15.10) zdjęto szwy — zaczęła sama jeść i pić; nie wymiotowała;
+- w piątek (16.10) ominęła jedną dawkę Palladii, w sobotę (17.10) dostała; miała zaparcie — dostała wlewkę; w piątek — kontrolne badanie krwi;
+- oddech poprawia się po sterydzie i furosemidzie;
+- wczoraj (18.10) był dobry dzień, aktywna.
+
+**Badanie:** **schudła znowu**; **oddech przeponowy, ciężki**; Varia osowiała.
+
+**Wnioski lekarza:** właścicieli poinformowano o **progresji choroby i złym rokowaniu**. Lekarka **odradziła punkcję** — ze względu na dobrostan zwierzęcia i wątpliwą zasadność tak częstych punkcji — i **zaleciła, na tym etapie, rozważenie eutanazji**.
+
+**Decyzją właścicieli** w Comfortanie wykonano **punkcję klatki piersiowej — ściągnięto 90 ml płynu surowiczo-krwistego** (strony nie podano) i podano **karboplatynę 200 mg/m² i.v. w powolnym wlewie z 5% glukozy**.
+
+**Zalecenia:**
+
+- leki podawać bez zmian;
+- przy złym oddechu — do rozważenia zwiększenie **furosemidu do 1 tabl. 2×/dobę** i **sterydu do 1 tabl. 1×/dobę**.
+
+**IDEXX ProCyte Dx, 19.10.2026, 20:46** (2 str.; na str. 2 — skatergramy RBC i WBC oraz komentarz laboratorium):
+
+| Parametr | Wynik | Zakres | Status | 16.10.2026 |
+| --- | --- | --- | --- | --- |
+| RBC, ×10¹²/l | 9.11 | 6.54–12.20 | Norma | 9.00 |
+| Hematokryt, l/l | 0.327 | 0.303–0.523 | Norma | 0.331 |
+| Hemoglobina, g/l | 100 | 98–162 | Norma (przy dolnej granicy) | 98 |
+| MCV, fl | 35.9 | 35.9–53.1 | Na dolnej granicy | 36.8 |
+| MCH, pg | 11.0 | 11.8–17.3 | **Obniżone** | 10.9 ↓ |
+| MCHC, g/l | 306 | 281–358 | Norma | 296 |
+| RDW, % | 28.2 | 15.0–27.0 | **Podwyższone** | 28.9 ↑ |
+| Retikulocyty, K/µl | 37.4 (0.4%) | 3.0–50.0 | Norma | 38.7 |
+| Hemoglobina retikulocytów, pg | 13.5 | 13.2–20.8 | Norma | 13.9 |
+| **WBC, ×10⁹/l** | **19.25** | 2.87–17.02 | **Podwyższone** | 13.95 |
+| **Neutrofile, ×10⁹/l** | **17.38 (90.3%)** | 2.30–10.29 | **Podwyższone** | 11.86 ↑ |
+| Limfocyty, ×10⁹/l | 1.14 (5.9%) | 0.92–6.88 | Norma | 1.30 |
+| Monocyty, ×10⁹/l | 0.60 (3.1%) | 0.05–0.67 | Norma | 0.50 |
+| **Eozynofile, ×10⁹/l** | **0.11 (0.6%)** | 0.17–1.57 | **Obniżone** | 0.27 |
+| Bazofile, ×10⁹/l | 0.02 (0.1%) | 0.01–0.26 | Norma | 0.02 |
+| **Płytki krwi, ×10⁹/l** | **673** | 151–600 | **Podwyższone** | 840 ↑ |
+| MPV, fl | 15.6 | 11.4–21.6 | Norma | 16.5 |
+| **Płytkokryt, %** | **1.05** | 0.17–0.86 | **Podwyższony** | 1.39 ↑ |
+
+**Komentarz laboratorium IDEXX** — ten sam co 07.10 i 16.10: „Zwiększone RDW – obecna anizocytoza – zweryfikować w rozmazie krwi”. W nagłówku IDEXX znów „British Shorthair”, „Female Entire”.
+
+Co widać z badania 19.10.2026:
+
+- **Neutrofile 11.86 → 17.38 ×10⁹/l, WBC 13.95 → 19.25 — więcej niż 07.10** (15.08 i 17.38); neutrofile 90.3%, eozynofile 0.11 ↓, limfocyty 1.14 — obraz przypominający stresowy/zapalny; lekarka go w dokumencie nie komentuje. Brak neutropenii — to punkt wyjścia przed karboplatyną.
+- **Hemoglobina 98 → 100 g/l, hematokryt 0.327** — na poziomie 16.10, przy dolnej granicy zakresu; retikulocyty 37.4.
+- **Płytki krwi 840 → 673 ×10⁹/l** — nadal powyżej zakresu.
+- MCH 11.0 ↓ i RDW 28.2 ↑ — jak wcześniej.
+
+⚠️ **Masa ciała:** w opisie badania — „schudła znowu”, w polu „Waga” — te same 3.90 kg co 12.10 i 16.10; nowej wartości nie zapisano.
+
+⚠️ **Karboplatyna przy Palladii:** zalecenie „leki podajemy bez zmian” oznacza najwyraźniej, że Palladia jest kontynuowana. W maju–czerwcu 2026 to samo połączenie (karboplatyna 18.05 + Palladia) poprzedziło ciężką neutropenię 08.06 (Neu 0.45 ×10⁹/l). Termin kontroli krwi po karboplatynie w dokumencie nie jest podany.
+
+⚠️ **Nerki:** biochemii 19.10 nie wykonano. Ostatnia — 16.10: kreatynina 156 (norma), mocznik 23.7 mmol/l ↑. Karboplatyna jest wydalana przez nerki; czy przy doborze dawki uwzględniono funkcję nerek, w dokumencie nie podano.
+
+⚠️ **Sześć punkcji od 26.09:** 128, 50, 100, 120, ok. 140 i 90 ml; 19.10 — trzy dni po poprzedniej.
+
+⚠️ W wywiadzie 19.10 zaparcie leczono wlewką; w wywiadzie TENVET z 16.10 — „podany został czopek”.
+
+**To ostatnia data udokumentowana we wgranych materiałach w chwili aktualizacji raportu (20.10.2026).**
 
 ---
 
@@ -1334,6 +1406,7 @@ Leczenie rozpoczęto od karboplatyny, potem lek zastąpiono doksorubicyną. Przy
 | 17.08.2026 | Doxorubicin | 1 mg/kg, 2.4 ml + maropitant | Doksorubicyna IV |
 | 07.09.2026 | Doxorubicin | 1 mg/kg, 2.3 ml + maropitant | Doksorubicyna V (ostatnia dawka) |
 | ~28.09.2026 (plan) | Doxorubicin VI | — | **Niepodana:** 28.09 doksorubicynę zastąpiono Palladią |
+| 19.10.2026 | Karboplatyna (Carboplatin Ebewe) | 200 mg/m² i.v. w powolnym wlewie z 5% glukozy; wg rachunku — 4.8 (≈ 48 mg przy 10 mg/ml); Cerenia | **Decyzją właścicieli**, po tym jak onkolożka poinformowała o progresji i zaleciła rozważenie eutanazji; w tej samej wizycie — punkcja 90 ml. Palladia — „leki bez zmian” |
 
 Odstępy między dawkami doksorubicyny wynosiły dokładnie 21 dni (15.06→06.07→27.07→17.08→07.09) — numerację I–V potwierdzają zarówno dokumenty, jak i odstępy.
 
@@ -1353,6 +1426,7 @@ Na wizytach 11.09.2026 (nieplanowej, z powodu złego samopoczucia) i 14.09.2026 
 - **12.10.2026 (LoVet)** — „dziś dostała Palladię”; kupiono kolejne 4 tabl. po 10 mg.
 - **16.10.2026 (LoVet, lek. wet. Joanna Żak)** — **dawkę pominięto** z powodu osłabienia i nudności: przypadała 16.10, następna — w niedzielę 18.10 zgodnie z planem. Hematologia IDEXX 16.10: neutrofile 11.86 ×10⁹/l — brak neutropenii; **płytki 840 ×10⁹/l ↑**.
 - **17.10.2026 (wg właścicieli)** — Palladię podano, dzień wcześniej niż zaplanowane 18.10. Według obserwacji właścicieli z całego leczenia efekt daje tylko ona.
+- **19.10.2026 (LoVet, dr Drewniak)** — podano karboplatynę 200 mg/m²; „leki bez zmian” — najwyraźniej Palladia jest kontynuowana razem z karboplatyną, jak w maju 2026. Neutrofile 17.38 ×10⁹/l ↑, płytki 673 ↑.
 
 ---
 
@@ -1426,7 +1500,7 @@ Pełny formularz biochemii LoVet z **14.09.2026, 16:18** (surowica) zawiera doda
 - **Glukoza 16.47 mmol/l z 10.07.2026** — znacznie wyższa niż pozostałe pomiary; prawdopodobnie wyraźna hiperglikemia stresowa (tego dnia także silny stres, ból, RTG w sedacji) — ale pojedyncza wartość nie pozwala wykluczyć innych przyczyn.
 - **Obniżony fosfor (0.62) 10.07.2026** — nietypowe znalezisko przy podejrzeniu problemów z nerkami; znaczenia klinicznego z dokumentów nie da się ustalić.
 
-#### 8.4. IDEXX Haematology — 02.09, 07.09, 14.09, 07.10 i 16.10.2026
+#### 8.4. IDEXX Haematology — 02.09, 07.09, 14.09, 07.10, 16.10 i 19.10.2026
 
 Między tymi dwiema datami odnotowano: spadek RBC, HCT, HGB; spadek MCH; wzrost RDW; retikulocytozę; wzrost WBC, neutrofili i monocytów. Pełne wartości liczbowe — w oryginalnych formularzach laboratoryjnych (Zdjęcia 011–012, 016–017); przy przygotowaniu do konsultacji zaleca się weryfikację z oryginałami tych dwóch raportów.
 
@@ -1464,22 +1538,22 @@ Co wynika z formularza z 14.09.2026:
 - **Limfopenia 0.83 ×10⁹/l** — oczekiwana przy kortykosteroidach i chemioterapii.
 - Sformułowanie lekarza w karcie z 14.09.2026 — „morfologia bez istotnych odchyleń” — w zasadzie odpowiada formularzowi, jeśli uznać za nieistotne izolowane MCH, RDW i trombocytozę.
 
-**IDEXX ProCyte Dx z 07.10.2026, 19:54 i 16.10.2026, 12:33** (po 2 str.) — w całości w rozdz. 4 (wpisy z 07.10 i 16.10). Obok 14.09:
+**IDEXX ProCyte Dx z 07.10.2026, 19:54, 16.10.2026, 12:33 i 19.10.2026, 20:46** (po 2 str.) — w całości w rozdz. 4 (wpisy z 07.10 i 16.10). Obok 14.09:
 
-| Parametr | Zakres | 14.09.2026 | 07.10.2026 | 16.10.2026 |
-| --- | --- | --- | --- | --- |
-| RBC, ×10¹²/l | 6.54–12.20 | 10.27 | 10.99 | 9.00 |
-| Hematokryt, l/l | 0.303–0.523 | 0.38 | 0.394 | 0.331 |
-| Hemoglobina, g/l | 98–162 | 114 | 121 | 98 (dolna granica) |
-| MCH, pg | 11.8–17.3 | 11.1 ↓ | 11.0 ↓ | 10.9 ↓ |
-| RDW, % | 15.0–27.0 | 31.4 ↑ | 31.2 ↑ | 28.9 ↑ |
-| Retikulocyty, K/µl | 3.0–50.0 | 20.5 | 15.4 | 38.7 |
-| WBC, ×10⁹/l | 2.87–17.02 | 6.67 | **17.38 ↑** | 13.95 |
-| Neutrofile, ×10⁹/l | 2.30–10.29 | 5.09 | **15.08 ↑** | **11.86 ↑** |
-| Limfocyty, ×10⁹/l | 0.92–6.88 | 0.83 ↓ | 1.19 | 1.30 |
-| Płytki krwi, ×10⁹/l | 151–600 | 700 ↑ | 550 | **840 ↑** |
+| Parametr | Zakres | 14.09.2026 | 07.10.2026 | 16.10.2026 | 19.10.2026 |
+| --- | --- | --- | --- | --- | --- |
+| RBC, ×10¹²/l | 6.54–12.20 | 10.27 | 10.99 | 9.00 | 9.11 |
+| Hematokryt, l/l | 0.303–0.523 | 0.38 | 0.394 | 0.331 | 0.327 |
+| Hemoglobina, g/l | 98–162 | 114 | 121 | 98 (dolna granica) | 100 |
+| MCH, pg | 11.8–17.3 | 11.1 ↓ | 11.0 ↓ | 10.9 ↓ | 11.0 ↓ |
+| RDW, % | 15.0–27.0 | 31.4 ↑ | 31.2 ↑ | 28.9 ↑ | 28.2 ↑ |
+| Retikulocyty, K/µl | 3.0–50.0 | 20.5 | 15.4 | 38.7 | 37.4 |
+| WBC, ×10⁹/l | 2.87–17.02 | 6.67 | **17.38 ↑** | 13.95 | **19.25 ↑** |
+| Neutrofile, ×10⁹/l | 2.30–10.29 | 5.09 | **15.08 ↑** | **11.86 ↑** | **17.38 ↑** |
+| Limfocyty, ×10⁹/l | 0.92–6.88 | 0.83 ↓ | 1.19 | 1.30 | 1.14 |
+| Płytki krwi, ×10⁹/l | 151–600 | 700 ↑ | 550 | **840 ↑** | **673 ↑** |
 
-07.10 — neutrofilia na Palladii, bez neutropenii; parametry czerwonokrwinkowe stabilne. Laboratorium po raz pierwszy wprost komentuje RDW: anizocytoza, zalecony rozmaz krwi (niewykonany). **16.10 — hemoglobina spadła do dolnej granicy (98 g/l), hematokryt 0.331; retikulocyty wzrosły do 38.7; płytki 840 — najwyższa wartość w historii**; neutrofilia mniejsza niż 07.10. Komentarz laboratorium o anizocytozie powtórzono.
+07.10 — neutrofilia na Palladii, bez neutropenii; parametry czerwonokrwinkowe stabilne. Laboratorium po raz pierwszy wprost komentuje RDW: anizocytoza, zalecony rozmaz krwi (niewykonany). **16.10 — hemoglobina spadła do dolnej granicy (98 g/l), hematokryt 0.331; retikulocyty wzrosły do 38.7; płytki 840 — najwyższa wartość w historii**; neutrofilia mniejsza niż 07.10. Komentarz laboratorium o anizocytozie powtórzono. **19.10 — neutrofile 17.38 i WBC 19.25 — więcej niż 07.10**; hemoglobina 100, płytki 673; badanie z dnia podania karboplatyny.
 
 #### 8.5. Dane sprzed chemioterapii (2025) — dla informacji
 
@@ -1499,16 +1573,16 @@ Co wynika z formularza z 14.09.2026:
 
 | Lek | Okres / data rozpoczęcia | Komentarz |
 | --- | --- | --- |
-| Karboplatyna (Carboplatin Ebewe) | 18.05.2026 (jednorazowo) | Chemioterapia, 200 mg/m² w glukozie; powtórna dawka odwołana z powodu neutropenii |
+| Karboplatyna (Carboplatin Ebewe) | 18.05.2026; **ponownie 19.10.2026** | Chemioterapia, 200 mg/m² w glukozie; powtórna dawka w czerwcu odwołana z powodu neutropenii. **19.10.2026 — 200 mg/m² i.v. w powolnym wlewie z 5% glukozy**, decyzją właścicieli po zaleceniu onkolożki, by rozważyć eutanazję; Palladia — „bez zmian” |
 | Doksorubicyna (Doxorubicin) | 15.06.2026 – 07.09.2026, co 21 dni | Chemioterapia, 1 mg/kg; podano 5 dawek. 28.09.2026 zastąpiona Palladią, dawki VI nie podano |
-| Palladia (toceranib) | 13.04.2026 – 08.06.2026; **ponownie od 28.09.2026** | 28.09.2026: 10 mg pon./śr., przy braku działań niepożądanych — 15 mg pt./pon.; kontrola za tydzień. 07.10.2026 — jeden dzień przerwy, potem znów 10 mg. 10.10.2026 (wywiad TENVET): „dwa tygodnie, 10 mg na kota”; brak neutropenii. Wcześniej: 10 mg → 15 mg (11.05) → 10 mg (od 25.05), pon./śr./pt.; podawana równolegle z pierwszą dawką karboplatyny 18.05.2026. Po ciężkiej neutropenii 08.06.2026, wg właściciela, odstawiono karboplatynę i Palladię; od 15.06 rozpoczęto doksorubicynę, potem Palladii już nie stosowano. ⚠️ Zakup Palladii 10 mg z 08.06 potwierdza obecność leku w dokumentach, ale nie dowodzi dalszego faktycznego podawania. 12.10.2026 — podana, kupiono kolejne 4 tabl. po 10 mg. **16.10.2026 — dawkę pominięto** z powodu osłabienia i nudności; następną zaplanowano na 18.10; **wg właścicieli podana 17.10** — wg ich obserwacji działa tylko Palladia; neutrofile 11.86, płytki 840 ↑. |
-| Prednicortone / prednizolon | od ok. 27.04.2026 | 5 mg/dobę → 7.5 mg (1.5 tabl.) od 15.06 → 5 mg od 17.08 → 3/4 tabl. od 07.09.2026 → znów 1 cała tabl. (5 mg) od 11.09.2026 → znów 3/4 tabl. od 21.09.2026 → **od 28.09.2026 — 3/4 tabl. na przemian z 1 tabl., 1×/dobę** (kupiono 10 tabl.). Zmniejszanie dawki w sierpniu–wrześniu prowadzono m.in. na zalecenie okulisty; powrotu do 5 mg 11.09 w dokumentach nie powiązano z problemem okulistycznym. 23.09.2026 lekarz LoVet dopuszcza, że zmniejszenie z 21.09 mogło nasilić gromadzenie płynu w klatce piersiowej, ale zwraca uwagę na szkodliwość sterydu dla żołądka; okulista tego samego dnia nazywa sterydoterapię czynnikiem obniżającym szansę powodzenia zabiegu. 12.10 — kupiono kolejne 10 tabl., schemat bez zmian. 16.10 o 18:40 właścicielka podała Prednicortone przy przyspieszonym oddechu (czy była to dawka planowa, nie podano). |
-| Furosemid | 29.04.2026 – 27.07.2026; ⚠️ **wznowiony 13–14.09.2026** | Stosowany przy epizodach przyspieszonego oddechu/wysięku opłucnowego. Uważano go za całkowicie odstawiony od 27.07.2026 — **to stwierdzenie nie jest już aktualne**: w zapisie z 14.09.2026 wg właściciela odnotowano „podano furosemid 10 mg, 1/4 tabletki”, w razie potrzeby. 27.09 podany przez właścicieli; **28.09 — 1 mg/kg s.c. w przychodni, wieczorem — w tabletce wg zalecenia dr Drewniak**. **Do 03.10 — 5 mg 1×/dobę rano; od 04.10 — 1/2 tabl. 2×/dobę** (05.10 wg właścicieli poranna dawka „nie zadziałała”); **05.10 — 3/4 tabl. Furosoral 10 mg 3×/dobę** (ok. 22.5 mg/dobę); **07.10 (kreatynina 250): 08.10 — bez furosemidu, od 09.10 — 3/4 tabl. 2×/dobę**. 10.10 — „w niskiej dawce”, ostatnia w domu ok. 01:00; rano w TENVET podany w dawce podtrzymującej wg zalecenia lekarza prowadzącego. Wcześniej w dokumentach figuruje Libeo/Furosoral/furosemid w dawce zmienianej zależnie od oddechu i objętości wysięku. **12.10 — 3/4 tabl. 2×/dobę** (09.10 właścicielka próbowała 1/4 tabl.; kupiono 40 tabl. Furosoral 10 mg). **16.10 (LoVet) — zmniejszony do 1/2 tabl. 2×/dobę**; przy niepokojącym przyspieszeniu oddechu — wrócić do 3/4 tabl. 2×/dobę i wykonać USG. Wieczorem 16.10 — RR 44–46/min i torakocenteza ok. 140 ml w TENVET. **Wg właścicieli na 18.10 — znów 3/4 tabl.** |
+| Palladia (toceranib) | 13.04.2026 – 08.06.2026; **ponownie od 28.09.2026** | 28.09.2026: 10 mg pon./śr., przy braku działań niepożądanych — 15 mg pt./pon.; kontrola za tydzień. 07.10.2026 — jeden dzień przerwy, potem znów 10 mg. 10.10.2026 (wywiad TENVET): „dwa tygodnie, 10 mg na kota”; brak neutropenii. Wcześniej: 10 mg → 15 mg (11.05) → 10 mg (od 25.05), pon./śr./pt.; podawana równolegle z pierwszą dawką karboplatyny 18.05.2026. Po ciężkiej neutropenii 08.06.2026, wg właściciela, odstawiono karboplatynę i Palladię; od 15.06 rozpoczęto doksorubicynę, potem Palladii już nie stosowano. ⚠️ Zakup Palladii 10 mg z 08.06 potwierdza obecność leku w dokumentach, ale nie dowodzi dalszego faktycznego podawania. 12.10.2026 — podana, kupiono kolejne 4 tabl. po 10 mg. **16.10.2026 — dawkę pominięto** z powodu osłabienia i nudności; następną zaplanowano na 18.10; **wg właścicieli podana 17.10** — wg ich obserwacji działa tylko Palladia; neutrofile 11.86, płytki 840 ↑. **19.10.2026 — „leki bez zmian”** przy podaniu karboplatyny; neutrofile 17.38 ↑. |
+| Prednicortone / prednizolon | od ok. 27.04.2026 | 5 mg/dobę → 7.5 mg (1.5 tabl.) od 15.06 → 5 mg od 17.08 → 3/4 tabl. od 07.09.2026 → znów 1 cała tabl. (5 mg) od 11.09.2026 → znów 3/4 tabl. od 21.09.2026 → **od 28.09.2026 — 3/4 tabl. na przemian z 1 tabl., 1×/dobę** (kupiono 10 tabl.). Zmniejszanie dawki w sierpniu–wrześniu prowadzono m.in. na zalecenie okulisty; powrotu do 5 mg 11.09 w dokumentach nie powiązano z problemem okulistycznym. 23.09.2026 lekarz LoVet dopuszcza, że zmniejszenie z 21.09 mogło nasilić gromadzenie płynu w klatce piersiowej, ale zwraca uwagę na szkodliwość sterydu dla żołądka; okulista tego samego dnia nazywa sterydoterapię czynnikiem obniżającym szansę powodzenia zabiegu. 12.10 — kupiono kolejne 10 tabl., schemat bez zmian. 16.10 o 18:40 właścicielka podała Prednicortone przy przyspieszonym oddechu (czy była to dawka planowa, nie podano). **19.10 (LoVet): przy złym oddechu — do rozważenia zwiększenie do 1 tabl. 1×/dobę.** |
+| Furosemid | 29.04.2026 – 27.07.2026; ⚠️ **wznowiony 13–14.09.2026** | Stosowany przy epizodach przyspieszonego oddechu/wysięku opłucnowego. Uważano go za całkowicie odstawiony od 27.07.2026 — **to stwierdzenie nie jest już aktualne**: w zapisie z 14.09.2026 wg właściciela odnotowano „podano furosemid 10 mg, 1/4 tabletki”, w razie potrzeby. 27.09 podany przez właścicieli; **28.09 — 1 mg/kg s.c. w przychodni, wieczorem — w tabletce wg zalecenia dr Drewniak**. **Do 03.10 — 5 mg 1×/dobę rano; od 04.10 — 1/2 tabl. 2×/dobę** (05.10 wg właścicieli poranna dawka „nie zadziałała”); **05.10 — 3/4 tabl. Furosoral 10 mg 3×/dobę** (ok. 22.5 mg/dobę); **07.10 (kreatynina 250): 08.10 — bez furosemidu, od 09.10 — 3/4 tabl. 2×/dobę**. 10.10 — „w niskiej dawce”, ostatnia w domu ok. 01:00; rano w TENVET podany w dawce podtrzymującej wg zalecenia lekarza prowadzącego. Wcześniej w dokumentach figuruje Libeo/Furosoral/furosemid w dawce zmienianej zależnie od oddechu i objętości wysięku. **12.10 — 3/4 tabl. 2×/dobę** (09.10 właścicielka próbowała 1/4 tabl.; kupiono 40 tabl. Furosoral 10 mg). **16.10 (LoVet) — zmniejszony do 1/2 tabl. 2×/dobę**; przy niepokojącym przyspieszeniu oddechu — wrócić do 3/4 tabl. 2×/dobę i wykonać USG. Wieczorem 16.10 — RR 44–46/min i torakocenteza ok. 140 ml w TENVET. **Wg właścicieli na 18.10 — znów 3/4 tabl.** **19.10 (LoVet): przy złym oddechu — do rozważenia zwiększenie do 1 tabl. 2×/dobę.** |
 | Gabapentin 100 mg | od 13.06.2026 (sformalizowane) | Początkowo — 2 godziny przed stresującymi wizytami. Wg zapisu z 11.09.2026 stosowany już stale: pół kapsułki 1×/dobę. ⚠️ W zapisie okulisty z 10.09.2026 zamiast gabapentyny podano **pregabalinę** — który z dwóch leków jest faktycznie podawany, z dokumentów nie wynika |
 | Bonqat 50 mg/ml (**pregabalina**, weterynaryjna, dla kotów) | 07.10.2026 | Wydany/zastosowany w LoVet — 0.4 op. (zwykle przeciw stresowi przed wizytami). ⚠️ Czy zastępuje gabapentynę, nie podano. 15.10.2026 — w zredukowanej dawce przed usunięciem szwów w Retinie. |
 | Nefrokrill Gatto | od 07.10.2026 | Dodatek paszowy wspierający nerki; 10 kapsułek wydano do domu po skoku kreatyniny |
 | Cyklonamina 250 mg (**etamsylat**) | od 11.05.2026 | 1/4 tabl. 2×/dobę. 10.10.2026 w domu nie udało się podać tabletki — w TENVET podano Cyclonamine 12.5% w iniekcji, 1 ampułka. 12.10.2026 — wydano postać iniekcyjną (Cyclonamina 12.5%, 25 mg/2 ml) — 2 ampułki; kto i jak podaje w domu, nie podano. |
-| Cerenia, maropitant | towarzyszy chemioterapii | Przeciwwymiotnie przy podawaniu chemioterapii |
+| Cerenia, maropitant | towarzyszy chemioterapii | Przeciwwymiotnie przy podawaniu chemioterapii; 19.10.2026 — z karboplatyną (Cerenia 10 mg/ml, w rachunku 1 fiolka 20 ml) |
 | Veraflox | od ok. 08.06.2026, dalej przy objawach ocznych | Antybiotyk |
 | Varenzin 23.3 mg/ml (**molidustat**) | 19.08.2026 – 07.09.2026 | 1 ml 1×/dobę. Lek przeciwanemiczny zwiększający wytwarzanie endogennej erytropoetyny; zarejestrowany w nieregeneracyjnej anemii związanej z PChN u kotów. Uzasadnienia zalecenia lekarz nie sformułował; odstawiony 07.09.2026 |
 | Famogast/Ranigast (famotydyna) | 19.08.2026; 21.09.2026 | 19.08 — 20 mg, schemat nieopisany. 21.09 — 1/4 tabl. 2×/dobę w ramach leczenia zapalenia żołądka. ⚠️ W zaleceniach z 23.09.2026 niewymieniony |
@@ -1520,7 +1594,7 @@ Co wynika z formularza z 14.09.2026:
 | Dicopeg, Fiberactiv | 10.07.2026; Dicopeg także 03.10 i 12–14.10.2026 | Środki przeczyszczające/błonnik przy zaparciu. 16.10.2026 — Dicopeg ponownie zalecony razem z Dulcobisem |
 | Dulcobis (**bisakodyl**) | zalecony 16.10.2026 | Środek przeczyszczający przy zaparciu (16.10 — twardy kał w odbytnicy); w wywiadzie TENVET z 16.10 — „podany został czopek”, po czym doszło do wypróżnienia |
 | Metoklopramid (Metoclopramidum 5 mg/ml) | 16.10.2026 | 0.25 mg/kg s.c. w przychodni przy nudnościach i trudnościach z przełykaniem; 05.10 proponowany jako następny krok, jeśli Zofran nie pomoże |
-| Comfortan 10 mg/ml (**metadon**) | 10.07.2026; 07.10.2026 | Analgetyk opioidowy; zastosowany w ramach farmakologicznego wsparcia badania/sedacji |
+| Comfortan 10 mg/ml (**metadon**) | 10.07.2026; 07.10.2026; 19.10.2026 | Analgetyk opioidowy; zastosowany w ramach farmakologicznego wsparcia badania/sedacji. 19.10 — 0.1 (wg rachunku) przed punkcją klatki piersiowej |
 | Propomitor 10 mg/ml (**propofol**) | 06.07.2026 (jednorazowo) | Lek dożylny do indukcji/podtrzymania znieczulenia ogólnego |
 | Libeo 10 mg (**furosemid**) | od 29.04.2026; faktycznie odstawiony od 27.07.2026 | 1/2 tabl. rano = 5 mg furosemidu. Zarejestrowany gatunek docelowy — psy; u Varii stosowany poza zarejestrowanym gatunkiem |
 | Neoplazmaxan | ok. 02.02.2026 | Skład i dokładne przeznaczenie nie wynikają z dokumentów |
@@ -1631,6 +1705,8 @@ Odwołanie do „wizyty u kardiologa 02.09.2026” w zapisie okulisty z 03.09.20
 
 **16.10.2026 (LoVet)** — nad ranem nudności, trudności z przełykaniem, oblizywała się (Zofran 2 mg); rano zjadła i napiła się, ale słabsza. W nocy oddała dużo moczu, rano w kuwecie nie oddała. Ostatni stolec 14.10 — nieduży, dość miękki i mokry. **Brzuch miękki, w odbytnicy dużo kału, per rectum — twardy kał (zaparcie).** Metoklopramid s.c.; zalecono Dicopeg i Dulcobis; dawkę Palladii pominięto. **Mocznik 23.7 mmol/l (najwyższy) przy kreatyninie 156 (norma), BUN/CRE 38**; amylaza 2145 ↑; parametry wątrobowe w normie. Wieczorem w TENVET: po lekach na zaparcie było wypróżnienie, ale oddech się pogorszył — torakocenteza ok. 140 ml. ⚠️ fPL nadal niewykonany.
 
+**19.10.2026 (LoVet)** — wg właścicieli po zdjęciu szwów 15.10 zaczęła sama jeść i pić, nie wymiotowała; zaparcie leczono wlewką. W badaniu — **schudła znowu** (nowej masy nie zapisano). Cerenia — razem z karboplatyną. Biochemii nie wykonano.
+
 Osobno — **02–04.03.2026**, otrzymano same zdjęcia RTG (bez opisu lekarza) z widoczną dużą niejednorodną strukturą w okolicy brzucha/lędźwi — wymagają oceny przez radiologa (zob. rozdział 4 i rozdział 15).
 
 ---
@@ -1650,23 +1726,25 @@ Osobno — **02–04.03.2026**, otrzymano same zdjęcia RTG (bez opisu lekarza) 
 
 ---
 
-## 14. Stan na ostatnią udokumentowaną datę (16.10.2026)
+## 14. Stan na ostatnią udokumentowaną datę (19.10.2026)
 
-- **Stan ogólny (wg właścicieli, 17–18.10):** po punkcji 16.10, furosemidzie i Palladii — RR 26–28 nie we śnie; je, pije, oddaje mocz i kał.
+- **19.10.2026, LoVet (dr Agata Drewniak):** schudła znowu, oddech przeponowy, ciężki, osowiała. Onkolożka poinformowała o **progresji choroby i złym rokowaniu**, odradziła punkcję i **zaleciła, na tym etapie, rozważenie eutanazji**. **Decyzją właścicieli** — punkcja 90 ml płynu surowiczo-krwistego w Comfortanie i **karboplatyna 200 mg/m² i.v.** z 5% glukozą. Leki bez zmian; przy złym oddechu — do rozważenia furosemid 1 tabl. 2×/dobę i steryd 1 tabl. 1×/dobę. Krew (IDEXX): WBC 19.25 ↑, neutrofile 17.38 ↑, eozynofile 0.11 ↓, hemoglobina 100 g/l, płytki 673 ↑; biochemii nie wykonano. Termin następnej kontroli nie jest podany.
+- **Stan ogólny (wg właścicieli, 17–19.10):** po punkcji 16.10, furosemidzie i Palladii — RR 26–28 nie we śnie; je, pije, oddaje mocz i kał. 18.10 — dobry dzień, aktywna; 19.10 — znów zły oddech.
 - **Stan ogólny wg dokumentów:** 12.10 — nieco lepiej, interesuje się otoczeniem, skacze, RR w domu do 30. **16.10 rano** — osłabienie, nudności, trudności z przełykaniem, zaparcie; temperatura 38.2 °C, węzły chłonne niepowiększone, osłuchowo — bez istotnych zmian; RR w domu 32–34, oddech piersiowy. **16.10 wieczorem** — RR do 40, o 18:40 — 44–46/min; TENVET 24h: ok. godziny w klatce tlenowej, torakocenteza, wypisana do domu. Rokowanie TENVET z 10.10 — ostrożne (m.in. ryzyko zatorowości płucnej); 07.10 onkolog LoVet poinformowała o złym rokowaniu.
-- **Wysięk opłucnowy:** 26.09 — 128 ml; 28.09 — 50 ml z prawej; 07.10 — 100 ml z prawej; 10.10 — 120 ml; **16.10 — ok. 140 ml (60 ml z prawej, 80 ml z lewej)**, płyn krwisty. 12.10 w USG LoVet — płyn 1.6–2 cm. Wg karty znieczulenia z 25.09 — punkcja także 24.09 (brak dokumentu). Próg pilnej wizyty — RR 40/min i więcej, oddychanie z otwartym pyskiem, wyraźne osłabienie.
-- **Następny krok:** kontrola w LoVet „w przyszłym tygodniu” (zalecenie z 12.10) z decyzją o powtórce Convenii; uzgodnić dzień następnej dawki Palladii (ostatnia — 17.10); kontrola w Retinie — do ok. 29.10.
+- **Wysięk opłucnowy:** 26.09 — 128 ml; 28.09 — 50 ml z prawej; 07.10 — 100 ml z prawej; 10.10 — 120 ml; **16.10 — ok. 140 ml (60 ml z prawej, 80 ml z lewej)**, płyn krwisty. 12.10 w USG LoVet — płyn 1.6–2 cm. Wg karty znieczulenia z 25.09 — punkcja także 24.09 (brak dokumentu). Próg pilnej wizyty — RR 40/min i więcej, oddychanie z otwartym pyskiem, wyraźne osłabienie. **19.10 — 90 ml** płynu surowiczo-krwistego (LoVet).
+- **Następny krok:** termin kontroli po karboplatynie z 19.10 (krew, nerki) w dokumencie nie jest podany — do ustalenia z onkolożką; kwestia powtórki Convenii (zalecenie z 12.10) 19.10 nie była poruszona; kontrola w Retinie — do ok. 29.10.
 - **Oczy:** 15.10 w Retinie usunięto szwy; rogówki bardziej przezierne, IOP 13 / 14 mmHg, brak dyskomfortu, odruch zagrożenia i olśnienia zachowane. Krople: Vigamox 4×/dobę, Vital Drop 3×/dobę, surowica z Optixcare 4×/dobę, Optixcare 4×/dobę. Wyniku posiewu z 21.09 nie otrzymano.
 - **Przewód pokarmowy i żywienie:** je niewiele, jedzenie domowe (tuńczyk, wątróbka, kurczak); pije sama rano i wieczorem. 16.10 — nudności (Zofran, metoklopramid s.c.), zaparcie — Dicopeg i Dulcobis. **18.10, wg właścicieli:** je, pije, oddaje mocz i kał.
-- **Onkologia:** doksorubicynę zakończono po V dawce (07.09.2026); **od 28.09.2026 — Palladia** 10 mg, od 05.10 — co drugi dzień; 07.10 — jeden dzień przerwy; **16.10 — dawkę pominięto, podana 17.10** (wg właścicieli; wg ich obserwacji z całego leczenia działa tylko ona). 05.10 — ognisko w wątrobie 0.78 × 0.65 cm, „możliwa zmiana przerzutowa”; USG klatki piersiowej — „pogorszenie obrazu”, zapadnięcie prawego płuca. 26.09 — rozrost w klatce piersiowej ok. 1 × 1.5 cm; 21.09 — zmiana podskórna w okolicy brzucha 0.46 cm.
-- **Ostatnie badania — 16.10.2026 (LoVet + IDEXX):** kreatynina 156 (norma), **mocznik 23.7 ↑ (najwyższy)**, BUN/CRE 38; amylaza 2145 ↑, glukoza 8.90 ↑, cholesterol 6.73 ↑; potas 4.71, sód 148, fosfor 1.20; parametry wątrobowe w normie. WBC 13.95, neutrofile 11.86 ↑, limfocyty 1.30; **hemoglobina 98 g/l (dolna granica)**, hematokryt 0.331, RBC 9.00; retikulocyty 38.7; MCH 10.9 ↓, RDW 28.9 ↑; **płytki 840 ↑**.
+- **Onkologia:** doksorubicynę zakończono po V dawce (07.09.2026); **od 28.09.2026 — Palladia** 10 mg, od 05.10 — co drugi dzień; 07.10 — jeden dzień przerwy; **16.10 — dawkę pominięto, podana 17.10** (wg właścicieli; wg ich obserwacji z całego leczenia działa tylko ona). 05.10 — ognisko w wątrobie 0.78 × 0.65 cm, „możliwa zmiana przerzutowa”; USG klatki piersiowej — „pogorszenie obrazu”, zapadnięcie prawego płuca. 26.09 — rozrost w klatce piersiowej ok. 1 × 1.5 cm; 21.09 — zmiana podskórna w okolicy brzucha 0.46 cm. **19.10 — karboplatyna 200 mg/m²**, Palladia — „bez zmian”; onkolożka stwierdza progresję.
+- **Hematologia 19.10.2026 (IDEXX):** WBC 19.25 ↑, neutrofile 17.38 ↑ (90.3%), limfocyty 1.14, eozynofile 0.11 ↓; hemoglobina 100 g/l, hematokryt 0.327; MCH 11.0 ↓, RDW 28.2 ↑; płytki 673 ↑.
+- **Ostatnia biochemia i hematologia — 16.10.2026 (LoVet + IDEXX):** kreatynina 156 (norma), **mocznik 23.7 ↑ (najwyższy)**, BUN/CRE 38; amylaza 2145 ↑, glukoza 8.90 ↑, cholesterol 6.73 ↑; potas 4.71, sód 148, fosfor 1.20; parametry wątrobowe w normie. WBC 13.95, neutrofile 11.86 ↑, limfocyty 1.30; **hemoglobina 98 g/l (dolna granica)**, hematokryt 0.331, RBC 9.00; retikulocyty 38.7; MCH 10.9 ↓, RDW 28.9 ↑; **płytki 840 ↑**.
 - **Wcześniejsze badania:** 10.10 (TENVET) — kreatynina ≈ 159, mocznik ≈ 11.4, cechy odwodnienia (RBC 13.31 ↑, Hb 16.2 ↑), limfocyty 0.44 ↓, chlorki 106.8 ↓, mleczany 2.47 ↑. 07.10 (LoVet) — kreatynina 250 ↑, mocznik 16.5 ↑; IDEXX — neutrofile 15.08 ↑, hemoglobina 121.
-- **Furosemid:** od 09.10 — 3/4 tabl. 2×/dobę (09.10 właścicielka próbowała 1/4 tabl.); **16.10 rano — zmniejszony do 1/2 tabl. 2×/dobę**, przy przyspieszeniu oddechu — wrócić do 3/4 tabl. i wykonać USG; wieczorem tego samego dnia — punkcja ok. 140 ml. **Wg właścicieli na 18.10 — znów 3/4 tabl.**
-- **Steryd:** ostatnie zalecenie — 28.09.2026: 3/4 tabl. na przemian z 1 tabl. (5 mg), 1×/dobę. 16.10 o 18:40 właścicielka podała Prednicortone przy przyspieszonym oddechu.
+- **Furosemid:** od 09.10 — 3/4 tabl. 2×/dobę (09.10 właścicielka próbowała 1/4 tabl.); **16.10 rano — zmniejszony do 1/2 tabl. 2×/dobę**, przy przyspieszeniu oddechu — wrócić do 3/4 tabl. i wykonać USG; wieczorem tego samego dnia — punkcja ok. 140 ml. **Wg właścicieli na 18.10 — znów 3/4 tabl.** 19.10 — przy złym oddechu do rozważenia 1 tabl. 2×/dobę.
+- **Steryd:** ostatnie zalecenie — 28.09.2026: 3/4 tabl. na przemian z 1 tabl. (5 mg), 1×/dobę. 16.10 o 18:40 właścicielka podała Prednicortone przy przyspieszonym oddechu. 19.10 — przy złym oddechu do rozważenia 1 tabl. 1×/dobę.
 - **Nerki:** Nefrokrill Gatto od 07.10.
 - **Leczenie przeciwbólowe:** ostatnie zalecenie — buprenorfina (Bupaq) na błonę śluzową; 16.10 w klinice — butorfanol 0.2 ml.
 - **Cyklonamina (etamsylat):** 12.10 wydano postać iniekcyjną — 2 ampułki.
-- **Masa ciała:** **3.90 kg (12.10.2026; 16.10 — ta sama wartość)**; 05.10 — 4.19 kg, 26.09 — 4.5 kg, 14.09 — 4.78 kg, lipiec — 5.2 kg. 10.10 — BCS 4/9.
+- **Masa ciała:** **3.90 kg (12.10.2026; 16.10 i 19.10 — ta sama wartość pola)**; 19.10 w badaniu — „schudła znowu”; 05.10 — 4.19 kg, 26.09 — 4.5 kg, 14.09 — 4.78 kg, lipiec — 5.2 kg. 10.10 — BCS 4/9.
 - **Mocz (21.09.2026):** brak białkomoczu i krwiomoczu (UPC 0.164), ciężar właściwy 1.027.
 - **Inne:** 16.10 — mała sucha ranka pośrodku nosa, możliwy uraz; jama ustna silnie pigmentowana. Bolesność odcinka piersiowego kręgosłupa (02.09.2026) w zapisach po 02.09 nie jest wspominana.
 
@@ -1679,7 +1757,9 @@ Pełna lista rozbieżności między dokumentami i nierozstrzygniętych pytań kl
 
 #### Wymagające uwagi klinicznej
 
-- **Wysięk opłucnowy gromadzi się w ciągu kilku dni:** 26.09 — 128 ml (obustronna torakocenteza), 28.09 — 50 ml tylko z prawej (z lewej nie nakłuwano z powodu niepokoju), 07.10 — 100 ml z prawej (LoVet), **10.10 — 120 ml** (TENVET 24h), **16.10 — ok. 140 ml** (TENVET 24h, 60 ml z prawej i 80 ml z lewej); wg karty znieczulenia — punkcja także 24.09. Pięć punkcji w trzy tygodnie, objętości nie maleją. Stałego planu (kryteria, miejsce, częstotliwość punkcji, drenaż) w dokumentach nie ma. 10.10 w nocy właściciele zgodzili się tylko na leczenie zachowawcze, punkcję wykonano rano po dwóch rozmowach telefonicznych — wcześniej uzgodniona decyzja (gdzie i przy jakim progu nakłuwać) skróciłaby opóźnienie. Obie ostatnie punkcje wykonano w TENVET, a nie u lekarza prowadzącego.
+- **Wysięk opłucnowy gromadzi się w ciągu kilku dni:** 26.09 — 128 ml (obustronna torakocenteza), 28.09 — 50 ml tylko z prawej (z lewej nie nakłuwano z powodu niepokoju), 07.10 — 100 ml z prawej (LoVet), **10.10 — 120 ml** (TENVET 24h), **16.10 — ok. 140 ml** (TENVET 24h, 60 ml z prawej i 80 ml z lewej); wg karty znieczulenia — punkcja także 24.09. Pięć punkcji w trzy tygodnie, objętości nie maleją. Stałego planu (kryteria, miejsce, częstotliwość punkcji, drenaż) w dokumentach nie ma. 10.10 w nocy właściciele zgodzili się tylko na leczenie zachowawcze, punkcję wykonano rano po dwóch rozmowach telefonicznych — wcześniej uzgodniona decyzja (gdzie i przy jakim progu nakłuwać) skróciłaby opóźnienie. Obie ostatnie punkcje wykonano w TENVET, a nie u lekarza prowadzącego. **19.10 — szósta punkcja, 90 ml** (LoVet), trzy dni po poprzedniej; onkolożka jej nie zalecała ze względu na dobrostan zwierzęcia i wątpliwą zasadność tak częstych punkcji, wykonano ją decyzją właścicieli.
+- **19.10.2026 — progresja, zalecenie rozważenia eutanazji; decyzją właścicieli podano karboplatynę 200 mg/m².** Kryteriów oceny efektu, terminu kontroli krwi i nerek ani planu na wypadek pogorszenia oddechu w dokumencie nie ma. Palladia najwyraźniej jest kontynuowana („leki bez zmian”) — w maju–czerwcu takie połączenie poprzedziło ciężką neutropenię (Neu 0.45 08.06). Biochemii przed podaniem nie wykonano; 16.10 — mocznik 23.7 ↑, kreatynina 156; karboplatyna jest wydalana przez nerki.
+- **Neutrofilia 19.10: 17.38 ×10⁹/l, WBC 19.25** — więcej niż 07.10; eozynofile 0.11 ↓; lekarka nie komentuje.
 - **Rokowanie TENVET z 10.10.2026 — ostrożne**, z wyraźną wzmianką o ryzyku zatorowości płucnej. W T-FAST — niedodma z ucisku w dobrzusznych partiach płuc, opłucna fragmentaryczna, o nieregularnym przebiegu; wcześniej nie opisywano tego takimi słowami — porównać z wcześniejszymi TFAST można tylko na obrazach.
 - **Nerki: kreatynina 250 µmol/l i mocznik 16.5 mmol/l 07.10.2026**; 10.10 (TENVET, inny analizator) — ok. 159 i 11.4; **16.10 (LoVet) — kreatynina 156 (norma), ale mocznik 23.7 mmol/l — najwyższy w historii, BUN/CRE 38.** Przyczyny skoku z 07.10 i wzrostu mocznika do 16.10 w dokumentach nie podano. Wzrost mocznika przy prawidłowej kreatyninie występuje przy odwodnieniu, diecie wysokobiałkowej (obecnie tuńczyk, wątróbka, kurczak), przy sterydzie i przy krwawieniu z przewodu pokarmowego; lekarz 16.10 tylko stwierdza „mocznik wzrósł”.
 - **Hemoglobina 121 → 98 g/l** (IDEXX, 07.10 → 16.10; dolna granica zakresu), hematokryt 0.394 → 0.331; retikulocyty 15.4 → 38.7. Między badaniami — punkcje 100 i 120 ml krwistego płynu. Lekarz nazwał morfologię „stabilną”; spadku nie skomentowano.
@@ -1738,7 +1818,8 @@ Pełna lista rozbieżności między dokumentami i nierozstrzygniętych pytań kl
 - **Pole „Waga” w formularzach LoVet** zawiera 4.87 kg w trzech kolejnych dokumentach (14.09, 21.09, 23.09.2026), podczas gdy w opisie badania — 4.78, 4.75 i 4.6 kg. Pole najwyraźniej nie było aktualizowane; należy używać masy z opisu badania. 07.10.2026 w polu po raz pierwszy nowa wartość — 4.19 kg.
 - Formularze IDEXX z 07.10 i 16.10.2026: „British Shorthair”, „Female Entire” — błędy techniczne (kotka jest długowłosa, sterylizowana).
 - USG LoVet z 12.10.2026: „poziom płynu 1,6–2” — bez jednostek (wg właścicieli cm) i bez strony.
-- Pole „Waga” LoVet: 3.90 kg zarówno 12.10, jak i 16.10.2026; 12.10 w badaniu — „schudła”, czyli ważenie najwyraźniej było; czy ważono 16.10, nie wiadomo.
+- Pole „Waga” LoVet: 3.90 kg 12.10, 16.10 i 19.10.2026; 12.10 w badaniu — „schudła”, czyli ważenie najwyraźniej było; czy ważono 16.10, nie wiadomo; 19.10 w badaniu — „schudła znowu”, a w polu te same 3.90.
+- Formularz IDEXX z 19.10.2026 — znów „British Shorthair”, „Female Entire”. W rachunku LoVet z 19.10 jednostki ilości nie są podpisane (Comfortan 0.1, Carboplatin 4.8).
 - Karta TENVET z 16.10.2026 wystawiona na Huliaiev Dmytro (10.10 — również); w karcie Retiny z 15.10 właściciel — Grakova Karina.
 - Wizyta LoVet z 23.09.2026 istnieje w **dwóch wydrukach** z identycznym tekstem, ale różną listą produktów (Bunondol + Mirataz + Cerenia 0.4 wobec całej Cerenii 20 ml).
 - **Odręczna notatka z protokołem znieczulenia** (deksmedetomidyna, metadon, ewentualnie ketamina, propofol, izofluran) — bez daty, podpisu i nazwy przychodni; przypisana do 23.09.2026 na podstawie kontekstu partii. Karta znieczulenia Retiny z 25.09.2026 potwierdza ten protokół (bez ketaminy).
@@ -1811,6 +1892,7 @@ Wszystkie dokumenty dotarły jako zdjęcia wykonane przez właścicielkę i był
 | 13. | IMG_6430–6435 (6 plików) | 10.10.2026 | IMG_6430–6431 — TENVET 24h, 10.10 02:53, wizyta nocna i hospitalizacja w klatce tlenowej (2 str.); IMG_6432–6435 — TENVET 24h, 10.10 09:40, badanie poranne, biochemia, gazometria, hematologia, torakocenteza 120 ml, wypis (4 str.) |
 | 14. | IMG_6401–6404 (4 pliki) | 07.10.2026 | IMG_6401 — wydruk biochemii LoVet 07.10, 19:52; IMG_6402–6403 — LoVet 07.10, 20:00, pilna wizyta, punkcja 100 ml (2 str.); IMG_6404 — IDEXX Haematology 07.10, 19:54 (str. 1 z 2). Osobno (zrzuty ekranu w czacie) — powtórka str. 1 i str. 2 z komentarzem laboratorium o anizocytozie; **wizyta LoVet z 05.10.2026, 2 str.** (zrzuty ekranu). Dotarła po 13. partii, choć według numeracji plików wcześniej |
 | 15. | IMG_6505–6513 (9 plików) | 12.10 – 16.10.2026 | IMG_6505 — wydruk biochemii LoVet 16.10, 12:41 (na str. 1 IDEXX); IMG_6506–6507 — IDEXX Haematology 16.10, 12:33 (2 str.); IMG_6508–6509 — LoVet 12.10, 20:30, kontrola po TENVET (2 str.; str. 2 sfotografowana do góry nogami); IMG_6510 — Retina 15.10, usunięcie szwów (str. 1 z 2); IMG_6511–6512 — LoVet 16.10, 12:00 (2 str.); IMG_6513 — TENVET 24h 16.10, 20:23, torakocenteza ok. 140 ml |
+| 16. | IMG_6533–6536 (4 pliki) | 19.10.2026 | IMG_6533–6534 — LoVet 19.10, 20:30, dr Agata Drewniak: progresja, zalecenie rozważenia eutanazji, punkcja 90 ml, karboplatyna (2 str.); IMG_6535–6536 — IDEXX Haematology 19.10, 20:46 (2 str.) |
 
 Szczegółowe tabele strona po stronie dla każdej partii (z dokładnym plikiem, datą dokumentu, rodzajem i przychodnią dla każdego zdjęcia) są przechowywane w roboczym szkicu chronologii i mogą zostać udostępnione na prośbę.
 
@@ -1820,7 +1902,7 @@ Szczegółowe tabele strona po stronie dla każdej partii (z dokładnym plikiem,
 
 Raport opracowano na podstawie zdjęć dokumentów udostępnionych przez właścicielkę kotki, bez bezpośredniego udziału lekarza weterynarii w jego przygotowaniu. Prośba do specjalisty korzystającego z tego dokumentu: przy podejmowaniu decyzji klinicznych opierać się na oryginałach dokumentów tam, gdzie to możliwe, zwłaszcza w odniesieniu do dosłownych cytatów z wyników histologicznych (oznaczonych jako wymagające weryfikacji) i nieprofesjonalnych opisów obrazów (zdjęcia RTG w rozdziale 4).
 
-Dokument może być uzupełniany w miarę napływu nowych materiałów i dokumentów medycznych. Ostatnie uzupełnienie — 18.10.2026, partia IMG_6505–6513 (LoVet 12.10 i 16.10, IDEXX 16.10, Retina 15.10, TENVET 24h 16.10.2026).
+Dokument może być uzupełniany w miarę napływu nowych materiałów i dokumentów medycznych. Ostatnie uzupełnienie — 20.10.2026, partia IMG_6533–6536 (LoVet 19.10 i IDEXX 19.10.2026).
 
 Ta polska wersja jest tłumaczeniem rosyjskiego oryginału; w razie wątpliwości pierwszeństwo mają tekst rosyjski i oryginalne dokumenty.
 

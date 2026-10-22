@@ -2,9 +2,9 @@
 
 ### Lab trends
 
-*Data: 24.06.2025 – 16.10.2026*
+*Data: 24.06.2025 – 19.10.2026*
 
-*Compiled: 10.10.2026; updated 18.10.2026*
+*Compiled: 10.10.2026; updated 20.10.2026*
 
 ![Varia — a black British Longhair cat](assets/varia-portrait.jpg)
 
@@ -20,24 +20,24 @@ Details of each test are in the entry for that date in the [full chronology](chr
 
 Key parameters since 14.09.2026. The laboratory is given in the column header.
 
-| Parameter | 14.09<br>LoVet / IDEXX | 28.09<br>LoVet | 07.10<br>LoVet / IDEXX | 10.10<br>TENVET | 16.10<br>LoVet / IDEXX |
-| --- | --- | --- | --- | --- | --- |
-| Creatinine, µmol/l | 126 | 152 | **250 ↑** | ≈ 159 | 156 |
-| Urea, mmol/l | 6.85 | **12.0 ↑** | **16.5 ↑** | ≈ 11.4 | **23.7 ↑** |
-| Glucose, mmol/l | **8.55 ↑** | **8.79 ↑** | **10.33 ↑** | **≈ 11.3 ↑** | **8.90 ↑** |
-| Potassium, mmol/l | **5.14 ↑** | 4.76 | 4.54 | 3.57 | 4.71 |
-| Sodium, mmol/l | 150 | 145 | 150 | 148.2 | 148 |
-| Amylase, U/l | 1503 | 1509 | **2158 ↑** | — | **2145 ↑** |
-| Albumin, g/l | 33.0 | 30.4 | 34.1 | 33 | 33.6 |
-| White cells (WBC), ×10⁹/l | 6.67 | “leucocytosis” ↑ | **17.38 ↑** | 11.77 | 13.95 |
-| Neutrophils, ×10⁹/l | 5.09 | “neutrophilia” ↑ | **15.08 ↑** | 10.43 | **11.86 ↑** |
-| Lymphocytes, ×10⁹/l | **0.83 ↓** | — | 1.19 | **0.44 ↓** | 1.30 |
-| Haematocrit | 0.38 l/l | — | 0.394 l/l | 49 % | 0.331 l/l |
-| Haemoglobin | 114 g/l | — | 121 g/l | **16.2 g/dl ↑** | 98 g/l |
-| Platelets, ×10⁹/l | **700 ↑** | — | 550 | 372 | **840 ↑** |
-| Weight, kg | 4.78 | — | 4.19 (05.10) | — | 3.90 (12.10) |
+| Parameter | 14.09<br>LoVet / IDEXX | 28.09<br>LoVet | 07.10<br>LoVet / IDEXX | 10.10<br>TENVET | 16.10<br>LoVet / IDEXX | 19.10<br>IDEXX |
+| --- | --- | --- | --- | --- | --- | --- |
+| Creatinine, µmol/l | 126 | 152 | **250 ↑** | ≈ 159 | 156 | — |
+| Urea, mmol/l | 6.85 | **12.0 ↑** | **16.5 ↑** | ≈ 11.4 | **23.7 ↑** | — |
+| Glucose, mmol/l | **8.55 ↑** | **8.79 ↑** | **10.33 ↑** | **≈ 11.3 ↑** | **8.90 ↑** | — |
+| Potassium, mmol/l | **5.14 ↑** | 4.76 | 4.54 | 3.57 | 4.71 | — |
+| Sodium, mmol/l | 150 | 145 | 150 | 148.2 | 148 | — |
+| Amylase, U/l | 1503 | 1509 | **2158 ↑** | — | **2145 ↑** | — |
+| Albumin, g/l | 33.0 | 30.4 | 34.1 | 33 | 33.6 | — |
+| White cells (WBC), ×10⁹/l | 6.67 | “leucocytosis” ↑ | **17.38 ↑** | 11.77 | 13.95 | **19.25 ↑** |
+| Neutrophils, ×10⁹/l | 5.09 | “neutrophilia” ↑ | **15.08 ↑** | 10.43 | **11.86 ↑** | **17.38 ↑** |
+| Lymphocytes, ×10⁹/l | **0.83 ↓** | — | 1.19 | **0.44 ↓** | 1.30 | 1.14 |
+| Haematocrit | 0.38 l/l | — | 0.394 l/l | 49 % | 0.331 l/l | 0.327 l/l |
+| Haemoglobin | 114 g/l | — | 121 g/l | **16.2 g/dl ↑** | 98 g/l | 100 g/l |
+| Platelets, ×10⁹/l | **700 ↑** | — | 550 | 372 | **840 ↑** | **673 ↑** |
+| Weight, kg | 4.78 | — | 4.19 (05.10) | — | 3.90 (12.10) | “lost weight again” |
 
-What this shows: **creatinine rose sharply by 07.10 and was back to normal (156) by 16.10, but urea kept rising — 23.7 mmol/l, the highest on record** (⚠️ 10.10 — different analyser). **The neutrophilia of 28.09–07.10** has decreased; **there is no neutropenia on Palladia**. **Haemoglobin on 16.10 is 98 g/l, at the lower limit** (07.10 — 121), **platelets 840 — the highest on record**. Weight — 3.90 kg. Glucose is persistently raised, but fructosamine on 14.09 was normal (277 µmol/l) — the rises are stress-related. On 10.10 the red-cell values were above normal — according to the vet, due to dehydration.
+What this shows: **creatinine rose sharply by 07.10 and was back to normal (156) by 16.10, but urea kept rising — 23.7 mmol/l, the highest on record** (⚠️ 10.10 — different analyser). **The neutrophilia of 28.09–07.10** has decreased; **there is no neutropenia on Palladia**. **Haemoglobin on 16.10 is 98 g/l, at the lower limit** (07.10 — 121), **platelets 840 — the highest on record**. Weight — 3.90 kg. Glucose is persistently raised, but fructosamine on 14.09 was normal (277 µmol/l) — the rises are stress-related. On 10.10 the red-cell values were above normal — according to the vet, due to dehydration. **19.10 (the day carboplatin was given) — neutrophils 17.38 and white cells 19.25, higher than on 07.10**; haemoglobin 100, platelets 673; no biochemistry on 19.10. On 19.10 the examination says “has lost weight again”, with no new weight value.
 
 ## 2. Weight
 
@@ -69,8 +69,9 @@ Weights from the examination notes. Values from the “Waga” field on LoVet fo
 | 05.10.2026 | **4.19 ↓** | **−19.4 % ↓** | LoVet |
 | 12.10.2026 | **3.90 ↓** | **−25.0 % ↓** | LoVet |
 | 16.10.2026 | **3.90 ↓** | **−25.0 % ↓** | LoVet, same value in the “Waga” field |
+| 19.10.2026 | **3.90 ↓** | **−25.0 % ↓** | LoVet, same value in the “Waga” field; examination — “has lost weight again” |
 
-Until mid-September the weight stayed within 4.8–5.3 kg. **From 14.09 to 05.10 — from 4.78 to 4.19 kg, i.e. −0.6 kg (−12%) in three weeks;** by 12.10 — **3.90 kg**, another −0.3 kg in a week. From the July weight — **−25%**. On 10.10 at TENVET the cat was not weighed (BCS 4/9); on 16.10 the LoVet field shows the same 3.90 kg, and it is unclear whether she was reweighed.
+Until mid-September the weight stayed within 4.8–5.3 kg. **From 14.09 to 05.10 — from 4.78 to 4.19 kg, i.e. −0.6 kg (−12%) in three weeks;** by 12.10 — **3.90 kg**, another −0.3 kg in a week. From the July weight — **−25%**. On 10.10 at TENVET the cat was not weighed (BCS 4/9); on 16.10 the LoVet field shows the same 3.90 kg, and it is unclear whether she was reweighed. On 19.10 the LoVet field again shows 3.90 kg, while the examination says “has lost weight again”, so the real weight is probably lower.
 
 ## 3. Respiratory rate and thoracocentesis
 
@@ -104,8 +105,9 @@ Respiratory rate (RR) from clinic records and from the owners. For a cat at rest
 | 16.10.2026, evening | up to 40; at 18:40 — **44–46 ↑** | at home, before the visit | owner | **~140 ml** (60 right + 80 left) |
 | 16.10.2026, after the tap | 34 | at home | owner | — |
 | 17.10.2026 | 26 and 28 | awake, after furosemide and Palladia | owner | — |
+| 19.10.2026 | bad; diaphragmatic, laboured (number not recorded) | at the visit | LoVet | **90 ml** (serosanguineous) |
 
-No taps were needed from July to September. **From 26.09 to 16.10 — five taps in three weeks** (26.09, 28.09, 07.10, 10.10, 16.10; possibly also 24.09), volumes 50–140 ml, 2–9 days apart. Breathing worsened before each one. 16.10 was the largest volume, six days after the previous tap. Right after it — 34 breaths, and the next day (17.10), after furosemide and Palladia, — 26–28 even while awake. Values under anaesthesia (25.09) are not comparable with the rest.
+No taps were needed from July to September. **From 26.09 to 16.10 — five taps in three weeks** (26.09, 28.09, 07.10, 10.10, 16.10; possibly also 24.09), volumes 50–140 ml, 2–9 days apart. Breathing worsened before each one. 16.10 was the largest volume, six days after the previous tap. Right after it — 34 breaths, and the next day (17.10), after furosemide and Palladia, — 26–28 even while awake. Values under anaesthesia (25.09) are not comparable with the rest. **19.10 — sixth tap, 90 ml, three days after the previous one**; the oncologist did not recommend it, it was done by the owners’ decision.
 
 ## 4. Temperature
 
@@ -194,24 +196,24 @@ Glucose is above normal in every measurement, but fructosamine on 14.09.2026 was
 
 Reference ranges are from the 2026 forms; in 2025 IDEXX used a different MCV reference range (39–56 fl).
 
-| Parameter | Reference | 24.06.25 | 06.08.25 | 31.10.25 | 20.12.25 | 17.03.26 | 14.09.26 | 07.10.26 | 16.10.26 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| White cells (WBC), ×10⁹/l | 2.87–17.02 | 7.05 | — | — | 11.28 | — | 6.67 | **17.38 ↑** | 13.95 |
-| Neutrophils, ×10⁹/l | 2.30–10.29 | — | — | — | — | — | 5.09 | **15.08 ↑** | **11.86 ↑** |
-| Lymphocytes, ×10⁹/l | 0.92–6.88 | — | — | — | — | — | **0.83 ↓** | 1.19 | 1.30 |
-| Monocytes, ×10⁹/l | 0.05–0.67 | — | — | — | — | — | 0.34 | 0.58 | 0.50 |
-| Eosinophils, ×10⁹/l | 0.17–1.57 | — | — | — | — | — | 0.39 | 0.50 | 0.27 |
-| Red cells (RBC), ×10¹²/l | 6.54–12.20 | 9.46 | 10.81 | — | 10.62 | — | 10.27 | 10.99 | 9.00 |
-| Haematocrit, l/l | 0.303–0.523 | 0.415 | 0.386 | — | 0.38 | — | 0.38 | 0.394 | 0.331 |
-| Haemoglobin, g/l | 98–162 | 128 | 138 | — | 120 | 103 | 114 | 121 | 98 |
-| MCV, fl | 35.9–53.1 | 43.9 | **35.7 ↓** | **37.6 ↓** | **35.6 ↓** | — | 37.0 | 35.9 | 36.8 |
-| MCH, pg | 11.8–17.3 | 13.5 | — | **12.0 ↓** | **11.3 ↓** | — | **11.1 ↓** | **11.0 ↓** | **10.9 ↓** |
-| MCHC, g/l | 281–358 | 308 | — | — | 317 | — | 300 | 307 | 296 |
-| RDW, % | 15.0–27.0 | — | — | — | — | — | **31.4 ↑** | **31.2 ↑** | **28.9 ↑** |
-| Reticulocytes, K/µl | 3.0–50.0 | — | — | — | — | — | 20.5 | 15.4 | 38.7 |
-| Platelets, ×10⁹/l | 151–600 | 427 | 325 | — | 279 | — | **700 ↑** | 550 | **840 ↑** |
+| Parameter | Reference | 24.06.25 | 06.08.25 | 31.10.25 | 20.12.25 | 17.03.26 | 14.09.26 | 07.10.26 | 16.10.26 | 19.10.26 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| White cells (WBC), ×10⁹/l | 2.87–17.02 | 7.05 | — | — | 11.28 | — | 6.67 | **17.38 ↑** | 13.95 | **19.25 ↑** |
+| Neutrophils, ×10⁹/l | 2.30–10.29 | — | — | — | — | — | 5.09 | **15.08 ↑** | **11.86 ↑** | **17.38 ↑** |
+| Lymphocytes, ×10⁹/l | 0.92–6.88 | — | — | — | — | — | **0.83 ↓** | 1.19 | 1.30 | 1.14 |
+| Monocytes, ×10⁹/l | 0.05–0.67 | — | — | — | — | — | 0.34 | 0.58 | 0.50 | 0.60 |
+| Eosinophils, ×10⁹/l | 0.17–1.57 | — | — | — | — | — | 0.39 | 0.50 | 0.27 | **0.11 ↓** |
+| Red cells (RBC), ×10¹²/l | 6.54–12.20 | 9.46 | 10.81 | — | 10.62 | — | 10.27 | 10.99 | 9.00 | 9.11 |
+| Haematocrit, l/l | 0.303–0.523 | 0.415 | 0.386 | — | 0.38 | — | 0.38 | 0.394 | 0.331 | 0.327 |
+| Haemoglobin, g/l | 98–162 | 128 | 138 | — | 120 | 103 | 114 | 121 | 98 | 100 |
+| MCV, fl | 35.9–53.1 | 43.9 | **35.7 ↓** | **37.6 ↓** | **35.6 ↓** | — | 37.0 | 35.9 | 36.8 | 35.9 |
+| MCH, pg | 11.8–17.3 | 13.5 | — | **12.0 ↓** | **11.3 ↓** | — | **11.1 ↓** | **11.0 ↓** | **10.9 ↓** | **11.0 ↓** |
+| MCHC, g/l | 281–358 | 308 | — | — | 317 | — | 300 | 307 | 296 | 306 |
+| RDW, % | 15.0–27.0 | — | — | — | — | — | **31.4 ↑** | **31.2 ↑** | **28.9 ↑** | **28.2 ↑** |
+| Reticulocytes, K/µl | 3.0–50.0 | — | — | — | — | — | 20.5 | 15.4 | 38.7 | 37.4 |
+| Platelets, ×10⁹/l | 151–600 | 427 | 325 | — | 279 | — | **700 ↑** | 550 | **840 ↑** | **673 ↑** |
 
-Since August 2025 — small red cells (microcytosis) and low MCH, even before the first surgery. On 07.10 and 16.10.2026 IDEXX flagged a raised RDW (red cells of varying size) and recommended a blood smear — according to the records, it was not done. **On 16.10 haemoglobin was 98 g/l, exactly at the lower limit** (07.10 — 121), haematocrit 0.331; reticulocytes rose to 38.7. Platelets of 840 are higher than ever before. IDEXX forms with numbers for 02.09 and 07.09.2026 have not been received.
+Since August 2025 — small red cells (microcytosis) and low MCH, even before the first surgery. On 07.10, 16.10 and 19.10.2026 IDEXX flagged a raised RDW (red cells of varying size) and recommended a blood smear — according to the records, it was not done. **On 16.10 haemoglobin was 98 g/l, exactly at the lower limit** (07.10 — 121), haematocrit 0.331; reticulocytes rose to 38.7. Platelets of 840 are higher than ever before. IDEXX forms with numbers for 02.09 and 07.09.2026 have not been received. **19.10 — neutrophils 17.38 and white cells 19.25 above range, eosinophils 0.11 below**; haemoglobin 100, platelets 673; sample taken on the day carboplatin was given.
 
 ## 9. TENVET tests, 10.10.2026
 

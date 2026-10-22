@@ -1,10 +1,10 @@
 # Varia
 
-### Analiza: najważniejsze na 16.10.2026
+### Analiza: najważniejsze na 19.10.2026
 
-*Dane: 13.04.2026 – 16.10.2026*
+*Dane: 13.04.2026 – 19.10.2026*
 
-*Aktualizacja: 18.10.2026*
+*Aktualizacja: 20.10.2026*
 
 ![Varia — czarna kotka brytyjska długowłosa](assets/varia-portrait.jpg)
 
@@ -14,23 +14,24 @@ Co można stwierdzić na podstawie dokumentów, a czego nie. Liczby — w [„Ba
 
 | Temat | Co pokazują dane | Wniosek |
 | --- | --- | --- |
-| **Wysięk w klatce piersiowej** | Od lipca do września punkcji nie było. Od 26.09 do 16.10 — pięć: 128, 50, 100, 120 i ok. 140 ml, w odstępach 2–9 dni. Przed każdą — pogorszenie oddechu | Płyn gromadzi się szybko, objętości nie maleją. Objętości i odstępy to wiarygodna miara; centymetrów z USG różnych lekarzy nie należy porównywać |
-| **Oddech w domu** | Przed pogorszeniami w domu liczono 34–40 (17–24.09), 46 (04.10) i 44–46 (16.10); po punkcjach — do 30 (12.10) i 34 (16.10); 17.10, po furosemidzie i Palladii, — 26–28 nie we śnie | Liczenie oddechów w domu to najlepszy wczesny sygnał. Próg pilnej wizyty — 40/min i więcej |
-| **Furosemid i nerki** | 07.10 — kreatynina 250. 16.10 — kreatynina 156 (norma), ale **mocznik 23,7 — najwyższy w historii**. 16.10 rano furosemid zmniejszony do 1/2 tabl. 2×/dobę, wieczorem — punkcja 140 ml; obecnie znów 3/4 tabl. (wg właścicieli) | Kreatynina wróciła do normy, mocznik — nie; przyczyny lekarze nie omawiali. Wysięk nowotworowy zwykle słabo odpowiada na leki moczopędne: najspokojniejszy okres (lipiec–wrzesień) był bez furosemidu |
-| **Krew** | Hemoglobina 121 → 98 g/l (07.10 → 16.10), płytki 840 — najwyższa wartość; neutrofile 11,86 | Brak neutropenii na Palladii. Spadek hemoglobiny zbiegł się z dwiema punkcjami krwistego płynu; lekarz określił morfologię jako „stabilną” |
-| **Palladia** | Brak neutropenii ani 07.10, ani 10.10, ani 16.10. Co drugi dzień; 16.10 dawka pominięta z powodu osłabienia i nudności, 17.10 podana | Z punktu widzenia krwi tolerowana. **Według obserwacji właścicieli z całego leczenia działa tylko ona**; w dokumentach jeszcze tego nie widać — wysięk gromadzi się równie szybko |
-| **Cechy progresji** | 26.09 — rozrost w klatce piersiowej ok. 1 × 1,5 cm; 05.10 — ognisko w wątrobie 0,78 × 0,65 cm („możliwa zmiana przerzutowa”), zapadnięcie płuca po prawej | Prawdopodobna progresja, nic z tego nie zostało zweryfikowane |
-| **Masa ciała, żywienie, przewód pokarmowy** | 4,78 → 4,19 → **3,90 kg** (14.09 → 05.10 → 12.10), −25% od lipca. Je niewiele, jedzenie domowe; 16.10 — nudności i zaparcie; 18.10, wg właścicieli, — je, pije, oddaje mocz i kał | Utrata masy trwa — ok. 0,3 kg na tydzień |
-| **Oczy** | 15.10 zdjęto szwy: rogówki bardziej przezierne, brak dyskomfortu, odruchy wzrokowe zachowane | Zabieg z 25.09 przyniósł efekt; schemat kropli uproszczony |
+| **Rokowanie i taktyka** | 19.10 onkolożka (dr Drewniak) poinformowała o progresji i złym rokowaniu, odradziła punkcję i zaleciła, na tym etapie, rozważenie eutanazji. Decyzją właścicieli — punkcja 90 ml i **karboplatyna 200 mg/m²**; leki bez zmian | Lekarz prowadzący ocenia chorobę jako postępującą. Efekt karboplatyny, jeśli wystąpi, jest spodziewany najwcześniej po tygodniach, a płyn gromadzi się w ciągu dni |
+| **Wysięk w klatce piersiowej** | Od lipca do września punkcji nie było. Od 26.09 do 19.10 — sześć: 128, 50, 100, 120, ok. 140 i 90 ml, w odstępach 2–9 dni; ostatnia — trzy dni po poprzedniej. Przed każdą — pogorszenie oddechu | Płyn gromadzi się szybko, odstępy się skracają. Objętości i odstępy to wiarygodna miara; centymetrów z USG różnych lekarzy nie należy porównywać |
+| **Oddech w domu** | Przed pogorszeniami w domu liczono 34–40 (17–24.09), 46 (04.10) i 44–46 (16.10); 17.10, po furosemidzie i Palladii, — 26–28 nie we śnie. 19.10 na wizycie — przeponowy, ciężki | Liczenie w domu to najlepszy wczesny sygnał. Próg pilnej wizyty — 40/min i więcej |
+| **Furosemid i nerki** | 07.10 — kreatynina 250. 16.10 — kreatynina 156 (norma), ale **mocznik 23.7 — najwyższy w historii**. 19.10 przy złym oddechu lekarka dopuszcza 1 tabl. 2×/dobę; biochemii 19.10 nie wykonano | Kreatynina wróciła do normy, mocznik — nie. Wysięk nowotworowy zwykle słabo odpowiada na leki moczopędne: najspokojniejszy okres (lipiec–wrzesień) był bez furosemidu. Karboplatyna jest wydalana przez nerki |
+| **Krew** | Hemoglobina 121 → 98 → 100 g/l (07.10 → 16.10 → 19.10); płytki 840 → 673; **neutrofile 17.38 i leukocyty 19.25 (19.10) — więcej niż 07.10** | Brak neutropenii — to punkt wyjścia przed karboplatyną. W czerwcu karboplatyna razem z Palladią dała ciężką neutropenię (Neu 0.45) |
+| **Palladia** | Brak neutropenii ani 07.10, ani 10.10, ani 16.10, ani 19.10. 16.10 dawka pominięta, 17.10 podana; 19.10 — „leki bez zmian” | Według obserwacji właścicieli z całego leczenia działała tylko ona; w dokumentach płyn gromadzi się równie szybko. Teraz najwyraźniej razem z karboplatyną |
+| **Cechy progresji** | 26.09 — rozrost w klatce piersiowej ok. 1 × 1.5 cm; 05.10 — ognisko w wątrobie 0.78 × 0.65 cm („możliwy przerzut”), zapadnięcie płuca po prawej; 19.10 — onkolożka wprost pisze o progresji | Progresję stwierdza lekarz prowadzący; morfologicznie nic nie zweryfikowano |
+| **Masa, żywienie, przewód pokarmowy** | 4.78 → 4.19 → **3.90 kg** (14.09 → 05.10 → 12.10), −25% od lipca; 19.10 — „schudła znowu” (nowej wartości nie zapisano). 16.10 — nudności i zaparcie; 19.10 wg właścicieli — po zdjęciu szwów je i pije sama, bez wymiotów | Utrata masy trwa |
+| **Oczy** | 15.10 zdjęto szwy: rogówki bardziej przejrzyste, brak dyskomfortu, reakcje wzrokowe zachowane | Zabieg z 25.09 przyniósł efekt; schemat kropli uproszczony |
 
-## O co zapytać lekarza na następnej wizycie
+## O co zapytać lekarza
 
-1. **Plan punkcji:** ostatnie trzy punkcje — w odstępach 3–6 dni. Przy jakiej częstości oddechów, gdzie i kto wykonuje punkcję — także w nocy. Czy potrzebny jest stały drenaż.
-2. **Furosemid:** obecnie znów 3/4 tabl. (16.10 rano zmniejszano do 1/2, wieczorem — punkcja 140 ml). Potwierdzić dawkę i jaki przynosi efekt.
-3. **Mocznik 23,7 przy prawidłowej kreatyninie:** z czym to jest związane i czy trzeba coś zmienić — w jedzeniu, płynach, sterydzie.
-4. **Hemoglobina 98 i płytki 840:** czy kontrolować częściej; rozmaz krwi, który IDEXX zaleca od 07.10.
-5. **Palladia:** właściciele widzą efekt tylko po niej — jak to potwierdzić, skoro wysięk gromadzi się równie szybko; w jakim dniu następna dawka (ostatnia — 17.10).
-6. **Nudności i zaparcie:** co podawać na stałe; Convenia — powtarzać czy nie (pytanie od 12.10).
+1. **Cel leczenia:** po czym oceniać, czy karboplatyna pomaga i jak Varia się czuje; kiedy następna kontrola; co robić przy nagłym pogorszeniu oddechu, także w nocy.
+2. **Krew i nerki po karboplatynie:** kiedy sprawdzić neutrofile (w czerwcu, na karboplatynie z Palladią, — Neu 0.45) oraz mocznik i kreatyninę (16.10 — mocznik 23.7; 19.10 biochemii nie robiono). Czy kontynuować Palladię razem z karboplatyną.
+3. **Punkcje:** sześć w trzy i pół tygodnia, ostatnia — trzy dni po poprzedniej. Przy jakim oddechu i gdzie nakłuwać; czy potrzebny jest stały drenaż.
+4. **Furosemid i steryd:** 19.10 dopuszczono zwiększenie do 1 tabl. 2×/dobę i 1 tabl. 1×/dobę — przy jakim oddechu zwiększać i jak to się ma do mocznika 23.7.
+5. **Neutrofile 17.38 i leukocyty 19.25:** z czym są związane, czy trzeba coś robić.
+6. **Żywienie:** masa nadal spada — co podawać na stałe na nudności i zaparcie, czy potrzebny jest stymulator apetytu.
 
 ### O tej części
 

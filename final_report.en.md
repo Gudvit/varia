@@ -4,19 +4,21 @@
 
 *Cat, British Longhair, spayed*
 
-*Data: 24.06.2025 – 16.10.2026*
+*Data: 24.06.2025 – 19.10.2026*
 
-*Report compiled: 08.09.2026; updated 18.10.2026*
+*Report compiled: 08.09.2026; updated 20.10.2026*
 
 *Owner: Karina Grakova*
 
 ![Varia — a black British Longhair cat](assets/varia-portrait.jpg)
 
-## Clinical summary / current status as of 16.10.2026
+## Clinical summary / current status as of 19.10.2026
 
 A one-page summary to get into the history in 1–2 minutes. Everything here is expanded in sections 1–16; section references are given in brackets. The ⚠️ symbol marks places where documents contradict each other or data are missing.
 
-> **Situation as of 16.10.2026 — the effusion reaccumulates within six days, weight keeps falling.** **Evening of 16.10** — RR 44–46/min; at TENVET 24h about an hour in an oxygen cage, then **thoracocentesis ~140 ml** of haemorrhagic fluid (60 ml right, 80 ml left) — the fifth tap since 26.09 and the largest volume. **Morning of 16.10 at LoVet:** weakness, nausea, constipation (hard faeces in the rectum), 38.2 °C, RR at home 32–34. **Creatinine is back to normal — 156 µmol/l, but urea is 23.7 mmol/l — the highest on record**; haemoglobin 98 g/l — at the lower limit (07.10 — 121), platelets 840 ↑, neutrophils 11.86 ↑ — no neutropenia. Furosemide reduced to 1/2 tablet twice daily, the 16.10 Palladia dose skipped (next — 18.10), metoclopramide SC, Dicopeg and Dulcobis. **Weight 3.90 kg** (12.10) — −7% in a week and −25% from 5.2 kg in July. **15.10 at Retina — eye sutures removed:** corneas clearer, IOP 13 / 14 mmHg, menace and dazzle responses preserved, no discomfort. **12.10 at LoVet** (recheck after TENVET): slightly better, RR up to 30, eating a little (home-cooked food), ultrasound — fluid 1.6–2 cm; furosemide 3/4 tablet twice daily, Palladia continued (sect. 4, entries 12–16.10.2026). **Per the owners:** after the tap on 16.10 RR was 34, and on 17.10, after furosemide and Palladia, breathing improved — **RR 26 and 28 even while awake**; on 18.10 she is eating, drinking, urinating and defecating; furosemide back to 3/4 tablet; Palladia given on 17.10 — in the owners’ observation, it is the only part of the treatment that works.
+> **Situation as of 19.10.2026 — progression; the oncologist advised considering euthanasia.** **19.10 at LoVet** (dr Agata Drewniak): per the owners, breathing is bad now, while 18.10 was a good day and she was active. On examination — **has lost weight again, diaphragmatic laboured breathing, dull**. The vet informed the owners of **disease progression and a poor prognosis**, advised against a tap for the animal’s welfare and because such frequent taps are of doubtful value, and **recommended considering euthanasia at this stage**. **By the owners’ decision**, under Comfortan (methadone), a **tap removed 90 ml of serosanguineous fluid** (the sixth since 26.09, three days after ~140 ml) and **carboplatin 200 mg/m² IV** was given as a slow infusion in 5% glucose. Medications unchanged; if breathing is bad — consider **furosemide 1 tablet twice daily and the steroid 1 tablet once daily**. Blood on 19.10 (IDEXX): **neutrophils 17.38 ↑, WBC 19.25 ↑**, haemoglobin 100 g/l (near the lower limit), platelets 673 ↑; no biochemistry (sect. 4, entry 19.10.2026).
+>
+> **16.10.2026 — the effusion reaccumulates within six days, weight keeps falling.** **Evening of 16.10** — RR 44–46/min; at TENVET 24h about an hour in an oxygen cage, then **thoracocentesis ~140 ml** of haemorrhagic fluid (60 ml right, 80 ml left) — the fifth tap since 26.09 and the largest volume. **Morning of 16.10 at LoVet:** weakness, nausea, constipation (hard faeces in the rectum), 38.2 °C, RR at home 32–34. **Creatinine is back to normal — 156 µmol/l, but urea is 23.7 mmol/l — the highest on record**; haemoglobin 98 g/l — at the lower limit (07.10 — 121), platelets 840 ↑, neutrophils 11.86 ↑ — no neutropenia. Furosemide reduced to 1/2 tablet twice daily, the 16.10 Palladia dose skipped (next — 18.10), metoclopramide SC, Dicopeg and Dulcobis. **Weight 3.90 kg** (12.10) — −7% in a week and −25% from 5.2 kg in July. **15.10 at Retina — eye sutures removed:** corneas clearer, IOP 13 / 14 mmHg, menace and dazzle responses preserved, no discomfort. **12.10 at LoVet** (recheck after TENVET): slightly better, RR up to 30, eating a little (home-cooked food), ultrasound — fluid 1.6–2 cm; furosemide 3/4 tablet twice daily, Palladia continued (sect. 4, entries 12–16.10.2026). **Per the owners:** after the tap on 16.10 RR was 34, and on 17.10, after furosemide and Palladia, breathing improved — **RR 26 and 28 even while awake**; on 18.10 she is eating, drinking, urinating and defecating; furosemide back to 3/4 tablet; Palladia given on 17.10 — in the owners’ observation, it is the only part of the treatment that works.
 >
 > **05–10.10.2026:** on the night of 10.10 — dyspnoea; at the 24-hour clinic TENVET 24h RR 33, fluid on both sides (1.5 / 1.8 cm), compression atelectasis; a night in an oxygen cage. In the morning RR 40 — **thoracocentesis, 120 ml** of haemorrhagic fluid; discharged in stable condition, recheck with the primary vet on 11.10. **05.10 at LoVet** (oncology recheck): ultrasound — “worse picture”, right lung collapse, **0.78 × 0.65 cm liver lesion — possible metastasis**; temperature 39.0 °C; Palladia every other day, furosemide increased to 3/4 tablet three times daily, Convenia. **07.10 at LoVet — a 100 ml tap on the right and a jump in renal values: creatinine 250 µmol/l, urea 16.5 mmol/l** (28.09 — 152 and 12.0), neutrophilia 15.08; weight 4.19 kg (same as 05.10). The oncologist reported poor condition and a poor prognosis; SC fluids, a day without furosemide, then 3/4 tablet twice daily; Palladia paused for one day. 10.10 at TENVET: creatinine ≈ 159 µmol/l, urea ≈ 11.4 mmol/l (different analyser), **no neutropenia** (Neu 10.43), signs of dehydration (RBC and Hb above the reference range). TENVET prognosis — guarded (sect. 4, entries 29.09–10.10.2026).
 >
@@ -28,17 +30,17 @@ A one-page summary to get into the history in 1–2 minutes. Everything here is 
 | **Diagnosis** | High-grade mammary carcinoma. Primary sample 08.08.2025 — simple solid carcinoma (*rak prosty lity*), Mills grade III (sect. 5). |
 | **Extent** | Since 13.04.2026 the oncologist **clinically** considers the disease metastatic with lung involvement (TFAST + overall picture). ⚠️ The lung lesion has not been confirmed morphologically. Recurrent pleural effusion since April 2026. 21.09.2026 on AFAST — a new 0.46 cm subcutaneous mass in the abdominal region, recurrence in the differential. 26.09.2026 on TFAST — **~1 × 1.5 cm mass in the thorax**. **05.10.2026 on ultrasound — 0.78 × 0.65 cm heterogeneous liver lesion, “possible metastasis”**; not verified. |
 | **Surgery (4 oncological operations, ALVET)** | 08.08.2025 — total right-sided mastectomy + inguinal lymph node (margin ~0.2 mm); 04.11.2025 — nodule near the scar, **histologically benign**; 29.12.2025 — mass behind the right scapula, high grade + lymphovascular invasion; 20.03.2026 — masses in the axillary region and abdomen; poorly differentiated high-grade tumour, tumour cells multifocally reaching the histological margins (sect. 6). **25.09.2026 — eye surgery at Retina** (cross-linking of both corneas, third eyelid flaps). |
-| **Chemotherapy** | Carboplatin 200 mg/m² — one dose on 18.05.2026; the 08.06.2026 dose cancelled because of severe neutropenia (Neu# 0.45). From 15.06.2026 — doxorubicin 1 mg/kg every 21 days; 5 doses given, the last on 07.09.2026. **The sixth dose was not given: on 28.09.2026 doxorubicin was replaced with Palladia** (sect. 7). |
+| **Chemotherapy** | Carboplatin 200 mg/m² — one dose on 18.05.2026; the 08.06.2026 dose cancelled because of severe neutropenia (Neu# 0.45). From 15.06.2026 — doxorubicin 1 mg/kg every 21 days; 5 doses given, the last on 07.09.2026. **The sixth dose was not given: on 28.09.2026 doxorubicin was replaced with Palladia** (sect. 7). **19.10.2026 — carboplatin 200 mg/m² IV** — by the owners’ decision, after the oncologist recommended considering euthanasia. |
 | **Targeted therapy** | Palladia (toceranib) 13.04–08.06.2026: 10 → 15 → 10 mg Mon/Wed/Fri; stopped after severe neutropenia on 08.06.2026 (given together with carboplatin). **Restarted on 28.09.2026:** 10 mg on Monday and Wednesday; if there are no side effects — 15 mg on Friday and Monday. 07.10 — paused for one day, then 10 mg again; history on 10.10 — “two weeks of Palladia 10 mg per cat”; 12.10 — given; **16.10 — dose skipped because of weakness and nausea** (the next was due on 18.10); **per the owners, given on 17.10**. **No neutropenia** on 07.10 (Neu 15.08), 10.10 (Neu 10.43) or 16.10 (Neu 11.86 ×10⁹/l). |
-| **Treatment** (latest prescriptions 12–16.10) | **Palladia** — see above. **Furosemide (Furosoral 10 mg):** from 09.10 — 3/4 tablet twice daily; **16.10 — reduced to 1/2 tablet twice daily**; if breathing speeds up worryingly — back to 3/4 tablet twice daily and an ultrasound. **Per the owners, as of 18.10 — back to 3/4 tablet.** **Convenia** SC on 05.10; whether to repeat — to be decided at the recheck (recommendation of 12.10). **Antiemetics:** Zofran twice daily (12.10 — “helps”), metoclopramide SC at the clinic on 16.10. **Constipation:** Dicopeg, Dulcobis (16.10). **Nefrokrill Gatto** (since 07.10). **Mirataz** (dispensed 12.10). **Cyclonamine** injectable — 2 ampoules (12.10). **Prednisolone:** 3/4 tablet alternating with 1 tablet (5 mg), once daily (since 28.09). **Analgesia:** buprenorphine (Bupaq) transmucosally. **GI:** sucralfate, Helicid. **Eyes (since 15.10, both):** Vigamox 4× daily until the recheck; after 3 min — Vital Drop 3× daily until the bottle is finished; after 15 min — serum with Optixcare 4× daily until the vial is finished; after 3 min — Optixcare 4× daily long-term; if the eyes stay good — switch to Dexoftyal 3× daily and Optixcare gel 4× daily (sect. 9, 10). |
+| **Treatment** (latest prescriptions 12–19.10) | **19.10 (LoVet): medications unchanged; if breathing is bad — consider furosemide 1 tablet twice daily and prednisolone 1 tablet once daily.** **Palladia** — see above. **Furosemide (Furosoral 10 mg):** from 09.10 — 3/4 tablet twice daily; **16.10 — reduced to 1/2 tablet twice daily**; if breathing speeds up worryingly — back to 3/4 tablet twice daily and an ultrasound. **Per the owners, as of 18.10 — back to 3/4 tablet.** **Convenia** SC on 05.10; whether to repeat — to be decided at the recheck (recommendation of 12.10). **Antiemetics:** Zofran twice daily (12.10 — “helps”), metoclopramide SC at the clinic on 16.10. **Constipation:** Dicopeg, Dulcobis (16.10). **Nefrokrill Gatto** (since 07.10). **Mirataz** (dispensed 12.10). **Cyclonamine** injectable — 2 ampoules (12.10). **Prednisolone:** 3/4 tablet alternating with 1 tablet (5 mg), once daily (since 28.09). **Analgesia:** buprenorphine (Bupaq) transmucosally. **GI:** sucralfate, Helicid. **Eyes (since 15.10, both):** Vigamox 4× daily until the recheck; after 3 min — Vital Drop 3× daily until the bottle is finished; after 15 min — serum with Optixcare 4× daily until the vial is finished; after 3 min — Optixcare 4× daily long-term; if the eyes stay good — switch to Dexoftyal 3× daily and Optixcare gel 4× daily (sect. 9, 10). |
 
 #### Active problems as of the latest documented date
 
-- **Pleural effusion — taps every few days:** 26.09 — 128 ml, 28.09 — 50 ml on the right, **07.10 — 100 ml on the right** (LoVet), **10.10 — 120 ml**, **16.10 — ~140 ml** (TENVET 24h: 60 ml right, 80 ml left, after an hour in an oxygen cage; RR at home beforehand 44–46/min). 12.10 on LoVet ultrasound — fluid 1.6–2 cm (side not stated). 10.10 — 120 ml (TENVET 24h, after a night in an oxygen cage; T-FAST 1.5 cm right / 1.8 cm left, compression atelectasis of the ventral lung fields, pleura fragmented and irregular). At night RR 33 and dyspnoea after activity, in the morning — 40/min. TENVET prognosis — guarded, including a risk of pulmonary thromboembolism. 26.09 — TFAST 2.2 cm left / 2 cm right, RR 43/min with abdominal effort, pale-cyanotic dry mucous membranes, crackles over all lung fields; bilateral thoracocentesis, **128 ml** of dark haemorrhagic non-clotting fluid, after which breathing became deeper and slower. On the night of 28.09 breathing worsened again; on 28.09 another **50 ml was removed on the right** (the left side was not tapped because the cat was restless). The 25.09 anaesthesia record mentions a tap “yesterday as well” (24.09) — there is no document for it. Threshold for an urgent visit recommended on 26.09 — **RR 40/min or more** (sect. 4).
+- **Pleural effusion — taps every few days:** 26.09 — 128 ml, 28.09 — 50 ml on the right, **07.10 — 100 ml on the right** (LoVet), **10.10 — 120 ml**, **16.10 — ~140 ml** (TENVET 24h: 60 ml right, 80 ml left, after an hour in an oxygen cage; RR at home beforehand 44–46/min). 12.10 on LoVet ultrasound — fluid 1.6–2 cm (side not stated). 10.10 — 120 ml (TENVET 24h, after a night in an oxygen cage; T-FAST 1.5 cm right / 1.8 cm left, compression atelectasis of the ventral lung fields, pleura fragmented and irregular). At night RR 33 and dyspnoea after activity, in the morning — 40/min. TENVET prognosis — guarded, including a risk of pulmonary thromboembolism. 26.09 — TFAST 2.2 cm left / 2 cm right, RR 43/min with abdominal effort, pale-cyanotic dry mucous membranes, crackles over all lung fields; bilateral thoracocentesis, **128 ml** of dark haemorrhagic non-clotting fluid, after which breathing became deeper and slower. On the night of 28.09 breathing worsened again; on 28.09 another **50 ml was removed on the right** (the left side was not tapped because the cat was restless). The 25.09 anaesthesia record mentions a tap “yesterday as well” (24.09) — there is no document for it. Threshold for an urgent visit recommended on 26.09 — **RR 40/min or more** (sect. 4). **19.10 — 90 ml** of serosanguineous fluid (LoVet; diaphragmatic, laboured breathing; the vet advised against the tap, it was done by the owners’ decision).
 - **Eyes after the surgery of 25.09:** cross-linking of both corneas, an antibiotic-impregnated collagen shield, third eyelid flaps. **15.10 at Retina — sutures removed:** no purulent discharge, **corneal clarity improved**, IOP 13 (right) / 14 (left) mmHg, no squinting, no signs of discomfort, menace and dazzle responses preserved on both sides. Drop regimen simplified (Vigamox, Vital Drop, serum with Optixcare, Optixcare); if the eyes stay good — switch to Dexoftyal and Optixcare gel. Recheck within 14 days (sect. 10).
 - **Oncology — change of approach:** on 28.09 the oncologist reported a poor prognosis and a high risk of progression on doxorubicin; at the owner’s request Palladia was started. The new **~1 × 1.5 cm mass in the thorax** (26.09) and the 0.46 cm subcutaneous mass in the abdominal region (21.09) are not verified.
 - **Appetite, stomach, hydration:** 26.09 and the morning of 28.09 — no appetite; Retina on 25.09 notes that the cat is being assist-fed; Mirataz at the clinic on 26.09 and a spare dose on 27.09. Ultrasound signs of gastritis (21.09); the anaesthesia record says “gastritis / pancreatitis”. **Weight 3.90 kg (12.10)** — −0.3 kg in the week after 4.19 kg (05.10); from 4.78 kg (14.09) — about −18%, from 5.2 kg in July — −25%. 10.10 — only licked the sauce, no thirst, signs of dehydration. 12.10 — eating a little (the owner cooks tuna, liver, chicken), drinks on her own morning and evening, Zofran twice daily helps. **16.10 — nausea, difficulty swallowing, weakness; constipation** (last stool 14.10, hard faeces in the rectum) — metoclopramide, Dicopeg, Dulcobis (sect. 8.3, 12).
-- **Blood:** 28.09 — leucocytosis with neutrophilia (per the vet; form not received), Clamoxyl L.A. prescribed. **07.10 (IDEXX) — WBC 17.38 ↑, neutrophils 15.08 ↑**; red-cell values normal, MCH 11.0 ↓, RDW 31.2 ↑, platelets 550. **10.10 — WBC 11.77, neutrophils 10.43 (normal), lymphopenia 0.44; RBC 13.31 and Hb 16.2 above the reference range** — haemoconcentration with dehydration. Chloride low (106.8), lactate 2.47 ↑. **16.10 (IDEXX) — haemoglobin 98 g/l (lower limit; 07.10 — 121), haematocrit 0.331, reticulocytes 38.7; platelets 840 ↑ — the highest on record; neutrophils 11.86 ↑** (sect. 4, entries 10.10 and 16.10).
+- **Blood:** 28.09 — leucocytosis with neutrophilia (per the vet; form not received), Clamoxyl L.A. prescribed. **07.10 (IDEXX) — WBC 17.38 ↑, neutrophils 15.08 ↑**; red-cell values normal, MCH 11.0 ↓, RDW 31.2 ↑, platelets 550. **10.10 — WBC 11.77, neutrophils 10.43 (normal), lymphopenia 0.44; RBC 13.31 and Hb 16.2 above the reference range** — haemoconcentration with dehydration. Chloride low (106.8), lactate 2.47 ↑. **16.10 (IDEXX) — haemoglobin 98 g/l (lower limit; 07.10 — 121), haematocrit 0.331, reticulocytes 38.7; platelets 840 ↑ — the highest on record; neutrophils 11.86 ↑** (sect. 4, entries 10.10 and 16.10). **19.10 (IDEXX) — neutrophils 17.38 ↑, WBC 19.25 ↑, eosinophils 0.11 ↓; haemoglobin 100 g/l, platelets 673 ↑.**
 - **Analgesia is limited by breathing:** per the owner, buprenorphine works for about an hour; the LoVet vet noted on 23.09 that higher opioid doses may worsen breathing.
 - **~0.9×0.7 cm mass** at the heart apex/in the mediastinum with a cyst inside — found on 26.08.2026, nature not established; ⚠️ whether it is the same as the “~1 × 1.5 cm mass” of 26.09 is not stated (sect. 11).
 - **Kidneys — jump on 07.10, urea on 16.10:** creatinine 126 (14.09) → 152 (28.09) → **250 µmol/l (07.10, ↑)** → **156 (16.10, normal)**, urea 6.85 → 12.0 → 16.5 → **23.7 mmol/l (16.10, ↑ — the highest on record)** — all from the same LoVet laboratory; BUN/CRE on 16.10 — 38 (07.10 — 16). 10.10 (TENVET, different analyser) — ≈ 159 µmol/l and ≈ 11.4 mmol/l. Both kidneys abnormal on AFAST 14.09.2026. Amylase on 07.10 — 2158 U/l (↑) (sect. 8.1, 13).
@@ -46,13 +48,15 @@ A one-page summary to get into the history in 1–2 minutes. Everything here is 
 
 #### What needs a decision first
 
-1. **Pleural effusion:** 26.09 — 128 ml, 28.09 — 50 ml (right only), 07.10 — 100 ml (right), 10.10 — 120 ml, **16.10 — ~140 ml** (both sides); possibly another tap on 24.09. Five taps in three weeks, 2–9 days apart, volumes not decreasing. A plan is needed: criteria and place for taps (both of the last ones were at TENVET; on the night of 10.10 the owners at first agreed only to conservative treatment), the role of furosemide and the steroid, whether an indwelling drain is needed.
-2. **Furosemide:** on the morning of 16.10 the dose was reduced to 1/2 tablet twice daily; that evening — RR 44–46 and a 140 ml tap. After the tap the owners went back to 3/4 tablet (as of 18.10). The dose needs to be confirmed with the vet, and its benefit decided given taps every few days — taking into account urea of 23.7 mmol/l.
-3. **Urea and nutrition:** creatinine 250 (07.10) → 156 µmol/l (16.10, normal), but **urea 16.5 → 23.7 mmol/l — the highest on record**, BUN/CRE 38; the cause is not discussed in the documents. **Haemoglobin 121 → 98 g/l** in nine days (two taps of haemorrhagic fluid between the tests). **Weight 3.90 kg** (−25% from July); eating a little, home-cooked food (tuna, liver, chicken); 16.10 — nausea, constipation. Daily water and food intake are worth recording and reporting to the vet.
-4. **Palladia** since 28.09, every other day; no neutropenia (16.10 — Neu 11.86). The 16.10 dose was skipped because of weakness and nausea, given on 17.10. **In the owners’ observation, Palladia is the only part of the treatment that works**; the vets have not assessed its effect in the documents. Platelets 840 ↑. The day of the next dose needs to be agreed with the vet.
-5. **Steroid dose** has not changed since 28.09 (3/4 tablet alternating with 1 tablet), but on 16.10 at 18:40, with rapid breathing, the owner gave Prednicortone (whether this was the scheduled dose is not stated); its effects on the effusion, stomach and cornea have not been coordinated between the clinics.
-6. **0.78 × 0.65 cm liver lesion** (05.10), **~1 × 1.5 cm mass in the thorax** (26.09), **0.46 cm subcutaneous mass** (21.09) and **proliferative changes in the thoracic wall** (14.09) — probable signs of progression, not verified.
-7. **Eyes:** sutures removed on 15.10, condition better; recheck at Retina within 14 days (by ~29.10).
+1. **Goal of treatment:** on 19.10 the oncologist reported progression and a poor prognosis and recommended considering euthanasia at this stage; by the owners’ decision a 90 ml tap was done and carboplatin given. It needs to be agreed with the vet how to judge the effect of carboplatin and how the cat is feeling, when the next check is, and what to do if breathing suddenly worsens at night.
+2. **Carboplatin together with Palladia:** 19.10 — “medications unchanged”, so Palladia apparently continues. In May–June the same combination (carboplatin on 18.05 + Palladia) preceded severe neutropenia on 08.06 (Neu 0.45). No biochemistry before carboplatin on 19.10 (16.10 — creatinine 156, urea 23.7 ↑); carboplatin is excreted by the kidneys. The date of a blood check is not given.
+3. **Pleural effusion:** 26.09 — 128 ml, 28.09 — 50 ml (right only), 07.10 — 100 ml (right), 10.10 — 120 ml, **16.10 — ~140 ml** (both sides); possibly another tap on 24.09. Five taps in three weeks, 2–9 days apart, volumes not decreasing. A plan is needed: criteria and place for taps (both of the last ones were at TENVET; on the night of 10.10 the owners at first agreed only to conservative treatment), the role of furosemide and the steroid, whether an indwelling drain is needed. **19.10 — another 90 ml**, three days after the previous tap; the vet advised against it for the animal’s welfare.
+4. **Furosemide:** on the morning of 16.10 the dose was reduced to 1/2 tablet twice daily; that evening — RR 44–46 and a 140 ml tap. After the tap the owners went back to 3/4 tablet (as of 18.10). The dose needs to be confirmed with the vet, and its benefit decided given taps every few days — taking into account urea of 23.7 mmol/l. On 19.10 the vet allows an increase to 1 tablet twice daily if breathing is bad.
+5. **Urea and nutrition:** creatinine 250 (07.10) → 156 µmol/l (16.10, normal), but **urea 16.5 → 23.7 mmol/l — the highest on record**, BUN/CRE 38; the cause is not discussed in the documents. **Haemoglobin 121 → 98 g/l** in nine days (two taps of haemorrhagic fluid between the tests). **Weight 3.90 kg** (−25% from July); eating a little, home-cooked food (tuna, liver, chicken); 16.10 — nausea, constipation. Daily water and food intake are worth recording and reporting to the vet.
+6. **Palladia** since 28.09, every other day; no neutropenia (16.10 — Neu 11.86). The 16.10 dose was skipped because of weakness and nausea, given on 17.10. **In the owners’ observation, Palladia is the only part of the treatment that works**; the vets have not assessed its effect in the documents. Platelets 840 ↑. The day of the next dose needs to be agreed with the vet.
+7. **Steroid dose** has not changed since 28.09 (3/4 tablet alternating with 1 tablet), but on 16.10 at 18:40, with rapid breathing, the owner gave Prednicortone (whether this was the scheduled dose is not stated); its effects on the effusion, stomach and cornea have not been coordinated between the clinics. On 19.10 the oncologist allows an increase to 1 tablet once daily if breathing is bad.
+8. **0.78 × 0.65 cm liver lesion** (05.10), **~1 × 1.5 cm mass in the thorax** (26.09), **0.46 cm subcutaneous mass** (21.09) and **proliferative changes in the thoracic wall** (14.09) — probable signs of progression, not verified.
+9. **Eyes:** sutures removed on 15.10, condition better; recheck at Retina within 14 days (by ~29.10).
 
 The full list of open questions and discrepancies between documents is in section 15.
 
@@ -162,6 +166,7 @@ Thus **the age data from different clinics contradict each other**: ALVET record
 | 10.10.2026 | not stated | TENVET 24h; BCS 4/9 |
 | 12.10.2026 | **3.90** (“Waga” field) | LoVet; examination notes say “has lost weight” |
 | 16.10.2026 | 3.90 (“Waga” field) | LoVet; same value as 12.10 |
+| 19.10.2026 | 3.90 (“Waga” field) | LoVet; ⚠️ same field value, while the examination says “has lost weight again”; no new weight recorded |
 
 Overall trend: weight was relatively stable (4.8–5.3 kg) during chemotherapy, with a gradual slight decline towards September 2026. Between 07 and 14.09.2026 it ranged from 4.77 to 4.87 kg. **After 14.09.2026 the decline accelerated: 4.78 → 4.75 (21.09) → 4.6 (23.09) → 4.55 (25.09) → 4.5 kg (26.09)**, i.e. about 6% of body weight in 12 days, with a sharply reduced appetite (⚠️ the phrase “1 teaspoon a day” of 23.09 is the owner’s exaggeration, the actual amount was not measured; the weight loss itself is objective). The scales differ between the three clinics. **05.10.2026 — 4.19 kg**: another −0.3 kg in 9 days after 26.09; from 4.78 kg (14.09) — about −12% in three weeks. **12.10.2026 — 3.90 kg**: another −0.3 kg (−7%) in a week; from 4.78 kg (14.09) — about −18%, from 5.2 kg in July — −25%.
 
@@ -1284,7 +1289,74 @@ After the procedure **discharged home**. Recommendations: further work-up and tr
 - **18.10 — eating, drinking, urinating and defecating** (constipation on 16.10).
 - **Furosemide — back to 3/4 tablet** (as of 18.10). This is the previous dose to which LoVet said on 16.10 to return if breathing sped up; on the evening of 16.10 there was a ~140 ml tap.
 
-**This is the latest date documented in the uploaded materials at the time of this update (18.10.2026).**
+#### 19.10.2026 (Monday), 20:30 — LoVet, dr Agata Drewniak: progression, advised to consider euthanasia; by the owners’ decision — 90 ml tap and carboplatin
+
+Visit summary (“Podsumowanie wizyty”), 2 pages. “Waga” field — 3.90 kg (same value as on 12.10 and 16.10).
+
+Products and services: Comfortan 10 mg/ml (**methadone**) — 0.1; disposables; blood test — LoVet morphology (IDEXX); Glucosum 5% 250 ml — 1; Cerenia 10 mg/ml (20 ml vial) — 1; **Carboplatin Ebewe 10 mg/ml (45 ml vial) — 4.8**; intravenous chemotherapy administration; chest tap. ⚠️ The quantity units on the invoice are not labelled; 4.8 ml of 10 mg/ml concentrate is 48 mg, which matches 200 mg/m² at about 3.9 kg (compiler’s calculation).
+
+**History (per the owners):**
+
+- breathing is bad at the moment;
+- on Thursday (15.10) the sutures were removed — she started eating and drinking on her own; no vomiting;
+- on Friday (16.10) she missed one Palladia dose, on Saturday (17.10) she got it; she was constipated — an enema was given; on Friday — a follow-up blood test;
+- breathing improves after the steroid and furosemide;
+- yesterday (18.10) was a good day, she was active.
+
+**Examination:** **has lost weight again**; **diaphragmatic, laboured breathing**; Varia is dull.
+
+**Vet’s conclusion:** the owners were informed of **disease progression and a poor prognosis**. The vet **advised against the tap** — for the animal’s welfare and because such frequent taps are of doubtful value — and **recommended considering euthanasia at this stage**.
+
+**By the owners’ decision**, under Comfortan, a **chest tap was performed — 90 ml of serosanguineous fluid removed** (side not stated), and **carboplatin 200 mg/m² IV was given as a slow infusion in 5% glucose**.
+
+**Recommendations:**
+
+- medications unchanged;
+- if breathing is bad — consider increasing **furosemide to 1 tablet twice daily** and **the steroid to 1 tablet once daily**.
+
+**IDEXX ProCyte Dx, 19.10.2026, 20:46** (2 pages; page 2 — RBC and WBC scattergrams and the laboratory comment):
+
+| Parameter | Result | Reference | Status | 16.10.2026 |
+| --- | --- | --- | --- | --- |
+| RBC, ×10¹²/l | 9.11 | 6.54–12.20 | Normal | 9.00 |
+| Haematocrit, l/l | 0.327 | 0.303–0.523 | Normal | 0.331 |
+| Haemoglobin, g/l | 100 | 98–162 | Normal (near the lower limit) | 98 |
+| MCV, fl | 35.9 | 35.9–53.1 | At the lower limit | 36.8 |
+| MCH, pg | 11.0 | 11.8–17.3 | **Low** | 10.9 ↓ |
+| MCHC, g/l | 306 | 281–358 | Normal | 296 |
+| RDW, % | 28.2 | 15.0–27.0 | **High** | 28.9 ↑ |
+| Reticulocytes, K/µl | 37.4 (0.4%) | 3.0–50.0 | Normal | 38.7 |
+| Reticulocyte haemoglobin, pg | 13.5 | 13.2–20.8 | Normal | 13.9 |
+| **WBC, ×10⁹/l** | **19.25** | 2.87–17.02 | **High** | 13.95 |
+| **Neutrophils, ×10⁹/l** | **17.38 (90.3%)** | 2.30–10.29 | **High** | 11.86 ↑ |
+| Lymphocytes, ×10⁹/l | 1.14 (5.9%) | 0.92–6.88 | Normal | 1.30 |
+| Monocytes, ×10⁹/l | 0.60 (3.1%) | 0.05–0.67 | Normal | 0.50 |
+| **Eosinophils, ×10⁹/l** | **0.11 (0.6%)** | 0.17–1.57 | **Low** | 0.27 |
+| Basophils, ×10⁹/l | 0.02 (0.1%) | 0.01–0.26 | Normal | 0.02 |
+| **Platelets, ×10⁹/l** | **673** | 151–600 | **High** | 840 ↑ |
+| MPV, fl | 15.6 | 11.4–21.6 | Normal | 16.5 |
+| **Plateletcrit, %** | **1.05** | 0.17–0.86 | **High** | 1.39 ↑ |
+
+**IDEXX laboratory comment** — the same as on 07.10 and 16.10: increased RDW, anisocytosis present, verify on a blood smear. The IDEXX header again says “British Shorthair”, “Female Entire”.
+
+What the 19.10.2026 test shows:
+
+- **Neutrophils 11.86 → 17.38 ×10⁹/l, WBC 13.95 → 19.25 — higher than on 07.10** (15.08 and 17.38); neutrophils 90.3%, eosinophils 0.11 ↓, lymphocytes 1.14 — a stress/inflammatory-type picture; the vet does not comment on it. No neutropenia — this is the baseline before carboplatin.
+- **Haemoglobin 98 → 100 g/l, haematocrit 0.327** — at the 16.10 level, near the lower reference limit; reticulocytes 37.4.
+- **Platelets 840 → 673 ×10⁹/l** — still above the reference range.
+- MCH 11.0 ↓ and RDW 28.2 ↑ — as before.
+
+⚠️ **Weight:** the examination says “has lost weight again”, while the “Waga” field shows the same 3.90 kg as on 12.10 and 16.10; no new value was recorded.
+
+⚠️ **Carboplatin alongside Palladia:** the recommendation “medications unchanged” apparently means Palladia continues. In May–June 2026 the same combination (carboplatin on 18.05 + Palladia) preceded the severe neutropenia of 08.06 (Neu 0.45 ×10⁹/l). The date of a blood check after carboplatin is not given in the document.
+
+⚠️ **Kidneys:** no biochemistry on 19.10. The latest is from 16.10: creatinine 156 (normal), urea 23.7 mmol/l ↑. Carboplatin is excreted by the kidneys; whether kidney function was taken into account when choosing the dose is not stated.
+
+⚠️ **Six taps since 26.09:** 128, 50, 100, 120, ~140 and 90 ml; 19.10 — three days after the previous one.
+
+⚠️ The 19.10 history says the constipation was treated with an enema (“wlewka”); the TENVET history of 16.10 says “a suppository was given”.
+
+**This is the latest date documented in the uploaded materials at the time of this update (20.10.2026).**
 
 ---
 
@@ -1334,6 +1406,7 @@ Treatment began with carboplatin, then the drug was replaced with doxorubicin. T
 | 17.08.2026 | Doxorubicin | 1 mg/kg, 2.4 ml + maropitant | Doxorubicin IV |
 | 07.09.2026 | Doxorubicin | 1 mg/kg, 2.3 ml + maropitant | Doxorubicin V (last dose) |
 | ~28.09.2026 (planned) | Doxorubicin VI | — | **Not given:** on 28.09 doxorubicin was replaced with Palladia |
+| 19.10.2026 | Carboplatin (Carboplatin Ebewe) | 200 mg/m² IV as a slow infusion in 5% glucose; invoice — 4.8 (≈ 48 mg at 10 mg/ml); Cerenia | **By the owners’ decision**, after the oncologist reported progression and recommended considering euthanasia; a 90 ml tap at the same visit. Palladia — “medications unchanged” |
 
 The intervals between doxorubicin doses were strictly 21 days (15.06→06.07→27.07→17.08→07.09) — the numbering I–V is confirmed both by the documents and by the intervals.
 
@@ -1353,6 +1426,7 @@ At the visits of 11.09.2026 (unscheduled, for malaise) and 14.09.2026 (oncology 
 - **12.10.2026 (LoVet)** — “received Palladia today”; another 4 tablets of 10 mg bought.
 - **16.10.2026 (LoVet, lek. wet. Joanna Żak)** — **dose skipped** because of weakness and nausea: it was due on 16.10, the next — on Sunday 18.10 as planned. IDEXX haematology 16.10: neutrophils 11.86 ×10⁹/l — no neutropenia; **platelets 840 ×10⁹/l ↑**.
 - **17.10.2026 (per the owners)** — Palladia given, a day earlier than the scheduled 18.10. In the owners’ observation, it is the only part of the treatment that has an effect.
+- **19.10.2026 (LoVet, dr Drewniak)** — carboplatin 200 mg/m² given; “medications unchanged” — Palladia apparently continues together with carboplatin, as in May 2026. Neutrophils 17.38 ×10⁹/l ↑, platelets 673 ↑.
 
 ---
 
@@ -1426,7 +1500,7 @@ The full LoVet biochemistry form of **14.09.2026, 16:18** (serum) also includes:
 - **Glucose 16.47 mmol/l on 10.07.2026** — much higher than the other measurements; probably marked stress hyperglycaemia (that day also had severe stress, pain, a radiograph under sedation) — but a single value cannot exclude other causes.
 - **Low phosphorus (0.62) on 10.07.2026** — an unusual finding given the suspected kidney problems; its clinical significance cannot be established from the documents.
 
-#### 8.4. IDEXX Haematology — 02.09, 07.09, 14.09, 07.10 and 16.10.2026
+#### 8.4. IDEXX Haematology — 02.09, 07.09, 14.09, 07.10, 16.10 and 19.10.2026
 
 Between these two dates the following were noted: a decrease in RBC, HCT, HGB; a decrease in MCH; an increase in RDW; reticulocytosis; an increase in WBC, neutrophils and monocytes. The full numbers are in the original laboratory forms (Photos 011–012, 016–017); when preparing for a consultation it is advisable to check against the originals of these two reports.
 
@@ -1464,22 +1538,22 @@ What follows from the 14.09.2026 form:
 - **Lymphopenia 0.83 ×10⁹/l** — expected with corticosteroids and chemotherapy.
 - The vet’s wording on the 14.09.2026 record — “CBC without significant abnormalities” — broadly matches the form, if the isolated MCH, RDW and thrombocytosis are regarded as insignificant.
 
-**IDEXX ProCyte Dx of 07.10.2026, 19:54 and 16.10.2026, 12:33** (2 pages each) — in full in sect. 4 (entries of 07.10 and 16.10). Alongside 14.09:
+**IDEXX ProCyte Dx of 07.10.2026, 19:54, 16.10.2026, 12:33 and 19.10.2026, 20:46** (2 pages each) — in full in sect. 4 (entries of 07.10 and 16.10). Alongside 14.09:
 
-| Parameter | Reference | 14.09.2026 | 07.10.2026 | 16.10.2026 |
-| --- | --- | --- | --- | --- |
-| RBC, ×10¹²/l | 6.54–12.20 | 10.27 | 10.99 | 9.00 |
-| Haematocrit, l/l | 0.303–0.523 | 0.38 | 0.394 | 0.331 |
-| Haemoglobin, g/l | 98–162 | 114 | 121 | 98 (lower limit) |
-| MCH, pg | 11.8–17.3 | 11.1 ↓ | 11.0 ↓ | 10.9 ↓ |
-| RDW, % | 15.0–27.0 | 31.4 ↑ | 31.2 ↑ | 28.9 ↑ |
-| Reticulocytes, K/µl | 3.0–50.0 | 20.5 | 15.4 | 38.7 |
-| WBC, ×10⁹/l | 2.87–17.02 | 6.67 | **17.38 ↑** | 13.95 |
-| Neutrophils, ×10⁹/l | 2.30–10.29 | 5.09 | **15.08 ↑** | **11.86 ↑** |
-| Lymphocytes, ×10⁹/l | 0.92–6.88 | 0.83 ↓ | 1.19 | 1.30 |
-| Platelets, ×10⁹/l | 151–600 | 700 ↑ | 550 | **840 ↑** |
+| Parameter | Reference | 14.09.2026 | 07.10.2026 | 16.10.2026 | 19.10.2026 |
+| --- | --- | --- | --- | --- | --- |
+| RBC, ×10¹²/l | 6.54–12.20 | 10.27 | 10.99 | 9.00 | 9.11 |
+| Haematocrit, l/l | 0.303–0.523 | 0.38 | 0.394 | 0.331 | 0.327 |
+| Haemoglobin, g/l | 98–162 | 114 | 121 | 98 (lower limit) | 100 |
+| MCH, pg | 11.8–17.3 | 11.1 ↓ | 11.0 ↓ | 10.9 ↓ | 11.0 ↓ |
+| RDW, % | 15.0–27.0 | 31.4 ↑ | 31.2 ↑ | 28.9 ↑ | 28.2 ↑ |
+| Reticulocytes, K/µl | 3.0–50.0 | 20.5 | 15.4 | 38.7 | 37.4 |
+| WBC, ×10⁹/l | 2.87–17.02 | 6.67 | **17.38 ↑** | 13.95 | **19.25 ↑** |
+| Neutrophils, ×10⁹/l | 2.30–10.29 | 5.09 | **15.08 ↑** | **11.86 ↑** | **17.38 ↑** |
+| Lymphocytes, ×10⁹/l | 0.92–6.88 | 0.83 ↓ | 1.19 | 1.30 | 1.14 |
+| Platelets, ×10⁹/l | 151–600 | 700 ↑ | 550 | **840 ↑** | **673 ↑** |
 
-07.10 — neutrophilia on Palladia, without neutropenia; red-cell values stable. The laboratory comments directly on RDW for the first time: anisocytosis, blood smear recommended (not done). **16.10 — haemoglobin fell to the lower limit (98 g/l), haematocrit 0.331; reticulocytes rose to 38.7; platelets 840 — the highest on record**; less neutrophilia than on 07.10. The laboratory’s comment on anisocytosis is repeated.
+07.10 — neutrophilia on Palladia, without neutropenia; red-cell values stable. The laboratory comments directly on RDW for the first time: anisocytosis, blood smear recommended (not done). **16.10 — haemoglobin fell to the lower limit (98 g/l), haematocrit 0.331; reticulocytes rose to 38.7; platelets 840 — the highest on record**; less neutrophilia than on 07.10. The laboratory’s comment on anisocytosis is repeated. **19.10 — neutrophils 17.38 and WBC 19.25 — higher than on 07.10**; haemoglobin 100, platelets 673; sample taken on the day carboplatin was given.
 
 #### 8.5. Data before chemotherapy (2025) — for reference
 
@@ -1499,16 +1573,16 @@ What follows from the 14.09.2026 form:
 
 | Drug | Period / start date | Comment |
 | --- | --- | --- |
-| Carboplatin (Carboplatin Ebewe) | 18.05.2026 (single dose) | Chemotherapy, 200 mg/m² in glucose; repeat dose cancelled because of neutropenia |
+| Carboplatin (Carboplatin Ebewe) | 18.05.2026; **again 19.10.2026** | Chemotherapy, 200 mg/m² in glucose; the June repeat dose cancelled because of neutropenia. **19.10.2026 — 200 mg/m² IV as a slow infusion in 5% glucose**, by the owners’ decision after the oncologist recommended considering euthanasia; Palladia — “unchanged” |
 | Doxorubicin | 15.06.2026 – 07.09.2026, every 21 days | Chemotherapy, 1 mg/kg; 5 doses given. Replaced with Palladia on 28.09.2026, dose VI not given |
-| Palladia (toceranib) | 13.04.2026 – 08.06.2026; **again from 28.09.2026** | 28.09.2026: 10 mg Mon/Wed, if no side effects — 15 mg Fri/Mon; recheck in a week. 07.10.2026 — one-day pause, then 10 mg again. 10.10.2026 (TENVET history): “two weeks, 10 mg per cat”; no neutropenia. Earlier: 10 mg → 15 mg (11.05) → 10 mg (from 25.05), Mon/Wed/Fri; given together with the first carboplatin dose on 18.05.2026. After the severe neutropenia of 08.06.2026, per the owner, both carboplatin and Palladia were stopped; doxorubicin started on 15.06, after which Palladia was not used. ⚠️ The purchase of Palladia 10 mg on 08.06 confirms the drug in the documents but does not prove it was actually given afterwards. 12.10.2026 — given, another 4 tablets of 10 mg bought. **16.10.2026 — dose skipped** because of weakness and nausea; the next was due on 18.10; **per the owners, given on 17.10** — in their observation, only Palladia works; neutrophils 11.86, platelets 840 ↑. |
-| Prednicortone / prednisolone | from ~27.04.2026 | 5 mg/day → 7.5 mg (1.5 tablets) from 15.06 → 5 mg from 17.08 → 3/4 tablet from 07.09.2026 → again 1 whole tablet (5 mg) from 11.09.2026 → again 3/4 tablet from 21.09.2026 → **from 28.09.2026 — 3/4 tablet alternating with 1 tablet, once daily** (10 tablets bought). The dose reduction in August–September was partly on the ophthalmologist’s recommendation; the return to 5 mg on 11.09 is not linked to the eye problem in the documents. On 23.09.2026 the LoVet vet considered that the reduction on 21.09 may have increased fluid accumulation in the chest, but noted the steroid’s harm to the stomach; the ophthalmologist on the same day named steroid therapy as a factor reducing the chance of surgical success. 12.10 — another 10 tablets bought, regimen unchanged. 16.10 at 18:40 the owner gave Prednicortone because of rapid breathing (whether this was the scheduled dose is not stated). |
-| Furosemide | 29.04.2026 – 27.07.2026; ⚠️ **resumed 13–14.09.2026** | Used for episodes of rapid breathing/pleural effusion. Was considered completely stopped from 27.07.2026 — **this statement is no longer valid**: the note of 14.09.2026 records per the owner “furosemide 10 mg, 1/4 tablet given”, as needed. 27.09 given by the owners; **28.09 — 1 mg/kg SC at the clinic, in the evening — as a tablet as recommended by dr Drewniak**. **Until 03.10 — 5 mg once daily in the morning; from 04.10 — 1/2 tablet twice daily** (on 05.10, per the owners, the morning dose “didn’t work”); **05.10 — 3/4 tablet of Furosoral 10 mg three times daily** (~22.5 mg/day); **07.10 (creatinine 250): none on 08.10, from 09.10 — 3/4 tablet twice daily**. 10.10 — “at a low dose”, the last at home at about 01:00; in the morning at TENVET given at a maintenance dose as prescribed by the primary vet. Earlier the documents mention Libeo/Furosoral/furosemide at doses varied according to breathing and the volume of pleural effusion. **12.10 — 3/4 tablet twice daily** (on 09.10 the owner tried 1/4 tablet; 40 tablets of Furosoral 10 mg bought). **16.10 (LoVet) — reduced to 1/2 tablet twice daily**; if breathing speeds up worryingly — back to 3/4 tablet twice daily and an ultrasound. On the evening of 16.10 — RR 44–46/min and a ~140 ml thoracocentesis at TENVET. **Per the owners, as of 18.10 — back to 3/4 tablet.** |
+| Palladia (toceranib) | 13.04.2026 – 08.06.2026; **again from 28.09.2026** | 28.09.2026: 10 mg Mon/Wed, if no side effects — 15 mg Fri/Mon; recheck in a week. 07.10.2026 — one-day pause, then 10 mg again. 10.10.2026 (TENVET history): “two weeks, 10 mg per cat”; no neutropenia. Earlier: 10 mg → 15 mg (11.05) → 10 mg (from 25.05), Mon/Wed/Fri; given together with the first carboplatin dose on 18.05.2026. After the severe neutropenia of 08.06.2026, per the owner, both carboplatin and Palladia were stopped; doxorubicin started on 15.06, after which Palladia was not used. ⚠️ The purchase of Palladia 10 mg on 08.06 confirms the drug in the documents but does not prove it was actually given afterwards. 12.10.2026 — given, another 4 tablets of 10 mg bought. **16.10.2026 — dose skipped** because of weakness and nausea; the next was due on 18.10; **per the owners, given on 17.10** — in their observation, only Palladia works; neutrophils 11.86, platelets 840 ↑. **19.10.2026 — “medications unchanged”** when carboplatin was given; neutrophils 17.38 ↑. |
+| Prednicortone / prednisolone | from ~27.04.2026 | 5 mg/day → 7.5 mg (1.5 tablets) from 15.06 → 5 mg from 17.08 → 3/4 tablet from 07.09.2026 → again 1 whole tablet (5 mg) from 11.09.2026 → again 3/4 tablet from 21.09.2026 → **from 28.09.2026 — 3/4 tablet alternating with 1 tablet, once daily** (10 tablets bought). The dose reduction in August–September was partly on the ophthalmologist’s recommendation; the return to 5 mg on 11.09 is not linked to the eye problem in the documents. On 23.09.2026 the LoVet vet considered that the reduction on 21.09 may have increased fluid accumulation in the chest, but noted the steroid’s harm to the stomach; the ophthalmologist on the same day named steroid therapy as a factor reducing the chance of surgical success. 12.10 — another 10 tablets bought, regimen unchanged. 16.10 at 18:40 the owner gave Prednicortone because of rapid breathing (whether this was the scheduled dose is not stated). **19.10 (LoVet): if breathing is bad — consider increasing to 1 tablet once daily.** |
+| Furosemide | 29.04.2026 – 27.07.2026; ⚠️ **resumed 13–14.09.2026** | Used for episodes of rapid breathing/pleural effusion. Was considered completely stopped from 27.07.2026 — **this statement is no longer valid**: the note of 14.09.2026 records per the owner “furosemide 10 mg, 1/4 tablet given”, as needed. 27.09 given by the owners; **28.09 — 1 mg/kg SC at the clinic, in the evening — as a tablet as recommended by dr Drewniak**. **Until 03.10 — 5 mg once daily in the morning; from 04.10 — 1/2 tablet twice daily** (on 05.10, per the owners, the morning dose “didn’t work”); **05.10 — 3/4 tablet of Furosoral 10 mg three times daily** (~22.5 mg/day); **07.10 (creatinine 250): none on 08.10, from 09.10 — 3/4 tablet twice daily**. 10.10 — “at a low dose”, the last at home at about 01:00; in the morning at TENVET given at a maintenance dose as prescribed by the primary vet. Earlier the documents mention Libeo/Furosoral/furosemide at doses varied according to breathing and the volume of pleural effusion. **12.10 — 3/4 tablet twice daily** (on 09.10 the owner tried 1/4 tablet; 40 tablets of Furosoral 10 mg bought). **16.10 (LoVet) — reduced to 1/2 tablet twice daily**; if breathing speeds up worryingly — back to 3/4 tablet twice daily and an ultrasound. On the evening of 16.10 — RR 44–46/min and a ~140 ml thoracocentesis at TENVET. **Per the owners, as of 18.10 — back to 3/4 tablet.** **19.10 (LoVet): if breathing is bad — consider increasing to 1 tablet twice daily.** |
 | Gabapentin 100 mg | from 13.06.2026 (formalised) | Initially — 2 hours before stressful clinic visits. Per the note of 11.09.2026 it is already used continuously: half a capsule once daily. ⚠️ The ophthalmologist’s note of 10.09.2026 gives **pregabalin** instead of gabapentin — which of the two is actually given cannot be resolved from the documents |
 | Bonqat 50 mg/ml (**pregabalin**, veterinary, for cats) | 07.10.2026 | Dispensed/used at LoVet — 0.4 pack (usually for stress before visits). ⚠️ Whether it replaces gabapentin is not stated. 15.10.2026 — at a reduced dose before suture removal at Retina. |
 | Nefrokrill Gatto | from 07.10.2026 | Feed supplement for renal support; 10 capsules dispensed for home after the creatinine jump |
 | Cyklonamina 250 mg (**etamsylate**) | from 11.05.2026 | 1/4 tablet twice daily. 10.10.2026 the tablet could not be given at home — at TENVET Cyclonamine 12.5% was given by injection, 1 ampoule. 12.10.2026 — injectable form dispensed (Cyclonamina 12.5%, 25 mg/2 ml) — 2 ampoules; who gives it at home and how is not stated. |
-| Cerenia, maropitant | accompanies chemotherapy | Antiemetic with chemotherapy |
+| Cerenia, maropitant | accompanies chemotherapy | Antiemetic with chemotherapy; 19.10.2026 — with carboplatin (Cerenia 10 mg/ml, invoice: 1 vial of 20 ml) |
 | Veraflox | from ~08.06.2026, later for eye signs | Antibiotic |
 | Varenzin 23.3 mg/ml (**molidustat**) | 19.08.2026 – 07.09.2026 | 1 ml once daily. An anti-anaemic drug increasing endogenous erythropoietin production; authorised for non-regenerative anaemia associated with CKD in cats. The vet did not state a reason for prescribing it; stopped on 07.09.2026 |
 | Famogast/Ranigast (famotidine) | 19.08.2026; 21.09.2026 | 19.08 — 20 mg, regimen not described. 21.09 — 1/4 tablet twice daily as part of the treatment of gastritis. ⚠️ Not mentioned in the prescriptions of 23.09.2026 |
@@ -1520,7 +1594,7 @@ What follows from the 14.09.2026 form:
 | Dicopeg, Fiberactiv | 10.07.2026; Dicopeg also 03.10 and 12–14.10.2026 | Laxatives/fibre for constipation. 16.10.2026 — Dicopeg recommended again together with Dulcobis |
 | Dulcobis (**bisacodyl**) | recommended 16.10.2026 | Laxative for constipation (16.10 — hard faeces in the rectum); TENVET history of 16.10 — “a suppository was given”, after which she passed stool |
 | Metoclopramide (Metoclopramidum 5 mg/ml) | 16.10.2026 | 0.25 mg/kg SC at the clinic for nausea and difficulty swallowing; on 05.10 it was suggested as the next step if Zofran did not help |
-| Comfortan 10 mg/ml (**methadone**) | 10.07.2026; 07.10.2026 | Opioid analgesic; used as part of drug support for an examination/sedation |
+| Comfortan 10 mg/ml (**methadone**) | 10.07.2026; 07.10.2026; 19.10.2026 | Opioid analgesic; used as part of drug support for an examination/sedation. 19.10 — 0.1 (per invoice) before the chest tap |
 | Propomitor 10 mg/ml (**propofol**) | 06.07.2026 (single) | Intravenous drug for induction/maintenance of general anaesthesia |
 | Libeo 10 mg (**furosemide**) | from 29.04.2026; actually stopped from 27.07.2026 | 1/2 tablet in the morning = 5 mg furosemide. The authorised target species is dogs; used off-label in Varia |
 | Neoplazmaxan | ~02.02.2026 | Composition and exact purpose not established from the documents |
@@ -1631,6 +1705,8 @@ The reference to a “cardiology visit on 02.09.2026” in the ophthalmologist�
 
 **16.10.2026 (LoVet)** — nausea before dawn, difficulty swallowing, lip-licking (Zofran 2 mg); ate and drank in the morning, but weaker. Urinated a lot overnight, did not urinate in the litter box in the morning. Last stool 14.10 — small, fairly soft and moist. **Abdomen soft, a lot of faeces in the rectum, rectally — hard faeces (constipation).** Metoclopramide SC; Dicopeg and Dulcobis recommended; the Palladia dose skipped. **Urea 23.7 mmol/l (the highest) with creatinine 156 (normal), BUN/CRE 38**; amylase 2145 ↑; liver values normal. In the evening at TENVET: after the drugs for constipation she passed stool, but breathing worsened — thoracocentesis ~140 ml. ⚠️ fPL still not done.
 
+**19.10.2026 (LoVet)** — per the owners, after the sutures were removed on 15.10 she started eating and drinking on her own, no vomiting; constipation was treated with an enema. On examination — **has lost weight again** (no new weight recorded). Cerenia — with carboplatin. No biochemistry.
+
 Separately — **02–04.03.2026**, the radiographs themselves were received (without a vet’s report), showing a large heterogeneous structure in the abdominal/lumbar region — they need to be read by a radiologist (see section 4 and section 15).
 
 ---
@@ -1650,23 +1726,25 @@ Separately — **02–04.03.2026**, the radiographs themselves were received (wi
 
 ---
 
-## 14. Status as of the latest documented date (16.10.2026)
+## 14. Status as of the latest documented date (19.10.2026)
 
-- **General condition (per the owners, 17–18.10):** after the 16.10 tap, furosemide and Palladia — RR 26–28 while awake; eating, drinking, urinating and defecating.
+- **19.10.2026, LoVet (dr Agata Drewniak):** has lost weight again, diaphragmatic laboured breathing, dull. The oncologist reported **disease progression and a poor prognosis**, advised against a tap and **recommended considering euthanasia at this stage**. **By the owners’ decision** — a 90 ml tap of serosanguineous fluid under Comfortan and **carboplatin 200 mg/m² IV** in 5% glucose. Medications unchanged; if breathing is bad — consider furosemide 1 tablet twice daily and the steroid 1 tablet once daily. Blood (IDEXX): WBC 19.25 ↑, neutrophils 17.38 ↑, eosinophils 0.11 ↓, haemoglobin 100 g/l, platelets 673 ↑; no biochemistry. The date of the next check is not given.
+- **General condition (per the owners, 17–19.10):** after the 16.10 tap, furosemide and Palladia — RR 26–28 while awake; eating, drinking, urinating and defecating. 18.10 — a good day, active; 19.10 — bad breathing again.
 - **General condition per the documents:** 12.10 — slightly better, interested in her surroundings, jumping, RR at home up to 30. **Morning of 16.10** — weakness, nausea, difficulty swallowing, constipation; temperature 38.2 °C, lymph nodes not enlarged, auscultation — no significant changes; RR at home 32–34, thoracic breathing. **Evening of 16.10** — RR up to 40, at 18:40 — 44–46/min; TENVET 24h: about an hour in an oxygen cage, thoracocentesis, discharged home. TENVET prognosis of 10.10 — guarded (including a risk of pulmonary thromboembolism); on 07.10 the LoVet oncologist reported a poor prognosis.
-- **Pleural effusion:** 26.09 — 128 ml; 28.09 — 50 ml on the right; 07.10 — 100 ml on the right; 10.10 — 120 ml; **16.10 — ~140 ml (60 ml right, 80 ml left)**, haemorrhagic fluid. 12.10 on LoVet ultrasound — fluid 1.6–2 cm. Per the 25.09 anaesthesia record — also a tap on 24.09 (no document). Threshold for an urgent visit — RR 40/min or more, open-mouth breathing, marked weakness.
-- **Next step:** LoVet recheck “next week” (recommendation of 12.10) with a decision on repeating Convenia; agree the day of the next Palladia dose (last given 17.10); Retina recheck — by ~29.10.
+- **Pleural effusion:** 26.09 — 128 ml; 28.09 — 50 ml on the right; 07.10 — 100 ml on the right; 10.10 — 120 ml; **16.10 — ~140 ml (60 ml right, 80 ml left)**, haemorrhagic fluid. 12.10 on LoVet ultrasound — fluid 1.6–2 cm. Per the 25.09 anaesthesia record — also a tap on 24.09 (no document). Threshold for an urgent visit — RR 40/min or more, open-mouth breathing, marked weakness. **19.10 — 90 ml** of serosanguineous fluid (LoVet).
+- **Next step:** the date of a check after the 19.10 carboplatin (blood, kidneys) is not given in the document — to be clarified with the oncologist; repeating Convenia (recommendation of 12.10) was not mentioned on 19.10; Retina recheck — by ~29.10.
 - **Eyes:** 15.10 at Retina — sutures removed; corneas clearer, IOP 13 / 14 mmHg, no discomfort, menace and dazzle responses preserved. Drops: Vigamox 4× daily, Vital Drop 3× daily, serum with Optixcare 4× daily, Optixcare 4× daily. The 21.09 culture result not received.
 - **GI and nutrition:** eating a little, home-cooked food (tuna, liver, chicken); drinks on her own morning and evening. 16.10 — nausea (Zofran, metoclopramide SC), constipation — Dicopeg and Dulcobis. **18.10, per the owners:** eating, drinking, urinating and defecating.
-- **Oncology:** doxorubicin stopped after dose V (07.09.2026); **from 28.09.2026 — Palladia** 10 mg, every other day from 05.10; 07.10 — one-day pause; **16.10 — dose skipped, given on 17.10** (per the owners; in their observation, it is the only part of the treatment that works). 05.10 — 0.78 × 0.65 cm liver lesion, “possible metastasis”; chest ultrasound — “worse picture”, right lung collapse. 26.09 — ~1 × 1.5 cm mass in the thorax; 21.09 — 0.46 cm subcutaneous mass in the abdominal region.
-- **Latest tests — 16.10.2026 (LoVet + IDEXX):** creatinine 156 (normal), **urea 23.7 ↑ (the highest)**, BUN/CRE 38; amylase 2145 ↑, glucose 8.90 ↑, cholesterol 6.73 ↑; potassium 4.71, sodium 148, phosphorus 1.20; liver values normal. WBC 13.95, neutrophils 11.86 ↑, lymphocytes 1.30; **haemoglobin 98 g/l (lower limit)**, haematocrit 0.331, RBC 9.00; reticulocytes 38.7; MCH 10.9 ↓, RDW 28.9 ↑; **platelets 840 ↑**.
+- **Oncology:** doxorubicin stopped after dose V (07.09.2026); **from 28.09.2026 — Palladia** 10 mg, every other day from 05.10; 07.10 — one-day pause; **16.10 — dose skipped, given on 17.10** (per the owners; in their observation, it is the only part of the treatment that works). 05.10 — 0.78 × 0.65 cm liver lesion, “possible metastasis”; chest ultrasound — “worse picture”, right lung collapse. 26.09 — ~1 × 1.5 cm mass in the thorax; 21.09 — 0.46 cm subcutaneous mass in the abdominal region. **19.10 — carboplatin 200 mg/m²**, Palladia — “unchanged”; the oncologist states progression.
+- **Haematology 19.10.2026 (IDEXX):** WBC 19.25 ↑, neutrophils 17.38 ↑ (90.3%), lymphocytes 1.14, eosinophils 0.11 ↓; haemoglobin 100 g/l, haematocrit 0.327; MCH 11.0 ↓, RDW 28.2 ↑; platelets 673 ↑.
+- **Latest biochemistry and haematology — 16.10.2026 (LoVet + IDEXX):** creatinine 156 (normal), **urea 23.7 ↑ (the highest)**, BUN/CRE 38; amylase 2145 ↑, glucose 8.90 ↑, cholesterol 6.73 ↑; potassium 4.71, sodium 148, phosphorus 1.20; liver values normal. WBC 13.95, neutrophils 11.86 ↑, lymphocytes 1.30; **haemoglobin 98 g/l (lower limit)**, haematocrit 0.331, RBC 9.00; reticulocytes 38.7; MCH 10.9 ↓, RDW 28.9 ↑; **platelets 840 ↑**.
 - **Previous tests:** 10.10 (TENVET) — creatinine ≈ 159, urea ≈ 11.4, signs of dehydration (RBC 13.31 ↑, Hb 16.2 ↑), lymphocytes 0.44 ↓, chloride 106.8 ↓, lactate 2.47 ↑. 07.10 (LoVet) — creatinine 250 ↑, urea 16.5 ↑; IDEXX — neutrophils 15.08 ↑, haemoglobin 121.
-- **Furosemide:** from 09.10 — 3/4 tablet twice daily (on 09.10 the owner tried 1/4 tablet); **morning of 16.10 — reduced to 1/2 tablet twice daily**, if breathing speeds up — back to 3/4 tablet and an ultrasound; that evening — a ~140 ml tap. **Per the owners, as of 18.10 — back to 3/4 tablet.**
-- **Steroid:** latest prescription — 28.09.2026: 3/4 tablet alternating with 1 tablet (5 mg), once daily. On 16.10 at 18:40 the owner gave Prednicortone because of rapid breathing.
+- **Furosemide:** from 09.10 — 3/4 tablet twice daily (on 09.10 the owner tried 1/4 tablet); **morning of 16.10 — reduced to 1/2 tablet twice daily**, if breathing speeds up — back to 3/4 tablet and an ultrasound; that evening — a ~140 ml tap. **Per the owners, as of 18.10 — back to 3/4 tablet.** 19.10 — if breathing is bad, consider 1 tablet twice daily.
+- **Steroid:** latest prescription — 28.09.2026: 3/4 tablet alternating with 1 tablet (5 mg), once daily. On 16.10 at 18:40 the owner gave Prednicortone because of rapid breathing. 19.10 — if breathing is bad, consider 1 tablet once daily.
 - **Kidneys:** Nefrokrill Gatto since 07.10.
 - **Analgesia:** latest prescription — buprenorphine (Bupaq) transmucosally; on 16.10 at the clinic — butorphanol 0.2 ml.
 - **Cyklonamina (etamsylate):** on 12.10 the injectable form was dispensed — 2 ampoules.
-- **Weight:** **3.90 kg (12.10.2026; 16.10 — same value)**; 05.10 — 4.19 kg, 26.09 — 4.5 kg, 14.09 — 4.78 kg, July — 5.2 kg. 10.10 — BCS 4/9.
+- **Weight:** **3.90 kg (12.10.2026; 16.10 and 19.10 — same field value)**; on 19.10 the examination says “has lost weight again”; 05.10 — 4.19 kg, 26.09 — 4.5 kg, 14.09 — 4.78 kg, July — 5.2 kg. 10.10 — BCS 4/9.
 - **Urine (21.09.2026):** no proteinuria or haematuria (UPC 0.164), specific gravity 1.027.
 - **Other:** 16.10 — a small dry lesion in the middle of the nose, possibly an injury; oral cavity heavily pigmented. The thoracic spine pain (02.09.2026) is not mentioned in records after 02.09.
 
@@ -1679,7 +1757,9 @@ The full list of discrepancies between documents and unresolved clinical questio
 
 #### Needing clinical attention
 
-- **The pleural effusion reaccumulates within a few days:** 26.09 — 128 ml (bilateral thoracocentesis), 28.09 — 50 ml on the right only (the left side was not tapped because the cat was restless), 07.10 — 100 ml on the right (LoVet), **10.10 — 120 ml** (TENVET 24h), **16.10 — ~140 ml** (TENVET 24h, 60 ml right and 80 ml left); per the anaesthesia record — also a tap on 24.09. Five taps in three weeks, volumes not decreasing. There is no standing plan (criteria, place, frequency of taps, drain) in the documents. On the night of 10.10 the owners consented only to conservative treatment; the tap was done in the morning after two phone calls — a decision agreed in advance (where and at what threshold to tap) would have shortened the delay. Both of the last taps were done at TENVET rather than by the primary vet.
+- **The pleural effusion reaccumulates within a few days:** 26.09 — 128 ml (bilateral thoracocentesis), 28.09 — 50 ml on the right only (the left side was not tapped because the cat was restless), 07.10 — 100 ml on the right (LoVet), **10.10 — 120 ml** (TENVET 24h), **16.10 — ~140 ml** (TENVET 24h, 60 ml right and 80 ml left); per the anaesthesia record — also a tap on 24.09. Five taps in three weeks, volumes not decreasing. There is no standing plan (criteria, place, frequency of taps, drain) in the documents. On the night of 10.10 the owners consented only to conservative treatment; the tap was done in the morning after two phone calls — a decision agreed in advance (where and at what threshold to tap) would have shortened the delay. Both of the last taps were done at TENVET rather than by the primary vet. **19.10 — sixth tap, 90 ml** (LoVet), three days after the previous one; the oncologist did not recommend it for the animal’s welfare and because such frequent taps are of doubtful value; it was done by the owners’ decision.
+- **19.10.2026 — progression, advice to consider euthanasia; by the owners’ decision carboplatin 200 mg/m² was given.** The document gives no criteria for judging the effect, no date for a blood and kidney check and no plan for worsening breathing. Palladia apparently continues (“medications unchanged”) — in May–June this combination preceded severe neutropenia (Neu 0.45 on 08.06). No biochemistry before the infusion; 16.10 — urea 23.7 ↑, creatinine 156; carboplatin is excreted by the kidneys.
+- **Neutrophilia on 19.10: 17.38 ×10⁹/l, WBC 19.25** — higher than on 07.10; eosinophils 0.11 ↓; not commented on by the vet.
 - **TENVET prognosis of 10.10.2026 — guarded**, with explicit mention of a risk of pulmonary thromboembolism. On T-FAST — compression atelectasis of the ventral lung fields, pleura fragmented and irregular; not previously described in these words — can only be compared with earlier TFAST studies using the images.
 - **Kidneys: creatinine 250 µmol/l and urea 16.5 mmol/l on 07.10.2026**; 10.10 (TENVET, different analyser) — about 159 and 11.4; **16.10 (LoVet) — creatinine 156 (normal), but urea 23.7 mmol/l — the highest on record, BUN/CRE 38.** The cause of the 07.10 jump and of the urea rise by 16.10 is not named in the documents. Urea rising with normal creatinine can occur with dehydration, a high-protein diet (currently tuna, liver, chicken), steroids and gastrointestinal bleeding; on 16.10 the vet only states “urea has increased”.
 - **Haemoglobin 121 → 98 g/l** (IDEXX, 07.10 → 16.10; lower limit of the reference range), haematocrit 0.394 → 0.331; reticulocytes 15.4 → 38.7. Between the tests — taps of 100 and 120 ml of haemorrhagic fluid. The vet called the CBC “stable”; the decrease is not commented on.
@@ -1738,7 +1818,8 @@ The full list of discrepancies between documents and unresolved clinical questio
 - **The “Waga” field on LoVet forms** shows 4.87 kg in three documents in a row (14.09, 21.09, 23.09.2026), whereas the examination notes give 4.78, 4.75 and 4.6 kg. The field was apparently not updated; the weight from the examination notes should be used. On 07.10.2026 the field shows a new value for the first time — 4.19 kg.
 - IDEXX forms of 07.10 and 16.10.2026: “British Shorthair”, “Female Entire” — technical errors (the cat is longhaired and spayed).
 - LoVet ultrasound of 12.10.2026: “fluid level 1.6–2” — no units (per the owners, cm) and no side.
-- LoVet “Waga” field: 3.90 kg on both 12.10 and 16.10.2026; on 12.10 the examination says “has lost weight”, so she apparently was weighed; whether she was weighed on 16.10 is unclear.
+- LoVet “Waga” field: 3.90 kg on 12.10, 16.10 and 19.10.2026; on 12.10 the examination says “has lost weight”, so she was apparently weighed; whether she was weighed on 16.10 is unclear; on 19.10 the examination says “has lost weight again”, but the field still shows 3.90.
+- IDEXX form of 19.10.2026 — again “British Shorthair”, “Female Entire”. The quantity units on the LoVet invoice of 19.10 are not labelled (Comfortan 0.1, Carboplatin 4.8).
 - The TENVET record of 16.10.2026 is in the name of Huliaiev Dmytro (as on 10.10); on the Retina record of 15.10 the owner is Grakova Karina.
 - The LoVet visit of 23.09.2026 exists in **two printouts** with the same text but different product lists (Bunondol + Mirataz + Cerenia 0.4 versus a whole 20 ml Cerenia).
 - **The handwritten note with the anaesthesia protocol** (dexmedetomidine, methadone, possibly ketamine, propofol, isoflurane) — without date, signature or clinic name; assigned to 23.09.2026 from the context of the batch. The Retina anaesthesia record of 25.09.2026 confirms this protocol (without ketamine).
@@ -1811,6 +1892,7 @@ All documents arrived as photographs taken by the owner and were numbered as the
 | 13th | IMG_6430–6435 (6 files) | 10.10.2026 | IMG_6430–6431 — TENVET 24h, 10.10 02:53, night visit and admission to an oxygen cage (2 pages); IMG_6432–6435 — TENVET 24h, 10.10 09:40, morning examination, biochemistry, blood gases, haematology, 120 ml thoracocentesis, discharge (4 pages) |
 | 14th | IMG_6401–6404 (4 files) | 07.10.2026 | IMG_6401 — LoVet biochemistry printout 07.10, 19:52; IMG_6402–6403 — LoVet 07.10, 20:00, urgent visit, 100 ml tap (2 pages); IMG_6404 — IDEXX Haematology 07.10, 19:54 (page 1 of 2). Separately (screenshots in chat) — a repeat of page 1 and page 2 with the laboratory comment on anisocytosis; **LoVet visit of 05.10.2026, 2 pages** (screenshots). Arrived after the 13th batch, although earlier by file numbering |
 | 15th | IMG_6505–6513 (9 files) | 12.10 – 16.10.2026 | IMG_6505 — LoVet biochemistry printout 16.10, 12:41 (on top of IDEXX page 1); IMG_6506–6507 — IDEXX Haematology 16.10, 12:33 (2 pages); IMG_6508–6509 — LoVet 12.10, 20:30, recheck after TENVET (2 pages; page 2 photographed upside down); IMG_6510 — Retina 15.10, suture removal (page 1 of 2); IMG_6511–6512 — LoVet 16.10, 12:00 (2 pages); IMG_6513 — TENVET 24h 16.10, 20:23, ~140 ml thoracocentesis |
+| 16th | IMG_6533–6536 (4 files) | 19.10.2026 | IMG_6533–6534 — LoVet 19.10, 20:30, dr Agata Drewniak: progression, advice to consider euthanasia, 90 ml tap, carboplatin (2 pages); IMG_6535–6536 — IDEXX Haematology 19.10, 20:46 (2 pages) |
 
 Detailed page-by-page tables for each batch (with the exact file, document date, type and clinic for each photo) are kept in the working draft of the chronology and can be provided on request.
 
@@ -1820,7 +1902,7 @@ Detailed page-by-page tables for each batch (with the exact file, document date,
 
 The report was compiled from photographs of documents provided by the cat’s owner, without direct involvement of a vet in its preparation. A request to any specialist using this document: when making clinical decisions, rely on the original documents where possible, especially for verbatim quotations from histology reports (marked as needing verification) and lay descriptions of images (the radiographs in section 4).
 
-The document may be supplemented as new materials and medical records arrive. The latest addition — 18.10.2026, batch IMG_6505–6513 (LoVet 12.10 and 16.10, IDEXX 16.10, Retina 15.10, TENVET 24h 16.10.2026).
+The document may be supplemented as new materials and medical records arrive. The latest addition — 20.10.2026, batch IMG_6533–6536 (LoVet 19.10 and IDEXX 19.10.2026).
 
 This English version is a translation of the Russian original; in case of doubt, the Russian text and the original documents take precedence.
 

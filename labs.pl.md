@@ -2,9 +2,9 @@
 
 ### Badania w dynamice
 
-*Dane: 24.06.2025 – 16.10.2026*
+*Dane: 24.06.2025 – 19.10.2026*
 
-*Opracowano: 10.10.2026; aktualizacja 18.10.2026*
+*Opracowano: 10.10.2026; aktualizacja 20.10.2026*
 
 ![Varia — czarna kotka brytyjska długowłosa](assets/varia-portrait.jpg)
 
@@ -20,24 +20,24 @@ Szczegóły każdego badania — we wpisie z odpowiednią datą w [pełnej chron
 
 Kluczowe parametry od 14.09.2026. Laboratorium podano w nagłówku kolumny.
 
-| Parametr | 14.09<br>LoVet / IDEXX | 28.09<br>LoVet | 07.10<br>LoVet / IDEXX | 10.10<br>TENVET | 16.10<br>LoVet / IDEXX |
-| --- | --- | --- | --- | --- | --- |
-| Kreatynina, µmol/l | 126 | 152 | **250 ↑** | ≈ 159 | 156 |
-| Mocznik, mmol/l | 6.85 | **12.0 ↑** | **16.5 ↑** | ≈ 11.4 | **23.7 ↑** |
-| Glukoza, mmol/l | **8.55 ↑** | **8.79 ↑** | **10.33 ↑** | **≈ 11.3 ↑** | **8.90 ↑** |
-| Potas, mmol/l | **5.14 ↑** | 4.76 | 4.54 | 3.57 | 4.71 |
-| Sód, mmol/l | 150 | 145 | 150 | 148.2 | 148 |
-| Amylaza, U/l | 1503 | 1509 | **2158 ↑** | — | **2145 ↑** |
-| Albumina, g/l | 33.0 | 30.4 | 34.1 | 33 | 33.6 |
-| Leukocyty (WBC), ×10⁹/l | 6.67 | „leukocytoza” ↑ | **17.38 ↑** | 11.77 | 13.95 |
-| Neutrofile, ×10⁹/l | 5.09 | „neutrofilia” ↑ | **15.08 ↑** | 10.43 | **11.86 ↑** |
-| Limfocyty, ×10⁹/l | **0.83 ↓** | — | 1.19 | **0.44 ↓** | 1.30 |
-| Hematokryt | 0.38 l/l | — | 0.394 l/l | 49 % | 0.331 l/l |
-| Hemoglobina | 114 g/l | — | 121 g/l | **16.2 g/dl ↑** | 98 g/l |
-| Płytki krwi, ×10⁹/l | **700 ↑** | — | 550 | 372 | **840 ↑** |
-| Masa ciała, kg | 4.78 | — | 4.19 (05.10) | — | 3.90 (12.10) |
+| Parametr | 14.09<br>LoVet / IDEXX | 28.09<br>LoVet | 07.10<br>LoVet / IDEXX | 10.10<br>TENVET | 16.10<br>LoVet / IDEXX | 19.10<br>IDEXX |
+| --- | --- | --- | --- | --- | --- | --- |
+| Kreatynina, µmol/l | 126 | 152 | **250 ↑** | ≈ 159 | 156 | — |
+| Mocznik, mmol/l | 6.85 | **12.0 ↑** | **16.5 ↑** | ≈ 11.4 | **23.7 ↑** | — |
+| Glukoza, mmol/l | **8.55 ↑** | **8.79 ↑** | **10.33 ↑** | **≈ 11.3 ↑** | **8.90 ↑** | — |
+| Potas, mmol/l | **5.14 ↑** | 4.76 | 4.54 | 3.57 | 4.71 | — |
+| Sód, mmol/l | 150 | 145 | 150 | 148.2 | 148 | — |
+| Amylaza, U/l | 1503 | 1509 | **2158 ↑** | — | **2145 ↑** | — |
+| Albumina, g/l | 33.0 | 30.4 | 34.1 | 33 | 33.6 | — |
+| Leukocyty (WBC), ×10⁹/l | 6.67 | „leukocytoza” ↑ | **17.38 ↑** | 11.77 | 13.95 | **19.25 ↑** |
+| Neutrofile, ×10⁹/l | 5.09 | „neutrofilia” ↑ | **15.08 ↑** | 10.43 | **11.86 ↑** | **17.38 ↑** |
+| Limfocyty, ×10⁹/l | **0.83 ↓** | — | 1.19 | **0.44 ↓** | 1.30 | 1.14 |
+| Hematokryt | 0.38 l/l | — | 0.394 l/l | 49 % | 0.331 l/l | 0.327 l/l |
+| Hemoglobina | 114 g/l | — | 121 g/l | **16.2 g/dl ↑** | 98 g/l | 100 g/l |
+| Płytki krwi, ×10⁹/l | **700 ↑** | — | 550 | 372 | **840 ↑** | **673 ↑** |
+| Masa ciała, kg | 4.78 | — | 4.19 (05.10) | — | 3.90 (12.10) | „schudła znowu” |
 
-Co widać: **kreatynina gwałtownie wzrosła do 07.10 i do 16.10 wróciła do normy (156), ale mocznik dalej rośnie — 23.7 mmol/l, najwyższa wartość w historii** (⚠️ 10.10 — inny analizator). **Neutrofilia z 28.09–07.10** zmniejszyła się; **na Palladii nie ma neutropenii**. **Hemoglobina 16.10 — 98 g/l, na dolnej granicy** (07.10 — 121), **płytki 840 — najwyższa wartość**. Masa ciała — 3.90 kg. Glukoza jest stale podwyższona, ale fruktozamina 14.09 w normie (277 µmol/l) — wzrosty są stresowe. 10.10 parametry czerwonokrwinkowe powyżej normy — wg lekarza z powodu odwodnienia.
+Co widać: **kreatynina gwałtownie wzrosła do 07.10 i do 16.10 wróciła do normy (156), ale mocznik dalej rośnie — 23.7 mmol/l, najwyższa wartość w historii** (⚠️ 10.10 — inny analizator). **Neutrofilia z 28.09–07.10** zmniejszyła się; **na Palladii nie ma neutropenii**. **Hemoglobina 16.10 — 98 g/l, na dolnej granicy** (07.10 — 121), **płytki 840 — najwyższa wartość**. Masa ciała — 3.90 kg. Glukoza jest stale podwyższona, ale fruktozamina 14.09 w normie (277 µmol/l) — wzrosty są stresowe. 10.10 parametry czerwonokrwinkowe powyżej normy — wg lekarza z powodu odwodnienia. **19.10 (w dniu podania karboplatyny) — neutrofile 17.38 i leukocyty 19.25, więcej niż 07.10**; hemoglobina 100, płytki 673; biochemii 19.10 nie wykonano. 19.10 w badaniu — „schudła znowu”, bez nowej wartości masy.
 
 ## 2. Masa ciała
 
@@ -69,8 +69,9 @@ Ważenia z opisów badania. Wartości z pola „Waga” formularzy LoVet, które
 | 05.10.2026 | **4.19 ↓** | **−19.4 % ↓** | LoVet |
 | 12.10.2026 | **3.90 ↓** | **−25.0 % ↓** | LoVet |
 | 16.10.2026 | **3.90 ↓** | **−25.0 % ↓** | LoVet, ta sama wartość w polu „Waga” |
+| 19.10.2026 | **3.90 ↓** | **−25.0 % ↓** | LoVet, ta sama wartość w polu „Waga”; w badaniu — „schudła znowu” |
 
-Do połowy września masa utrzymywała się w przedziale 4.8–5.3 kg. **Od 14.09 do 05.10 — z 4.78 do 4.19 kg, czyli −0.6 kg (−12%) w trzy tygodnie;** do 12.10 — **3.90 kg**, kolejne −0.3 kg w tydzień. Od masy z lipca — **−25%**. 10.10 w TENVET kotki nie ważono (BCS 4/9); 16.10 w polu LoVet — te same 3.90 kg, nie wiadomo, czy ważono ponownie.
+Do połowy września masa utrzymywała się w przedziale 4.8–5.3 kg. **Od 14.09 do 05.10 — z 4.78 do 4.19 kg, czyli −0.6 kg (−12%) w trzy tygodnie;** do 12.10 — **3.90 kg**, kolejne −0.3 kg w tydzień. Od masy z lipca — **−25%**. 10.10 w TENVET kotki nie ważono (BCS 4/9); 16.10 w polu LoVet — te same 3.90 kg, nie wiadomo, czy ważono ponownie. 19.10 w polu LoVet — znów 3.90 kg, a w opisie badania „schudła znowu”, czyli rzeczywista masa jest prawdopodobnie mniejsza.
 
 ## 3. Częstość oddechów i punkcje
 
@@ -104,8 +105,9 @@ Częstość oddechów (RR) — z zapisów przychodni i wg właścicieli. U kota 
 | 16.10.2026, wieczór | do 40; o 18:40 — **44–46 ↑** | w domu, przed wizytą | właściciel | **ok. 140 ml** (60 z prawej + 80 z lewej) |
 | 16.10.2026, po punkcji | 34 | w domu | właściciel | — |
 | 17.10.2026 | 26 i 28 | nie we śnie, po furosemidzie i Palladii | właściciel | — |
+| 19.10.2026 | zły; przeponowy, ciężki (liczby nie zapisano) | na wizycie | LoVet | **90 ml** (surowiczo-krwisty) |
 
-Od lipca do września punkcje nie były potrzebne. **Od 26.09 do 16.10 — pięć punkcji w trzy tygodnie** (26.09, 28.09, 07.10, 10.10, 16.10; możliwe, że także 24.09), objętości 50–140 ml, odstępy 2–9 dni. Przed każdą — pogorszenie oddechu. 16.10 — największa objętość, sześć dni po poprzedniej punkcji. Zaraz po niej — 34 oddechy, a następnego dnia (17.10), po furosemidzie i Palladii, — 26–28 nawet nie we śnie. Wartości w znieczuleniu (25.09) nie są porównywalne z pozostałymi.
+Od lipca do września punkcje nie były potrzebne. **Od 26.09 do 16.10 — pięć punkcji w trzy tygodnie** (26.09, 28.09, 07.10, 10.10, 16.10; możliwe, że także 24.09), objętości 50–140 ml, odstępy 2–9 dni. Przed każdą — pogorszenie oddechu. 16.10 — największa objętość, sześć dni po poprzedniej punkcji. Zaraz po niej — 34 oddechy, a następnego dnia (17.10), po furosemidzie i Palladii, — 26–28 nawet nie we śnie. Wartości w znieczuleniu (25.09) nie są porównywalne z pozostałymi. **19.10 — szósta punkcja, 90 ml, trzy dni po poprzedniej**; onkolożka jej nie zalecała, wykonano ją decyzją właścicieli.
 
 ## 4. Temperatura
 
@@ -194,24 +196,24 @@ Glukoza powyżej normy we wszystkich pomiarach, ale fruktozamina 14.09.2026 — 
 
 Zakresy referencyjne — z formularzy z 2026 roku; w 2025 roku IDEXX stosował inny zakres MCV (39–56 fl).
 
-| Parametr | Zakres | 24.06.25 | 06.08.25 | 31.10.25 | 20.12.25 | 17.03.26 | 14.09.26 | 07.10.26 | 16.10.26 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Leukocyty (WBC), ×10⁹/l | 2.87–17.02 | 7.05 | — | — | 11.28 | — | 6.67 | **17.38 ↑** | 13.95 |
-| Neutrofile, ×10⁹/l | 2.30–10.29 | — | — | — | — | — | 5.09 | **15.08 ↑** | **11.86 ↑** |
-| Limfocyty, ×10⁹/l | 0.92–6.88 | — | — | — | — | — | **0.83 ↓** | 1.19 | 1.30 |
-| Monocyty, ×10⁹/l | 0.05–0.67 | — | — | — | — | — | 0.34 | 0.58 | 0.50 |
-| Eozynofile, ×10⁹/l | 0.17–1.57 | — | — | — | — | — | 0.39 | 0.50 | 0.27 |
-| Erytrocyty (RBC), ×10¹²/l | 6.54–12.20 | 9.46 | 10.81 | — | 10.62 | — | 10.27 | 10.99 | 9.00 |
-| Hematokryt, l/l | 0.303–0.523 | 0.415 | 0.386 | — | 0.38 | — | 0.38 | 0.394 | 0.331 |
-| Hemoglobina, g/l | 98–162 | 128 | 138 | — | 120 | 103 | 114 | 121 | 98 |
-| MCV, fl | 35.9–53.1 | 43.9 | **35.7 ↓** | **37.6 ↓** | **35.6 ↓** | — | 37.0 | 35.9 | 36.8 |
-| MCH, pg | 11.8–17.3 | 13.5 | — | **12.0 ↓** | **11.3 ↓** | — | **11.1 ↓** | **11.0 ↓** | **10.9 ↓** |
-| MCHC, g/l | 281–358 | 308 | — | — | 317 | — | 300 | 307 | 296 |
-| RDW, % | 15.0–27.0 | — | — | — | — | — | **31.4 ↑** | **31.2 ↑** | **28.9 ↑** |
-| Retikulocyty, K/µl | 3.0–50.0 | — | — | — | — | — | 20.5 | 15.4 | 38.7 |
-| Płytki krwi, ×10⁹/l | 151–600 | 427 | 325 | — | 279 | — | **700 ↑** | 550 | **840 ↑** |
+| Parametr | Zakres | 24.06.25 | 06.08.25 | 31.10.25 | 20.12.25 | 17.03.26 | 14.09.26 | 07.10.26 | 16.10.26 | 19.10.26 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Leukocyty (WBC), ×10⁹/l | 2.87–17.02 | 7.05 | — | — | 11.28 | — | 6.67 | **17.38 ↑** | 13.95 | **19.25 ↑** |
+| Neutrofile, ×10⁹/l | 2.30–10.29 | — | — | — | — | — | 5.09 | **15.08 ↑** | **11.86 ↑** | **17.38 ↑** |
+| Limfocyty, ×10⁹/l | 0.92–6.88 | — | — | — | — | — | **0.83 ↓** | 1.19 | 1.30 | 1.14 |
+| Monocyty, ×10⁹/l | 0.05–0.67 | — | — | — | — | — | 0.34 | 0.58 | 0.50 | 0.60 |
+| Eozynofile, ×10⁹/l | 0.17–1.57 | — | — | — | — | — | 0.39 | 0.50 | 0.27 | **0.11 ↓** |
+| Erytrocyty (RBC), ×10¹²/l | 6.54–12.20 | 9.46 | 10.81 | — | 10.62 | — | 10.27 | 10.99 | 9.00 | 9.11 |
+| Hematokryt, l/l | 0.303–0.523 | 0.415 | 0.386 | — | 0.38 | — | 0.38 | 0.394 | 0.331 | 0.327 |
+| Hemoglobina, g/l | 98–162 | 128 | 138 | — | 120 | 103 | 114 | 121 | 98 | 100 |
+| MCV, fl | 35.9–53.1 | 43.9 | **35.7 ↓** | **37.6 ↓** | **35.6 ↓** | — | 37.0 | 35.9 | 36.8 | 35.9 |
+| MCH, pg | 11.8–17.3 | 13.5 | — | **12.0 ↓** | **11.3 ↓** | — | **11.1 ↓** | **11.0 ↓** | **10.9 ↓** | **11.0 ↓** |
+| MCHC, g/l | 281–358 | 308 | — | — | 317 | — | 300 | 307 | 296 | 306 |
+| RDW, % | 15.0–27.0 | — | — | — | — | — | **31.4 ↑** | **31.2 ↑** | **28.9 ↑** | **28.2 ↑** |
+| Retikulocyty, K/µl | 3.0–50.0 | — | — | — | — | — | 20.5 | 15.4 | 38.7 | 37.4 |
+| Płytki krwi, ×10⁹/l | 151–600 | 427 | 325 | — | 279 | — | **700 ↑** | 550 | **840 ↑** | **673 ↑** |
 
-Od sierpnia 2025 roku — drobne erytrocyty (mikrocytoza) i obniżone MCH, jeszcze przed pierwszą operacją. 07.10 i 16.10.2026 laboratorium IDEXX odnotowało podwyższone RDW (erytrocyty różnej wielkości) i zaleciło rozmaz krwi — według dokumentów nie został wykonany. **16.10 hemoglobina — 98 g/l, dokładnie na dolnej granicy** (07.10 — 121), hematokryt 0.331; retikulocyty wzrosły do 38.7. Płytki 840 — więcej niż kiedykolwiek wcześniej. Formularzy IDEXX z liczbami z 02.09 i 07.09.2026 nie otrzymano.
+Od sierpnia 2025 roku — drobne erytrocyty (mikrocytoza) i obniżone MCH, jeszcze przed pierwszą operacją. 07.10, 16.10 i 19.10.2026 laboratorium IDEXX odnotowało podwyższone RDW (erytrocyty różnej wielkości) i zaleciło rozmaz krwi — według dokumentów nie został wykonany. **16.10 hemoglobina — 98 g/l, dokładnie na dolnej granicy** (07.10 — 121), hematokryt 0.331; retikulocyty wzrosły do 38.7. Płytki 840 — więcej niż kiedykolwiek wcześniej. Formularzy IDEXX z liczbami z 02.09 i 07.09.2026 nie otrzymano. **19.10 — neutrofile 17.38 i leukocyty 19.25 powyżej normy, eozynofile 0.11 poniżej**; hemoglobina 100, płytki 673; badanie z dnia podania karboplatyny.
 
 ## 9. Badania TENVET, 10.10.2026
 
